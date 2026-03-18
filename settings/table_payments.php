@@ -45,24 +45,29 @@ $runnerTableSettings['payments'] = array(
 	'strOrderBy' => 'ORDER BY `date` DESC',
 	'orderInfo' => array( 
 		array(
-			'index' => 7,
+			'index' => 8,
 			'dir' => 'DESC',
-			'field' => 'group_id' 
+			'field' => 'service_type' 
 		) 
 	),
 	'sql' => 'SELECT
-	id,
-	transaction_number,
-	service_type,
-	hospital_service_id,
-	professional_service_id,
-	amount,
-	`date`,
-	payment_method,
-	placed_by,
-	group_id
+	payments.id,
+	payments.transaction_number,
+	payments.service_type,
+	payments.hospital_service_id,
+	payments.professional_service_id,
+	COALESCE(hs.hospital_account, ps.pf_account) AS services,
+	payments.amount,
+	payments.`date`,
+	payments.payment_method,
+	payments.placed_by,
+	payments.group_id
 FROM
 	payments
+LEFT JOIN hospital_services hs ON hs.id = payments.hospital_service_id
+LEFT JOIN professional_services ps ON ps.id = payments.professional_service_id
+LEFT JOIN hospital_accounts ha ON ha.label = hs.hospital_account
+LEFT JOIN professional_accounts pa ON pa.label = ps.pf_account
 ORDER BY `date` DESC',
 	'keyFields' => array( 
 		'id' 
@@ -83,7 +88,7 @@ ORDER BY `date` DESC',
 			'index' => 1,
 			'type' => 3,
 			'autoinc' => true,
-			'sqlExpression' => 'id',
+			'sqlExpression' => 'payments.id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -101,7 +106,7 @@ ORDER BY `date` DESC',
 			'goodName' => 'transaction_number',
 			'strField' => 'transaction_number',
 			'index' => 2,
-			'sqlExpression' => 'transaction_number',
+			'sqlExpression' => 'payments.transaction_number',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -128,9 +133,9 @@ ORDER BY `date` DESC',
 			'name' => 'amount',
 			'goodName' => 'amount',
 			'strField' => 'amount',
-			'index' => 6,
+			'index' => 7,
 			'type' => 14,
-			'sqlExpression' => 'amount',
+			'sqlExpression' => 'payments.amount',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Number' 
@@ -147,9 +152,9 @@ ORDER BY `date` DESC',
 			'name' => 'date',
 			'goodName' => 'date',
 			'strField' => 'date',
-			'index' => 7,
+			'index' => 8,
 			'type' => 135,
-			'sqlExpression' => '`date`',
+			'sqlExpression' => 'payments.`date`',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Short Date' 
@@ -168,8 +173,8 @@ ORDER BY `date` DESC',
 			'name' => 'payment_method',
 			'goodName' => 'payment_method',
 			'strField' => 'payment_method',
-			'index' => 8,
-			'sqlExpression' => 'payment_method',
+			'index' => 9,
+			'sqlExpression' => 'payments.payment_method',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -192,8 +197,8 @@ ORDER BY `date` DESC',
 			'name' => 'placed_by',
 			'goodName' => 'placed_by',
 			'strField' => 'placed_by',
-			'index' => 9,
-			'sqlExpression' => 'placed_by',
+			'index' => 10,
+			'sqlExpression' => 'payments.placed_by',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -211,8 +216,8 @@ ORDER BY `date` DESC',
 			'name' => 'group_id',
 			'goodName' => 'group_id',
 			'strField' => 'group_id',
-			'index' => 10,
-			'sqlExpression' => 'group_id',
+			'index' => 11,
+			'sqlExpression' => 'payments.group_id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -231,7 +236,7 @@ ORDER BY `date` DESC',
 			'goodName' => 'service_type',
 			'strField' => 'service_type',
 			'index' => 3,
-			'sqlExpression' => 'service_type',
+			'sqlExpression' => 'payments.service_type',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -251,13 +256,31 @@ ORDER BY `date` DESC',
 			),
 			'tableName' => 'payments' 
 		),
+		'services' => array(
+			'name' => 'services',
+			'goodName' => 'services',
+			'strField' => 'services',
+			'index' => 6,
+			'sqlExpression' => 'COALESCE(hs.hospital_account, ps.pf_account)',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => '' 
+		),
 		'hospital_service_id' => array(
 			'name' => 'hospital_service_id',
 			'goodName' => 'hospital_service_id',
 			'strField' => 'hospital_service_id',
 			'index' => 4,
 			'type' => 3,
-			'sqlExpression' => 'hospital_service_id',
+			'sqlExpression' => 'payments.hospital_service_id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -272,7 +295,7 @@ ORDER BY `date` DESC',
 					'lookupLinkField' => 'id',
 					'lookupDisplayField' => 'hospital_account',
 					'lookupControlType' => 2,
-					'lookupWhere' => 'status=\'Unpaid\'',
+					'lookupWhere' => 'status IN (\'Unpaid\')',
 					'lookupListPage' => 'transactionsChild',
 					'lookupDependent' => true,
 					'lookupDependentFields' => array( 
@@ -291,7 +314,7 @@ ORDER BY `date` DESC',
 			'strField' => 'professional_service_id',
 			'index' => 5,
 			'type' => 3,
-			'sqlExpression' => 'professional_service_id',
+			'sqlExpression' => 'payments.professional_service_id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -306,7 +329,7 @@ ORDER BY `date` DESC',
 					'lookupLinkField' => 'id',
 					'lookupDisplayField' => 'pf_account',
 					'lookupControlType' => 2,
-					'lookupWhere' => 'status=\'Unpaid\'',
+					'lookupWhere' => 'status IN (\'Unpaid\')',
 					'lookupListPage' => 'transactionsChild',
 					'lookupDependent' => true,
 					'lookupDependentFields' => array( 
@@ -322,24 +345,29 @@ ORDER BY `date` DESC',
 	),
 	'query' => array(
 		'sql' => 'SELECT
-	id,
-	transaction_number,
-	service_type,
-	hospital_service_id,
-	professional_service_id,
-	amount,
-	`date`,
-	payment_method,
-	placed_by,
-	group_id
+	payments.id,
+	payments.transaction_number,
+	payments.service_type,
+	payments.hospital_service_id,
+	payments.professional_service_id,
+	COALESCE(hs.hospital_account, ps.pf_account) AS services,
+	payments.amount,
+	payments.`date`,
+	payments.payment_method,
+	payments.placed_by,
+	payments.group_id
 FROM
 	payments
+LEFT JOIN hospital_services hs ON hs.id = payments.hospital_service_id
+LEFT JOIN professional_services ps ON ps.id = payments.professional_service_id
+LEFT JOIN hospital_accounts ha ON ha.label = hs.hospital_account
+LEFT JOIN professional_accounts pa ON pa.label = ps.pf_account
 ORDER BY `date` DESC',
 		'parsed' => true,
 		'type' => 'SQLQuery',
 		'fieldList' => array( 
 			array(
-				'sql' => 'id',
+				'sql' => 'payments.id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -354,7 +382,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'id' 
 			),
 			array(
-				'sql' => 'transaction_number',
+				'sql' => 'payments.transaction_number',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -369,7 +397,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'transaction_number' 
 			),
 			array(
-				'sql' => 'service_type',
+				'sql' => 'payments.service_type',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -384,7 +412,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'service_type' 
 			),
 			array(
-				'sql' => 'hospital_service_id',
+				'sql' => 'payments.hospital_service_id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -399,7 +427,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'hospital_service_id' 
 			),
 			array(
-				'sql' => 'professional_service_id',
+				'sql' => 'payments.professional_service_id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -414,7 +442,34 @@ ORDER BY `date` DESC',
 				'columnName' => 'professional_service_id' 
 			),
 			array(
-				'sql' => 'amount',
+				'sql' => 'COALESCE(hs.hospital_account, ps.pf_account)',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => 'services',
+				'expression' => array(
+					'sql' => 'COALESCE(hs.hospital_account, ps.pf_account)',
+					'parsed' => true,
+					'type' => 'FunctionCall',
+					'arguments' => array( 
+						array(
+							'sql' => 'hs.hospital_account',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						),
+						array(
+							'sql' => 'ps.pf_account',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						) 
+					),
+					'functionName' => 'COALESCE',
+					'functionType' => 5 
+				),
+				'encrypted' => false,
+				'columnName' => 'services' 
+			),
+			array(
+				'sql' => 'payments.amount',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -429,7 +484,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'amount' 
 			),
 			array(
-				'sql' => '`date`',
+				'sql' => 'payments.`date`',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -444,7 +499,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'date' 
 			),
 			array(
-				'sql' => 'payment_method',
+				'sql' => 'payments.payment_method',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -459,7 +514,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'payment_method' 
 			),
 			array(
-				'sql' => 'placed_by',
+				'sql' => 'payments.placed_by',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -474,7 +529,7 @@ ORDER BY `date` DESC',
 				'columnName' => 'placed_by' 
 			),
 			array(
-				'sql' => 'group_id',
+				'sql' => 'payments.group_id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -534,6 +589,258 @@ ORDER BY `date` DESC',
 					) 
 				),
 				'link' => 0 
+			),
+			array(
+				'sql' => 'LEFT JOIN hospital_services hs ON hs.id = payments.hospital_service_id',
+				'parsed' => true,
+				'type' => 'FromListItem',
+				'table' => array(
+					'sql' => 'hospital_services',
+					'parsed' => true,
+					'type' => 'SQLTable',
+					'columns' => array( 
+						'id',
+						'transaction_number',
+						'hospital_account_id',
+						'amount',
+						'status',
+						'placed_by',
+						'group_id',
+						'created_at',
+						'updated_at' 
+					),
+					'name' => 'hospital_services' 
+				),
+				'joinOn' => array(
+					'sql' => 'hs.id = payments.hospital_service_id',
+					'parsed' => true,
+					'type' => 'LogicalExpression',
+					'contained' => array( 
+						 
+					),
+					'unionType' => 0,
+					'column' => array(
+						'sql' => '',
+						'parsed' => true,
+						'type' => 'SQLField',
+						'table' => 'hs',
+						'name' => 'id' 
+					),
+					'case' => '= payments.hospital_service_id',
+					'useAlias' => false 
+				),
+				'joinList' => array(
+					'sql' => 'hs.id = payments.hospital_service_id',
+					'parsed' => true,
+					'type' => 'JoinOn',
+					'field1' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'hs',
+							'name' => 'id' 
+						) 
+					),
+					'field2' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'payments',
+							'name' => 'hospital_service_id' 
+						) 
+					) 
+				),
+				'alias' => 'hs',
+				'link' => 3 
+			),
+			array(
+				'sql' => 'LEFT JOIN professional_services ps ON ps.id = payments.professional_service_id',
+				'parsed' => true,
+				'type' => 'FromListItem',
+				'table' => array(
+					'sql' => 'professional_services',
+					'parsed' => true,
+					'type' => 'SQLTable',
+					'columns' => array( 
+						'id',
+						'transaction_number',
+						'pf_account_id',
+						'amount',
+						'professional_id',
+						'type_of_account_due',
+						'status',
+						'placed_by',
+						'group_id',
+						'created_at',
+						'updated_at' 
+					),
+					'name' => 'professional_services' 
+				),
+				'joinOn' => array(
+					'sql' => 'ps.id = payments.professional_service_id',
+					'parsed' => true,
+					'type' => 'LogicalExpression',
+					'contained' => array( 
+						 
+					),
+					'unionType' => 0,
+					'column' => array(
+						'sql' => '',
+						'parsed' => true,
+						'type' => 'SQLField',
+						'table' => 'ps',
+						'name' => 'id' 
+					),
+					'case' => '= payments.professional_service_id',
+					'useAlias' => false 
+				),
+				'joinList' => array(
+					'sql' => 'ps.id = payments.professional_service_id',
+					'parsed' => true,
+					'type' => 'JoinOn',
+					'field1' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'ps',
+							'name' => 'id' 
+						) 
+					),
+					'field2' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'payments',
+							'name' => 'professional_service_id' 
+						) 
+					) 
+				),
+				'alias' => 'ps',
+				'link' => 3 
+			),
+			array(
+				'sql' => 'LEFT JOIN hospital_accounts ha ON ha.label = hs.hospital_account',
+				'parsed' => true,
+				'type' => 'FromListItem',
+				'table' => array(
+					'sql' => 'hospital_accounts',
+					'parsed' => true,
+					'type' => 'SQLTable',
+					'columns' => array( 
+						'id',
+						'label',
+						'description',
+						'fund_code',
+						'fund_type',
+						'created_at',
+						'updated_at' 
+					),
+					'name' => 'hospital_accounts' 
+				),
+				'joinOn' => array(
+					'sql' => 'ha.`label` = hs.hospital_account',
+					'parsed' => true,
+					'type' => 'LogicalExpression',
+					'contained' => array( 
+						 
+					),
+					'unionType' => 0,
+					'column' => array(
+						'sql' => '',
+						'parsed' => true,
+						'type' => 'SQLField',
+						'table' => 'ha',
+						'name' => 'label' 
+					),
+					'case' => '= hs.hospital_account',
+					'useAlias' => false 
+				),
+				'joinList' => array(
+					'sql' => 'ha.label = hs.hospital_account',
+					'parsed' => true,
+					'type' => 'JoinOn',
+					'field1' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'ha',
+							'name' => 'label' 
+						) 
+					),
+					'field2' => array( 
+						array(
+							'sql' => 'hs.hospital_account',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						) 
+					) 
+				),
+				'alias' => 'ha',
+				'link' => 3 
+			),
+			array(
+				'sql' => 'LEFT JOIN professional_accounts pa ON pa.label = ps.pf_account',
+				'parsed' => true,
+				'type' => 'FromListItem',
+				'table' => array(
+					'sql' => 'professional_accounts',
+					'parsed' => true,
+					'type' => 'SQLTable',
+					'columns' => array( 
+						'id',
+						'label',
+						'description',
+						'created_at',
+						'updated_at' 
+					),
+					'name' => 'professional_accounts' 
+				),
+				'joinOn' => array(
+					'sql' => 'pa.`label` = ps.pf_account',
+					'parsed' => true,
+					'type' => 'LogicalExpression',
+					'contained' => array( 
+						 
+					),
+					'unionType' => 0,
+					'column' => array(
+						'sql' => '',
+						'parsed' => true,
+						'type' => 'SQLField',
+						'table' => 'pa',
+						'name' => 'label' 
+					),
+					'case' => '= ps.pf_account',
+					'useAlias' => false 
+				),
+				'joinList' => array(
+					'sql' => 'pa.label = ps.pf_account',
+					'parsed' => true,
+					'type' => 'JoinOn',
+					'field1' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'pa',
+							'name' => 'label' 
+						) 
+					),
+					'field2' => array( 
+						array(
+							'sql' => 'ps.pf_account',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						) 
+					) 
+				),
+				'alias' => 'pa',
+				'link' => 3 
 			) 
 		),
 		'where' => array(
@@ -572,7 +879,7 @@ ORDER BY `date` DESC',
 					'name' => 'date' 
 				),
 				'asc' => false,
-				'columnNumber' => 7 
+				'columnNumber' => 8 
 			) 
 		),
 		'colsIndex' => array( 
@@ -620,14 +927,14 @@ ORDER BY `date` DESC',
 			),
 			array(
 				'fieldIndex' => 6,
-				'orderByIndex' => 0,
+				'orderByIndex' => -1,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
 			),
 			array(
 				'fieldIndex' => 7,
-				'orderByIndex' => -1,
+				'orderByIndex' => 0,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
@@ -645,21 +952,33 @@ ORDER BY `date` DESC',
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 10,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
 			) 
 		),
 		'headSql' => 'SELECT',
-		'fieldListSql' => 'id,
-	transaction_number,
-	service_type,
-	hospital_service_id,
-	professional_service_id,
-	amount,
-	`date`,
-	payment_method,
-	placed_by,
-	group_id',
+		'fieldListSql' => 'payments.id,
+	payments.transaction_number,
+	payments.service_type,
+	payments.hospital_service_id,
+	payments.professional_service_id,
+	COALESCE(hs.hospital_account, ps.pf_account) AS services,
+	payments.amount,
+	payments.`date`,
+	payments.payment_method,
+	payments.placed_by,
+	payments.group_id',
 		'fromListSql' => 'FROM
-	payments',
+	payments
+LEFT JOIN hospital_services hs ON hs.id = payments.hospital_service_id
+LEFT JOIN professional_services ps ON ps.id = payments.professional_service_id
+LEFT JOIN hospital_accounts ha ON ha.label = hs.hospital_account
+LEFT JOIN professional_accounts pa ON pa.label = ps.pf_account',
 		'orderBySql' => 'ORDER BY `date` DESC',
 		'tailSql' => '' 
 	),
@@ -713,6 +1032,7 @@ ORDER BY `date` DESC',
 			'placed_by',
 			'group_id',
 			'service_type',
+			'services',
 			'hospital_service_id',
 			'professional_service_id' 
 		),
@@ -729,6 +1049,7 @@ ORDER BY `date` DESC',
 			'placed_by',
 			'group_id',
 			'service_type',
+			'services',
 			'hospital_service_id',
 			'professional_service_id' 
 		) 
@@ -796,8 +1117,9 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'placed_by' => 'Placed By',
 		'group_id' => 'Group Id',
 		'service_type' => 'Service Type',
-		'hospital_service_id' => 'Hospital Service',
-		'professional_service_id' => 'Professional Service' 
+		'services' => 'Services',
+		'hospital_service_id' => 'Hospital Service Id',
+		'professional_service_id' => 'Professional Service Id' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
@@ -808,6 +1130,7 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'placed_by' => '',
 		'group_id' => '',
 		'service_type' => '',
+		'services' => '',
 		'hospital_service_id' => '',
 		'professional_service_id' => '' 
 	),
@@ -820,6 +1143,7 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'placed_by' => '',
 		'group_id' => '',
 		'service_type' => '',
+		'services' => '',
 		'hospital_service_id' => '',
 		'professional_service_id' => '' 
 	),
