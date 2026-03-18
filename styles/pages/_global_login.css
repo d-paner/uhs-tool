@@ -1,0 +1,89 @@
+[data-cellid="above-grid_c2"][data-page="_global_login"][data-cellid="above-grid_c2"][data-page="_global_login"][data-cellid="above-grid_c2"][data-page="_global_login"] {
+  font-size: 20px;
+}
+[data-cellid="footer_c1"][data-page="_global_login"][data-cellid="footer_c1"][data-page="_global_login"][data-cellid="footer_c1"][data-page="_global_login"] {
+  width: 33.33333333%;
+}
+[data-cellid="footer_c"][data-page="_global_login"][data-cellid="footer_c"][data-page="_global_login"][data-cellid="footer_c"][data-page="_global_login"] {
+  width: 33.33333333%;
+}
+[data-page="_global_login"][data-itemid="text"] {
+  font-weight: bold;
+}
+[data-page="_global_login"][data-itemid="image"] {
+  width: 200px;
+  height: 200px;
+}
+[data-page="_global_login"][data-itemid="page_image_ash8f23hr"] {
+  width: 400px;
+}
+
+/* Put  your custom CSS code here */
+
+[data-page="_global_login"][data-itemid="image"] {
+  color: red;
+}
+
+.container {
+  display: flex;
+  justify-content: center;  /* horizontal */
+  align-items: center;      /* vertical */
+}
+:host {
+  color: red;
+  border-color: transparent;
+}
+
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: transparent; 
+    border-color: transparent; 
+}
+
+[data-page="_global_login"][data-itemid="login_external"] > .btn {
+    border-color: transparent;
+}
+
+.panel-primary {
+    border-color: #f3f3f3;
+    border-radius: 5px;
+}
+
+body {
+background-color: #f0f4f9;
+    display: grid;
+    place-items: center; 
+    height: 100vh;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Center the login form container */
+.loginform {
+  display: flex;
+  flex-direction: column; /* stack inputs vertically */
+  align-items: center;    /* center horizontally */
+  gap: 10px;              /* spacing between fields */
+  margin-top: 50px;       /* optional, move down */
+}
+
+[data-itemid="username"] input,
+[data-itemid="password"] input {
+  width: 300px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn.btn-primary { 
+    width: 150px; 
+    margin: 0 auto; 
+    display: block;
+}

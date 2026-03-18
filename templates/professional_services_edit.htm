@@ -1,0 +1,402 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+						<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		{BEGIN styleCSSFiles}
+<link REL="stylesheet" href="{$stylepath}" type="text/css">
+{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-edit" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="edit_header" data-itemid="edit_header" {$item_edit_header} data-pageid="{$pageid}" >{$pagetitlelabel professional_services edit}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<div data-itemtype="edit_message" data-itemid="edit_message" {$item_edit_message} data-pageid="{$pageid}" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN message_back_button}
+			<button class="btn btn-sm btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+	{END message_back_button}
+{BEGIN message_view_page_button}
+		<a class="btn btn-sm btn-default" href="professional_services_view.php?{$editlink}" {$view_page_button_attrs}>{mlang_message VIEW}</a>
+{END message_view_page_button}
+</div>
+</div>
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN transaction_number_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_transaction_number}  r-vertical-field" 
+	data-signal-error-for="transaction_number{$id}" {$required_attr_transaction_number}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="transaction_number" data-fieldname="transaction_number" >
+
+	<label class="r-edit-label control-label {$transaction_number_label_class}" for="{$labelfor_transaction_number}">
+		{BEGIN transaction_number_label}
+			{$transaction_number_forward_control}
+			{$label professional_services transaction_number }			{END transaction_number_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$transaction_number_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="transaction_number" {$tooltipAttr professional_services transaction_number } >
+		<div class="text-muted" >
+		{$tooltip professional_services transaction_number }		</div>
+	</div>
+	</div>
+
+
+{END transaction_number_fieldblock}
+											
+{BEGIN amount_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_amount}  r-vertical-field" 
+	data-signal-error-for="amount{$id}" {$required_attr_amount}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="amount" data-fieldname="amount" >
+
+	<label class="r-edit-label control-label {$amount_label_class}" for="{$labelfor_amount}">
+		{BEGIN amount_label}
+			{$amount_forward_control}
+			{$label professional_services amount }			{END amount_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$amount_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="amount" {$tooltipAttr professional_services amount } >
+		<div class="text-muted" >
+		{$tooltip professional_services amount }		</div>
+	</div>
+	</div>
+
+
+{END amount_fieldblock}
+											
+{BEGIN professional_id_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_professional_id}  r-vertical-field" 
+	data-signal-error-for="professional_id{$id}" {$required_attr_professional_id}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="professional_id" data-fieldname="professional_id" >
+
+	<label class="r-edit-label control-label {$professional_id_label_class}" for="{$labelfor_professional_id}">
+		{BEGIN professional_id_label}
+			{$professional_id_forward_control}
+			{$label professional_services professional_id }			{END professional_id_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$professional_id_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="professional_id" {$tooltipAttr professional_services professional_id } >
+		<div class="text-muted" >
+		{$tooltip professional_services professional_id }		</div>
+	</div>
+	</div>
+
+
+{END professional_id_fieldblock}
+											
+{BEGIN type_of_account_due_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_type_of_account_due}  r-vertical-field" 
+	data-signal-error-for="type_of_account_due{$id}" {$required_attr_type_of_account_due}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="type_of_account_due" data-fieldname="type_of_account_due" >
+
+	<label class="r-edit-label control-label {$type_of_account_due_label_class}" for="{$labelfor_type_of_account_due}">
+		{BEGIN type_of_account_due_label}
+			{$type_of_account_due_forward_control}
+			{$label professional_services type_of_account_due }			{END type_of_account_due_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$type_of_account_due_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="type_of_account_due" {$tooltipAttr professional_services type_of_account_due } >
+		<div class="text-muted" >
+		{$tooltip professional_services type_of_account_due }		</div>
+	</div>
+	</div>
+
+
+{END type_of_account_due_fieldblock}
+											
+{BEGIN status_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_status}  r-vertical-field" 
+	data-signal-error-for="status{$id}" {$required_attr_status}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="status" data-fieldname="status" >
+
+	<label class="r-edit-label control-label {$status_label_class}" for="{$labelfor_status}">
+		{BEGIN status_label}
+			{$status_forward_control}
+			{$label professional_services status }			{END status_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$status_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="status" {$tooltipAttr professional_services status } >
+		<div class="text-muted" >
+		{$tooltip professional_services status }		</div>
+	</div>
+	</div>
+
+
+{END status_fieldblock}
+											
+{BEGIN placed_by_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_placed_by}  r-vertical-field" 
+	data-signal-error-for="placed_by{$id}" {$required_attr_placed_by}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="placed_by" data-fieldname="placed_by" >
+
+	<label class="r-edit-label control-label {$placed_by_label_class}" for="{$labelfor_placed_by}">
+		{BEGIN placed_by_label}
+			{$placed_by_forward_control}
+			{$label professional_services placed_by }			{END placed_by_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$placed_by_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="placed_by" {$tooltipAttr professional_services placed_by } >
+		<div class="text-muted" >
+		{$tooltip professional_services placed_by }		</div>
+	</div>
+	</div>
+
+
+{END placed_by_fieldblock}
+											
+{BEGIN group_id_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_group_id}  r-vertical-field" 
+	data-signal-error-for="group_id{$id}" {$required_attr_group_id}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="group_id" data-fieldname="group_id" >
+
+	<label class="r-edit-label control-label {$group_id_label_class}" for="{$labelfor_group_id}">
+		{BEGIN group_id_label}
+			{$group_id_forward_control}
+			{$label professional_services group_id }			{END group_id_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$group_id_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="group_id" {$tooltipAttr professional_services group_id } >
+		<div class="text-muted" >
+		{$tooltip professional_services group_id }		</div>
+	</div>
+	</div>
+
+
+{END group_id_fieldblock}
+											
+{BEGIN created_at_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_created_at}  r-vertical-field" 
+	data-signal-error-for="created_at{$id}" {$required_attr_created_at}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="created_at" data-fieldname="created_at" >
+
+	<label class="r-edit-label control-label {$created_at_label_class}" for="{$labelfor_created_at}">
+		{BEGIN created_at_label}
+			{$created_at_forward_control}
+			{$label professional_services created_at }			{END created_at_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$created_at_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="created_at" {$tooltipAttr professional_services created_at } >
+		<div class="text-muted" >
+		{$tooltip professional_services created_at }		</div>
+	</div>
+	</div>
+
+
+{END created_at_fieldblock}
+											
+{BEGIN updated_at_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_updated_at}  r-vertical-field" 
+	data-signal-error-for="updated_at{$id}" {$required_attr_updated_at}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="updated_at" data-fieldname="updated_at" >
+
+	<label class="r-edit-label control-label {$updated_at_label_class}" for="{$labelfor_updated_at}">
+		{BEGIN updated_at_label}
+			{$updated_at_forward_control}
+			{$label professional_services updated_at }			{END updated_at_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$updated_at_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="updated_at" {$tooltipAttr professional_services updated_at } >
+		<div class="text-muted" >
+		{$tooltip professional_services updated_at }		</div>
+	</div>
+	</div>
+
+
+{END updated_at_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-6
+	">
+	 
+		{BEGIN save_edit}
+<span data-itemtype="edit_save" data-itemid="edit_save" {$item_edit_save} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$savebutton_attrs} >
+							{mlang_message SAVE}			</a>
+</span>
+{END save_edit}
+	 
+		{BEGIN back_button}
+<span data-itemtype="edit_back_list" data-itemid="edit_back_list" {$item_edit_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							{mlang_message BACK_TO_LIST}			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN close_button}
+<span data-itemtype="edit_close" data-itemid="edit_close" {$item_edit_close} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$closebutton_attrs} >
+							{mlang_message CANCEL}			</a>
+</span>
+{END close_button}
+	</div>			 
+				<div 
+	data-cellId="below-grid_c2" data-pageid="{$pageid}"	{$cell_below-grid_c2}
+	class="r-align-right r-ori-vert			col-md-6
+	">
+	 
+		<span data-itemtype="hamburger" data-itemid="hamburger" {$item_hamburger} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown dropup">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+												<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN reset_button}
+	<li data-itemtype="edit_reset" data-itemid="edit_reset" {$item_edit_reset} data-pageid="{$pageid}" data-small >
+				<a  {$resetbutton_attrs}  title="" >
+				
+		{mlang_message RESET}		
+		</a>
+	</li>
+{END reset_button}
+							{BEGIN view_page_button}
+	<li data-itemtype="edit_view" data-itemid="edit_view" {$item_edit_view} data-pageid="{$pageid}" data-small >
+				<a  href="professional_services_view.php?{$editlink}" {$view_page_button_attrs}  title="" >
+				
+		{mlang_message VIEW}		
+		</a>
+	</li>
+{END view_page_button}
+					</ul>
+	</span>
+</span>
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>
