@@ -62,7 +62,7 @@ return $defaultValue;
 }
 
 public function default_status_efedit(  ) {
-	$defaultValue = Open;
+	$defaultValue = "Open";
 return $defaultValue;
 }
 
