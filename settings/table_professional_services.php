@@ -205,7 +205,7 @@ FROM
 				'edit' => array(
 					'format' => 'Readonly',
 					'required' => true,
-					'defaultValue' => 'Unpaid',
+					'defaultValue' => '"Unpaid"',
 					'lookupType' => 0,
 					'lookupValues' => array( 
 						'Paid',

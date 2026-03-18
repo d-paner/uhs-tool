@@ -15,15 +15,9 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'professional_services',
+		'table' => 'transactions',
 		'schema' => '',
-		'filename' => 'professional_services' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'hospital_services',
-		'schema' => '',
-		'filename' => 'hospital_services' 
+		'filename' => 'transactions' 
 	),
 	array(
 		'connId' => 'conn',
@@ -33,33 +27,9 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'transactions',
+		'table' => 'hospital_services',
 		'schema' => '',
-		'filename' => 'transactions' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'professionals',
-		'schema' => '',
-		'filename' => 'professionals' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'users',
-		'schema' => '',
-		'filename' => 'users' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'guarantors',
-		'schema' => '',
-		'filename' => 'guarantors' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'offices',
-		'schema' => '',
-		'filename' => 'offices' 
+		'filename' => 'hospital_services' 
 	),
 	array(
 		'connId' => 'conn',
@@ -69,9 +39,39 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
+		'table' => 'users',
+		'schema' => '',
+		'filename' => 'users' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'professionals',
+		'schema' => '',
+		'filename' => 'professionals' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'professional_services',
+		'schema' => '',
+		'filename' => 'professional_services' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'offices',
+		'schema' => '',
+		'filename' => 'offices' 
+	),
+	array(
+		'connId' => 'conn',
 		'table' => 'transaction_guarantor',
 		'schema' => '',
 		'filename' => 'transaction_guarantor' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'guarantors',
+		'schema' => '',
+		'filename' => 'guarantors' 
 	),
 	array(
 		'connId' => 'conn',
