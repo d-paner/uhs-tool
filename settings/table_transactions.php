@@ -202,7 +202,7 @@ ORDER BY created_at DESC',
 			'editFormats' => array(
 				'edit' => array(
 					'format' => 'Readonly',
-					'defaultValue' => 'Open' 
+					'defaultValue' => '"Open"' 
 				) 
 			),
 			'tableName' => 'transactions' 

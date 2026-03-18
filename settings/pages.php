@@ -137,36 +137,6 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'transactions' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list',
-				'transactionsList' 
-			),
-			'print' => array( 
-				'print' 
-			),
-			'masterlist' => array( 
-				'masterlist' 
-			),
-			'masterprint' => array( 
-				'masterprint' 
-			) 
-		),
 		'hospital_accounts' => array(
 			'add' => array( 
 				'add' 
@@ -328,21 +298,51 @@ $runnerPageInfo = array(
 			'print' => array( 
 				'print' 
 			) 
+		),
+		'transactions' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'transactionsList' 
+			),
+			'print' => array( 
+				'print' 
+			),
+			'masterlist' => array( 
+				'masterlist' 
+			),
+			'masterprint' => array( 
+				'masterprint' 
+			) 
 		) 
 	),
 	'tableMasks' => array(
 		'patients' => 'ADESPI',
 		'payments' => 'ADESPI',
-		'transactions' => 'ADESPI',
+		'guarantors' => 'ADESPI',
+		'patient_types' => 'ADESPI',
 		'hospital_accounts' => 'ADESPI',
 		'hospital_services' => 'ADESPI',
-		'patient_types' => 'ADESPI',
-		'users' => 'ADESPI',
-		'professionals' => 'ADESPI',
 		'professional_services' => 'ADESPI',
 		'offices' => 'ADESPI',
+		'users' => 'ADESPI',
+		'transactions' => 'ADESPI',
+		'professionals' => 'ADESPI',
 		'transaction_guarantor' => 'ADESPI',
-		'guarantors' => 'ADESPI',
 		'Viewing List' => 'ADESPI',
 		'professional_accounts' => 'ADESPI',
 		'<global>' => 'S' 
