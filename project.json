@@ -1,0 +1,2064 @@
+{
+	"programVersion": 2,
+	"versionName": "11.1",
+	"name": "university-health-service",
+	"mainDiagram": {
+		"tables": [
+			{
+				"gid": 2605319477,
+				"y": 0,
+				"x": 1081.6666717529297,
+				"width": 146.9375,
+				"height": 263.3333435058594
+			},
+			{
+				"gid": 3763669081,
+				"y": 467.33333349227905,
+				"x": 611,
+				"width": 178.75,
+				"height": 179.33334350585938
+			},
+			{
+				"gid": 1504671644,
+				"y": 122,
+				"x": 603,
+				"width": 174.0625,
+				"height": 291.3333435058594
+			},
+			{
+				"gid": 4118085452,
+				"y": 557.333333492279,
+				"x": 243,
+				"width": 135.8854217529297,
+				"height": 207.33334350585938
+			},
+			{
+				"gid": 3422966527,
+				"y": 346,
+				"x": 840,
+				"width": 171.95834350585938,
+				"height": 151.33334350585938
+			},
+			{
+				"gid": 751578668,
+				"y": 36,
+				"x": 17,
+				"width": 115.70833587646484,
+				"height": 263.3333435058594
+			},
+			{
+				"gid": 1708301106,
+				"y": 665,
+				"x": 460,
+				"width": 136.7291717529297,
+				"height": 179.33334350585938
+			},
+			{
+				"gid": 1498301457,
+				"y": 725,
+				"x": 20,
+				"width": 205.9791717529297,
+				"height": 179.33334350585938
+			},
+			{
+				"gid": 3769908180,
+				"y": 115,
+				"x": 158,
+				"width": 201.2916717529297,
+				"height": 347.3333435058594
+			},
+			{
+				"gid": 767438990,
+				"y": 387,
+				"x": 0,
+				"width": 149.15625,
+				"height": 263.3333435058594
+			},
+			{
+				"gid": 1653239510,
+				"y": 44,
+				"x": 789,
+				"width": 202.875,
+				"height": 207.33334350585938
+			},
+			{
+				"gid": 3936885324,
+				"y": 43,
+				"x": 397,
+				"width": 142.15625,
+				"height": 291.3333435058594
+			},
+			{
+				"gid": 344172009,
+				"y": 268,
+				"x": 1043,
+				"width": 110.70833587646484,
+				"height": 291.3333435058594
+			},
+			{
+				"gid": 631629026,
+				"y": 670,
+				"x": 20,
+				"width": 141.125,
+				"height": 39.333335876464844
+			}
+		]
+	},
+	"securitySettings": {
+		"loginDataSource": "users",
+		"loginForm": 0,
+		"providers": [
+			{
+				"type": "%db",
+				"name": "db",
+				"active": true,
+				"label": {
+					"text": "Database",
+					"type": 0
+				},
+				"code": "00",
+				"table": {
+					"connId": "conn",
+					"table": "users"
+				},
+				"usernameField": "username",
+				"passwordField": "password",
+				"emailField": "email",
+				"extUserIdField": "ext_security_id",
+				"fullnameField": "full_name",
+				"userpicField": "",
+				"activationField": "˂Create new˃",
+				"resetTokenField": "˂Create new˃",
+				"resetDateField": "˂Create new˃",
+				"userGroupField": "group_id"
+			}
+		],
+		"sessionControl": {
+			"lifeTime": 15,
+			"sessionName": "8nXCYnXrReLvXLSetlFq",
+			"JWTSecret": "szdDF91FS36L01KHedZ6"
+		},
+		"registration": {
+			"remindMethod": 1,
+			"hashAlgorithm": 0,
+			"registerPage": false,
+			"remindPage": false,
+			"changePwdPage": true,
+			"hashPassword": true,
+			"changePasswordPage": true,
+			"remindPasswordPage": false,
+			"passwordValidation": {
+				"strong": false,
+				"minimumLength": 8,
+				"uniqueCharacters": 4,
+				"digitsAndSymbols": 2,
+				"upperAndLowerCase": false
+			}
+		},
+		"captchaSettings": {
+			"captchaType": 0,
+			"siteKey": "",
+			"secretKey": "",
+			"passesCount": 5
+		},
+		"emailSettings": {
+			"fromEmail": "",
+			"usePHPDefinedSMTP": false,
+			"useBuiltInMailer": false,
+			"SMTPServer": "localhost",
+			"SMTPPort": 25,
+			"SMTPUser": "",
+			"SMTPPassword": "",
+			"securityProtocol": 0
+		},
+		"advancedSecurity": {
+			"allowGuestLogin": false
+		},
+		"auditAndLocking": {
+			"loggingMode": 0,
+			"loggingTable": {
+				"connId": "",
+				"table": ""
+			},
+			"loggingFile": "audit.log",
+			"logSecurityActions": false,
+			"lockAfterUnsuccessfulLogin": false,
+			"enableLocking": false,
+			"lockingTable": {
+				"connId": "",
+				"table": ""
+			},
+			"tables": {}
+		},
+		"twoFactorSettings": {
+			"available": false,
+			"required": false,
+			"enable": true,
+			"remember": true,
+			"types": {},
+			"twoFactorField": "",
+			"emailField": "",
+			"phoneField": "",
+			"codeField": "",
+			"projectName": ""
+		},
+		"staticPermissions": {
+			"groups": {
+				"<Default>": {
+					"permissions": {
+						"patients": {
+							"mask": "ADESPI",
+							"table": "patients",
+							"restrictedPages": {}
+						},
+						"transactions": {
+							"mask": "ADESPI",
+							"table": "transactions",
+							"restrictedPages": {}
+						},
+						"patient_types": {
+							"mask": "ADESPI",
+							"table": "patient_types",
+							"restrictedPages": {}
+						},
+						"hospital_accounts": {
+							"mask": "ADESPI",
+							"table": "hospital_accounts",
+							"restrictedPages": {}
+						},
+						"guarantors": {
+							"mask": "ADESPI",
+							"table": "guarantors",
+							"restrictedPages": {}
+						},
+						"professionals": {
+							"mask": "ADESPI",
+							"table": "professionals",
+							"restrictedPages": {}
+						},
+						"offices": {
+							"mask": "ADESPI",
+							"table": "offices",
+							"restrictedPages": {}
+						},
+						"professional_services": {
+							"mask": "ADESPI",
+							"table": "professional_services",
+							"restrictedPages": {}
+						},
+						"hospital_services": {
+							"mask": "ADESPI",
+							"table": "hospital_services",
+							"restrictedPages": {}
+						},
+						"users": {
+							"mask": "ADESPI",
+							"table": "users",
+							"restrictedPages": {}
+						},
+						"<global>": {
+							"mask": "ADESPI",
+							"table": "<global>",
+							"restrictedPages": {}
+						},
+						"payments": {
+							"mask": "ADESPI",
+							"table": "payments",
+							"restrictedPages": {}
+						},
+						"transaction_guarantor": {
+							"mask": "ADESPI",
+							"table": "transaction_guarantor",
+							"restrictedPages": {}
+						},
+						"Viewing List": {
+							"mask": "ADESPI",
+							"table": "Viewing List",
+							"restrictedPages": {}
+						},
+						"professional_accounts": {
+							"mask": "ADESPI",
+							"table": "professional_accounts",
+							"restrictedPages": {}
+						}
+					},
+					"admin": false,
+					"username": "<Default>"
+				},
+				"Admin": {
+					"permissions": {
+						"<global>": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"guarantors": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"hospital_accounts": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"hospital_services": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"offices": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"patient_types": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"patients": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"payments": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"professional_services": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"professionals": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"transactions": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"users": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"transaction_guarantor": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						},
+						"Viewing List": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"list": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						},
+						"professional_accounts": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						}
+					}
+				},
+				"cashier": {
+					"permissions": {
+						"<global>": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"menu": false
+							}
+						},
+						"guarantors": {
+							"mask": "",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"hospital_accounts": {
+							"mask": "",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"hospital_services": {
+							"mask": "S",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": false,
+								"transactionsChild": false,
+								"view": false,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"offices": {
+							"mask": "",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"patient_types": {
+							"mask": "",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"patients": {
+							"mask": "",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"forTransactions": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"payments": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						},
+						"professional_services": {
+							"mask": "S",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": false,
+								"transactionsChild": false,
+								"view": false,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"professionals": {
+							"mask": "",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"transactions": {
+							"mask": "S",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": false,
+								"view": false,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"users": {
+							"mask": "",
+							"table": "",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"dbConnections": [
+		{
+			"id": "conn",
+			"name": "uhs_db at localhost",
+			"connString": "mysql;localhost;root;;;uhs_db;;1"
+		}
+	],
+	"defaultConnID": "conn",
+	"menus": [
+		{
+			"id": "main",
+			"root": {
+				"children": [
+					{
+						"id": "2",
+						"data": {
+							"name": {
+								"text": "Patient Transactions",
+								"type": 0
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-flash",
+							"showIconType": 2,
+							"table": 3936885324,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "17",
+						"data": {
+							"name": {
+								"table": "transaction_guarantor",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"table": 1653239510,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "13",
+						"children": [
+							{
+								"id": "12",
+								"parent": "13",
+								"data": {
+									"name": {
+										"table": "hospital_services",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 1504671644,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "11",
+								"parent": "13",
+								"data": {
+									"name": {
+										"table": "professional_services",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-shopping-cart",
+									"showIconType": 2,
+									"table": 3769908180,
+									"pageType": "list"
+								}
+							}
+						],
+						"data": {
+							"name": {
+								"text": "Billings",
+								"type": 0
+							}
+						}
+					},
+					{
+						"id": "3",
+						"children": [
+							{
+								"id": "1",
+								"parent": "3",
+								"data": {
+									"name": {
+										"table": "patients",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-headphones",
+									"showIconType": 2,
+									"table": 751578668,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "7",
+								"parent": "3",
+								"data": {
+									"name": {
+										"table": "guarantors",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-flash",
+									"showIconType": 2,
+									"table": 2605319477,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "9",
+								"parent": "3",
+								"data": {
+									"name": {
+										"table": "professionals",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-calendar",
+									"showIconType": 2,
+									"table": 767438990,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "6",
+								"parent": "3",
+								"data": {
+									"name": {
+										"table": "hospital_accounts",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-barcode",
+									"showIconType": 2,
+									"table": 3763669081,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "19",
+								"parent": "3",
+								"data": {
+									"name": {
+										"table": "professional_accounts",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 1498301457,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "10",
+								"parent": "3",
+								"data": {
+									"name": {
+										"table": "offices",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-camera",
+									"showIconType": 2,
+									"table": 4118085452,
+									"pageType": "list"
+								}
+							}
+						],
+						"data": {
+							"name": {
+								"text": "Master Data",
+								"type": 0
+							}
+						}
+					},
+					{
+						"id": "5",
+						"children": [
+							{
+								"id": "4",
+								"parent": "5",
+								"data": {
+									"name": {
+										"table": "patient_types",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-earphone",
+									"showIconType": 2,
+									"table": 3422966527,
+									"pageType": "list"
+								}
+							}
+						],
+						"data": {
+							"name": {
+								"text": "Dropdowns",
+								"type": 0
+							}
+						}
+					},
+					{
+						"id": "15",
+						"children": [
+							{
+								"id": "14",
+								"parent": "15",
+								"data": {
+									"name": {
+										"table": "users",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 344172009,
+									"pageType": "list"
+								}
+							}
+						],
+						"data": {
+							"name": {
+								"text": "Admin",
+								"type": 0
+							}
+						}
+					},
+					{
+						"id": "16",
+						"data": {
+							"name": {
+								"table": "payments",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"table": 1708301106,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "18",
+						"data": {
+							"name": {
+								"table": "Viewing List",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"table": 631629026,
+							"pageType": "list"
+						}
+					}
+				]
+			}
+		}
+	],
+	"globalPages": [
+		{
+			"id": "menu",
+			"type": "menu",
+			"layoutId": "topbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "menu-topbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo",
+								"menu"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"loginform_login",
+								"username_button"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "welcome",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"welcome_item",
+								"welcome_item1",
+								"welcome_item2",
+								"welcome_item3",
+								"welcome_item4",
+								"welcome_item6",
+								"welcome_item7",
+								"welcome_item8",
+								"welcome_item9",
+								"welcome_item10",
+								"welcome_item11",
+								"welcome_item12",
+								"welcome_item13",
+								"welcome_item14"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"welcome_item": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "patients",
+					"linkPage": "list",
+					"linkText": {
+						"table": "patients",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "headphones"
+					},
+					"linkComments": {
+						"text": "Patients description",
+						"type": 0
+					},
+					"background": "#2f4f4f",
+					"linkType": 0
+				},
+				"welcome_item1": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "transactions",
+					"linkPage": "list",
+					"linkText": {
+						"table": "transactions",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "flash"
+					},
+					"linkComments": {
+						"text": "Transactions description",
+						"type": 0
+					},
+					"background": "#6da5c8",
+					"linkType": 0
+				},
+				"welcome_item2": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "patient_types",
+					"linkPage": "list",
+					"linkText": {
+						"table": "patient_types",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "earphone"
+					},
+					"linkComments": {
+						"text": "Patient Types description",
+						"type": 0
+					},
+					"background": "#778899",
+					"linkType": 0
+				},
+				"welcome_item3": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "hospital_accounts",
+					"linkPage": "list",
+					"linkText": {
+						"table": "hospital_accounts",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "barcode"
+					},
+					"linkComments": {
+						"text": "Hospital Accounts description",
+						"type": 0
+					},
+					"background": "#6da5c8",
+					"linkType": 0
+				},
+				"welcome_item4": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "guarantors",
+					"linkPage": "list",
+					"linkText": {
+						"table": "guarantors",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "flash"
+					},
+					"linkComments": {
+						"text": "Guarantors description",
+						"type": 0
+					},
+					"background": "#1e90ff",
+					"linkType": 0
+				},
+				"welcome_item6": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "professionals",
+					"linkPage": "list",
+					"linkText": {
+						"table": "professionals",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "calendar"
+					},
+					"background": "#008b8b",
+					"linkType": 0
+				},
+				"welcome_item7": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "offices",
+					"linkPage": "list",
+					"linkText": {
+						"table": "offices",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "camera"
+					},
+					"background": "#e8926f",
+					"linkType": 0
+				},
+				"welcome_item8": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "professional_services",
+					"linkPage": "list",
+					"linkText": {
+						"table": "professional_services",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "shopping-cart"
+					},
+					"background": "#9acd32",
+					"linkType": 0
+				},
+				"welcome_item9": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "hospital_services",
+					"linkPage": "list",
+					"linkText": {
+						"table": "hospital_services",
+						"type": 6
+					},
+					"background": "#4682b4",
+					"linkType": 0
+				},
+				"welcome_item10": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "users",
+					"linkPage": "list",
+					"linkText": {
+						"table": "users",
+						"type": 6
+					},
+					"background": "#b22222",
+					"linkType": 0
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"welcome_item11": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "payments",
+					"linkPage": "list",
+					"linkText": {
+						"table": "payments",
+						"type": 6
+					},
+					"background": "#5f9ea0",
+					"linkType": 0
+				},
+				"welcome_item12": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "transaction_guarantor",
+					"linkPage": "list",
+					"linkText": {
+						"table": "transaction_guarantor",
+						"type": 6
+					},
+					"background": "#5f9ea0",
+					"linkType": 0
+				},
+				"welcome_item13": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "Viewing List",
+					"linkPage": "list",
+					"linkText": {
+						"table": "Viewing List",
+						"type": 6
+					},
+					"background": "#edca00",
+					"linkType": 0
+				},
+				"welcome_item14": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "professional_accounts",
+					"linkPage": "list",
+					"linkText": {
+						"table": "professional_accounts",
+						"type": 6
+					},
+					"background": "#5f9ea0",
+					"linkType": 0
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"welcomePageStay": true,
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "login",
+			"type": "login",
+			"layoutId": "first",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "login-above-grid",
+					"grid": [
+						{
+							"section": "",
+							"cells": [
+								{
+									"cell": "c"
+								}
+							]
+						},
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"text"
+							],
+							"align": "center",
+							"font-size": "20px"
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"login_message"
+							]
+						},
+						"c": {
+							"model": "c2",
+							"items": [
+								"image"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "login-header",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "login-nolabels",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						},
+						{
+							"section": "",
+							"cells": [
+								{
+									"cell": "c"
+								}
+							]
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"username"
+							]
+						},
+						"c4": {
+							"model": "c4",
+							"items": [
+								"password"
+							]
+						},
+						"c": {
+							"model": "c4",
+							"items": [
+								"login_button"
+							],
+							"align": "center"
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "login-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1",
+									"colspan": 1
+								},
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						},
+						"c": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"superbottom": {
+					"modelId": "login-superbottom",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"text": {
+					"type": "text",
+					"label": {
+						"text": "University Health Service",
+						"type": 0
+					},
+					"editedByRte": false,
+					"bold": true
+				},
+				"login_message": {
+					"type": "login_message"
+				},
+				"image": {
+					"type": "image",
+					"image": {
+						"image": "uhslogo (2).png",
+						"source": 2
+					},
+					"width": "200px",
+					"height": "200px",
+					"customCSS": "/* Put  your custom CSS code here */\n\n:host {\n  color: red;\n}\n\n.container {\n  display: flex;\n  justify-content: center;  /* horizontal */\n  align-items: center;      /* vertical */\n}"
+				},
+				"username": {
+					"type": "username"
+				},
+				"password": {
+					"type": "password"
+				},
+				"login_button": {
+					"type": "login_button",
+					"icon": {
+						"style": 0
+					},
+					"buttonStyle": "primary"
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"pageCSS": ":host {\n  color: red;\n  border-color: transparent;\n}\n\n\n.panel-primary > .panel-heading {\n    color: #fff;\n    background-color: transparent; \n    border-color: transparent; \n}\n\n[data-page=\"_global_login\"][data-itemid=\"login_external\"] > .btn {\n    border-color: transparent;\n}\n\n.panel-primary {\n    border-color: #f3f3f3;\n    border-radius: 5px;\n}\n\nbody {\nbackground-color: #f0f4f9;\n    display: grid;\n    place-items: center; \n    height: 100vh;\n}\n\nimg {\n  display: block;\n  margin: 0 auto;\n  max-width: 100%;\n}\n\n/* Center the login form container */\n.loginform {\n  display: flex;\n  flex-direction: column; /* stack inputs vertically */\n  align-items: center;    /* center horizontally */\n  gap: 10px;              /* spacing between fields */\n  margin-top: 50px;       /* optional, move down */\n}\n\n[data-itemid=\"username\"] input,\n[data-itemid=\"password\"] input {\n  width: 300px;\n  padding: 6px 10px;\n  border-radius: 10px;\n  border: 1px solid #ccc;\n  display: block;\n  margin: 0 auto;\n}\n\n.btn.btn-primary { \n    width: 150px; \n    margin: 0 auto; \n    display: block;\n}",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "userinfo",
+			"type": "userinfo",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"loginform_login",
+								"username_button"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "empty-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "userinfo-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "fields_message"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "fields"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "buttons"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"fields_message": {
+							"model": "fields_message",
+							"items": [
+								"user_fields_title",
+								"fields_message"
+							]
+						},
+						"buttons": {
+							"model": "buttons",
+							"items": [
+								"user_fields_reset",
+								"user_fields_save"
+							]
+						},
+						"fields": {
+							"model": "fields",
+							"items": [
+								"changepassword_link",
+								"integrated_edit_field",
+								"integrated_edit_field1",
+								"integrated_edit_field2"
+							]
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 1,
+					"inlineLabels": false,
+					"separateLabels": false
+				}
+			},
+			"items": {
+				"fields_message": {
+					"type": "fields_message"
+				},
+				"user_fields_reset": {
+					"type": "user_fields_reset"
+				},
+				"user_fields_save": {
+					"type": "user_fields_save"
+				},
+				"user_fields_title": {
+					"type": "user_fields_title",
+					"font-size": "24px"
+				},
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				},
+				"integrated_edit_field": {
+					"field": "username",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field1": {
+					"field": "email",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field2": {
+					"field": "full_name",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"changepassword_link": {
+					"type": "changepassword_link"
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "changepwd",
+			"type": "changepwd",
+			"layoutId": "first",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "changepwd-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_message"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "changepwd-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "changepwd-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c5"
+								},
+								{
+									"cell": "c6"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"oldpass_label"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"oldpass"
+							]
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"newpass_label"
+							]
+						},
+						"c4": {
+							"model": "c4",
+							"items": [
+								"newpass"
+							]
+						},
+						"c5": {
+							"model": "c5",
+							"items": [
+								"confirm_label"
+							]
+						},
+						"c6": {
+							"model": "c6",
+							"items": [
+								"confirm"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "changepwd-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_button",
+								"changepwd_back"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"oldpass_label": {
+					"type": "oldpass_label"
+				},
+				"newpass_label": {
+					"type": "newpass_label"
+				},
+				"confirm_label": {
+					"type": "confirm_label"
+				},
+				"oldpass": {
+					"type": "oldpass"
+				},
+				"newpass": {
+					"type": "newpass"
+				},
+				"confirm": {
+					"type": "confirm"
+				},
+				"changepwd_message": {
+					"type": "changepwd_message"
+				},
+				"changepwd_button": {
+					"type": "changepwd_button"
+				},
+				"changepwd_back": {
+					"type": "changepwd_back"
+				},
+				"changepwd_header": {
+					"type": "changepwd_header"
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "changepwd_success",
+			"type": "changepwd_success",
+			"layoutId": "first",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "changepwd-success-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_success_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "changepwd-success-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_success_message"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "changepwd-success-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_success_back"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"changepwd_success_message": {
+					"type": "changepwd_success_message"
+				},
+				"changepwd_success_back": {
+					"type": "changepwd_success_back"
+				},
+				"changepwd_success_header": {
+					"type": "changepwd_success_header"
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_AFTERSUCCESSFULLLOGIN",
+			"pageType": "login",
+			"code": "// create session to use later\n$_SESSION['group'] = $data['group_id'];\n$_SESSION['full_name'] = $data['full_name'];\nif($_SESSION['group'] == 'Admin'){\n    // Redirect to a specific page\n    header(\"Location: transactions_list.php\");\n}\nelseif($_SESSION['group'] == 'cashier'){\n    // Redirect to a specific page\n    header(\"Location: payments_list.php\");\n}\n\nexit();\n\n"
+		},
+		{
+			"eventId": "EVENT_BEFOREPROCESS_MENU",
+			"pageType": "menu",
+			"code": "if($_SESSION['group'] == 'Admin'){\n    // Redirect to a specific page\n    header(\"Location: transactions_list.php\");\n}\nelseif($_SESSION['group'] == 'cashier'){\n    // Redirect to a specific page\n    header(\"Location: payments_list.php\");\n}\nexit();"
+		},
+		{
+			"eventId": "EVENT_JS_ONLOAD",
+			"pageType": "login",
+			"code": "// Place event code here.\n// Use \"Add Action\" button to add code snippets.\n\ndocument.getElementById(\"username\").setAttribute(\"placeholder\", \"Enter your username\");\ndocument.getElementById(\"password\").setAttribute(\"placeholder\", \"Enter your password\");"
+		}
+	],
+	"projectStyle": {
+		"theme": "flatly",
+		"sidebarColor": "light",
+		"sidebarTheme": "legacy",
+		"topbarTheme": "legacy",
+		"logoTheme": "legacy",
+		"fixedTopbar": true,
+		"sidebarCustomThemeColor": "legacy",
+		"topbarCustomThemeColor": "legacy",
+		"logoCustomThemeColor": "legacy",
+		"gpHeaderBg": "legacy",
+		"gpHeaderColor": "legacy",
+		"gpFooterBg": "legacy",
+		"gpPanelBorder": "legacy",
+		"gpBorderColor": "legacy",
+		"gpInnerBorder": "legacy",
+		"gpInnerBorderColor": "legacy",
+		"gcOddBg": "legacy",
+		"gcOddColor": "legacy",
+		"gcEvenBg": "legacy",
+		"gcEvenColor": "legacy",
+		"gcRolloverHighlightBg": "legacy",
+		"gcRolloverHighlightColor": "legacy"
+	},
+	"settingsTable": {
+		"connId": "",
+		"table": ""
+	},
+	"messages": {},
+	"projectLogo": {
+		"English": "University Health Service"
+	},
+	"cookieBannerText": {}
+}
