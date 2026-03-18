@@ -125,7 +125,7 @@
 			"editFormats": [
 				{
 					"format": "Readonly",
-					"defaultValue": "Open"
+					"defaultValue": "\"Open\""
 				}
 			],
 			"label": {
