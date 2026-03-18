@@ -1,13 +1,13 @@
 {
 	"orderInfo": [
 		{
-			"index": 7,
-			"field": "group_id",
-			"expr": "`date`",
+			"index": 8,
+			"field": "service_type",
+			"expr": "payments.`date`",
 			"asc": false
 		}
 	],
-	"sql": "SELECT\r\n\tid,\r\n\ttransaction_number,\r\n\tservice_type,\r\n\thospital_service_id,\r\n\tprofessional_service_id,\r\n\tamount,\r\n\t`date`,\r\n\tpayment_method,\r\n\tplaced_by,\r\n\tgroup_id\r\nFROM\r\n\tpayments\r\nORDER BY `date` DESC",
+	"sql": "SELECT\r\n\tpayments.id,\r\n\tpayments.transaction_number,\r\n\tpayments.service_type,\r\n\tpayments.hospital_service_id,\r\n\tpayments.professional_service_id,\r\n\tCOALESCE(hs.hospital_account, ps.pf_account) AS services,\r\n\tpayments.amount,\r\n\tpayments.`date`,\r\n\tpayments.payment_method,\r\n\tpayments.placed_by,\r\n\tpayments.group_id\r\nFROM\r\n\tpayments\r\nLEFT JOIN hospital_services hs ON hs.id = payments.hospital_service_id\r\nLEFT JOIN professional_services ps ON ps.id = payments.professional_service_id\r\nLEFT JOIN hospital_accounts ha ON ha.label = hs.hospital_account\r\nLEFT JOIN professional_accounts pa ON pa.label = ps.pf_account\r\nORDER BY `date` DESC",
 	"connId": "conn",
 	"originalTable": "payments",
 	"name": "payments",
@@ -20,7 +20,7 @@
 	"fields": [
 		{
 			"name": "id",
-			"sqlExpression": "id",
+			"sqlExpression": "payments.id",
 			"index": 1,
 			"strField": "id",
 			"type": 3,
@@ -38,7 +38,7 @@
 		},
 		{
 			"name": "transaction_number",
-			"sqlExpression": "transaction_number",
+			"sqlExpression": "payments.transaction_number",
 			"index": 2,
 			"strField": "transaction_number",
 			"type": 200,
@@ -67,8 +67,8 @@
 		},
 		{
 			"name": "amount",
-			"sqlExpression": "amount",
-			"index": 6,
+			"sqlExpression": "payments.amount",
+			"index": 7,
 			"strField": "amount",
 			"type": 14,
 			"viewFormats": [
@@ -88,8 +88,8 @@
 		},
 		{
 			"name": "date",
-			"sqlExpression": "`date`",
-			"index": 7,
+			"sqlExpression": "payments.`date`",
+			"index": 8,
 			"strField": "date",
 			"type": 135,
 			"viewFormats": [
@@ -111,8 +111,8 @@
 		},
 		{
 			"name": "payment_method",
-			"sqlExpression": "payment_method",
-			"index": 8,
+			"sqlExpression": "payments.payment_method",
+			"index": 9,
 			"strField": "payment_method",
 			"type": 200,
 			"viewFormats": [
@@ -136,8 +136,8 @@
 		},
 		{
 			"name": "placed_by",
-			"sqlExpression": "placed_by",
-			"index": 9,
+			"sqlExpression": "payments.placed_by",
+			"index": 10,
 			"strField": "placed_by",
 			"type": 200,
 			"viewFormats": [
@@ -156,8 +156,8 @@
 		},
 		{
 			"name": "group_id",
-			"sqlExpression": "group_id",
-			"index": 10,
+			"sqlExpression": "payments.group_id",
+			"index": 11,
 			"strField": "group_id",
 			"type": 200,
 			"viewFormats": [
@@ -176,7 +176,7 @@
 		},
 		{
 			"name": "service_type",
-			"sqlExpression": "service_type",
+			"sqlExpression": "payments.service_type",
 			"index": 3,
 			"strField": "service_type",
 			"type": 200,
@@ -201,8 +201,25 @@
 			"tableName": "payments"
 		},
 		{
+			"name": "services",
+			"sqlExpression": "COALESCE(hs.hospital_account, ps.pf_account)",
+			"index": 6,
+			"strField": "services",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Services"
+			},
+			"tableName": ""
+		},
+		{
 			"name": "hospital_service_id",
-			"sqlExpression": "hospital_service_id",
+			"sqlExpression": "payments.hospital_service_id",
 			"index": 4,
 			"strField": "hospital_service_id",
 			"type": 3,
@@ -218,7 +235,7 @@
 					"lookupLinkField": "id",
 					"lookupDisplayField": "hospital_account",
 					"lookupControlType": 2,
-					"lookupWhere": "status='Unpaid'",
+					"lookupWhere": "status IN ('Unpaid')",
 					"lookupListPage": "transactionsChild",
 					"lookupDependent": true,
 					"lookupDependentFields": [
@@ -230,13 +247,13 @@
 				}
 			],
 			"label": {
-				"English": "Hospital Service"
+				"English": "Hospital Service Id"
 			},
 			"tableName": "payments"
 		},
 		{
 			"name": "professional_service_id",
-			"sqlExpression": "professional_service_id",
+			"sqlExpression": "payments.professional_service_id",
 			"index": 5,
 			"strField": "professional_service_id",
 			"type": 3,
@@ -252,7 +269,7 @@
 					"lookupLinkField": "id",
 					"lookupDisplayField": "pf_account",
 					"lookupControlType": 2,
-					"lookupWhere": "status='Unpaid'",
+					"lookupWhere": "status IN ('Unpaid')",
 					"lookupListPage": "transactionsChild",
 					"lookupDependent": true,
 					"lookupDependentFields": [
@@ -264,7 +281,7 @@
 				}
 			],
 			"label": {
-				"English": "Professional Service"
+				"English": "Professional Service Id"
 			},
 			"tableName": "payments"
 		}
@@ -587,22 +604,12 @@
 				"integrated_edit_field7": {
 					"field": "hospital_service_id",
 					"type": "integrated_edit_field",
-					"orientation": 0,
-					"label": {
-						"field": "hospital_service_id",
-						"table": "payments",
-						"type": 3
-					}
+					"orientation": 0
 				},
 				"integrated_edit_field8": {
 					"field": "professional_service_id",
 					"type": "integrated_edit_field",
-					"orientation": 0,
-					"label": {
-						"field": "professional_service_id",
-						"table": "payments",
-						"type": 3
-					}
+					"orientation": 0
 				}
 			},
 			"version": 13,
@@ -690,7 +697,8 @@
 								"export_field5",
 								"export_field6",
 								"export_field7",
-								"export_field8"
+								"export_field8",
+								"export_field9"
 							]
 						}
 					},
@@ -768,10 +776,14 @@
 					"type": "export_field"
 				},
 				"export_field7": {
-					"field": "hospital_service_id",
+					"field": "services",
 					"type": "export_field"
 				},
 				"export_field8": {
+					"field": "hospital_service_id",
+					"type": "export_field"
+				},
+				"export_field9": {
 					"field": "professional_service_id",
 					"type": "export_field"
 				}
@@ -1422,12 +1434,6 @@
 									"cell": "headcell_field1"
 								},
 								{
-									"cell": "headcell_field2"
-								},
-								{
-									"cell": "headcell_field3"
-								},
-								{
 									"cell": "headcell_field4"
 								},
 								{
@@ -1441,6 +1447,9 @@
 								},
 								{
 									"cell": "headcell_field8"
+								},
+								{
+									"cell": "headcell_field9"
 								}
 							]
 						},
@@ -1457,12 +1466,6 @@
 									"cell": "cell_field1"
 								},
 								{
-									"cell": "cell_field2"
-								},
-								{
-									"cell": "cell_field3"
-								},
-								{
 									"cell": "cell_field4"
 								},
 								{
@@ -1476,6 +1479,9 @@
 								},
 								{
 									"cell": "cell_field8"
+								},
+								{
+									"cell": "cell_field9"
 								}
 							]
 						},
@@ -1492,12 +1498,6 @@
 									"cell": "footcell_field1"
 								},
 								{
-									"cell": "footcell_field2"
-								},
-								{
-									"cell": "footcell_field3"
-								},
-								{
 									"cell": "footcell_field4"
 								},
 								{
@@ -1511,6 +1511,9 @@
 								},
 								{
 									"cell": "footcell_field8"
+								},
+								{
+									"cell": "footcell_field9"
 								}
 							]
 						}
@@ -1521,187 +1524,198 @@
 							"items": [
 								"simple_grid_field"
 							],
-							"field": "transaction_number"
+							"field": "transaction_number",
+							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field1"
 							],
-							"field": "transaction_number"
+							"field": "transaction_number",
+							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "transaction_number"
+							"field": "transaction_number",
+							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field4"
 							],
-							"field": "service_type"
+							"field": "service_type",
+							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
 								"grid_field2"
 							],
-							"field": "service_type"
+							"field": "service_type",
+							"columnName": "field"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "service_type"
-						},
-						"headcell_field2": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field6"
-							],
-							"field": "hospital_service_id"
-						},
-						"cell_field2": {
-							"model": "cell_field",
-							"items": [
-								"grid_field3"
-							],
-							"field": "hospital_service_id"
-						},
-						"footcell_field2": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "hospital_service_id"
-						},
-						"headcell_field3": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field7"
-							],
-							"field": "professional_service_id"
-						},
-						"cell_field3": {
-							"model": "cell_field",
-							"items": [
-								"grid_field5"
-							],
-							"field": "professional_service_id"
-						},
-						"footcell_field3": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "professional_service_id"
+							"field": "service_type",
+							"columnName": "field"
 						},
 						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field5"
+								"grid_field9"
 							],
-							"field": "amount"
+							"field": "services",
+							"columnName": "field"
 						},
 						"cell_field4": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field2"
+								"grid_field3"
 							],
-							"field": "amount"
+							"field": "services",
+							"columnName": "field"
 						},
 						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "amount"
+							"field": "services",
+							"columnName": "field"
 						},
 						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field6"
+								"simple_grid_field5"
 							],
-							"field": "date"
+							"field": "amount",
+							"columnName": "field"
 						},
 						"cell_field5": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field3"
+								"simple_grid_field2"
 							],
-							"field": "date"
+							"field": "amount",
+							"columnName": "field"
 						},
 						"footcell_field5": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "date"
+							"field": "amount",
+							"columnName": "field"
 						},
 						"headcell_field6": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field7"
+								"simple_grid_field6"
 							],
-							"field": "payment_method"
+							"field": "date",
+							"columnName": "field"
 						},
 						"cell_field6": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field4"
+								"simple_grid_field3"
 							],
-							"field": "payment_method"
+							"field": "date",
+							"columnName": "field"
 						},
 						"footcell_field6": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "payment_method"
+							"field": "date",
+							"columnName": "field"
 						},
 						"headcell_field7": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field8"
+								"simple_grid_field7"
 							],
-							"field": "placed_by"
+							"field": "payment_method",
+							"columnName": "field"
 						},
 						"cell_field7": {
 							"model": "cell_field",
 							"items": [
-								"grid_field"
+								"simple_grid_field4"
 							],
-							"field": "placed_by"
+							"field": "payment_method",
+							"columnName": "field"
 						},
 						"footcell_field7": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "placed_by"
+							"field": "payment_method",
+							"columnName": "field"
 						},
 						"headcell_field8": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field9"
+								"grid_field10"
 							],
-							"field": "group_id"
+							"field": "placed_by",
+							"columnName": "field"
 						},
 						"cell_field8": {
 							"model": "cell_field",
 							"items": [
-								"grid_field1"
+								"grid_field"
 							],
-							"field": "group_id"
+							"field": "placed_by",
+							"columnName": "field"
 						},
 						"footcell_field8": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "group_id"
+							"field": "placed_by",
+							"columnName": "field"
+						},
+						"headcell_field9": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field11"
+							],
+							"field": "group_id",
+							"columnName": "field"
+						},
+						"cell_field9": {
+							"model": "cell_field",
+							"items": [
+								"grid_field1"
+							],
+							"field": "group_id",
+							"columnName": "field"
+						},
+						"footcell_field9": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "group_id",
+							"columnName": "field"
 						},
 						"headcell_checkbox": {
 							"model": "headcell_checkbox",
 							"items": [
 								"grid_checkbox_head"
-							]
+							],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"cell_checkbox": {
 							"model": "cell_checkbox",
 							"items": [
 								"grid_checkbox"
-							]
+							],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"footcell_checkbox": {
 							"model": "footcell_checkbox",
-							"items": []
+							"items": [],
+							"columnName": "checkbox",
+							"field": ""
 						}
 					},
 					"deferredItems": [],
@@ -1734,6 +1748,7 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field4",
+						"search_panel_field9",
 						"search_panel_field8",
 						"search_panel_field7",
 						"search_panel_field6",
@@ -1873,10 +1888,14 @@
 					"type": "search_panel_field"
 				},
 				"search_panel_field7": {
-					"field": "hospital_service_id",
+					"field": "services",
 					"type": "search_panel_field"
 				},
 				"search_panel_field8": {
+					"field": "hospital_service_id",
+					"type": "search_panel_field"
+				},
+				"search_panel_field9": {
 					"field": "professional_service_id",
 					"type": "search_panel_field"
 				},
@@ -1901,24 +1920,14 @@
 					"field": "service_type"
 				},
 				"grid_field3": {
-					"field": "hospital_service_id",
+					"field": "services",
 					"type": "grid_field",
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"grid_field6": {
+				"grid_field9": {
 					"type": "grid_field_label",
-					"field": "hospital_service_id"
-				},
-				"grid_field5": {
-					"field": "professional_service_id",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field7": {
-					"type": "grid_field_label",
-					"field": "professional_service_id"
+					"field": "services"
 				},
 				"simple_grid_field2": {
 					"field": "amount",
@@ -1956,7 +1965,7 @@
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"grid_field8": {
+				"grid_field10": {
 					"type": "grid_field_label",
 					"field": "placed_by"
 				},
@@ -1966,7 +1975,7 @@
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"grid_field9": {
+				"grid_field11": {
 					"type": "grid_field_label",
 					"field": "group_id"
 				},
@@ -2086,7 +2095,8 @@
 								"simple_grid_field5",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field8"
+								"simple_grid_field8",
+								"simple_grid_field9"
 							]
 						}
 					},
@@ -2133,10 +2143,14 @@
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field7": {
-					"field": "hospital_service_id",
+					"field": "services",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field8": {
+					"field": "hospital_service_id",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field9": {
 					"field": "professional_service_id",
 					"type": "simple_grid_field"
 				}
