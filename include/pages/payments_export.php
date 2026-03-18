@@ -25,6 +25,9 @@
 		'service_type' => array(
 			'totalsType' => '' 
 		),
+		'services' => array(
+			'totalsType' => '' 
+		),
 		'hospital_service_id' => array(
 			'totalsType' => '' 
 		),
@@ -41,6 +44,7 @@
 			'placed_by',
 			'group_id',
 			'service_type',
+			'services',
 			'hospital_service_id',
 			'professional_service_id' 
 		),
@@ -52,6 +56,7 @@
 			'placed_by',
 			'group_id',
 			'service_type',
+			'services',
 			'hospital_service_id',
 			'professional_service_id' 
 		),
@@ -83,11 +88,14 @@
 			'service_type' => array( 
 				'export_field6' 
 			),
-			'hospital_service_id' => array( 
+			'services' => array( 
 				'export_field7' 
 			),
-			'professional_service_id' => array( 
+			'hospital_service_id' => array( 
 				'export_field8' 
+			),
+			'professional_service_id' => array( 
+				'export_field9' 
 			) 
 		) 
 	),
@@ -115,7 +123,8 @@
 					'export_field5',
 					'export_field6',
 					'export_field7',
-					'export_field8' 
+					'export_field8',
+					'export_field9' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -138,6 +147,7 @@
 				'export_field6' => 'grid',
 				'export_field7' => 'grid',
 				'export_field8' => 'grid',
+				'export_field9' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -167,7 +177,8 @@
 				'export_field5',
 				'export_field6',
 				'export_field7',
-				'export_field8' 
+				'export_field8',
+				'export_field9' 
 			) 
 		),
 		'cellMaps' => array(
@@ -315,7 +326,8 @@
 						'export_field5',
 						'export_field6',
 						'export_field7',
-						'export_field8' 
+						'export_field8',
+						'export_field9' 
 					) 
 				) 
 			),
@@ -399,10 +411,14 @@
 			'type' => 'export_field' 
 		),
 		'export_field7' => array(
-			'field' => 'hospital_service_id',
+			'field' => 'services',
 			'type' => 'export_field' 
 		),
 		'export_field8' => array(
+			'field' => 'hospital_service_id',
+			'type' => 'export_field' 
+		),
+		'export_field9' => array(
 			'field' => 'professional_service_id',
 			'type' => 'export_field' 
 		) 

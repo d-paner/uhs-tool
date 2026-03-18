@@ -91,6 +91,9 @@ pdfDocument = {
 										{BEGIN col_grid_8}
 					"%",
 					{END col_grid_8}
+										{BEGIN col_grid_9}
+					"%",
+					{END col_grid_9}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -238,7 +241,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments transaction_number }","hidden":"{$item_hide_simple_grid_field9}","bold":true},
+			{"text":"{$jslabel payments transaction_number }","hidden":"{$item_hide_simple_grid_field10}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -267,7 +270,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments amount }","hidden":"{$item_hide_simple_grid_field10}","bold":true},
+			{"text":"{$jslabel payments amount }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -296,7 +299,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments date }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
+			{"text":"{$jslabel payments date }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -325,7 +328,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments payment_method }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
+			{"text":"{$jslabel payments payment_method }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -354,7 +357,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments placed_by }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
+			{"text":"{$jslabel payments placed_by }","hidden":"{$item_hide_simple_grid_field14}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -383,7 +386,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments group_id }","hidden":"{$item_hide_simple_grid_field14}","bold":true},
+			{"text":"{$jslabel payments group_id }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -412,7 +415,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments service_type }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
+			{"text":"{$jslabel payments service_type }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -425,6 +428,35 @@ pdfDocument = {
 																							{BEGIN cellblock_grid_headcell_field7}
 {
 	cellId: 'headcell_field7',
+	col:0,
+	row:0,
+			fieldName: 'services',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel payments services }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$services_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field7}
+																							{BEGIN cellblock_grid_headcell_field8}
+{
+	cellId: 'headcell_field8',
 	col:0,
 	row:0,
 			fieldName: 'hospital_service_id',
@@ -441,7 +473,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments hospital_service_id }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
+			{"text":"{$jslabel payments hospital_service_id }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -450,10 +482,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_headcell_field7}
-																							{BEGIN cellblock_grid_headcell_field8}
+{END cellblock_grid_headcell_field8}
+																							{BEGIN cellblock_grid_headcell_field9}
 {
-	cellId: 'headcell_field8',
+	cellId: 'headcell_field9',
 	col:0,
 	row:0,
 			fieldName: 'professional_service_id',
@@ -470,7 +502,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel payments professional_service_id }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
+			{"text":"{$jslabel payments professional_service_id }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -479,7 +511,7 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_headcell_field8}
+{END cellblock_grid_headcell_field9}
 											],
 				{END row_grid_0}
 		
@@ -697,6 +729,35 @@ pdfDocument = {
 	cellId: 'cell_field7',
 	col:0,
 	row:0,
+			fieldName: 'services',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$services_pdfvalue},"hidden":"{$item_hide_simple_grid_field7}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$services_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field7}
+																							{BEGIN cellblock_grid_cell_field8}
+{
+	cellId: 'cell_field8',
+	col:0,
+	row:0,
 			fieldName: 'hospital_service_id',
 				style: 'bodycell',
 		
@@ -711,7 +772,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":{$hospital_service_id_pdfvalue},"hidden":"{$item_hide_simple_grid_field7}"},
+			{"text":{$hospital_service_id_pdfvalue},"hidden":"{$item_hide_simple_grid_field8}"},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -720,10 +781,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_cell_field7}
-																							{BEGIN cellblock_grid_cell_field8}
+{END cellblock_grid_cell_field8}
+																							{BEGIN cellblock_grid_cell_field9}
 {
-	cellId: 'cell_field8',
+	cellId: 'cell_field9',
 	col:0,
 	row:0,
 			fieldName: 'professional_service_id',
@@ -740,7 +801,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":{$professional_service_id_pdfvalue},"hidden":"{$item_hide_simple_grid_field8}"},
+			{"text":{$professional_service_id_pdfvalue},"hidden":"{$item_hide_simple_grid_field9}"},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -749,7 +810,7 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_cell_field8}
+{END cellblock_grid_cell_field9}
 											],
 				{END row_grid_1}
 		
@@ -993,6 +1054,32 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field8}
+																							{BEGIN cellblock_grid_footcell_field9}
+{
+	cellId: 'footcell_field9',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field9}
 											],
 				{END row_grid_2}
 		

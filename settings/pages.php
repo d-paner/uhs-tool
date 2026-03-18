@@ -133,6 +133,30 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
+		'patients' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'forTransactions' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
 		'transactions' => array(
 			'add' => array( 
 				'add' 
@@ -186,61 +210,6 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'professional_services' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list',
-				'transactionsChild' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
-		'payments' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
-		'Viewing List' => array(
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
 		'guarantors' => array(
 			'add' => array( 
 				'add' 
@@ -264,7 +233,7 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'patients' => array(
+		'professional_services' => array(
 			'add' => array( 
 				'add' 
 			),
@@ -282,27 +251,10 @@ $runnerPageInfo = array(
 			),
 			'list' => array( 
 				'list',
-				'forTransactions' 
+				'transactionsChild' 
 			),
 			'print' => array( 
 				'print' 
-			) 
-		),
-		'<global>' => array(
-			'menu' => array( 
-				'menu' 
-			),
-			'login' => array( 
-				'login' 
-			),
-			'userinfo' => array( 
-				'userinfo' 
-			),
-			'changepwd' => array( 
-				'changepwd' 
-			),
-			'changepwd_success' => array( 
-				'changepwd_success' 
 			) 
 		),
 		'hospital_services' => array(
@@ -328,20 +280,68 @@ $runnerPageInfo = array(
 			'print' => array( 
 				'print' 
 			) 
+		),
+		'Viewing List' => array(
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'list' => array( 
+				'list' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
+		'<global>' => array(
+			'menu' => array( 
+				'menu' 
+			),
+			'login' => array( 
+				'login' 
+			),
+			'userinfo' => array( 
+				'userinfo' 
+			),
+			'changepwd' => array( 
+				'changepwd' 
+			),
+			'changepwd_success' => array( 
+				'changepwd_success' 
+			) 
+		),
+		'payments' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'list' => array( 
+				'list' 
+			),
+			'print' => array( 
+				'print' 
+			) 
 		) 
 	),
 	'tableMasks' => array(
 		'patients' => 'ADESPI',
 		'payments' => 'ADESPI',
-		'patient_types' => 'ADESPI',
+		'transactions' => 'ADESPI',
 		'professionals' => 'ADESPI',
-		'offices' => 'ADESPI',
+		'patient_types' => 'ADESPI',
+		'hospital_services' => 'ADESPI',
 		'hospital_accounts' => 'ADESPI',
-		'professional_services' => 'ADESPI',
+		'offices' => 'ADESPI',
 		'guarantors' => 'ADESPI',
 		'users' => 'ADESPI',
-		'transactions' => 'ADESPI',
-		'hospital_services' => 'ADESPI',
+		'professional_services' => 'ADESPI',
 		'transaction_guarantor' => 'ADESPI',
 		'Viewing List' => 'ADESPI',
 		'professional_accounts' => 'ADESPI',
