@@ -118,11 +118,18 @@
 			],
 			"editFormats": [
 				{
-					"required": true
+					"format": "Lookup wizard",
+					"required": true,
+					"lookupType": 0,
+					"lookupValues": [
+						"admin",
+						"cashier",
+						"billing"
+					]
 				}
 			],
 			"label": {
-				"English": "Group Id"
+				"English": "Group"
 			},
 			"tableName": "users"
 		},
@@ -1670,7 +1677,12 @@
 				},
 				"simple_grid_field12": {
 					"type": "grid_field_label",
-					"field": "group_id"
+					"field": "group_id",
+					"label": {
+						"field": "group_id",
+						"table": "users",
+						"type": 3
+					}
 				},
 				"simple_grid_field6": {
 					"field": "ext_security_id",

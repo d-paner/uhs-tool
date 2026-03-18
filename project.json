@@ -257,9 +257,11 @@
 							"restrictedPages": {}
 						},
 						"<global>": {
-							"mask": "ADESPI",
+							"mask": "AEDSPI",
 							"table": "<global>",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"menu": false
+							}
 						},
 						"payments": {
 							"mask": "ADESPI",
@@ -284,107 +286,6 @@
 					},
 					"admin": false,
 					"username": "<Default>"
-				},
-				"Admin": {
-					"permissions": {
-						"<global>": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"guarantors": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"hospital_accounts": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"hospital_services": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"offices": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"patient_types": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"patients": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"payments": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"professional_services": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"professionals": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"transactions": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"users": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {}
-						},
-						"transaction_guarantor": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {
-								"add": false,
-								"edit": false,
-								"list": false,
-								"view": false,
-								"print": false,
-								"export": false,
-								"import": false
-							}
-						},
-						"Viewing List": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {
-								"add": false,
-								"list": false,
-								"print": false,
-								"export": false,
-								"import": false
-							}
-						},
-						"professional_accounts": {
-							"mask": "AEDSPI",
-							"table": "",
-							"restrictedPages": {
-								"add": false,
-								"edit": false,
-								"list": false,
-								"view": false,
-								"print": false,
-								"export": false,
-								"import": false
-							}
-						}
-					}
 				},
 				"cashier": {
 					"permissions": {
@@ -540,6 +441,85 @@
 								"export": true,
 								"import": true
 							}
+						}
+					}
+				},
+				"admin": {
+					"permissions": {
+						"<global>": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"Viewing List": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"guarantors": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"hospital_accounts": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"hospital_services": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"offices": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"patient_types": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"patients": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"payments": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"professional_accounts": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"professional_services": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"professionals": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"transaction_guarantor": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"transactions": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
+						},
+						"users": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {}
 						}
 					}
 				}
@@ -2015,7 +1995,7 @@
 		{
 			"eventId": "EVENT_AFTERSUCCESSFULLLOGIN",
 			"pageType": "login",
-			"code": "// create session to use later\n$_SESSION['group'] = $data['group_id'];\n$_SESSION['full_name'] = $data['full_name'];\nif($_SESSION['group'] == 'Admin'){\n    // Redirect to a specific page\n    header(\"Location: transactions_list.php\");\n}\nelseif($_SESSION['group'] == 'cashier'){\n    // Redirect to a specific page\n    header(\"Location: payments_list.php\");\n}\n\nexit();\n\n"
+			"code": "// create session to use later\n$_SESSION['group'] = $data['group_id'];\n$_SESSION['full_name'] = $data['full_name'];\nif($_SESSION['group'] == 'admin'){\n    // Redirect to a specific page\n    header(\"Location: transactions_list.php\");\n}\nelseif($_SESSION['group'] == 'cashier'){\n    // Redirect to a specific page\n    header(\"Location: payments_list.php\");\n}\n\nexit();\n\n"
 		},
 		{
 			"eventId": "EVENT_BEFOREPROCESS_MENU",
