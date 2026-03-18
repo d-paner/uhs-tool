@@ -241,10 +241,10 @@ $runnerProjectSettings = array(
 							) 
 						),
 						'<global>' => array(
-							'mask' => 'ADESPI',
+							'mask' => 'AEDSPI',
 							'table' => '<global>',
 							'restrictedPages' => array(
-								 
+								'menu' => false 
 							) 
 						),
 						'payments' => array(
@@ -278,131 +278,6 @@ $runnerProjectSettings = array(
 					),
 					'admin' => false,
 					'username' => '<Default>' 
-				),
-				'Admin' => array(
-					'permissions' => array(
-						'<global>' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'guarantors' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'hospital_accounts' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'hospital_services' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'offices' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'patient_types' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'patients' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'payments' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'professional_services' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'professionals' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'transactions' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'users' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								 
-							) 
-						),
-						'transaction_guarantor' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								'add' => false,
-								'edit' => false,
-								'list' => false,
-								'view' => false,
-								'print' => false,
-								'export' => false,
-								'import' => false 
-							) 
-						),
-						'Viewing List' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								'add' => false,
-								'list' => false,
-								'print' => false,
-								'export' => false,
-								'import' => false 
-							) 
-						),
-						'professional_accounts' => array(
-							'mask' => 'AEDSPI',
-							'table' => '',
-							'restrictedPages' => array(
-								'add' => false,
-								'edit' => false,
-								'list' => false,
-								'view' => false,
-								'print' => false,
-								'export' => false,
-								'import' => false 
-							) 
-						) 
-					) 
 				),
 				'cashier' => array(
 					'permissions' => array(
@@ -557,6 +432,115 @@ $runnerProjectSettings = array(
 								'print' => true,
 								'export' => true,
 								'import' => true 
+							) 
+						) 
+					) 
+				),
+				'admin' => array(
+					'permissions' => array(
+						'<global>' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'Viewing List' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'guarantors' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'hospital_accounts' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'hospital_services' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'offices' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'patient_types' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'patients' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'payments' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'professional_accounts' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'professional_services' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'professionals' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'transaction_guarantor' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'transactions' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'users' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								 
 							) 
 						) 
 					) 
@@ -829,7 +813,7 @@ $runnerProjectSettings = array(
 		'table' => '' 
 	),
 	'wizardBuild' => '43917',
-	'projectBuild' => 'bWvn7TgOgdsh',
+	'projectBuild' => 'XC0h2zFMG3Qg',
 	'projectTheme' => 'flatly',
 	'projectSize' => 'normal',
 	'customErrorMsg' => array(

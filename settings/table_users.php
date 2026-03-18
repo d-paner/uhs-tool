@@ -179,7 +179,14 @@ FROM
 			),
 			'editFormats' => array(
 				'edit' => array(
-					'required' => true 
+					'format' => 'Lookup wizard',
+					'required' => true,
+					'lookupType' => 0,
+					'lookupValues' => array( 
+						'admin',
+						'cashier',
+						'billing' 
+					) 
 				) 
 			),
 			'tableName' => 'users' 
@@ -673,7 +680,7 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'username' => 'Username',
 		'email' => 'Email',
 		'password' => 'Password',
-		'group_id' => 'Group Id',
+		'group_id' => 'Group',
 		'ext_security_id' => 'Ext Security Id',
 		'created_at' => 'Created At',
 		'updated_at' => 'Updated At' 

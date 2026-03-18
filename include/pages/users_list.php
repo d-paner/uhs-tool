@@ -1364,7 +1364,12 @@
 		),
 		'simple_grid_field12' => array(
 			'type' => 'grid_field_label',
-			'field' => 'group_id' 
+			'field' => 'group_id',
+			'label' => array(
+				'field' => 'group_id',
+				'table' => 'users',
+				'type' => 3 
+			) 
 		),
 		'simple_grid_field6' => array(
 			'field' => 'ext_security_id',
