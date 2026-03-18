@@ -124,6 +124,7 @@ ORDER BY `date` DESC',
 					'lookupOrderBy' => 'created_at',
 					'lookupOrderByDesc' => true,
 					'lookupControlType' => 2,
+					'lookupWhere' => 'status IN (\'Open\',\'Partially Paid\')',
 					'lookupListPage' => 'transactionsList' 
 				) 
 			),

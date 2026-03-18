@@ -71,7 +71,7 @@ addServicesCalculation($trnNumber);
 		
 	}
 	public function default_status_efedit(  ) {
-	$defaultValue = Unpaid;
+	$defaultValue = "Unpaid";
 return $defaultValue;
 }
 
