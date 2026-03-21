@@ -8,6 +8,10 @@
 		"transaction_number"
 	],
 	"detailsBadgeColor": "edca00",
+	"detailsTables": [
+		1504671644,
+		3769908180
+	],
 	"fields": [
 		{
 			"name": "guarantor_name",
@@ -691,6 +695,9 @@
 									"cell": "headcell_checkbox"
 								},
 								{
+									"cell": "headcell_details"
+								},
+								{
 									"cell": "headcell_field"
 								},
 								{
@@ -726,6 +733,9 @@
 									"cell": "cell_checkbox"
 								},
 								{
+									"cell": "cell_details"
+								},
+								{
 									"cell": "cell_field"
 								},
 								{
@@ -755,10 +765,22 @@
 							]
 						},
 						{
+							"cells": [
+								{
+									"cell": "cell_dpreview",
+									"colspan": 11
+								}
+							],
+							"section": "body"
+						},
+						{
 							"section": "foot",
 							"cells": [
 								{
 									"cell": "footcell_checkbox"
+								},
+								{
+									"cell": "footcell_details"
 								},
 								{
 									"cell": "footcell_field"
@@ -1010,6 +1032,29 @@
 							"items": [],
 							"field": "running_balance",
 							"columnName": "field"
+						},
+						"headcell_details": {
+							"model": "headcell_details",
+							"items": []
+						},
+						"cell_details": {
+							"model": "cell_details",
+							"items": [
+								"grid_alldetails_link",
+								"grid_details_link",
+								"grid_details_link1"
+							]
+						},
+						"footcell_details": {
+							"model": "footcell_details",
+							"items": []
+						},
+						"cell_dpreview": {
+							"model": "cell_dpreview",
+							"items": [
+								"details_preview",
+								"details_preview1"
+							]
 						}
 					},
 					"deferredItems": [],
@@ -1092,6 +1137,7 @@
 					"type": "print_panel",
 					"items": [
 						"print_scope",
+						"print_details",
 						"print_records",
 						"print_button"
 					]
@@ -1259,6 +1305,48 @@
 				"search_panel_field8": {
 					"field": "running_balance",
 					"type": "search_panel_field"
+				},
+				"grid_alldetails_link": {
+					"type": "grid_alldetails_link"
+				},
+				"grid_details_link": {
+					"type": "grid_details_link",
+					"table": 1504671644,
+					"badge": true,
+					"hideIfNone": false,
+					"showCount": false
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 1504671644,
+					"items": [],
+					"proceedLink": false,
+					"popup": false,
+					"hideEmptyPreview": false,
+					"pageId": "transactionsChild"
+				},
+				"print_details": {
+					"type": "print_details",
+					"tables": {
+						"1504671644": true,
+						"3769908180": true
+					}
+				},
+				"grid_details_link1": {
+					"type": "grid_details_link",
+					"table": 3769908180,
+					"badge": true,
+					"showCount": false,
+					"hideIfNone": false
+				},
+				"details_preview1": {
+					"type": "details_preview",
+					"table": 3769908180,
+					"items": [],
+					"proceedLink": false,
+					"popup": false,
+					"hideEmptyPreview": false,
+					"pageId": "transactionsChild"
 				}
 			},
 			"version": 13,
@@ -1356,6 +1444,195 @@
 								}
 							],
 							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"simple_grid_field",
+								"simple_grid_field1",
+								"simple_grid_field2",
+								"simple_grid_field3",
+								"simple_grid_field4",
+								"simple_grid_field5",
+								"simple_grid_field6",
+								"simple_grid_field7",
+								"simple_grid_field8"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"details_preview",
+								"details_preview1"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"print_header": {
+					"type": "print_header"
+				},
+				"print_subheader": {
+					"type": "print_subheader"
+				},
+				"print_pages": {
+					"type": "print_pages"
+				},
+				"simple_grid_field": {
+					"field": "guarantor_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field1": {
+					"field": "guarantor_office",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field2": {
+					"field": "transaction_number",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field3": {
+					"field": "transaction_date",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field4": {
+					"field": "patient_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field5": {
+					"field": "patient_type",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field6": {
+					"field": "total_hospital_amount",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field7": {
+					"field": "total_professional_amount",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field8": {
+					"field": "running_balance",
+					"type": "simple_grid_field"
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 1504671644,
+					"items": [],
+					"popup": false
+				},
+				"details_preview1": {
+					"type": "details_preview",
+					"table": 3769908180,
+					"items": [],
+					"popup": false
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "masterlist",
+			"type": "masterlist",
+			"layoutId": "masterlist",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "masterlist-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"back_master",
+								"masterlist_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
 						}
 					],
 					"cells": {
@@ -1379,14 +1656,166 @@
 				}
 			},
 			"items": {
-				"print_header": {
-					"type": "print_header"
+				"masterlist_header": {
+					"type": "masterlist_header"
 				},
-				"print_subheader": {
-					"type": "print_subheader"
+				"back_master": {
+					"type": "back_master"
 				},
-				"print_pages": {
-					"type": "print_pages"
+				"simple_grid_field": {
+					"field": "guarantor_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field1": {
+					"field": "guarantor_office",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field2": {
+					"field": "transaction_number",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field3": {
+					"field": "transaction_date",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field4": {
+					"field": "patient_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field5": {
+					"field": "patient_type",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field6": {
+					"field": "total_hospital_amount",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field7": {
+					"field": "total_professional_amount",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field8": {
+					"field": "running_balance",
+					"type": "simple_grid_field"
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "masterprint",
+			"type": "masterprint",
+			"layoutId": "masterprint",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "masterlist-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"masterprint_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"simple_grid_field",
+								"simple_grid_field1",
+								"simple_grid_field2",
+								"simple_grid_field3",
+								"simple_grid_field4",
+								"simple_grid_field5",
+								"simple_grid_field6",
+								"simple_grid_field7",
+								"simple_grid_field8"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"masterprint_header": {
+					"type": "masterprint_header"
 				},
 				"simple_grid_field": {
 					"field": "guarantor_name",

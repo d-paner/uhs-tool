@@ -17,6 +17,15 @@
 			"detailsKeys": [
 				"transaction_number"
 			]
+		},
+		{
+			"table": 631629026,
+			"masterKeys": [
+				"transaction_number"
+			],
+			"detailsKeys": [
+				"transaction_number"
+			]
 		}
 	],
 	"detailsBadgeColor": "9acd32",
@@ -2049,6 +2058,7 @@
 				"master_info": {
 					"type": "master_info",
 					"tables": {
+						"631629026": "true",
 						"3936885324": "true"
 					}
 				},
@@ -2362,6 +2372,7 @@
 				"master_info": {
 					"type": "master_info",
 					"tables": {
+						"631629026": "true",
 						"3936885324": "true"
 					}
 				},
