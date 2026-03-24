@@ -26,7 +26,7 @@ function addServicesCalculation($transactionNumbers){
         $totals[$row["transaction_number"]] = $row["total_amount"];
     }
 
-    // update the transactions tbl
+    // update the transactions
     if(!empty($totals)) {
 
         $caseSql = '';
