@@ -12,8 +12,16 @@ function generate_transaction_number(){
         file_put_contents($file, '');
     }
 
-    $fp = fopen($file, 'c+');
-    var_dump($fp);
+    try{
+        $fp = fopen($file, 'c+');
+        if($fp === false){
+            $err = error_get_last();
+            new Exception("Cannot open file: $file. Error: " . $err['message']);
+        }
+
+    } catch(Throwable $e){
+        echo "Error: " . $e->getMessage();
+    }
     flock($fp, LOCK_EX);
 
     rewind($fp);
