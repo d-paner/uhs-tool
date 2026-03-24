@@ -6,6 +6,9 @@
 	'master' => array(
 		'transactions' => array(
 			'preview' => false 
+		),
+		'Viewing List' => array(
+			'preview' => false 
 		) 
 	),
 	'fields' => array(

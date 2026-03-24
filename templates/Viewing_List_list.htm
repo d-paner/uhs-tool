@@ -254,6 +254,45 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_guarantor_name}</span>
 						</div>
 		{END searchCtrlBlock_guarantor_name}
+																{BEGIN searchCtrlBlock_total_paid}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_total_paid}" {$filterRow_attrs_total_paid}>
+			<label>{$label Viewing_List total_paid }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_total_paid}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_total_paid}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_total_paid}</span>
+						</div>
+		{END searchCtrlBlock_total_paid}
+																{BEGIN searchCtrlBlock_total_professional_fees}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_total_professional_fees}" {$filterRow_attrs_total_professional_fees}>
+			<label>{$label Viewing_List total_professional_fees }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_total_professional_fees}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_total_professional_fees}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_total_professional_fees}</span>
+						</div>
+		{END searchCtrlBlock_total_professional_fees}
+																{BEGIN searchCtrlBlock_total_hospital_fees}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_total_hospital_fees}" {$filterRow_attrs_total_hospital_fees}>
+			<label>{$label Viewing_List total_hospital_fees }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_total_hospital_fees}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_total_hospital_fees}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_total_hospital_fees}</span>
+						</div>
+		{END searchCtrlBlock_total_hospital_fees}
 																{BEGIN searchCtrlBlock_running_balance}
 
 
@@ -267,32 +306,6 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_running_balance}</span>
 						</div>
 		{END searchCtrlBlock_running_balance}
-																{BEGIN searchCtrlBlock_total_professional_amount}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_total_professional_amount}" {$filterRow_attrs_total_professional_amount}>
-			<label>{$label Viewing_List total_professional_amount }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_total_professional_amount}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_total_professional_amount}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_total_professional_amount}</span>
-						</div>
-		{END searchCtrlBlock_total_professional_amount}
-																{BEGIN searchCtrlBlock_total_hospital_amount}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_total_hospital_amount}" {$filterRow_attrs_total_hospital_amount}>
-			<label>{$label Viewing_List total_hospital_amount }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_total_hospital_amount}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_total_hospital_amount}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_total_hospital_amount}</span>
-						</div>
-		{END searchCtrlBlock_total_hospital_amount}
 																{BEGIN searchCtrlBlock_patient_type}
 
 
@@ -473,14 +486,6 @@
 		</a>
 	</li>
 {END export_link}
-							<li role="separator" class="divider"></li>							{BEGIN import_link}
-	<li data-itemtype="import" data-itemid="import" {$item_import} data-pageid="{$pageid}" data-small >
-				<a  {$importlink_attrs} href="Viewing_List_import.php{$stateLink_full}"  title="" >
-				
-		{mlang_message IMPORT}		
-		</a>
-	</li>
-{END import_link}
 					</ul>
 	</span>
 </span>
@@ -624,6 +629,36 @@
 				 
 					<li class="container-fluid 
 										">
+									{BEGIN print_details}
+<div>
+	<label for="printDetailsToggler{$id}">
+		<input type="checkbox" id="printDetailsToggler{$id}">
+		{mlang_message PPANEL_DETAILS}	</label>
+	<div  id="printdetailstables{$id}" style="display:none;">
+											{BEGIN print_details_hospital_services}
+			<div>
+				<label for="printDetailshospital_services{$id}">
+					<input type="checkbox" value="hospital_services" id="printDetailshospital_services{$id}" checked>
+					{$caption hospital_services }				</label>
+			</div>
+			{END print_details_hospital_services}
+														{BEGIN print_details_professional_services}
+			<div>
+				<label for="printDetailsprofessional_services{$id}">
+					<input type="checkbox" value="professional_services" id="printDetailsprofessional_services{$id}" checked>
+					{$caption professional_services }				</label>
+			</div>
+			{END print_details_professional_services}
+						</div>
+</div>
+{END print_details}
+				 
+					</li>
+											<li class="divider" role="separator"></li>
+																				 
+				 
+					<li class="container-fluid 
+										">
 									<div>
 	<label for="printPerPage{$id}">
 					{mlang_message RECORDS_PP}							
@@ -680,51 +715,48 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="patient_type"]:before {
 		content: "{$label Viewing_List patient_type}";
 	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="total_hospital_amount"]:before {
-		content: "{$label Viewing_List total_hospital_amount}";
-	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="total_professional_amount"]:before {
-		content: "{$label Viewing_List total_professional_amount}";
-	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="running_balance"]:before {
 		content: "{$label Viewing_List running_balance}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="total_hospital_fees"]:before {
+		content: "{$label Viewing_List total_hospital_fees}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="total_professional_fees"]:before {
+		content: "{$label Viewing_List total_professional_fees}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="total_paid"]:before {
+		content: "{$label Viewing_List total_paid}";
 	}
 	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
 	cellpadding="0"
-	data-body-height="1"
+	data-body-height="2"
 >
 						<thead>
 			{BEGIN grid_header}
 			
-																									<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
+																														<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
 									{$gridHeader_class}
 					
 								r-gridrow
 							">
-									{BEGIN cellblock_grid_headcell_checkbox}
+									{BEGIN cellblock_grid_headcell_details}
 	<th
 	
-	{$cell_grid_headcell_checkbox}
+	{$cell_grid_headcell_details}
 	{$recordattrs}
 	class="
 		 r-ori-vert			"
 
 	
-	data-cellId="grid_headcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_list"	
-		data-checkbox-cell
+	data-cellId="grid_headcell_details" data-pageid="{$pageid}" data-record-id="{$recId}"		data-control-cell
+	
 	>
 
-	 
-		{BEGIN checkbox_column}
-<span data-itemtype="grid_checkbox_head" data-itemid="grid_checkbox_head" {$item_grid_checkbox_head} data-pageid="{$pageid}" data-record-id="{$recId}" >
-	<input type="checkbox" {$checkboxheader_attrs}>
-</span>
-{END checkbox_column}
 	
 	</th>
-	{END cellblock_grid_headcell_checkbox}
+	{END cellblock_grid_headcell_details}
 									{BEGIN cellblock_grid_headcell_field}
 	<th
 	
@@ -742,7 +774,7 @@
 		{BEGIN guarantor_name_fieldheadercolumn}
 	{BEGIN guarantor_name_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_name" data-fieldname="guarantor_name" 
+	data-itemtype="grid_field_label" data-itemid="grid_field10" {$item_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_name" data-fieldname="guarantor_name" 
 
 			{$guarantor_name_orderlinkattrs}
 	
@@ -776,7 +808,7 @@
 		{BEGIN guarantor_office_fieldheadercolumn}
 	{BEGIN guarantor_office_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label1" {$item_grid_field_label1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_office" data-fieldname="guarantor_office" 
+	data-itemtype="grid_field_label" data-itemid="grid_field11" {$item_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_office" data-fieldname="guarantor_office" 
 
 			{$guarantor_office_orderlinkattrs}
 	
@@ -810,7 +842,7 @@
 		{BEGIN transaction_number_fieldheadercolumn}
 	{BEGIN transaction_number_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label2" {$item_grid_field_label2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="transaction_number" data-fieldname="transaction_number" 
+	data-itemtype="grid_field_label" data-itemid="grid_field12" {$item_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="transaction_number" data-fieldname="transaction_number" 
 
 			{$transaction_number_orderlinkattrs}
 	
@@ -844,7 +876,7 @@
 		{BEGIN transaction_date_fieldheadercolumn}
 	{BEGIN transaction_date_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label3" {$item_grid_field_label3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="transaction_date" data-fieldname="transaction_date" 
+	data-itemtype="grid_field_label" data-itemid="grid_field13" {$item_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="transaction_date" data-fieldname="transaction_date" 
 
 			{$transaction_date_orderlinkattrs}
 	
@@ -878,7 +910,7 @@
 		{BEGIN patient_name_fieldheadercolumn}
 	{BEGIN patient_name_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label4" {$item_grid_field_label4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_name" data-fieldname="patient_name" 
+	data-itemtype="grid_field_label" data-itemid="grid_field14" {$item_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_name" data-fieldname="patient_name" 
 
 			{$patient_name_orderlinkattrs}
 	
@@ -912,7 +944,7 @@
 		{BEGIN patient_type_fieldheadercolumn}
 	{BEGIN patient_type_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label5" {$item_grid_field_label5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_type" data-fieldname="patient_type" 
+	data-itemtype="grid_field_label" data-itemid="grid_field15" {$item_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_type" data-fieldname="patient_type" 
 
 			{$patient_type_orderlinkattrs}
 	
@@ -935,30 +967,30 @@
 	{$cell_grid_headcell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_hospital_amount_class}	"
+		 r-ori-vert		 {$total_hospital_fees_class}	"
 
-			data-field="total_hospital_amount"
+			data-field="total_hospital_fees"
 	
 	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN total_hospital_amount_fieldheadercolumn}
-	{BEGIN total_hospital_amount_fieldheader}
+		{BEGIN total_hospital_fees_fieldheadercolumn}
+	{BEGIN total_hospital_fees_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label6" {$item_grid_field_label6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_hospital_amount" data-fieldname="total_hospital_amount" 
+	data-itemtype="grid_field_label" data-itemid="grid_field16" {$item_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_hospital_fees" data-fieldname="total_hospital_fees" 
 
-			{$total_hospital_amount_orderlinkattrs}
+			{$total_hospital_fees_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label Viewing_List total_hospital_amount }</span>
-					{$arrow_icon_total_hospital_amount}
+		<span>{$label Viewing_List total_hospital_fees }</span>
+					{$arrow_icon_total_hospital_fees}
 			</span>
 	</span>
-	{END total_hospital_amount_fieldheader}
-{END total_hospital_amount_fieldheadercolumn}
+	{END total_hospital_fees_fieldheader}
+{END total_hospital_fees_fieldheadercolumn}
 
 	
 	</th>
@@ -969,30 +1001,30 @@
 	{$cell_grid_headcell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_professional_amount_class}	"
+		 r-ori-vert		 {$total_professional_fees_class}	"
 
-			data-field="total_professional_amount"
+			data-field="total_professional_fees"
 	
 	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN total_professional_amount_fieldheadercolumn}
-	{BEGIN total_professional_amount_fieldheader}
+		{BEGIN total_professional_fees_fieldheadercolumn}
+	{BEGIN total_professional_fees_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label7" {$item_grid_field_label7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_professional_amount" data-fieldname="total_professional_amount" 
+	data-itemtype="grid_field_label" data-itemid="grid_field17" {$item_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_professional_fees" data-fieldname="total_professional_fees" 
 
-			{$total_professional_amount_orderlinkattrs}
+			{$total_professional_fees_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label Viewing_List total_professional_amount }</span>
-					{$arrow_icon_total_professional_amount}
+		<span>{$label Viewing_List total_professional_fees }</span>
+					{$arrow_icon_total_professional_fees}
 			</span>
 	</span>
-	{END total_professional_amount_fieldheader}
-{END total_professional_amount_fieldheadercolumn}
+	{END total_professional_fees_fieldheader}
+{END total_professional_fees_fieldheadercolumn}
 
 	
 	</th>
@@ -1003,18 +1035,52 @@
 	{$cell_grid_headcell_field8}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$total_paid_class}	"
+
+			data-field="total_paid"
+	
+	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN total_paid_fieldheadercolumn}
+	{BEGIN total_paid_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field18" {$item_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_paid" data-fieldname="total_paid" 
+
+			{$total_paid_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label Viewing_List total_paid }</span>
+					{$arrow_icon_total_paid}
+			</span>
+	</span>
+	{END total_paid_fieldheader}
+{END total_paid_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field8}
+									{BEGIN cellblock_grid_headcell_field9}
+	<th
+	
+	{$cell_grid_headcell_field9}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$running_balance_class}	"
 
 			data-field="running_balance"
 	
-	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN running_balance_fieldheadercolumn}
 	{BEGIN running_balance_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label8" {$item_grid_field_label8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="running_balance" data-fieldname="running_balance" 
+	data-itemtype="grid_field_label" data-itemid="grid_field19" {$item_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="running_balance" data-fieldname="running_balance" 
 
 			{$running_balance_orderlinkattrs}
 	
@@ -1030,42 +1096,46 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field8}
+	{END cellblock_grid_headcell_field9}
 							</tr>
-															
+																				
 					{END grid_header}
 			</thead>
 															<tbody>
 					{BEGIN grid_row}
 							
-																														<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
+																																			<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
 				
 								r-gridrow
 							">
-									{BEGIN cellblock_grid_cell_checkbox}
+									{BEGIN cellblock_grid_cell_details}
 	<td
 	
-	{$cell_grid_cell_checkbox}
+	{$cell_grid_cell_details}
 	{$recordattrs}
 	class="
 		 r-ori-vert			"
 
 	
-	data-cellId="grid_cell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}"		data-control-cell
+	data-cellId="grid_cell_details" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_list"		data-control-cell
 	
-		data-checkbox-cell
 	>
 
 	 
-		{BEGIN checkbox_column}
-<span data-itemtype="grid_checkbox" data-itemid="grid_checkbox" {$item_grid_checkbox} data-pageid="{$pageid}" data-record-id="{$recId}" >
-	<input type="checkbox" {$checkbox_attrs}
-		>
-</span>	
-{END checkbox_column}
+		{BEGIN dtables_link}
+	<a 
+		data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-record-id="{$recId}" 
+		{$dtables_link_attrs} 
+		class="{$dtables_link_class}" 
+		title="{mlang_message SHOW_DETAILS}"
+				
+	>
+					<span class="glyphicon glyphicon-th-list"></span>
+					</a>
+{END dtables_link}
 	
 	</td>
-	{END cellblock_grid_cell_checkbox}
+	{END cellblock_grid_cell_details}
 									{BEGIN cellblock_grid_cell_field}
 	<td
 	
@@ -1198,19 +1268,19 @@
 	{$cell_grid_cell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_hospital_amount_class}	"
+		 r-ori-vert		 {$total_hospital_fees_class}	"
 
-			data-field="total_hospital_amount"
+			data-field="total_hospital_fees"
 	
 	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN total_hospital_amount_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_hospital_amount" data-fieldname="total_hospital_amount" data-default-width >
-{$total_hospital_amount_value}
+		{BEGIN total_hospital_fees_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_hospital_fees" data-fieldname="total_hospital_fees" data-default-width >
+{$total_hospital_fees_value}
 </span>
-{END total_hospital_amount_fieldcolumn}	
+{END total_hospital_fees_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field6}
 									{BEGIN cellblock_grid_cell_field7}
@@ -1219,19 +1289,19 @@
 	{$cell_grid_cell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_professional_amount_class}	"
+		 r-ori-vert		 {$total_professional_fees_class}	"
 
-			data-field="total_professional_amount"
+			data-field="total_professional_fees"
 	
 	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN total_professional_amount_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_professional_amount" data-fieldname="total_professional_amount" data-default-width >
-{$total_professional_amount_value}
+		{BEGIN total_professional_fees_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_professional_fees" data-fieldname="total_professional_fees" data-default-width >
+{$total_professional_fees_value}
 </span>
-{END total_professional_amount_fieldcolumn}	
+{END total_professional_fees_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field7}
 									{BEGIN cellblock_grid_cell_field8}
@@ -1240,11 +1310,32 @@
 	{$cell_grid_cell_field8}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$total_paid_class}	"
+
+			data-field="total_paid"
+	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN total_paid_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total_paid" data-fieldname="total_paid" data-default-width >
+{$total_paid_value}
+</span>
+{END total_paid_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field8}
+									{BEGIN cellblock_grid_cell_field9}
+	<td
+	
+	{$cell_grid_cell_field9}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$running_balance_class}	"
 
 			data-field="running_balance"
 	
-	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1254,33 +1345,64 @@
 </span>
 {END running_balance_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field8}
+	{END cellblock_grid_cell_field9}
+							</tr>
+											<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
+				
+							">
+									{BEGIN cellblock_grid_cell_dpreview}
+	<td
+	
+	{$cell_grid_cell_dpreview}
+	{$recordattrs}
+	class="
+					"
+
+	
+	data-cellId="grid_cell_dpreview" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+				<div data-itemtype="details_preview" data-itemid="details_preview" {$item_details_preview} data-pageid="{$pageid}" data-record-id="{$recId}" 
+	data-orders="hospital_services,professional_services"
+			data-details-hospital_services			data-details-professional_services	>
+		<span data-details-inside data-short-table="hospital_services">
+			</span>
+		<span data-details-inside data-short-table="professional_services">
+			</span>
+		<div data-details-preview>
+	</div>
+</div>
+	 
+			
+	</td>
+	{END cellblock_grid_cell_dpreview}
 							</tr>
 										
 											{END grid_row}
 					</tbody>
 													<tfoot>
 			
-																																			<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
+																																													<tr {$rowattrs} {$row_grid_3} class="{$rowclass}
 									{$gridFooter_class}
 					
 								r-gridrow
 							">
-									{BEGIN cellblock_grid_footcell_checkbox}
+									{BEGIN cellblock_grid_footcell_details}
 	<td
 	
-	{$cell_grid_footcell_checkbox}
+	{$cell_grid_footcell_details}
 	{$recordattrs}
 	class="
 		 r-ori-vert			"
 
 	
-	data-cellId="grid_footcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_footcell_details" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	
 	</td>
-	{END cellblock_grid_footcell_checkbox}
+	{END cellblock_grid_footcell_details}
 									{BEGIN cellblock_grid_footcell_field}
 	<td
 	
@@ -1377,7 +1499,7 @@
 	{$cell_grid_footcell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_hospital_amount_class}	"
+		 r-ori-vert		 {$total_hospital_fees_class}	"
 
 	
 	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_list"	
@@ -1392,7 +1514,7 @@
 	{$cell_grid_footcell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_professional_amount_class}	"
+		 r-ori-vert		 {$total_professional_fees_class}	"
 
 	
 	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_list"	
@@ -1407,7 +1529,7 @@
 	{$cell_grid_footcell_field8}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$running_balance_class}	"
+		 r-ori-vert		 {$total_paid_class}	"
 
 	
 	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_list"	
@@ -1416,6 +1538,21 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field8}
+									{BEGIN cellblock_grid_footcell_field9}
+	<td
+	
+	{$cell_grid_footcell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$running_balance_class}	"
+
+	
+	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field9}
 							</tr>
 					
 					</tfoot>

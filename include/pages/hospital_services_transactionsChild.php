@@ -20,6 +20,9 @@
 	'master' => array(
 		'transactions' => array(
 			'preview' => true 
+		),
+		'Viewing List' => array(
+			'preview' => false 
 		) 
 	),
 	'listSearch' => array(

@@ -288,6 +288,15 @@ FROM
 			'masterKeys' => array( 
 				'transaction_number' 
 			) 
+		),
+		array(
+			'table' => 'Viewing List',
+			'detailsKeys' => array( 
+				'transaction_number' 
+			),
+			'masterKeys' => array( 
+				'transaction_number' 
+			) 
 		) 
 	),
 	'query' => array(

@@ -19,16 +19,13 @@
 		'patient_type' => array(
 			'totalsType' => '' 
 		),
+		'total_hospital_amount' => array(
+			'totalsType' => '' 
+		),
+		'total_professional_amount' => array(
+			'totalsType' => '' 
+		),
 		'running_balance' => array(
-			'totalsType' => '' 
-		),
-		'total_hospital_fees' => array(
-			'totalsType' => '' 
-		),
-		'total_professional_fees' => array(
-			'totalsType' => '' 
-		),
-		'total_paid' => array(
 			'totalsType' => '' 
 		) 
 	),
@@ -40,10 +37,9 @@
 			'transaction_date',
 			'patient_name',
 			'patient_type',
-			'running_balance',
-			'total_hospital_fees',
-			'total_professional_fees',
-			'total_paid' 
+			'total_hospital_amount',
+			'total_professional_amount',
+			'running_balance' 
 		),
 		'exportFields' => array( 
 			'guarantor_name',
@@ -52,9 +48,8 @@
 			'transaction_date',
 			'patient_name',
 			'patient_type',
-			'total_hospital_fees',
-			'total_professional_fees',
-			'total_paid',
+			'total_hospital_amount',
+			'total_professional_amount',
 			'running_balance' 
 		),
 		'searchRequiredFields' => array( 
@@ -82,17 +77,14 @@
 			'patient_type' => array( 
 				'export_field5' 
 			),
-			'running_balance' => array( 
-				'export_field8' 
-			),
-			'total_hospital_fees' => array( 
+			'total_hospital_amount' => array( 
 				'export_field6' 
 			),
-			'total_professional_fees' => array( 
+			'total_professional_amount' => array( 
 				'export_field7' 
 			),
-			'total_paid' => array( 
-				'export_field9' 
+			'running_balance' => array( 
+				'export_field8' 
 			) 
 		) 
 	),
@@ -120,7 +112,6 @@
 					'export_field5',
 					'export_field6',
 					'export_field7',
-					'export_field9',
 					'export_field8' 
 				),
 				'footer' => array( 
@@ -143,7 +134,6 @@
 				'export_field5' => 'grid',
 				'export_field6' => 'grid',
 				'export_field7' => 'grid',
-				'export_field9' => 'grid',
 				'export_field8' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
@@ -172,10 +162,9 @@
 				'export_field3',
 				'export_field4',
 				'export_field5',
-				'export_field8',
 				'export_field6',
 				'export_field7',
-				'export_field9' 
+				'export_field8' 
 			) 
 		),
 		'cellMaps' => array(
@@ -230,7 +219,7 @@
 		) 
 	),
 	'export' => array(
-		'format' => 0,
+		'format' => 2,
 		'selectFields' => false,
 		'delimiter' => ',',
 		'selectDelimiter' => false,
@@ -323,7 +312,6 @@
 						'export_field5',
 						'export_field6',
 						'export_field7',
-						'export_field9',
 						'export_field8' 
 					) 
 				) 
@@ -403,20 +391,16 @@
 			'field' => 'patient_type',
 			'type' => 'export_field' 
 		),
-		'export_field8' => array(
-			'field' => 'running_balance',
-			'type' => 'export_field' 
-		),
 		'export_field6' => array(
-			'field' => 'total_hospital_fees',
+			'field' => 'total_hospital_amount',
 			'type' => 'export_field' 
 		),
 		'export_field7' => array(
-			'field' => 'total_professional_fees',
+			'field' => 'total_professional_amount',
 			'type' => 'export_field' 
 		),
-		'export_field9' => array(
-			'field' => 'total_paid',
+		'export_field8' => array(
+			'field' => 'running_balance',
 			'type' => 'export_field' 
 		) 
 	),
@@ -431,7 +415,7 @@
 	'title' => array(
 		 
 	),
-	'exportFormat' => 0,
+	'exportFormat' => 2,
 	'exportDelimiter' => ',',
 	'exportSelectDelimiter' => false,
 	'exportSelectFields' => false 

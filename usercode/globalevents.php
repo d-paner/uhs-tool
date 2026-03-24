@@ -50,14 +50,7 @@ exit();
 	}
 
 	function BeforeProcessMenu( $pageObject ) {
-		if($_SESSION['group'] == 'Admin'){
-    // Redirect to a specific page
-    header("Location: transactions_list.php");
-}
-elseif($_SESSION['group'] == 'cashier'){
-    // Redirect to a specific page
-    header("Location: payments_list.php");
-}
+		header("Location: transactions_list.php");
 exit();
 		;
 		

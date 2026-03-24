@@ -44,7 +44,7 @@
 	
 ">
 		 
-		<h3 class="panel-title" data-itemtype="export_header" data-itemid="export_header" {$item_export_header} data-pageid="{$pageid}" >{$pagetitlelabel Viewing_List export}</h3>
+		<h3 class="panel-title" data-itemtype="export_header" data-itemid="export_header" {$item_export_header} data-pageid="{$pageid}" >{$pagetitlelabel Viewing_List_report export}</h3>
 		</div>			</div>		
 {END top_block}
 						</div>
@@ -72,6 +72,24 @@
   </div>
 {END range_block}
 
+	<div class="row">
+		<div class="col-sm-4 col-md-4">
+			<div class="radio bs-desktop-right">
+				{mlang_message TEXT_FORMATTING}			</div>
+		</div>
+		<div class="col-sm-8 col-md-8">
+			<div class="radio">
+			  <label>
+				<input type="radio" name="txtformatting" value="formatted" checked>
+				{mlang_message FORMATTED_VALUES}			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+				<input type="radio" name="txtformatting" value="raw">
+				{mlang_message RAW_VALUES}			  </label>
+			</div>
+		</div>
+	</div>
 	
 	<div class="row">
 		<div class="col-sm-4 col-md-4">
@@ -112,13 +130,13 @@
 				<div class="row">
 			 
 				<div 
-	data-cellId="footer_c1" data-pageid="{$pageid}" data-page="Viewing_List_export"	{$cell_footer_c1}
+	data-cellId="footer_c1" data-pageid="{$pageid}" data-page="Viewing_List1_export"	{$cell_footer_c1}
 	class=" r-ori-vert			col-md-6
 	
 ">
 			</div>			 
 				<div 
-	data-cellId="footer_c2" data-pageid="{$pageid}" data-page="Viewing_List_export"	{$cell_footer_c2}
+	data-cellId="footer_c2" data-pageid="{$pageid}" data-page="Viewing_List1_export"	{$cell_footer_c2}
 	class="			col-md-6
 	
 ">
