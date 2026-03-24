@@ -2,26 +2,14 @@
 
 function generate_transaction_number(){
 
-    // $file = 'custom/last_number.txt';
-    echo __DIR__;
     $file = __DIR__ . '/last_number.txt';
-    // echo $file;
     $date = date('Ymd'); // YYYYMMDD
 
     if (!file_exists($file)) {
         file_put_contents($file, '');
     }
 
-    try{
-        $fp = fopen($file, 'c+');
-        if($fp === false){
-            $err = error_get_last();
-            new Exception("Cannot open file: $file. Error: " . $err['message']);
-        }
-
-    } catch(Throwable $e){
-        echo "Error: " . $e->getMessage();
-    }
+    $fp = fopen($file, 'c+');
     flock($fp, LOCK_EX);
 
     rewind($fp);
