@@ -3,8 +3,9 @@
 function generate_transaction_number(){
 
     // $file = 'custom/last_number.txt';
-    echo __DIR__;
+    //echo __DIR__;
     $file = __DIR__ . '/last_number.txt';
+    // echo $file;
     $date = date('Ymd'); // YYYYMMDD
 
     if (!file_exists($file)) {
@@ -12,6 +13,7 @@ function generate_transaction_number(){
     }
 
     $fp = fopen($file, 'c+');
+    var_dump($fp);
     flock($fp, LOCK_EX);
 
     rewind($fp);
