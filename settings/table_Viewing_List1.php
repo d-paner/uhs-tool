@@ -1,24 +1,18 @@
 <?php
 global $runnerTableSettings;
-$runnerTableSettings['Viewing List'] = array(
-	'name' => 'Viewing List',
-	'type' => 6,
-	'shortName' => 'Viewing_List',
+$runnerTableSettings['Viewing List report'] = array(
+	'name' => 'Viewing List report',
+	'type' => 8,
+	'shortName' => 'Viewing_List1',
 	'pagesByType' => array(
 		'export' => array( 
 			'export' 
 		),
-		'list' => array( 
-			'list' 
+		'report' => array( 
+			'report' 
 		),
-		'print' => array( 
-			'print' 
-		),
-		'masterlist' => array( 
-			'masterlist' 
-		),
-		'masterprint' => array( 
-			'masterprint' 
+		'rprint' => array( 
+			'rprint' 
 		),
 		'search' => array( 
 			'search' 
@@ -26,22 +20,18 @@ $runnerTableSettings['Viewing List'] = array(
 	),
 	'pageTypes' => array(
 		'export' => 'export',
-		'list' => 'list',
-		'print' => 'print',
-		'masterlist' => 'masterlist',
-		'masterprint' => 'masterprint',
+		'report' => 'report',
+		'rprint' => 'rprint',
 		'search' => 'search' 
 	),
 	'defaultPages' => array(
 		'export' => 'export',
-		'list' => 'list',
-		'print' => 'print',
-		'masterlist' => 'masterlist',
-		'masterprint' => 'masterprint',
+		'report' => 'report',
+		'rprint' => 'rprint',
 		'search' => 'search' 
 	),
-	'afterEditDetails' => 'Viewing List',
-	'afterAddDetail' => 'Viewing List',
+	'afterEditDetails' => 'Viewing List report',
+	'afterAddDetail' => 'Viewing List report',
 	'detailsBadgeColor' => 'edca00',
 	'keyFields' => array( 
 		'transaction_number' 
@@ -160,10 +150,10 @@ $runnerTableSettings['Viewing List'] = array(
 			),
 			'tableName' => 'Viewing List' 
 		),
-		'running_balance' => array(
-			'name' => 'running_balance',
-			'goodName' => 'running_balance',
-			'strField' => 'running_balance',
+		'total_hospital_amount' => array(
+			'name' => 'total_hospital_amount',
+			'goodName' => 'total_hospital_amount',
+			'strField' => 'total_hospital_amount',
 			'index' => 7,
 			'type' => 14,
 			'viewFormats' => array(
@@ -178,10 +168,10 @@ $runnerTableSettings['Viewing List'] = array(
 			),
 			'tableName' => 'Viewing List' 
 		),
-		'total_hospital_fees' => array(
-			'name' => 'total_hospital_fees',
-			'goodName' => 'total_hospital_fees',
-			'strField' => 'total_hospital_fees',
+		'total_professional_amount' => array(
+			'name' => 'total_professional_amount',
+			'goodName' => 'total_professional_amount',
+			'strField' => 'total_professional_amount',
 			'index' => 8,
 			'type' => 14,
 			'viewFormats' => array(
@@ -196,10 +186,10 @@ $runnerTableSettings['Viewing List'] = array(
 			),
 			'tableName' => 'Viewing List' 
 		),
-		'total_professional_fees' => array(
-			'name' => 'total_professional_fees',
-			'goodName' => 'total_professional_fees',
-			'strField' => 'total_professional_fees',
+		'running_balance' => array(
+			'name' => 'running_balance',
+			'goodName' => 'running_balance',
+			'strField' => 'running_balance',
 			'index' => 9,
 			'type' => 14,
 			'viewFormats' => array(
@@ -213,46 +203,18 @@ $runnerTableSettings['Viewing List'] = array(
 				) 
 			),
 			'tableName' => 'Viewing List' 
-		),
-		'total_paid' => array(
-			'name' => 'total_paid',
-			'goodName' => 'total_paid',
-			'strField' => 'total_paid',
-			'index' => 10,
-			'type' => 14,
-			'viewFormats' => array(
-				'view' => array(
-					'format' => 'Number' 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					 
-				) 
-			),
-			'tableName' => 'Viewing List' 
 		) 
-	),
-	'detailsTables' => array( 
-		'hospital_services',
-		'professional_services' 
 	),
 	'originalTable' => '',
 	'originalPagesByType' => array(
 		'export' => array( 
 			'export' 
 		),
-		'list' => array( 
-			'list' 
+		'report' => array( 
+			'report' 
 		),
-		'print' => array( 
-			'print' 
-		),
-		'masterlist' => array( 
-			'masterlist' 
-		),
-		'masterprint' => array( 
-			'masterprint' 
+		'rprint' => array( 
+			'rprint' 
 		),
 		'search' => array( 
 			'search' 
@@ -260,18 +222,14 @@ $runnerTableSettings['Viewing List'] = array(
 	),
 	'originalPageTypes' => array(
 		'export' => 'export',
-		'list' => 'list',
-		'print' => 'print',
-		'masterlist' => 'masterlist',
-		'masterprint' => 'masterprint',
+		'report' => 'report',
+		'rprint' => 'rprint',
 		'search' => 'search' 
 	),
 	'originalDefaultPages' => array(
 		'export' => 'export',
-		'list' => 'list',
-		'print' => 'print',
-		'masterlist' => 'masterlist',
-		'masterprint' => 'masterprint',
+		'report' => 'report',
+		'rprint' => 'rprint',
 		'search' => 'search' 
 	),
 	'searchSettings' => array(
@@ -283,10 +241,9 @@ $runnerTableSettings['Viewing List'] = array(
 			'transaction_date',
 			'patient_name',
 			'patient_type',
-			'running_balance',
-			'total_hospital_fees',
-			'total_professional_fees',
-			'total_paid' 
+			'total_hospital_amount',
+			'total_professional_amount',
+			'running_balance' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => false,
@@ -299,10 +256,9 @@ $runnerTableSettings['Viewing List'] = array(
 			'transaction_date',
 			'patient_name',
 			'patient_type',
-			'running_balance',
-			'total_hospital_fees',
-			'total_professional_fees',
-			'total_paid' 
+			'total_hospital_amount',
+			'total_professional_amount',
+			'running_balance' 
 		) 
 	),
 	'connId' => 'conn',
@@ -340,23 +296,20 @@ $runnerTableSettings['Viewing List'] = array(
     g.full_name AS guarantor_name,
     g.office AS guarantor_office,
     ts.transaction_number,
-    ts.created_at AS transaction_date,
+    ts.created_at AS transaction_date,  -- Added transaction date
     CONCAT_WS(\' \', pt.first_name, pt.middle_name, pt.last_name) AS patient_name,
     ts.patient_type,
-
-    -- total hospital_services taken amount tapos 0 default
-    COALESCE(h_totals.total_hospital_amount, 0) AS total_hospital_fees,
-    -- total total_professional_amount taken amount tapos 0 default
-    COALESCE(p_totals.total_professional_amount, 0) AS total_professional_fees,
-    -- total total_professional_amount taken amount tapos 0 default pag di pa bayad
-    COALESCE(ts.total_paid, 0) AS total_paid,
-    -- Running balance
-    COALESCE(unpaid_h.total_unpaid_hospital, 0) 
-    + COALESCE(unpaid_p.total_unpaid_professional, 0) AS running_balance
+    -- Total amounts (all, regardless of status)
+    h_totals.total_hospital_amount,
+    p_totals.total_professional_amount,
+    
+    -- Running balance: sum of unpaid amounts only
+    COALESCE(unpaid_h.total_unpaid_hospital, 0) + COALESCE(unpaid_p.total_unpaid_professional, 0) AS running_balance
 
 FROM transactions ts
 JOIN patients pt ON pt.id = ts.patient_id
 
+-- Full hospital totals (all amounts)
 LEFT JOIN (
     SELECT 
         hs.transaction_number,
@@ -365,6 +318,7 @@ LEFT JOIN (
     GROUP BY hs.transaction_number
 ) h_totals ON h_totals.transaction_number = ts.transaction_number
 
+-- Full professional totals (all amounts)
 LEFT JOIN (
     SELECT 
         ps.transaction_number,
@@ -373,6 +327,7 @@ LEFT JOIN (
     GROUP BY ps.transaction_number
 ) p_totals ON p_totals.transaction_number = ts.transaction_number
 
+-- Unpaid hospital amounts
 LEFT JOIN (
     SELECT 
         hs.transaction_number,
@@ -382,6 +337,7 @@ LEFT JOIN (
     GROUP BY hs.transaction_number
 ) unpaid_h ON unpaid_h.transaction_number = ts.transaction_number
 
+-- Unpaid professional amounts
 LEFT JOIN (
     SELECT 
         ps.transaction_number,
@@ -415,8 +371,8 @@ ORDER BY ts.transaction_number;',
 
 global $runnerTableLabels;
 if( mlang_getcurrentlang() === 'English' ) {
-	$runnerTableLabels['Viewing List'] = array(
-	'tableCaption' => 'Viewing List',
+	$runnerTableLabels['Viewing List report'] = array(
+	'tableCaption' => 'Viewing List Report',
 	'fieldLabels' => array(
 		'guarantor_name' => 'Guarantor Name',
 		'guarantor_office' => 'Guarantor Office',
@@ -424,10 +380,9 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'transaction_date' => 'Transaction Date',
 		'patient_name' => 'Patient Name',
 		'patient_type' => 'Patient Type',
-		'running_balance' => 'Running Balance',
-		'total_hospital_fees' => 'Total Hospital Fees',
-		'total_professional_fees' => 'Total Professional Fees',
-		'total_paid' => 'Total Paid' 
+		'total_hospital_amount' => 'Total Hospital Amount',
+		'total_professional_amount' => 'Total Professional Amount',
+		'running_balance' => 'Running Balance' 
 	),
 	'fieldTooltips' => array(
 		'guarantor_name' => '',
@@ -436,10 +391,9 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'transaction_date' => '',
 		'patient_name' => '',
 		'patient_type' => '',
-		'running_balance' => '',
-		'total_hospital_fees' => '',
-		'total_professional_fees' => '',
-		'total_paid' => '' 
+		'total_hospital_amount' => '',
+		'total_professional_amount' => '',
+		'running_balance' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'guarantor_name' => '',
@@ -448,10 +402,9 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'transaction_date' => '',
 		'patient_name' => '',
 		'patient_type' => '',
-		'running_balance' => '',
-		'total_hospital_fees' => '',
-		'total_professional_fees' => '',
-		'total_paid' => '' 
+		'total_hospital_amount' => '',
+		'total_professional_amount' => '',
+		'running_balance' => '' 
 	),
 	'pageTitles' => array(
 		 

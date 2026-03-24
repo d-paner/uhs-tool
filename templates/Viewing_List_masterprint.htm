@@ -1,51 +1,22 @@
-<!doctype html>
-<html  {$html_attrs}>
-	<head>
-						<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{$pagetitle}</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<base href="{$projectPath}">
-		{BEGIN styleCSSFiles}
-<link REL="stylesheet" href="{$stylepath}" type="text/css">
-{END styleCSSFiles}
-			
-	</head>
-
-	<body class="{$stylename} function-print" >
-	{BEGIN body}
-		{$header}
-		<style>
-			{$containerCss}
-		</style>
-		{$locking}
-		<div class="r-small-page" 
-			data-body-align="left"
-			data-body-width="standard"
-		>
-							{BEGIN top_block}
-<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}" >		
+<div class="panel panel-primary">
+		<div class="panel-heading">
+						{BEGIN top_block}
+<div class="panel-title r-panel-top row" data-location="top" id="form_top_{$pageid}" data-makeup="panel-only" {$form_top} data-pageid="{$pageid}" >		
 	 
-				<div class="row">
-			 
-				<div 
-	data-cellId="top_c2" data-pageid="{$pageid}"	{$cell_top_c2}
+		 
+			<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
 	class=" r-ori-vert			col-md-12
 	
 ">
 		 
-		<h2 data-itemtype="print_header" data-itemid="print_header" {$item_print_header} data-pageid="{$pageid}" >{$pagetitlelabel Viewing_List print}</h2>
-	 
-		{BEGIN printtabheader}
-<span data-itemtype="print_subheader" data-itemid="print_subheader" {$item_print_subheader} data-pageid="{$pageid}" >
-{$printtabheader_text}
-</span>
-{END printtabheader}
-		</div>					</div>
-			</div>		
+		<h3 class="panel-title" data-itemtype="masterprint_header" data-itemid="masterprint_header" {$item_masterprint_header} data-pageid="{$pageid}" >{$pagetitlelabel Viewing_List masterprint}</h3>
+		</div>			</div>		
 {END top_block}
-									{BEGIN above-grid_block}
-<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}" >		
+			</div>
+		<div class="panel-body">
+							{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="panel-only" {$form_above-grid} data-pageid="{$pageid}" >		
 	 
 				<div class="row">
 			 
@@ -55,24 +26,21 @@
 	
 ">
 		{BEGIN firstAboveGridCell}
-		 
-		<span data-itemtype="print_pages" data-itemid="print_pages" {$item_print_pages} data-pageid="{$pageid}" >
-	{$print_pages_labelprint_pages}
-</span>			{END firstAboveGridCell}	
+				{END firstAboveGridCell}	
 	</div>					</div>
 			</div>		
 {END above-grid_block}
-									{BEGIN grid_block}
+								{BEGIN grid_block}
 {BEGIN message_block}
 <div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
-{END message_block}<table data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  rnr-b-grid rnr-gridtable"
+{END message_block}<table data-location="grid" id="form_grid_{$pageid}" data-makeup="panel-only" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  rnr-b-grid rnr-gridtable"
 	cellpadding="0"
-	data-body-height="2"
+	data-body-height="1"
 >
 						<thead>
 			{BEGIN grid_header}
 			
-																														<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
+																									<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
 									{$gridHeader_class}
 					
 								r-gridrow
@@ -378,13 +346,13 @@
 	</th>
 	{END cellblock_grid_headcell_field9}
 							</tr>
-																				
+															
 					{END grid_header}
 			</thead>
-															{BEGIN grid_row}
-					<tbody>
+															<tbody>
+					{BEGIN grid_row}
 							
-																																			<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
+																														<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
 				
 								r-gridrow
 							">
@@ -599,39 +567,12 @@
 	</td>
 	{END cellblock_grid_cell_field9}
 							</tr>
-											<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
-				
-							">
-									{BEGIN cellblock_grid_cell_dpreview}
-	<td
-	
-	{$cell_grid_cell_dpreview}
-	{$recordattrs}
-	class="
-					"
-
-	
-	data-cellId="grid_cell_dpreview" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN details_hospital_services}
-{$displayDetailTable_hospital_services}
-{END details_hospital_services}
-	 
-		{BEGIN details_professional_services}
-{$displayDetailTable_professional_services}
-{END details_professional_services}
-	
-	</td>
-	{END cellblock_grid_cell_dpreview}
-							</tr>
 										
-											</tbody>
-					{END grid_row}
+											{END grid_row}
+					</tbody>
 													<tfoot>
 			
-																																													<tr {$rowattrs} {$row_grid_3} class="{$rowclass}
+																																			<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
 									{$gridFooter_class}
 					
 								r-gridrow
@@ -645,7 +586,7 @@
 		 r-ori-vert		 {$guarantor_name_class}	"
 
 	
-	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -660,7 +601,7 @@
 		 r-ori-vert		 {$guarantor_office_class}	"
 
 	
-	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -675,7 +616,7 @@
 		 r-ori-vert		 {$transaction_number_class}	"
 
 	
-	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -690,7 +631,7 @@
 		 r-ori-vert		 {$transaction_date_class}	"
 
 	
-	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -705,7 +646,7 @@
 		 r-ori-vert		 {$patient_name_class}	"
 
 	
-	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -720,7 +661,7 @@
 		 r-ori-vert		 {$patient_type_class}	"
 
 	
-	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -735,7 +676,7 @@
 		 r-ori-vert		 {$running_balance_class}	"
 
 	
-	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -750,7 +691,7 @@
 		 r-ori-vert		 {$total_hospital_fees_class}	"
 
 	
-	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -765,7 +706,7 @@
 		 r-ori-vert		 {$total_professional_fees_class}	"
 
 	
-	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -780,7 +721,7 @@
 		 r-ori-vert		 {$total_paid_class}	"
 
 	
-	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_print"	
+	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="Viewing_List_masterprint"	
 	>
 
 	
@@ -791,21 +732,5 @@
 					</tfoot>
 				</table>
 {END grid_block}
-									{BEGIN below-grid_block}
-<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}" >		
-	 
-				<div class="row">
-			 
-				<div 
-	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
-	class=" r-ori-vert			col-md-12
-	
-">
-			</div>					</div>
-			</div>		
-{END below-grid_block}
-			</div>
-		{$footer}
-	{END body}
-	</body>
-</html>
+								</div>
+</div>

@@ -20,6 +20,9 @@
 	'master' => array(
 		'transactions' => array(
 			'preview' => true 
+		),
+		'Viewing List' => array(
+			'preview' => true 
 		) 
 	),
 	'listSearch' => array(
@@ -89,7 +92,14 @@
 			 
 		),
 		'inlineAddFields' => array( 
-			 
+			'transaction_number',
+			'hospital_account',
+			'amount',
+			'status',
+			'placed_by',
+			'group_id',
+			'created_at',
+			'updated_at' 
 		),
 		'inlineEditFields' => array( 
 			 
@@ -1807,7 +1817,8 @@
 		'master_info' => array(
 			'type' => 'master_info',
 			'tables' => array(
-				'6812' => 'true' 
+				'6812' => 'true',
+				'7813' => 'true' 
 			) 
 		),
 		'search_panel_field' => array(
@@ -1827,7 +1838,7 @@
 		'simple_grid_field1' => array(
 			'field' => 'transaction_number',
 			'type' => 'grid_field',
-			'inlineAdd' => false,
+			'inlineAdd' => true,
 			'inlineEdit' => false 
 		),
 		'simple_grid_field' => array(
@@ -1836,7 +1847,8 @@
 		),
 		'grid_field2' => array(
 			'field' => 'hospital_account',
-			'type' => 'grid_field' 
+			'type' => 'grid_field',
+			'inlineAdd' => true 
 		),
 		'grid_field3' => array(
 			'type' => 'grid_field_label',
@@ -1845,7 +1857,7 @@
 		'simple_grid_field3' => array(
 			'field' => 'amount',
 			'type' => 'grid_field',
-			'inlineAdd' => false,
+			'inlineAdd' => true,
 			'inlineEdit' => false 
 		),
 		'simple_grid_field9' => array(
@@ -1855,7 +1867,7 @@
 		'simple_grid_field4' => array(
 			'field' => 'status',
 			'type' => 'grid_field',
-			'inlineAdd' => false,
+			'inlineAdd' => true,
 			'inlineEdit' => false 
 		),
 		'simple_grid_field10' => array(
@@ -1865,7 +1877,7 @@
 		'simple_grid_field5' => array(
 			'field' => 'placed_by',
 			'type' => 'grid_field',
-			'inlineAdd' => false,
+			'inlineAdd' => true,
 			'inlineEdit' => false 
 		),
 		'simple_grid_field11' => array(
@@ -1875,7 +1887,7 @@
 		'simple_grid_field6' => array(
 			'field' => 'group_id',
 			'type' => 'grid_field',
-			'inlineAdd' => false,
+			'inlineAdd' => true,
 			'inlineEdit' => false 
 		),
 		'simple_grid_field12' => array(
@@ -1885,7 +1897,7 @@
 		'simple_grid_field7' => array(
 			'field' => 'created_at',
 			'type' => 'grid_field',
-			'inlineAdd' => false,
+			'inlineAdd' => true,
 			'inlineEdit' => false 
 		),
 		'simple_grid_field13' => array(
@@ -1895,7 +1907,7 @@
 		'simple_grid_field8' => array(
 			'field' => 'updated_at',
 			'type' => 'grid_field',
-			'inlineAdd' => false,
+			'inlineAdd' => true,
 			'inlineEdit' => false 
 		),
 		'simple_grid_field14' => array(

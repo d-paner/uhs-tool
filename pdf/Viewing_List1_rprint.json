@@ -1,0 +1,913 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+						pagesummary: {
+		fillColor: '#ffffbb',
+	},
+	globalsummary: {
+		fillColor: '#ffe0b0',
+	},
+			group_1: {
+			fillColor: '#90ee90'
+		},
+		nbgroup_1: {
+			fillColor: '#90ee90'
+		},
+		header_1: {
+			fillColor: '#90ee90',
+			fontSize: 15,
+			bold: true
+		},
+		/* new style styles */
+		header_guarantor_name: {
+			fillColor: '#90ee90',
+			fontSize: 15,
+			bold: true
+		},
+		group_guarantor_name: {
+			fillColor: '#90ee90'
+		},
+
+			group_2: {
+			fillColor: '#add8e6'
+		},
+		nbgroup_2: {
+			fillColor: '#add8e6'
+		},
+		header_2: {
+			fillColor: '#add8e6',
+			fontSize: 15,
+			bold: true
+		},
+		/* new style styles */
+		header_transaction_number: {
+			fillColor: '#add8e6',
+			fontSize: 15,
+			bold: true
+		},
+		group_transaction_number: {
+			fillColor: '#add8e6'
+		},
+
+			group_3: {
+			fillColor: '#fffacd'
+		},
+		nbgroup_3: {
+			fillColor: '#fffacd'
+		},
+		header_3: {
+			fillColor: '#fffacd',
+			fontSize: 15,
+			bold: true
+		},
+		/* new style styles */
+		header_patient_name: {
+			fillColor: '#fffacd',
+			fontSize: 15,
+			bold: true
+		},
+		group_patient_name: {
+			fillColor: '#fffacd'
+		},
+
+			group_4: {
+			fillColor: '#7fffd4'
+		},
+		nbgroup_4: {
+			fillColor: '#7fffd4'
+		},
+		header_4: {
+			fillColor: '#7fffd4',
+			fontSize: 15,
+			bold: true
+		},
+		/* new style styles */
+		header_patient_type: {
+			fillColor: '#7fffd4',
+			fontSize: 15,
+			bold: true
+		},
+		group_patient_type: {
+			fillColor: '#7fffd4'
+		},
+
+			group_5: {
+			fillColor: '#b0e0e6'
+		},
+		nbgroup_5: {
+			fillColor: '#b0e0e6'
+		},
+		header_5: {
+			fillColor: '#b0e0e6',
+			fontSize: 15,
+			bold: true
+		},
+		/* new style styles */
+		header_total_hospital_amount: {
+			fillColor: '#b0e0e6',
+			fontSize: 15,
+			bold: true
+		},
+		group_total_hospital_amount: {
+			fillColor: '#b0e0e6'
+		},
+
+			group_6: {
+			fillColor: '#fa8072'
+		},
+		nbgroup_6: {
+			fillColor: '#fa8072'
+		},
+		header_6: {
+			fillColor: '#fa8072',
+			fontSize: 15,
+			bold: true
+		},
+		/* new style styles */
+		header_total_professional_amount: {
+			fillColor: '#fa8072',
+			fontSize: 15,
+			bold: true
+		},
+		group_total_professional_amount: {
+			fillColor: '#fa8072'
+		},
+
+			group_7: {
+			fillColor: '#fff8dc'
+		},
+		nbgroup_7: {
+			fillColor: '#fff8dc'
+		},
+		header_7: {
+			fillColor: '#fff8dc',
+			fontSize: 15,
+			bold: true
+		},
+		/* new style styles */
+		header_running_balance: {
+			fillColor: '#fff8dc',
+			fontSize: 15,
+			bold: true
+		},
+		group_running_balance: {
+			fillColor: '#fff8dc'
+		},
+
+		
+	blackshade: {
+		fontSize: 15,
+	},
+	summarycell: {
+		border:[false, true, false, true ]
+	},
+/*
+		.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+	*/	
+			},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+		{BEGIN body}
+		{BEGIN embedded_grid_caption}
+			{
+				text: '{$jscaption Viewing_List_report}',
+			},
+		{END embedded_grid_caption}
+		{BEGIN embedded_page_title}
+			{
+				text: '{$jspagetitlelabel Viewing_List_report rprint}',
+			},
+		{END embedded_page_title}		
+		{ 
+			{BEGIN standalone_page}
+			pageBreak: 'before',
+			standAlonePage: true,
+			{END standalone_page}
+			{BEGIN embedded_grid}
+			embeddedPage: true,
+			{END embedded_grid}
+			layout: {
+				hLineWidth: function(i, node) { return 0.1; },
+				vLineWidth: function(i, node) { 
+					return 0.1; 
+				},
+				hLineColor: function(i, node) { return 'lightgray'; },
+				vLineColor: function(i, node) { return 'lightgray'; },
+			},
+			table: {
+				{BEGIN embedded_grid}
+				embeddedPage: true,
+				{END embedded_grid}
+				
+				tableForm: true,
+				headerRows: 1 
+								{BEGIN embedded_grid} -1 {END embedded_grid} ,
+
+				widths: [
+														"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+															],
+							
+				body: [
+				{BEGIN standalone_page}
+					[
+						{
+							colSpan: 9,
+							border:[false, false,false,false],
+							stack: [
+
+																										
+{
+	table: {
+	
+				
+		location: 'top',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c2',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"stack": [
+		
+				
+			{"text":"{$jspagetitlelabel Viewing_List_report rprint}","hidden":"{$item_hide_print_header}","fontSize":30},
+				
+				
+			{"text":"{$printtabheader_text}","hidden":"{$item_hide_print_subheader}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+,
+								
+																										
+{
+	table: {
+	
+				
+		location: 'above-grid',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				
+			{"text":"{mlang_message PRINT_PAGES}","hidden":"{$item_hide_print_pages}","isHtml":true,"page_indicator":true},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+,
+															]
+						},
+					],
+				{END standalone_page}
+
+																
+
+
+{BEGIN grid_row}
+	{BEGIN guarantor_name_newgroup}
+		[
+								{
+				text: '{$jslabel Viewing_List_report guarantor_name }',
+				style: "blackshade",
+				alignment: '{$guarantor_name_align}',
+			},
+											{
+				text: '{$jslabel Viewing_List_report transaction_number }',
+				style: "blackshade",
+				alignment: '{$transaction_number_align}',
+			},
+											{
+				text: '{$jslabel Viewing_List_report patient_name }',
+				style: "blackshade",
+				alignment: '{$patient_name_align}',
+			},
+											{
+				text: '{$jslabel Viewing_List_report patient_type }',
+				style: "blackshade",
+				alignment: '{$patient_type_align}',
+			},
+											{
+				text: '{$jslabel Viewing_List_report total_hospital_amount }',
+				style: "blackshade",
+				alignment: '{$total_hospital_amount_align}',
+			},
+											{
+				text: '{$jslabel Viewing_List_report total_professional_amount }',
+				style: "blackshade",
+				alignment: '{$total_professional_amount_align}',
+			},
+											{
+				text: '{$jslabel Viewing_List_report running_balance }',
+				style: "blackshade",
+				alignment: '{$running_balance_align}',
+			},
+															
+																																											{
+				text: '{$jslabel Viewing_List_report guarantor_office }',
+				style: "blackshade",
+				alignment: '{$guarantor_office_align}',
+			},
+											{
+				text: '{$jslabel Viewing_List_report transaction_date }',
+				style: "blackshade",
+				alignment: '{$transaction_date_align}',
+			},
+						],
+	
+	[
+													{
+					colSpan: 9,
+					text: {$guarantor_name_grval},
+					style: "header_1"
+				},
+																																								],
+	{END guarantor_name_newgroup}
+	{BEGIN transaction_number_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+																{
+					colSpan: 8,
+					text: {$transaction_number_grval},
+					style: "header_2"
+				},
+																																			],
+	{END transaction_number_newgroup}
+	{BEGIN patient_name_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+												{
+					text: '',
+					style: "group_2"
+				},
+																{
+					colSpan: 7,
+					text: {$patient_name_grval},
+					style: "header_3"
+				},
+																														],
+	{END patient_name_newgroup}
+	{BEGIN patient_type_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+												{
+					text: '',
+					style: "group_2"
+				},
+												{
+					text: '',
+					style: "group_3"
+				},
+																{
+					colSpan: 6,
+					text: {$patient_type_grval},
+					style: "header_4"
+				},
+																									],
+	{END patient_type_newgroup}
+	{BEGIN total_hospital_amount_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+												{
+					text: '',
+					style: "group_2"
+				},
+												{
+					text: '',
+					style: "group_3"
+				},
+												{
+					text: '',
+					style: "group_4"
+				},
+																{
+					colSpan: 5,
+					text: {$total_hospital_amount_grval},
+					style: "header_5"
+				},
+																				],
+	{END total_hospital_amount_newgroup}
+	{BEGIN total_professional_amount_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+												{
+					text: '',
+					style: "group_2"
+				},
+												{
+					text: '',
+					style: "group_3"
+				},
+												{
+					text: '',
+					style: "group_4"
+				},
+												{
+					text: '',
+					style: "group_5"
+				},
+																{
+					colSpan: 4,
+					text: {$total_professional_amount_grval},
+					style: "header_6"
+				},
+															],
+	{END total_professional_amount_newgroup}
+	{BEGIN running_balance_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+												{
+					text: '',
+					style: "group_2"
+				},
+												{
+					text: '',
+					style: "group_3"
+				},
+												{
+					text: '',
+					style: "group_4"
+				},
+												{
+					text: '',
+					style: "group_5"
+				},
+												{
+					text: '',
+					style: "group_6"
+				},
+																{
+					colSpan: 3,
+					text: {$running_balance_grval},
+					style:"header_7"
+				},
+										],
+	{END running_balance_newgroup}
+
+	{BEGIN row_data}
+	[
+			{
+			text: [
+									''
+							],
+			style: "group_1"
+		},
+			{
+			text: [
+									''
+							],
+			style: "group_2"
+		},
+			{
+			text: [
+									''
+							],
+			style: "group_3"
+		},
+			{
+			text: [
+									''
+							],
+			style: "group_4"
+		},
+			{
+			text: [
+									''
+							],
+			style: "group_5"
+		},
+			{
+			text: [
+									''
+							],
+			style: "group_6"
+		},
+			{
+			text: [
+									''
+							],
+			style: "group_7"
+		},
+																											{
+			text: {$guarantor_office_value},
+			alignment: '{$guarantor_office_align}',
+		},
+							{
+			text: {$transaction_date_value},
+			alignment: '{$transaction_date_align}',
+		},
+				],
+	{END row_data}
+
+
+		{BEGIN running_balance_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+						{
+				text: "",
+				style: "group_2"
+			},
+						{
+				text: "",
+				style: "group_3"
+			},
+						{
+				text: "",
+				style: "group_4"
+			},
+						{
+				text: "",
+				style: "group_5"
+			},
+						{
+				text: "",
+				style: "group_6"
+			},
+					
+																																						{
+				colSpan: 3,
+				text: [
+					'{mlang_message SUMMARY_FOR} {$jslabel Viewing_List_report running_balance } ', 
+					{$running_balance_grval},
+					' - ', 
+					{$grouprunning_balance_total_cnt}, 
+					' {mlang_message RECORDS_TOTAL}'
+				],
+				style: 'group_7',
+			},
+																],
+	
+	
+	
+	
+	
+	{END running_balance_endgroup}
+			{BEGIN total_professional_amount_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+						{
+				text: "",
+				style: "group_2"
+			},
+						{
+				text: "",
+				style: "group_3"
+			},
+						{
+				text: "",
+				style: "group_4"
+			},
+						{
+				text: "",
+				style: "group_5"
+			},
+					
+																																	{
+				colSpan: 4,
+				text: [
+					'{mlang_message SUMMARY_FOR} {$jslabel Viewing_List_report total_professional_amount } ', 
+					{$total_professional_amount_grval},
+					' - ', 
+					{$grouptotal_professional_amount_total_cnt}, 
+					' {mlang_message RECORDS_TOTAL}'
+				],
+				style: 'group_6',
+			},
+																					],
+	
+	
+	
+	
+	
+	{END total_professional_amount_endgroup}
+			{BEGIN total_hospital_amount_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+						{
+				text: "",
+				style: "group_2"
+			},
+						{
+				text: "",
+				style: "group_3"
+			},
+						{
+				text: "",
+				style: "group_4"
+			},
+					
+																												{
+				colSpan: 5,
+				text: [
+					'{mlang_message SUMMARY_FOR} {$jslabel Viewing_List_report total_hospital_amount } ', 
+					{$total_hospital_amount_grval},
+					' - ', 
+					{$grouptotal_hospital_amount_total_cnt}, 
+					' {mlang_message RECORDS_TOTAL}'
+				],
+				style: 'group_5',
+			},
+																										],
+	
+	
+	
+	
+	
+	{END total_hospital_amount_endgroup}
+			{BEGIN patient_type_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+						{
+				text: "",
+				style: "group_2"
+			},
+						{
+				text: "",
+				style: "group_3"
+			},
+					
+																							{
+				colSpan: 6,
+				text: [
+					'{mlang_message SUMMARY_FOR} {$jslabel Viewing_List_report patient_type } ', 
+					{$patient_type_grval},
+					' - ', 
+					{$grouppatient_type_total_cnt}, 
+					' {mlang_message RECORDS_TOTAL}'
+				],
+				style: 'group_4',
+			},
+																															],
+	
+	
+	
+	
+	
+	{END patient_type_endgroup}
+			{BEGIN patient_name_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+						{
+				text: "",
+				style: "group_2"
+			},
+					
+																		{
+				colSpan: 7,
+				text: [
+					'{mlang_message SUMMARY_FOR} {$jslabel Viewing_List_report patient_name } ', 
+					{$patient_name_grval},
+					' - ', 
+					{$grouppatient_name_total_cnt}, 
+					' {mlang_message RECORDS_TOTAL}'
+				],
+				style: 'group_3',
+			},
+																																				],
+	
+	
+	
+	
+	
+	{END patient_name_endgroup}
+			{BEGIN transaction_number_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+					
+													{
+				colSpan: 8,
+				text: [
+					'{mlang_message SUMMARY_FOR} {$jslabel Viewing_List_report transaction_number } ', 
+					{$transaction_number_grval},
+					' - ', 
+					{$grouptransaction_number_total_cnt}, 
+					' {mlang_message RECORDS_TOTAL}'
+				],
+				style: 'group_2',
+			},
+																																									],
+	
+	
+	
+	
+	
+	{END transaction_number_endgroup}
+			{BEGIN guarantor_name_endgroup}
+
+		[
+		
+								{
+				colSpan: 9,
+				text: [
+					'{mlang_message SUMMARY_FOR} {$jslabel Viewing_List_report guarantor_name } ', 
+					{$guarantor_name_grval},
+					' - ', 
+					{$groupguarantor_name_total_cnt}, 
+					' {mlang_message RECORDS_TOTAL}'
+				],
+				style: 'group_1',
+			},
+																																														],
+	
+	
+	
+	
+	
+	{END guarantor_name_endgroup}
+	
+{END grid_row}
+
+
+
+
+
+
+
+
+
+
+									]
+			
+			}
+		},
+		{END body}
+	],
+	footer: [
+								
+{
+	table: {
+	
+				
+		location: 'below-grid',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+			],
+	};
+
+
+pdfFonts = {$pdfFonts};

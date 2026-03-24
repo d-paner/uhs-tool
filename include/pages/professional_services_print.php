@@ -6,6 +6,9 @@
 	'master' => array(
 		'transactions' => array(
 			'preview' => true 
+		),
+		'Viewing List' => array(
+			'preview' => true 
 		) 
 	),
 	'totals' => array(
@@ -1321,7 +1324,8 @@
 		'master_info' => array(
 			'type' => 'master_info',
 			'tables' => array(
-				'6812' => 'true' 
+				'6812' => 'true',
+				'7813' => 'true' 
 			) 
 		),
 		'simple_grid_field1' => array(

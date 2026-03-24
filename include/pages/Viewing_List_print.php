@@ -3,6 +3,14 @@
 	'pdf' => array(
 		'pdfView' => false 
 	),
+	'details' => array(
+		'hospital_services' => array(
+			'displayPreview' => 1 
+		),
+		'professional_services' => array(
+			'displayPreview' => 1 
+		) 
+	),
 	'totals' => array(
 		'guarantor_name' => array(
 			'totalsType' => '' 
@@ -22,13 +30,16 @@
 		'patient_type' => array(
 			'totalsType' => '' 
 		),
-		'total_hospital_amount' => array(
-			'totalsType' => '' 
-		),
-		'total_professional_amount' => array(
-			'totalsType' => '' 
-		),
 		'running_balance' => array(
+			'totalsType' => '' 
+		),
+		'total_hospital_fees' => array(
+			'totalsType' => '' 
+		),
+		'total_professional_fees' => array(
+			'totalsType' => '' 
+		),
+		'total_paid' => array(
 			'totalsType' => '' 
 		) 
 	),
@@ -40,9 +51,10 @@
 			'transaction_date',
 			'patient_name',
 			'patient_type',
-			'total_hospital_amount',
-			'total_professional_amount',
-			'running_balance' 
+			'running_balance',
+			'total_hospital_fees',
+			'total_professional_fees',
+			'total_paid' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -53,39 +65,43 @@
 		'fieldItems' => array(
 			'guarantor_name' => array( 
 				'simple_grid_field',
-				'simple_grid_field9' 
+				'simple_grid_field10' 
 			),
 			'guarantor_office' => array( 
 				'simple_grid_field1',
-				'simple_grid_field10' 
+				'simple_grid_field11' 
 			),
 			'transaction_number' => array( 
 				'simple_grid_field2',
-				'simple_grid_field11' 
+				'simple_grid_field12' 
 			),
 			'transaction_date' => array( 
 				'simple_grid_field3',
-				'simple_grid_field12' 
+				'simple_grid_field13' 
 			),
 			'patient_name' => array( 
 				'simple_grid_field4',
-				'simple_grid_field13' 
+				'simple_grid_field14' 
 			),
 			'patient_type' => array( 
 				'simple_grid_field5',
-				'simple_grid_field14' 
-			),
-			'total_hospital_amount' => array( 
-				'simple_grid_field6',
 				'simple_grid_field15' 
-			),
-			'total_professional_amount' => array( 
-				'simple_grid_field7',
-				'simple_grid_field16' 
 			),
 			'running_balance' => array( 
 				'simple_grid_field8',
+				'simple_grid_field16' 
+			),
+			'total_hospital_fees' => array( 
+				'simple_grid_field6',
 				'simple_grid_field17' 
+			),
+			'total_professional_fees' => array( 
+				'simple_grid_field7',
+				'simple_grid_field18' 
+			),
+			'total_paid' => array( 
+				'simple_grid_field9',
+				'simple_grid_field19' 
 			) 
 		),
 		'hideEmptyFields' => array( 
@@ -112,24 +128,28 @@
 					'print_subheader' 
 				),
 				'grid' => array( 
-					'simple_grid_field9',
-					'simple_grid_field',
 					'simple_grid_field10',
-					'simple_grid_field1',
+					'simple_grid_field',
 					'simple_grid_field11',
-					'simple_grid_field2',
+					'simple_grid_field1',
 					'simple_grid_field12',
-					'simple_grid_field3',
+					'simple_grid_field2',
 					'simple_grid_field13',
-					'simple_grid_field4',
+					'simple_grid_field3',
 					'simple_grid_field14',
-					'simple_grid_field5',
+					'simple_grid_field4',
 					'simple_grid_field15',
-					'simple_grid_field6',
+					'simple_grid_field5',
 					'simple_grid_field16',
-					'simple_grid_field7',
+					'simple_grid_field8',
 					'simple_grid_field17',
-					'simple_grid_field8' 
+					'simple_grid_field6',
+					'simple_grid_field18',
+					'simple_grid_field7',
+					'simple_grid_field19',
+					'simple_grid_field9',
+					'details_preview',
+					'details_preview1' 
 				) 
 			),
 			'formXtTags' => array(
@@ -144,27 +164,31 @@
 				'print_pages' => 'above-grid',
 				'print_header' => 'top',
 				'print_subheader' => 'top',
-				'simple_grid_field9' => 'grid',
-				'simple_grid_field' => 'grid',
 				'simple_grid_field10' => 'grid',
-				'simple_grid_field1' => 'grid',
+				'simple_grid_field' => 'grid',
 				'simple_grid_field11' => 'grid',
-				'simple_grid_field2' => 'grid',
+				'simple_grid_field1' => 'grid',
 				'simple_grid_field12' => 'grid',
-				'simple_grid_field3' => 'grid',
+				'simple_grid_field2' => 'grid',
 				'simple_grid_field13' => 'grid',
-				'simple_grid_field4' => 'grid',
+				'simple_grid_field3' => 'grid',
 				'simple_grid_field14' => 'grid',
-				'simple_grid_field5' => 'grid',
+				'simple_grid_field4' => 'grid',
 				'simple_grid_field15' => 'grid',
-				'simple_grid_field6' => 'grid',
+				'simple_grid_field5' => 'grid',
 				'simple_grid_field16' => 'grid',
-				'simple_grid_field7' => 'grid',
+				'simple_grid_field8' => 'grid',
 				'simple_grid_field17' => 'grid',
-				'simple_grid_field8' => 'grid' 
+				'simple_grid_field6' => 'grid',
+				'simple_grid_field18' => 'grid',
+				'simple_grid_field7' => 'grid',
+				'simple_grid_field19' => 'grid',
+				'simple_grid_field9' => 'grid',
+				'details_preview' => 'grid',
+				'details_preview1' => 'grid' 
 			),
 			'itemLocations' => array(
-				'simple_grid_field9' => array(
+				'simple_grid_field10' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field' 
 				),
@@ -172,7 +196,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field' 
 				),
-				'simple_grid_field10' => array(
+				'simple_grid_field11' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field1' 
 				),
@@ -180,7 +204,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field1' 
 				),
-				'simple_grid_field11' => array(
+				'simple_grid_field12' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field2' 
 				),
@@ -188,7 +212,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field2' 
 				),
-				'simple_grid_field12' => array(
+				'simple_grid_field13' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field3' 
 				),
@@ -196,7 +220,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field3' 
 				),
-				'simple_grid_field13' => array(
+				'simple_grid_field14' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field4' 
 				),
@@ -204,7 +228,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field4' 
 				),
-				'simple_grid_field14' => array(
+				'simple_grid_field15' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field5' 
 				),
@@ -212,29 +236,45 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field5' 
 				),
-				'simple_grid_field15' => array(
+				'simple_grid_field16' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field6' 
 				),
-				'simple_grid_field6' => array(
+				'simple_grid_field8' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field6' 
 				),
-				'simple_grid_field16' => array(
+				'simple_grid_field17' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field7' 
 				),
-				'simple_grid_field7' => array(
+				'simple_grid_field6' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field7' 
 				),
-				'simple_grid_field17' => array(
+				'simple_grid_field18' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field8' 
 				),
-				'simple_grid_field8' => array(
+				'simple_grid_field7' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field8' 
+				),
+				'simple_grid_field19' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field9' 
+				),
+				'simple_grid_field9' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field9' 
+				),
+				'details_preview' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_dpreview' 
+				),
+				'details_preview1' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_dpreview' 
 				) 
 			),
 			'itemVisiblity' => array(
@@ -258,12 +298,12 @@
 				'simple_grid_field3',
 				'simple_grid_field4',
 				'simple_grid_field5',
+				'simple_grid_field8',
 				'simple_grid_field6',
 				'simple_grid_field7',
-				'simple_grid_field8' 
+				'simple_grid_field9' 
 			),
 			'grid_field_label' => array( 
-				'simple_grid_field9',
 				'simple_grid_field10',
 				'simple_grid_field11',
 				'simple_grid_field12',
@@ -271,7 +311,13 @@
 				'simple_grid_field14',
 				'simple_grid_field15',
 				'simple_grid_field16',
-				'simple_grid_field17' 
+				'simple_grid_field17',
+				'simple_grid_field18',
+				'simple_grid_field19' 
+			),
+			'details_preview' => array( 
+				'details_preview',
+				'details_preview1' 
 			) 
 		),
 		'cellMaps' => array(
@@ -288,7 +334,7 @@
 							'guarantor_name_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field9' 
+							'simple_grid_field10' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -304,7 +350,7 @@
 							'guarantor_office_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field10' 
+							'simple_grid_field11' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -320,7 +366,7 @@
 							'transaction_number_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field11' 
+							'simple_grid_field12' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -336,7 +382,7 @@
 							'transaction_date_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field12' 
+							'simple_grid_field13' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -352,7 +398,7 @@
 							'patient_name_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field13' 
+							'simple_grid_field14' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -368,7 +414,7 @@
 							'patient_type_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field14' 
+							'simple_grid_field15' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -381,10 +427,10 @@
 							0 
 						),
 						'tags' => array( 
-							'total_hospital_amount_fieldheadercolumn' 
+							'running_balance_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field15' 
+							'simple_grid_field16' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -397,10 +443,10 @@
 							0 
 						),
 						'tags' => array( 
-							'total_professional_amount_fieldheadercolumn' 
+							'total_hospital_fees_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field16' 
+							'simple_grid_field17' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -413,10 +459,26 @@
 							0 
 						),
 						'tags' => array( 
-							'running_balance_fieldheadercolumn' 
+							'total_professional_fees_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field17' 
+							'simple_grid_field18' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'total_paid_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field19' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -525,10 +587,10 @@
 							1 
 						),
 						'tags' => array( 
-							'total_hospital_amount_fieldcolumn' 
+							'running_balance_fieldcolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field6' 
+							'simple_grid_field8' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -541,10 +603,10 @@
 							1 
 						),
 						'tags' => array( 
-							'total_professional_amount_fieldcolumn' 
+							'total_hospital_fees_fieldcolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field7' 
+							'simple_grid_field6' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -557,12 +619,54 @@
 							1 
 						),
 						'tags' => array( 
-							'running_balance_fieldcolumn' 
+							'total_professional_fees_fieldcolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field8' 
+							'simple_grid_field7' 
 						),
 						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'total_paid_fieldcolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field9' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_dpreview' => array(
+						'cols' => array( 
+							0,
+							1,
+							2,
+							3,
+							4,
+							5,
+							6,
+							7,
+							8,
+							9 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							'details_preview',
+							'details_preview1' 
+						),
+						'fixedAtServer' => true,
 						'fixedAtClient' => false 
 					),
 					'footcell_field' => array(
@@ -570,7 +674,7 @@
 							0 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -586,7 +690,7 @@
 							1 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -602,7 +706,7 @@
 							2 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -618,7 +722,7 @@
 							3 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -634,7 +738,7 @@
 							4 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -650,7 +754,7 @@
 							5 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -666,7 +770,7 @@
 							6 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -682,7 +786,7 @@
 							7 
 						),
 						'rows' => array( 
-							2 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -698,7 +802,23 @@
 							8 
 						),
 						'rows' => array( 
-							2 
+							3 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'footcell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							3 
 						),
 						'tags' => array( 
 							 
@@ -710,8 +830,8 @@
 						'fixedAtClient' => false 
 					) 
 				),
-				'width' => 9,
-				'height' => 3 
+				'width' => 10,
+				'height' => 4 
 			) 
 		) 
 	),
@@ -892,6 +1012,9 @@
 						),
 						array(
 							'cell' => 'headcell_field8' 
+						),
+						array(
+							'cell' => 'headcell_field9' 
 						) 
 					) 
 				),
@@ -924,8 +1047,20 @@
 						),
 						array(
 							'cell' => 'cell_field8' 
+						),
+						array(
+							'cell' => 'cell_field9' 
 						) 
 					) 
+				),
+				array(
+					'cells' => array( 
+						array(
+							'cell' => 'cell_dpreview',
+							'colspan' => 10 
+						) 
+					),
+					'section' => 'body' 
 				),
 				array(
 					'section' => 'foot',
@@ -956,6 +1091,9 @@
 						),
 						array(
 							'cell' => 'footcell_field8' 
+						),
+						array(
+							'cell' => 'footcell_field9' 
 						) 
 					) 
 				) 
@@ -964,7 +1102,7 @@
 				'headcell_field' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field9' 
+						'simple_grid_field10' 
 					),
 					'field' => 'guarantor_name',
 					'columnName' => 'field' 
@@ -986,7 +1124,7 @@
 				'headcell_field1' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field10' 
+						'simple_grid_field11' 
 					),
 					'field' => 'guarantor_office',
 					'columnName' => 'field' 
@@ -1008,7 +1146,7 @@
 				'headcell_field2' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field11' 
+						'simple_grid_field12' 
 					),
 					'field' => 'transaction_number',
 					'columnName' => 'field' 
@@ -1030,7 +1168,7 @@
 				'headcell_field3' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field12' 
+						'simple_grid_field13' 
 					),
 					'field' => 'transaction_date',
 					'columnName' => 'field' 
@@ -1052,7 +1190,7 @@
 				'headcell_field4' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field13' 
+						'simple_grid_field14' 
 					),
 					'field' => 'patient_name',
 					'columnName' => 'field' 
@@ -1074,7 +1212,7 @@
 				'headcell_field5' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field14' 
+						'simple_grid_field15' 
 					),
 					'field' => 'patient_type',
 					'columnName' => 'field' 
@@ -1096,17 +1234,17 @@
 				'headcell_field6' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field15' 
+						'simple_grid_field16' 
 					),
-					'field' => 'total_hospital_amount',
+					'field' => 'running_balance',
 					'columnName' => 'field' 
 				),
 				'cell_field6' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field6' 
+						'simple_grid_field8' 
 					),
-					'field' => 'total_hospital_amount',
+					'field' => 'running_balance',
 					'columnName' => 'field' 
 				),
 				'footcell_field6' => array(
@@ -1118,17 +1256,17 @@
 				'headcell_field7' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field16' 
+						'simple_grid_field17' 
 					),
-					'field' => 'total_professional_amount',
+					'field' => 'total_hospital_fees',
 					'columnName' => 'field' 
 				),
 				'cell_field7' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field7' 
+						'simple_grid_field6' 
 					),
-					'field' => 'total_professional_amount',
+					'field' => 'total_hospital_fees',
 					'columnName' => 'field' 
 				),
 				'footcell_field7' => array(
@@ -1140,23 +1278,52 @@
 				'headcell_field8' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field17' 
+						'simple_grid_field18' 
 					),
-					'field' => 'running_balance',
+					'field' => 'total_professional_fees',
 					'columnName' => 'field' 
 				),
 				'cell_field8' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field8' 
+						'simple_grid_field7' 
 					),
-					'field' => 'running_balance',
+					'field' => 'total_professional_fees',
 					'columnName' => 'field' 
 				),
 				'footcell_field8' => array(
 					'model' => 'footcell_field',
 					'items' => array( 
 						 
+					) 
+				),
+				'headcell_field9' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'simple_grid_field19' 
+					),
+					'field' => 'total_paid',
+					'columnName' => 'field' 
+				),
+				'cell_field9' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'simple_grid_field9' 
+					),
+					'field' => 'total_paid',
+					'columnName' => 'field' 
+				),
+				'footcell_field9' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'cell_dpreview' => array(
+					'model' => 'cell_dpreview',
+					'items' => array( 
+						'details_preview',
+						'details_preview1' 
 					) 
 				) 
 			),
@@ -1180,7 +1347,7 @@
 			'field' => 'guarantor_name',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field9' => array(
+		'simple_grid_field10' => array(
 			'type' => 'grid_field_label',
 			'field' => 'guarantor_name' 
 		),
@@ -1188,7 +1355,7 @@
 			'field' => 'guarantor_office',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field10' => array(
+		'simple_grid_field11' => array(
 			'type' => 'grid_field_label',
 			'field' => 'guarantor_office' 
 		),
@@ -1196,7 +1363,7 @@
 			'field' => 'transaction_number',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field11' => array(
+		'simple_grid_field12' => array(
 			'type' => 'grid_field_label',
 			'field' => 'transaction_number' 
 		),
@@ -1204,7 +1371,7 @@
 			'field' => 'transaction_date',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field12' => array(
+		'simple_grid_field13' => array(
 			'type' => 'grid_field_label',
 			'field' => 'transaction_date' 
 		),
@@ -1212,7 +1379,7 @@
 			'field' => 'patient_name',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field13' => array(
+		'simple_grid_field14' => array(
 			'type' => 'grid_field_label',
 			'field' => 'patient_name' 
 		),
@@ -1220,33 +1387,57 @@
 			'field' => 'patient_type',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field14' => array(
-			'type' => 'grid_field_label',
-			'field' => 'patient_type' 
-		),
-		'simple_grid_field6' => array(
-			'field' => 'total_hospital_amount',
-			'type' => 'grid_field' 
-		),
 		'simple_grid_field15' => array(
 			'type' => 'grid_field_label',
-			'field' => 'total_hospital_amount' 
-		),
-		'simple_grid_field7' => array(
-			'field' => 'total_professional_amount',
-			'type' => 'grid_field' 
-		),
-		'simple_grid_field16' => array(
-			'type' => 'grid_field_label',
-			'field' => 'total_professional_amount' 
+			'field' => 'patient_type' 
 		),
 		'simple_grid_field8' => array(
 			'field' => 'running_balance',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field17' => array(
+		'simple_grid_field16' => array(
 			'type' => 'grid_field_label',
 			'field' => 'running_balance' 
+		),
+		'simple_grid_field6' => array(
+			'field' => 'total_hospital_fees',
+			'type' => 'grid_field' 
+		),
+		'simple_grid_field17' => array(
+			'type' => 'grid_field_label',
+			'field' => 'total_hospital_fees' 
+		),
+		'simple_grid_field7' => array(
+			'field' => 'total_professional_fees',
+			'type' => 'grid_field' 
+		),
+		'simple_grid_field18' => array(
+			'type' => 'grid_field_label',
+			'field' => 'total_professional_fees' 
+		),
+		'simple_grid_field9' => array(
+			'field' => 'total_paid',
+			'type' => 'grid_field' 
+		),
+		'simple_grid_field19' => array(
+			'type' => 'grid_field_label',
+			'field' => 'total_paid' 
+		),
+		'details_preview' => array(
+			'type' => 'details_preview',
+			'table' => 7248,
+			'items' => array( 
+				 
+			),
+			'popup' => false 
+		),
+		'details_preview1' => array(
+			'type' => 'details_preview',
+			'table' => 7200,
+			'items' => array( 
+				 
+			),
+			'popup' => false 
 		) 
 	),
 	'version' => 13,
