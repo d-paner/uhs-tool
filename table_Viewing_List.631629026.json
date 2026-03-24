@@ -111,40 +111,6 @@
 			"tableName": "Viewing List"
 		},
 		{
-			"name": "total_hospital_amount",
-			"strField": "total_hospital_amount",
-			"type": 14,
-			"viewFormats": [
-				{
-					"format": "Number"
-				}
-			],
-			"editFormats": [
-				{}
-			],
-			"label": {
-				"English": "Total Hospital Amount"
-			},
-			"tableName": "Viewing List"
-		},
-		{
-			"name": "total_professional_amount",
-			"strField": "total_professional_amount",
-			"type": 14,
-			"viewFormats": [
-				{
-					"format": "Number"
-				}
-			],
-			"editFormats": [
-				{}
-			],
-			"label": {
-				"English": "Total Professional Amount"
-			},
-			"tableName": "Viewing List"
-		},
-		{
 			"name": "running_balance",
 			"strField": "running_balance",
 			"type": 14,
@@ -160,6 +126,57 @@
 				"English": "Running Balance"
 			},
 			"tableName": "Viewing List"
+		},
+		{
+			"name": "total_hospital_fees",
+			"strField": "total_hospital_fees",
+			"type": 14,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Total Hospital Fees"
+			},
+			"tableName": "Viewing List"
+		},
+		{
+			"name": "total_professional_fees",
+			"strField": "total_professional_fees",
+			"type": 14,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Total Professional Fees"
+			},
+			"tableName": "Viewing List"
+		},
+		{
+			"name": "total_paid",
+			"strField": "total_paid",
+			"type": 14,
+			"viewFormats": [
+				{
+					"format": "Number"
+				}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Total Paid"
+			},
+			"tableName": "Viewing List"
 		}
 	],
 	"dataSourceOperations": [
@@ -167,7 +184,7 @@
 			"type": "selectList",
 			"subtype": "sql",
 			"enabled": true,
-			"sql": "SELECT\r\n    g.full_name AS guarantor_name,\r\n    g.office AS guarantor_office,\r\n    ts.transaction_number,\r\n    ts.created_at AS transaction_date,  -- Added transaction date\r\n    CONCAT_WS(' ', pt.first_name, pt.middle_name, pt.last_name) AS patient_name,\r\n    ts.patient_type,\r\n    -- Total amounts (all, regardless of status)\r\n    h_totals.total_hospital_amount,\r\n    p_totals.total_professional_amount,\r\n    \r\n    -- Running balance: sum of unpaid amounts only\r\n    COALESCE(unpaid_h.total_unpaid_hospital, 0) + COALESCE(unpaid_p.total_unpaid_professional, 0) AS running_balance\r\n\r\nFROM transactions ts\r\nJOIN patients pt ON pt.id = ts.patient_id\r\n\r\n-- Full hospital totals (all amounts)\r\nLEFT JOIN (\r\n    SELECT \r\n        hs.transaction_number,\r\n        SUM(hs.amount) AS total_hospital_amount\r\n    FROM hospital_services hs\r\n    GROUP BY hs.transaction_number\r\n) h_totals ON h_totals.transaction_number = ts.transaction_number\r\n\r\n-- Full professional totals (all amounts)\r\nLEFT JOIN (\r\n    SELECT \r\n        ps.transaction_number,\r\n        SUM(ps.amount) AS total_professional_amount\r\n    FROM professional_services ps\r\n    GROUP BY ps.transaction_number\r\n) p_totals ON p_totals.transaction_number = ts.transaction_number\r\n\r\n-- Unpaid hospital amounts\r\nLEFT JOIN (\r\n    SELECT \r\n        hs.transaction_number,\r\n        SUM(hs.amount) AS total_unpaid_hospital\r\n    FROM hospital_services hs\r\n    WHERE hs.status = 'Unpaid'\r\n    GROUP BY hs.transaction_number\r\n) unpaid_h ON unpaid_h.transaction_number = ts.transaction_number\r\n\r\n-- Unpaid professional amounts\r\nLEFT JOIN (\r\n    SELECT \r\n        ps.transaction_number,\r\n        SUM(ps.amount) AS total_unpaid_professional\r\n    FROM professional_services ps\r\n    WHERE ps.status = 'Unpaid'\r\n    GROUP BY ps.transaction_number\r\n) unpaid_p ON unpaid_p.transaction_number = ts.transaction_number\r\n\r\nLEFT JOIN transaction_guarantor tg ON tg.transaction_number = ts.transaction_number\r\nLEFT JOIN guarantors g ON g.id = tg.guarantor_id\r\n\r\nORDER BY ts.transaction_number;",
+			"sql": "SELECT\r\n    g.full_name AS guarantor_name,\r\n    g.office AS guarantor_office,\r\n    ts.transaction_number,\r\n    ts.created_at AS transaction_date,\r\n    CONCAT_WS(' ', pt.first_name, pt.middle_name, pt.last_name) AS patient_name,\r\n    ts.patient_type,\r\n\r\n    -- total hospital_services taken amount tapos 0 default\r\n    COALESCE(h_totals.total_hospital_amount, 0) AS total_hospital_fees,\r\n    -- total total_professional_amount taken amount tapos 0 default\r\n    COALESCE(p_totals.total_professional_amount, 0) AS total_professional_fees,\r\n    -- total total_professional_amount taken amount tapos 0 default pag di pa bayad\r\n    COALESCE(ts.total_paid, 0) AS total_paid,\r\n    -- Running balance\r\n    COALESCE(unpaid_h.total_unpaid_hospital, 0) \r\n    + COALESCE(unpaid_p.total_unpaid_professional, 0) AS running_balance\r\n\r\nFROM transactions ts\r\nJOIN patients pt ON pt.id = ts.patient_id\r\n\r\nLEFT JOIN (\r\n    SELECT \r\n        hs.transaction_number,\r\n        SUM(hs.amount) AS total_hospital_amount\r\n    FROM hospital_services hs\r\n    GROUP BY hs.transaction_number\r\n) h_totals ON h_totals.transaction_number = ts.transaction_number\r\n\r\nLEFT JOIN (\r\n    SELECT \r\n        ps.transaction_number,\r\n        SUM(ps.amount) AS total_professional_amount\r\n    FROM professional_services ps\r\n    GROUP BY ps.transaction_number\r\n) p_totals ON p_totals.transaction_number = ts.transaction_number\r\n\r\nLEFT JOIN (\r\n    SELECT \r\n        hs.transaction_number,\r\n        SUM(hs.amount) AS total_unpaid_hospital\r\n    FROM hospital_services hs\r\n    WHERE hs.status = 'Unpaid'\r\n    GROUP BY hs.transaction_number\r\n) unpaid_h ON unpaid_h.transaction_number = ts.transaction_number\r\n\r\nLEFT JOIN (\r\n    SELECT \r\n        ps.transaction_number,\r\n        SUM(ps.amount) AS total_unpaid_professional\r\n    FROM professional_services ps\r\n    WHERE ps.status = 'Unpaid'\r\n    GROUP BY ps.transaction_number\r\n) unpaid_p ON unpaid_p.transaction_number = ts.transaction_number\r\n\r\nLEFT JOIN transaction_guarantor tg ON tg.transaction_number = ts.transaction_number\r\nLEFT JOIN guarantors g ON g.id = tg.guarantor_id\r\n\r\nORDER BY ts.transaction_number;",
 			"payload": [],
 			"payloadFormat": 4
 		}
@@ -367,6 +384,7 @@
 								"export_field5",
 								"export_field6",
 								"export_field7",
+								"export_field9",
 								"export_field8"
 							]
 						}
@@ -440,16 +458,20 @@
 					"field": "patient_type",
 					"type": "export_field"
 				},
+				"export_field8": {
+					"field": "running_balance",
+					"type": "export_field"
+				},
 				"export_field6": {
-					"field": "total_hospital_amount",
+					"field": "total_hospital_fees",
 					"type": "export_field"
 				},
 				"export_field7": {
-					"field": "total_professional_amount",
+					"field": "total_professional_fees",
 					"type": "export_field"
 				},
-				"export_field8": {
-					"field": "running_balance",
+				"export_field9": {
+					"field": "total_paid",
 					"type": "export_field"
 				}
 			},
@@ -462,7 +484,7 @@
 			"imagePosition": "right",
 			"listTotals": 1,
 			"title": {},
-			"exportFormat": 2,
+			"exportFormat": 0,
 			"exportDelimiter": ",",
 			"exportSelectDelimiter": false,
 			"exportSelectFields": false
@@ -471,7 +493,7 @@
 			"id": "import",
 			"type": "import",
 			"layoutId": "first",
-			"disabled": false,
+			"disabled": true,
 			"default": 0,
 			"forms": {
 				"supertop": {
@@ -692,9 +714,6 @@
 							"section": "head",
 							"cells": [
 								{
-									"cell": "headcell_checkbox"
-								},
-								{
 									"cell": "headcell_details"
 								},
 								{
@@ -723,15 +742,15 @@
 								},
 								{
 									"cell": "headcell_field8"
+								},
+								{
+									"cell": "headcell_field9"
 								}
 							]
 						},
 						{
 							"section": "body",
 							"cells": [
-								{
-									"cell": "cell_checkbox"
-								},
 								{
 									"cell": "cell_details"
 								},
@@ -761,6 +780,9 @@
 								},
 								{
 									"cell": "cell_field8"
+								},
+								{
+									"cell": "cell_field9"
 								}
 							]
 						},
@@ -776,9 +798,6 @@
 						{
 							"section": "foot",
 							"cells": [
-								{
-									"cell": "footcell_checkbox"
-								},
 								{
 									"cell": "footcell_details"
 								},
@@ -808,37 +827,38 @@
 								},
 								{
 									"cell": "footcell_field8"
+								},
+								{
+									"cell": "footcell_field9"
 								}
 							]
 						}
 					],
 					"cells": {
-						"headcell_checkbox": {
-							"model": "headcell_checkbox",
-							"items": [
-								"grid_checkbox_head"
-							],
-							"columnName": "checkbox",
-							"field": ""
-						},
-						"cell_checkbox": {
-							"model": "cell_checkbox",
-							"items": [
-								"grid_checkbox"
-							],
-							"columnName": "checkbox",
-							"field": ""
-						},
-						"footcell_checkbox": {
-							"model": "footcell_checkbox",
+						"headcell_details": {
+							"model": "headcell_details",
 							"items": [],
-							"columnName": "checkbox",
+							"columnName": "details",
+							"field": ""
+						},
+						"cell_details": {
+							"model": "cell_details",
+							"items": [
+								"grid_alldetails_link"
+							],
+							"columnName": "details",
+							"field": ""
+						},
+						"footcell_details": {
+							"model": "footcell_details",
+							"items": [],
+							"columnName": "details",
 							"field": ""
 						},
 						"headcell_field": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label"
+								"grid_field10"
 							],
 							"field": "guarantor_name",
 							"columnName": "field"
@@ -860,7 +880,7 @@
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label1"
+								"grid_field11"
 							],
 							"field": "guarantor_office",
 							"columnName": "field"
@@ -882,7 +902,7 @@
 						"headcell_field2": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label2"
+								"grid_field12"
 							],
 							"field": "transaction_number",
 							"columnName": "field"
@@ -904,7 +924,7 @@
 						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label3"
+								"grid_field13"
 							],
 							"field": "transaction_date",
 							"columnName": "field"
@@ -926,7 +946,7 @@
 						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label4"
+								"grid_field14"
 							],
 							"field": "patient_name",
 							"columnName": "field"
@@ -948,7 +968,7 @@
 						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label5"
+								"grid_field15"
 							],
 							"field": "patient_type",
 							"columnName": "field"
@@ -970,9 +990,9 @@
 						"headcell_field6": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label6"
+								"grid_field16"
 							],
-							"field": "total_hospital_amount",
+							"field": "total_hospital_fees",
 							"columnName": "field"
 						},
 						"cell_field6": {
@@ -980,21 +1000,21 @@
 							"items": [
 								"grid_field6"
 							],
-							"field": "total_hospital_amount",
+							"field": "total_hospital_fees",
 							"columnName": "field"
 						},
 						"footcell_field6": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "total_hospital_amount",
+							"field": "total_hospital_fees",
 							"columnName": "field"
 						},
 						"headcell_field7": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label7"
+								"grid_field17"
 							],
-							"field": "total_professional_amount",
+							"field": "total_professional_fees",
 							"columnName": "field"
 						},
 						"cell_field7": {
@@ -1002,24 +1022,46 @@
 							"items": [
 								"grid_field7"
 							],
-							"field": "total_professional_amount",
+							"field": "total_professional_fees",
 							"columnName": "field"
 						},
 						"footcell_field7": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "total_professional_amount",
+							"field": "total_professional_fees",
 							"columnName": "field"
 						},
 						"headcell_field8": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label8"
+								"grid_field18"
+							],
+							"field": "total_paid",
+							"columnName": "field"
+						},
+						"cell_field8": {
+							"model": "cell_field",
+							"items": [
+								"grid_field9"
+							],
+							"field": "total_paid",
+							"columnName": "field"
+						},
+						"footcell_field8": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "total_paid",
+							"columnName": "field"
+						},
+						"headcell_field9": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field19"
 							],
 							"field": "running_balance",
 							"columnName": "field"
 						},
-						"cell_field8": {
+						"cell_field9": {
 							"model": "cell_field",
 							"items": [
 								"grid_field8"
@@ -1027,34 +1069,20 @@
 							"field": "running_balance",
 							"columnName": "field"
 						},
-						"footcell_field8": {
+						"footcell_field9": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "running_balance",
 							"columnName": "field"
-						},
-						"headcell_details": {
-							"model": "headcell_details",
-							"items": []
-						},
-						"cell_details": {
-							"model": "cell_details",
-							"items": [
-								"grid_alldetails_link",
-								"grid_details_link",
-								"grid_details_link1"
-							]
-						},
-						"footcell_details": {
-							"model": "footcell_details",
-							"items": []
 						},
 						"cell_dpreview": {
 							"model": "cell_dpreview",
 							"items": [
 								"details_preview",
 								"details_preview1"
-							]
+							],
+							"columnName": "field",
+							"field": "running_balance"
 						}
 					},
 					"deferredItems": [],
@@ -1089,9 +1117,7 @@
 						"show_search_panel",
 						"hide_search_panel",
 						"-2",
-						"export",
-						"-1",
-						"import"
+						"export"
 					]
 				},
 				"username_button": {
@@ -1127,9 +1153,6 @@
 				"-": {
 					"type": "-"
 				},
-				"import": {
-					"type": "import"
-				},
 				"-1": {
 					"type": "-"
 				},
@@ -1151,109 +1174,14 @@
 				"print_records": {
 					"type": "print_records"
 				},
-				"grid_checkbox": {
-					"type": "grid_checkbox"
-				},
-				"grid_checkbox_head": {
-					"type": "grid_checkbox_head"
-				},
-				"grid_field": {
-					"field": "guarantor_name",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label": {
-					"type": "grid_field_label",
-					"field": "guarantor_name"
-				},
-				"grid_field1": {
-					"field": "guarantor_office",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label1": {
-					"type": "grid_field_label",
-					"field": "guarantor_office"
-				},
-				"grid_field2": {
-					"field": "transaction_number",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label2": {
-					"type": "grid_field_label",
-					"field": "transaction_number"
-				},
-				"grid_field3": {
-					"field": "transaction_date",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label3": {
-					"type": "grid_field_label",
-					"field": "transaction_date"
-				},
-				"grid_field4": {
-					"field": "patient_name",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label4": {
-					"type": "grid_field_label",
-					"field": "patient_name"
-				},
-				"grid_field5": {
-					"field": "patient_type",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label5": {
-					"type": "grid_field_label",
-					"field": "patient_type"
-				},
-				"grid_field6": {
-					"field": "total_hospital_amount",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label6": {
-					"type": "grid_field_label",
-					"field": "total_hospital_amount"
-				},
-				"grid_field7": {
-					"field": "total_professional_amount",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label7": {
-					"type": "grid_field_label",
-					"field": "total_professional_amount"
-				},
-				"grid_field8": {
-					"field": "running_balance",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label8": {
-					"type": "grid_field_label",
-					"field": "running_balance"
-				},
 				"search_panel": {
 					"type": "search_panel",
 					"items": [
 						"search_panel_field",
-						"search_panel_field8",
+						"search_panel_field9",
 						"search_panel_field7",
 						"search_panel_field6",
+						"search_panel_field8",
 						"search_panel_field5",
 						"search_panel_field4",
 						"search_panel_field3",
@@ -1294,36 +1222,9 @@
 					"field": "patient_type",
 					"type": "search_panel_field"
 				},
-				"search_panel_field6": {
-					"field": "total_hospital_amount",
-					"type": "search_panel_field"
-				},
-				"search_panel_field7": {
-					"field": "total_professional_amount",
-					"type": "search_panel_field"
-				},
 				"search_panel_field8": {
 					"field": "running_balance",
 					"type": "search_panel_field"
-				},
-				"grid_alldetails_link": {
-					"type": "grid_alldetails_link"
-				},
-				"grid_details_link": {
-					"type": "grid_details_link",
-					"table": 1504671644,
-					"badge": true,
-					"hideIfNone": false,
-					"showCount": false
-				},
-				"details_preview": {
-					"type": "details_preview",
-					"table": 1504671644,
-					"items": [],
-					"proceedLink": false,
-					"popup": false,
-					"hideEmptyPreview": false,
-					"pageId": "transactionsChild"
 				},
 				"print_details": {
 					"type": "print_details",
@@ -1332,12 +1233,138 @@
 						"3769908180": true
 					}
 				},
-				"grid_details_link1": {
-					"type": "grid_details_link",
-					"table": 3769908180,
-					"badge": true,
-					"showCount": false,
-					"hideIfNone": false
+				"-3": {
+					"type": "-"
+				},
+				"-4": {
+					"type": "-"
+				},
+				"-5": {
+					"type": "-"
+				},
+				"search_panel_field6": {
+					"field": "total_hospital_fees",
+					"type": "search_panel_field"
+				},
+				"search_panel_field7": {
+					"field": "total_professional_fees",
+					"type": "search_panel_field"
+				},
+				"search_panel_field9": {
+					"field": "total_paid",
+					"type": "search_panel_field"
+				},
+				"grid_alldetails_link": {
+					"type": "grid_alldetails_link"
+				},
+				"grid_field10": {
+					"type": "grid_field_label",
+					"field": "guarantor_name"
+				},
+				"grid_field": {
+					"field": "guarantor_name",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field11": {
+					"type": "grid_field_label",
+					"field": "guarantor_office"
+				},
+				"grid_field1": {
+					"field": "guarantor_office",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field12": {
+					"type": "grid_field_label",
+					"field": "transaction_number"
+				},
+				"grid_field2": {
+					"field": "transaction_number",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field13": {
+					"type": "grid_field_label",
+					"field": "transaction_date"
+				},
+				"grid_field3": {
+					"field": "transaction_date",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field14": {
+					"type": "grid_field_label",
+					"field": "patient_name"
+				},
+				"grid_field4": {
+					"field": "patient_name",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field15": {
+					"type": "grid_field_label",
+					"field": "patient_type"
+				},
+				"grid_field5": {
+					"field": "patient_type",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field16": {
+					"type": "grid_field_label",
+					"field": "total_hospital_fees"
+				},
+				"grid_field6": {
+					"field": "total_hospital_fees",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field17": {
+					"type": "grid_field_label",
+					"field": "total_professional_fees"
+				},
+				"grid_field7": {
+					"field": "total_professional_fees",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field18": {
+					"type": "grid_field_label",
+					"field": "total_paid"
+				},
+				"grid_field9": {
+					"field": "total_paid",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field19": {
+					"type": "grid_field_label",
+					"field": "running_balance"
+				},
+				"grid_field8": {
+					"field": "running_balance",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 1504671644,
+					"items": [],
+					"proceedLink": false,
+					"popup": false,
+					"pageId": "transactionsChild",
+					"hideEmptyPreview": false
 				},
 				"details_preview1": {
 					"type": "details_preview",
@@ -1345,10 +1372,11 @@
 					"items": [],
 					"proceedLink": false,
 					"popup": false,
-					"hideEmptyPreview": false,
-					"pageId": "transactionsChild"
+					"pageId": "transactionsChild",
+					"hideEmptyPreview": false
 				}
 			},
+			"spreadsheetGrid": false,
 			"version": 13,
 			"imageItem": {
 				"type": "page_image"
@@ -1464,9 +1492,10 @@
 								"simple_grid_field3",
 								"simple_grid_field4",
 								"simple_grid_field5",
+								"simple_grid_field8",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field8"
+								"simple_grid_field9"
 							]
 						},
 						"c2": {
@@ -1515,16 +1544,20 @@
 					"field": "patient_type",
 					"type": "simple_grid_field"
 				},
+				"simple_grid_field8": {
+					"field": "running_balance",
+					"type": "simple_grid_field"
+				},
 				"simple_grid_field6": {
-					"field": "total_hospital_amount",
+					"field": "total_hospital_fees",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field7": {
-					"field": "total_professional_amount",
+					"field": "total_professional_fees",
 					"type": "simple_grid_field"
 				},
-				"simple_grid_field8": {
-					"field": "running_balance",
+				"simple_grid_field9": {
+					"field": "total_paid",
 					"type": "simple_grid_field"
 				},
 				"details_preview": {
@@ -1645,9 +1678,10 @@
 								"simple_grid_field3",
 								"simple_grid_field4",
 								"simple_grid_field5",
+								"simple_grid_field8",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field8"
+								"simple_grid_field9"
 							]
 						}
 					},
@@ -1686,16 +1720,20 @@
 					"field": "patient_type",
 					"type": "simple_grid_field"
 				},
+				"simple_grid_field8": {
+					"field": "running_balance",
+					"type": "simple_grid_field"
+				},
 				"simple_grid_field6": {
-					"field": "total_hospital_amount",
+					"field": "total_hospital_fees",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field7": {
-					"field": "total_professional_amount",
+					"field": "total_professional_fees",
 					"type": "simple_grid_field"
 				},
-				"simple_grid_field8": {
-					"field": "running_balance",
+				"simple_grid_field9": {
+					"field": "total_paid",
 					"type": "simple_grid_field"
 				}
 			},
@@ -1803,9 +1841,10 @@
 								"simple_grid_field3",
 								"simple_grid_field4",
 								"simple_grid_field5",
+								"simple_grid_field8",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field8"
+								"simple_grid_field9"
 							]
 						}
 					},
@@ -1841,16 +1880,20 @@
 					"field": "patient_type",
 					"type": "simple_grid_field"
 				},
+				"simple_grid_field8": {
+					"field": "running_balance",
+					"type": "simple_grid_field"
+				},
 				"simple_grid_field6": {
-					"field": "total_hospital_amount",
+					"field": "total_hospital_fees",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field7": {
-					"field": "total_professional_amount",
+					"field": "total_professional_fees",
 					"type": "simple_grid_field"
 				},
-				"simple_grid_field8": {
-					"field": "running_balance",
+				"simple_grid_field9": {
+					"field": "total_paid",
 					"type": "simple_grid_field"
 				}
 			},

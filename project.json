@@ -2000,7 +2000,7 @@
 		{
 			"eventId": "EVENT_BEFOREPROCESS_MENU",
 			"pageType": "menu",
-			"code": "if($_SESSION['group'] == 'Admin'){\n    // Redirect to a specific page\n    header(\"Location: transactions_list.php\");\n}\nelseif($_SESSION['group'] == 'cashier'){\n    // Redirect to a specific page\n    header(\"Location: payments_list.php\");\n}\nexit();"
+			"code": "header(\"Location: transactions_list.php\");\nexit();"
 		},
 		{
 			"eventId": "EVENT_JS_ONLOAD",
