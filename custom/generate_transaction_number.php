@@ -3,6 +3,7 @@
 function generate_transaction_number(){
 
     // $file = 'custom/last_number.txt';
+    echo __DIR__;
     $file = __DIR__ . '/last_number.txt';
     $date = date('Ymd'); // YYYYMMDD
 
