@@ -813,7 +813,7 @@ $runnerProjectSettings = array(
 		'table' => '' 
 	),
 	'wizardBuild' => '43917',
-	'projectBuild' => 'Y49L9ipXwBN7',
+	'projectBuild' => '46dUIINqnZFx',
 	'projectTheme' => 'flatly',
 	'projectSize' => 'normal',
 	'customErrorMsg' => array(

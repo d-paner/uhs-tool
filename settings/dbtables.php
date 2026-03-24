@@ -3,33 +3,15 @@ global $runnerDbTables;
 $runnerDbTables = array( 
 	array(
 		'connId' => 'conn',
-		'table' => 'patients',
-		'schema' => '',
-		'filename' => 'patients' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'payments',
-		'schema' => '',
-		'filename' => 'payments' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'professionals',
-		'schema' => '',
-		'filename' => 'professionals' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'guarantors',
-		'schema' => '',
-		'filename' => 'guarantors' 
-	),
-	array(
-		'connId' => 'conn',
 		'table' => 'transactions',
 		'schema' => '',
 		'filename' => 'transactions' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'patients',
+		'schema' => '',
+		'filename' => 'patients' 
 	),
 	array(
 		'connId' => 'conn',
@@ -39,9 +21,39 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'offices',
+		'table' => 'transaction_guarantor',
 		'schema' => '',
-		'filename' => 'offices' 
+		'filename' => 'transaction_guarantor' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'users',
+		'schema' => '',
+		'filename' => 'users' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'guarantors',
+		'schema' => '',
+		'filename' => 'guarantors' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'hospital_services',
+		'schema' => '',
+		'filename' => 'hospital_services' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'professionals',
+		'schema' => '',
+		'filename' => 'professionals' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'payments',
+		'schema' => '',
+		'filename' => 'payments' 
 	),
 	array(
 		'connId' => 'conn',
@@ -57,27 +69,15 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'users',
+		'table' => 'offices',
 		'schema' => '',
-		'filename' => 'users' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'hospital_services',
-		'schema' => '',
-		'filename' => 'hospital_services' 
+		'filename' => 'offices' 
 	),
 	array(
 		'connId' => 'conn',
 		'table' => 'professional_accounts',
 		'schema' => '',
 		'filename' => 'professional_accounts' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'transaction_guarantor',
-		'schema' => '',
-		'filename' => 'transaction_guarantor' 
 	) 
 );
 ?>

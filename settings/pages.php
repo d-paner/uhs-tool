@@ -25,6 +25,36 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
+		'transactions' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'transactionsList' 
+			),
+			'print' => array( 
+				'print' 
+			),
+			'masterlist' => array( 
+				'masterlist' 
+			),
+			'masterprint' => array( 
+				'masterprint' 
+			) 
+		),
 		'patient_types' => array(
 			'add' => array( 
 				'add' 
@@ -137,6 +167,54 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
+		'professional_services' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'transactionsChild' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
+		'hospital_services' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'transactionsChild' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
 		'users' => array(
 			'add' => array( 
 				'add' 
@@ -197,6 +275,23 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
+		'Viewing List' => array(
+			'export' => array( 
+				'export' 
+			),
+			'list' => array( 
+				'list' 
+			),
+			'print' => array( 
+				'print' 
+			),
+			'masterlist' => array( 
+				'masterlist' 
+			),
+			'masterprint' => array( 
+				'masterprint' 
+			) 
+		),
 		'professional_accounts' => array(
 			'add' => array( 
 				'add' 
@@ -220,101 +315,6 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'transactions' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list',
-				'transactionsList' 
-			),
-			'print' => array( 
-				'print' 
-			),
-			'masterlist' => array( 
-				'masterlist' 
-			),
-			'masterprint' => array( 
-				'masterprint' 
-			) 
-		),
-		'hospital_services' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list',
-				'transactionsChild' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
-		'professional_services' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list',
-				'transactionsChild' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
-		'Viewing List' => array(
-			'export' => array( 
-				'export' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			),
-			'masterlist' => array( 
-				'masterlist' 
-			),
-			'masterprint' => array( 
-				'masterprint' 
-			) 
-		),
 		'<global>' => array(
 			'menu' => array( 
 				'menu' 
@@ -334,20 +334,20 @@ $runnerPageInfo = array(
 		) 
 	),
 	'tableMasks' => array(
-		'patients' => 'ADESPI',
-		'payments' => 'ADESPI',
-		'professionals' => 'ADESPI',
-		'guarantors' => 'ADESPI',
 		'transactions' => 'ADESPI',
+		'patients' => 'ADESPI',
 		'patient_types' => 'ADESPI',
-		'offices' => 'ADESPI',
+		'transaction_guarantor' => 'ADESPI',
+		'users' => 'ADESPI',
+		'guarantors' => 'ADESPI',
+		'hospital_services' => 'ADESPI',
+		'professionals' => 'ADESPI',
+		'payments' => 'ADESPI',
 		'professional_services' => 'ADESPI',
 		'hospital_accounts' => 'ADESPI',
-		'users' => 'ADESPI',
-		'hospital_services' => 'ADESPI',
+		'offices' => 'ADESPI',
 		'Viewing List' => 'ADESP',
 		'professional_accounts' => 'ADESPI',
-		'transaction_guarantor' => 'ADESPI',
 		'<global>' => 'S' 
 	) 
 );
