@@ -248,7 +248,7 @@
 				}
 			],
 			"label": {
-				"English": "Hospital Service Id"
+				"English": "Hospital Service"
 			},
 			"tableName": "payments"
 		},
@@ -282,7 +282,7 @@
 				}
 			],
 			"label": {
-				"English": "Professional Service Id"
+				"English": "Professional Service"
 			},
 			"tableName": "payments"
 		}
@@ -304,12 +304,12 @@
 		{
 			"eventId": "EVENT_JS_ONLOAD",
 			"pageType": "add",
-			"code": "function toggleServices(){\r\n\r\n    var type = Runner.getControl(pageid, \"service_type\").getValue();\r\n\r\n    if(type == \"Hospital Service\"){\r\n        $(\"[data-field='hospital_service_id']\").show();\r\n        $(\"[data-field='professional_service_id']\").hide();\r\n    }\r\n\r\n    if(type == \"Professional Service\"){\r\n        $(\"[data-field='professional_service_id']\").show();\r\n        $(\"[data-field='hospital_service_id']\").hide();\r\n    }\r\n\r\n    if(type == \"Pay All\"){\r\n        $(\"[data-field='professional_service_id']\").hide();\r\n        $(\"[data-field='hospital_service_id']\").hide();\r\n    }\r\n\r\n}\r\n\r\ntoggleServices();\r\n\r\nRunner.getControl(pageid, \"service_type\").on(\"change\", function(){\r\n    toggleServices();\r\n});"
+			"code": "function toggleServices(){\r\n\r\n    $(\"[data-field='professional_service_id']\").hide();\r\n    $(\"[data-field='hospital_service_id']\").hide();\r\n    \r\n    var type = Runner.getControl(pageid, \"service_type\").getValue();\r\n\r\n    if(type == \"Hospital Service\"){\r\n        $(\"[data-field='hospital_service_id']\").show();\r\n        $(\"[data-field='hospital_service_id']\").required = true;\r\n    }\r\n\r\n    if(type == \"Professional Service\"){\r\n        $(\"[data-field='professional_service_id']\").show();\r\n        $(\"[data-field='professional_service_id']\").required = true;\r\n    }\r\n\r\n    if(type == \"Pay All\"){\r\n        // hide both fields when selected\r\n    }\r\n\r\n}\r\n\r\ntoggleServices();\r\n\r\nRunner.getControl(pageid, \"service_type\").on(\"change\", function(){\r\n    toggleServices();\r\n});"
 		},
 		{
 			"eventId": "EVENT_BEFOREADD",
 			"pageType": "add",
-			"code": "if($values['service_type'] == 'Hospital Service'){\n    $values['hospital_service_id'] = $values['hospital_service_id'];\n    $values['professional_service_id'] = null;\n    \n    $sql = \"SELECT amount FROM hospital_services WHERE id = {$values['hospital_service_id']}\";\n    $result = DB::Query($sql);\n    $data = $result->fetchAssoc();\n    if($values['amount']!=$data['amount']){\n        $message = \"Please enter the exact amount of hospital sevice fee.\";\n        return false;\n    }\n} elseif($values['service_type'] == 'Professional Service'){\n    $values['professional_service_id'] = $values['professional_service_id'];\n    $values['hospital_service_id'] = null;\n    \n    $sql = \"SELECT amount FROM professional_services WHERE id = {$values['professional_service_id']}\";\n    $result = DB::Query($sql);\n    $data = $result->fetchAssoc();\n    if($values['amount']!=$data['amount']){\n        $message = \"Please enter the exact amount of professional sevice fee.\";\n        return false;\n    }\n} else{\n    $values['professional_service_id'] = null;\n    $values['hospital_service_id'] = null;\n    \n    $sql = \"SELECT total_due, total_paid FROM transactions WHERE transaction_number = '{$values['transaction_number']}'\";\n    $result = DB::Query($sql);\n    $data = $result->fetchAssoc();\n    $remainingBalance = $data['total_due'] - $data['total_paid'];\n    if($values['amount']>$remainingBalance){\n        $message = \"Amount is higher than total charges.\";\n        return false;\n    }\n}\nreturn true;"
+			"code": "if ($values['service_type'] == 'Hospital Service') {\r\n\r\n    $values['professional_service_id'] = null;\r\n\r\n    if (isset($values['hospital_service_id']) && $values['hospital_service_id']) {\r\n\r\n        $id = (int)$values['hospital_service_id'];\r\n\r\n        $sql = \"SELECT amount FROM hospital_services WHERE id = $id\";\r\n        $result = DB::Query($sql);\r\n        $data = $result->fetchAssoc();\r\n\r\n        if (!$data) {\r\n            $message = \"Hospital service not found.\";\r\n            return false;\r\n        }\r\n\r\n        if (abs($values['amount'] - $data['amount']) > 0.01) {\r\n            $message = \"Please enter the exact amount of hospital service fee.\";\r\n            return false;\r\n        }\r\n\r\n    } else {\r\n        $message = \"Please enter hospital service id first.\";\r\n        return false;\r\n    }\r\n\r\n\r\n} elseif ($values['service_type'] == 'Professional Service') {\r\n\r\n    $values['hospital_service_id'] = null;\r\n\r\n    if (isset($values['professional_service_id']) && $values['professional_service_id']) {\r\n\r\n        $id = (int)$values['professional_service_id'];\r\n\r\n        $sql = \"SELECT amount FROM professional_services WHERE id = $id\";\r\n        $result = DB::Query($sql);\r\n        $data = $result->fetchAssoc();\r\n\r\n        if (!$data) {\r\n            $message = \"Professional service not found.\";\r\n            return false;\r\n        }\r\n\r\n        if (abs($values['amount'] - $data['amount']) > 0.01) {\r\n            $message = \"Please enter the exact amount of professional service fee.\";\r\n            return false;\r\n        }\r\n\r\n    } else {\r\n        $message = \"Please enter professional service id first.\";\r\n        return false;\r\n    }\r\n\r\n\r\n} else {\r\n\r\n    $values['professional_service_id'] = null;\r\n    $values['hospital_service_id'] = null;\r\n\r\n    $sql = \"SELECT total_due, total_paid \r\n            FROM transactions \r\n            WHERE transaction_number = '{$values['transaction_number']}'\";\r\n\r\n    $result = DB::Query($sql);\r\n    $data = $result->fetchAssoc();\r\n\r\n    if (!$data) {\r\n        $message = \"Transaction not found.\";\r\n        return false;\r\n    }\r\n\r\n    $remainingBalance = $data['total_due'] - $data['total_paid'];\r\n\r\n    if ($values['amount'] > $remainingBalance) {\r\n        $message = \"Amount is higher than total charges.\";\r\n        return false;\r\n    }elseif($values['amount'] < $remainingBalance){\r\n        $message = \"Please enter exact amount.\";\r\n        return false;\r\n    }\r\n}\r\n\r\nreturn true;"
 		}
 	],
 	"strOrderBy": "ORDER BY `date` DESC",
@@ -605,12 +605,22 @@
 				"integrated_edit_field7": {
 					"field": "hospital_service_id",
 					"type": "integrated_edit_field",
-					"orientation": 0
+					"orientation": 0,
+					"label": {
+						"field": "hospital_service_id",
+						"table": "payments",
+						"type": 3
+					}
 				},
 				"integrated_edit_field8": {
 					"field": "professional_service_id",
 					"type": "integrated_edit_field",
-					"orientation": 0
+					"orientation": 0,
+					"label": {
+						"field": "professional_service_id",
+						"table": "payments",
+						"type": 3
+					}
 				}
 			},
 			"version": 13,
