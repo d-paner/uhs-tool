@@ -1119,8 +1119,8 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'group_id' => 'Group Id',
 		'service_type' => 'Service Type',
 		'services' => 'Services',
-		'hospital_service_id' => 'Hospital Service Id',
-		'professional_service_id' => 'Professional Service Id' 
+		'hospital_service_id' => 'Hospital Service',
+		'professional_service_id' => 'Professional Service' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
