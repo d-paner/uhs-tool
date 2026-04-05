@@ -442,12 +442,22 @@
 		'integrated_edit_field7' => array(
 			'field' => 'hospital_service_id',
 			'type' => 'integrated_edit_field',
-			'orientation' => 0 
+			'orientation' => 0,
+			'label' => array(
+				'field' => 'hospital_service_id',
+				'table' => 'payments',
+				'type' => 3 
+			) 
 		),
 		'integrated_edit_field8' => array(
 			'field' => 'professional_service_id',
 			'type' => 'integrated_edit_field',
-			'orientation' => 0 
+			'orientation' => 0,
+			'label' => array(
+				'field' => 'professional_service_id',
+				'table' => 'payments',
+				'type' => 3 
+			) 
 		) 
 	),
 	'version' => 13,

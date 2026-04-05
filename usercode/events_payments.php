@@ -87,41 +87,90 @@ DB::Exec($query);
 	}
 
 	function BeforeAdd( &$values, &$sqlValues, &$message, $inline, $pageObject ) {
-		if($values['service_type'] == 'Hospital Service'){
-    $values['hospital_service_id'] = $values['hospital_service_id'];
+		if ($values['service_type'] == 'Hospital Service') {
+
     $values['professional_service_id'] = null;
-    
-    $sql = "SELECT amount FROM hospital_services WHERE id = {$values['hospital_service_id']}";
-    $result = DB::Query($sql);
-    $data = $result->fetchAssoc();
-    if($values['amount']!=$data['amount']){
-        $message = "Please enter the exact amount of hospital sevice fee.";
+
+    if (isset($values['hospital_service_id']) && $values['hospital_service_id']) {
+
+        $id = (int)$values['hospital_service_id'];
+
+        $sql = "SELECT amount FROM hospital_services WHERE id = $id";
+        $result = DB::Query($sql);
+        $data = $result->fetchAssoc();
+
+        if (!$data) {
+            $message = "Hospital service not found.";
+            return false;
+        }
+
+        if (abs($values['amount'] - $data['amount']) > 0.01) {
+            $message = "Please enter the exact amount of hospital service fee.";
+            return false;
+        }
+
+    } else {
+        $message = "Please enter hospital service id first.";
         return false;
     }
-} elseif($values['service_type'] == 'Professional Service'){
-    $values['professional_service_id'] = $values['professional_service_id'];
+
+
+} elseif ($values['service_type'] == 'Professional Service') {
+
     $values['hospital_service_id'] = null;
-    
-    $sql = "SELECT amount FROM professional_services WHERE id = {$values['professional_service_id']}";
-    $result = DB::Query($sql);
-    $data = $result->fetchAssoc();
-    if($values['amount']!=$data['amount']){
-        $message = "Please enter the exact amount of professional sevice fee.";
+
+    if (isset($values['professional_service_id']) && $values['professional_service_id']) {
+
+        $id = (int)$values['professional_service_id'];
+
+        $sql = "SELECT amount FROM professional_services WHERE id = $id";
+        $result = DB::Query($sql);
+        $data = $result->fetchAssoc();
+
+        if (!$data) {
+            $message = "Professional service not found.";
+            return false;
+        }
+
+        if (abs($values['amount'] - $data['amount']) > 0.01) {
+            $message = "Please enter the exact amount of professional service fee.";
+            return false;
+        }
+
+    } else {
+        $message = "Please enter professional service id first.";
         return false;
     }
-} else{
+
+
+} else {
+
     $values['professional_service_id'] = null;
     $values['hospital_service_id'] = null;
-    
-    $sql = "SELECT total_due, total_paid FROM transactions WHERE transaction_number = '{$values['transaction_number']}'";
+
+    $sql = "SELECT total_due, total_paid 
+            FROM transactions 
+            WHERE transaction_number = '{$values['transaction_number']}'";
+
     $result = DB::Query($sql);
     $data = $result->fetchAssoc();
+
+    if (!$data) {
+        $message = "Transaction not found.";
+        return false;
+    }
+
     $remainingBalance = $data['total_due'] - $data['total_paid'];
-    if($values['amount']>$remainingBalance){
+
+    if ($values['amount'] > $remainingBalance) {
         $message = "Amount is higher than total charges.";
+        return false;
+    }elseif($values['amount'] < $remainingBalance){
+        $message = "Please enter exact amount.";
         return false;
     }
 }
+
 return true;
 		;
 		return true;
