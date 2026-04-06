@@ -15,51 +15,9 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'payments',
+		'table' => 'transactions',
 		'schema' => '',
-		'filename' => 'payments' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'guarantors',
-		'schema' => '',
-		'filename' => 'guarantors' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'offices',
-		'schema' => '',
-		'filename' => 'offices' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'professionals',
-		'schema' => '',
-		'filename' => 'professionals' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'patient_types',
-		'schema' => '',
-		'filename' => 'patient_types' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'hospital_services',
-		'schema' => '',
-		'filename' => 'hospital_services' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'professional_services',
-		'schema' => '',
-		'filename' => 'professional_services' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'hospital_accounts',
-		'schema' => '',
-		'filename' => 'hospital_accounts' 
+		'filename' => 'transactions' 
 	),
 	array(
 		'connId' => 'conn',
@@ -69,15 +27,57 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'transactions',
+		'table' => 'payments',
 		'schema' => '',
-		'filename' => 'transactions' 
+		'filename' => 'payments' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'professionals',
+		'schema' => '',
+		'filename' => 'professionals' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'hospital_accounts',
+		'schema' => '',
+		'filename' => 'hospital_accounts' 
 	),
 	array(
 		'connId' => 'conn',
 		'table' => 'users',
 		'schema' => '',
 		'filename' => 'users' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'patient_types',
+		'schema' => '',
+		'filename' => 'patient_types' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'professional_services',
+		'schema' => '',
+		'filename' => 'professional_services' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'guarantors',
+		'schema' => '',
+		'filename' => 'guarantors' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'hospital_services',
+		'schema' => '',
+		'filename' => 'hospital_services' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'offices',
+		'schema' => '',
+		'filename' => 'offices' 
 	),
 	array(
 		'connId' => 'conn',
