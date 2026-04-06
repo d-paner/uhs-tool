@@ -61,6 +61,7 @@ $runnerTableSettings['transactions'] = array(
 		'masterprint' => 'masterprint',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'transactions',
 	'afterAddDetail' => 'transactions',
 	'detailsBadgeColor' => '6da5c8',

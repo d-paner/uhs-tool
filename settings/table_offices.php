@@ -49,6 +49,7 @@ $runnerTableSettings['offices'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'offices',
 	'afterAddDetail' => 'offices',
 	'detailsBadgeColor' => 'e8926f',

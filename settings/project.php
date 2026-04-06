@@ -47,6 +47,9 @@ $runnerProjectSettings = array(
 		),
 		'professional_accounts' => array(
 			'table' => 7869 
+		),
+		'uhs_audit' => array(
+			'table' => 8274 
 		) 
 	),
 	'userTableKeys' => array( 
@@ -135,21 +138,76 @@ $runnerProjectSettings = array(
 			'allowGuestLogin' => false 
 		),
 		'auditAndLocking' => array(
-			'loggingMode' => 0,
+			'loggingMode' => 1,
 			'loggingTable' => array(
-				'connId' => '',
-				'table' => '' 
+				'connId' => 'conn',
+				'table' => 'uhs_audit' 
 			),
 			'loggingFile' => 'audit.log',
 			'logSecurityActions' => false,
 			'lockAfterUnsuccessfulLogin' => false,
 			'enableLocking' => false,
 			'lockingTable' => array(
-				'connId' => '',
-				'table' => '' 
+				'connId' => 'conn',
+				'table' => '˂Create new˃' 
 			),
 			'tables' => array(
-				 
+				'patients' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'transactions' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'patient_types' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'hospital_accounts' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'guarantors' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'professionals' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'offices' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'professional_services' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'hospital_services' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'users' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'payments' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'transaction_guarantor' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				),
+				'Viewing List' => array(
+					'logModifications' => false,
+					'logFieldValues' => false 
+				),
+				'professional_accounts' => array(
+					'logModifications' => true,
+					'logFieldValues' => true 
+				) 
 			) 
 		),
 		'twoFactorSettings' => array(
@@ -271,6 +329,13 @@ $runnerProjectSettings = array(
 						'professional_accounts' => array(
 							'mask' => 'ADESPI',
 							'table' => 'professional_accounts',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'uhs_audit' => array(
+							'mask' => 'ADESPI',
+							'table' => 'uhs_audit',
 							'restrictedPages' => array(
 								 
 							) 
@@ -542,6 +607,19 @@ $runnerProjectSettings = array(
 							'restrictedPages' => array(
 								 
 							) 
+						),
+						'uhs_audit' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								'add' => false,
+								'edit' => false,
+								'list' => false,
+								'view' => false,
+								'print' => false,
+								'export' => false,
+								'import' => false 
+							) 
 						) 
 					) 
 				) 
@@ -754,6 +832,18 @@ $runnerProjectSettings = array(
 			'connId' => 'conn',
 			'color' => '5f9ea0',
 			'originalTable' => 'professional_accounts' 
+		),
+		'uhs_audit' => array(
+			'gid' => 8274,
+			'name' => 'uhs_audit',
+			'shortName' => 'uhs_audit',
+			'type' => 0,
+			'caption' => array(
+				'English' => 'Uhs Audit' 
+			),
+			'connId' => 'conn',
+			'color' => '5f9ea0',
+			'originalTable' => 'uhs_audit' 
 		) 
 	),
 	'tablesByShort' => array(
@@ -770,7 +860,8 @@ $runnerProjectSettings = array(
 		'payments' => 'payments',
 		'transaction_guarantor' => 'transaction_guarantor',
 		'Viewing_List' => 'Viewing List',
-		'professional_accounts' => 'professional_accounts' 
+		'professional_accounts' => 'professional_accounts',
+		'uhs_audit' => 'uhs_audit' 
 	),
 	'tablesByGood' => array(
 		'patients' => 'patients',
@@ -786,7 +877,8 @@ $runnerProjectSettings = array(
 		'payments' => 'payments',
 		'transaction_guarantor' => 'transaction_guarantor',
 		'Viewing_List' => 'Viewing List',
-		'professional_accounts' => 'professional_accounts' 
+		'professional_accounts' => 'professional_accounts',
+		'uhs_audit' => 'uhs_audit' 
 	),
 	'events' => array( 
 		 
@@ -813,7 +905,7 @@ $runnerProjectSettings = array(
 		'table' => '' 
 	),
 	'wizardBuild' => '43917',
-	'projectBuild' => 'h4Oez46Ys4Ll',
+	'projectBuild' => 'MDr56hn0DEKM',
 	'projectTheme' => 'flatly',
 	'projectSize' => 'normal',
 	'customErrorMsg' => array(

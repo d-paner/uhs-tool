@@ -49,6 +49,7 @@ $runnerTableSettings['guarantors'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'guarantors',
 	'afterAddDetail' => 'guarantors',
 	'detailsBadgeColor' => '1e90ff',

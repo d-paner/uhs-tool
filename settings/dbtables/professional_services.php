@@ -29,11 +29,11 @@ $runnerDbTableInfo['professional_services'] = array(
 			'defaultValue' => '' 
 		),
 		array(
-			'name' => 'pf_account_id',
-			'type' => 3,
-			'size' => 11,
+			'name' => 'pf_account',
+			'type' => 200,
+			'size' => 250,
 			'scale' => 0,
-			'typeName' => 'int(11)',
+			'typeName' => 'varchar(250)',
 			'nullable' => false,
 			'autoinc' => false,
 			'defaultValueSQL' => null,

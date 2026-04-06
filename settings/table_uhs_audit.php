@@ -1,23 +1,14 @@
 <?php
 global $runnerTableSettings;
-$runnerTableSettings['transaction_guarantor'] = array(
-	'name' => 'transaction_guarantor',
-	'shortName' => 'transaction_guarantor',
+$runnerTableSettings['uhs_audit'] = array(
+	'name' => 'uhs_audit',
+	'shortName' => 'uhs_audit',
 	'pagesByType' => array(
-		'add' => array( 
-			'add' 
-		),
 		'export' => array( 
 			'export' 
 		),
 		'import' => array( 
 			'import' 
-		),
-		'edit' => array( 
-			'edit' 
-		),
-		'view' => array( 
-			'view' 
 		),
 		'list' => array( 
 			'list' 
@@ -30,38 +21,41 @@ $runnerTableSettings['transaction_guarantor'] = array(
 		) 
 	),
 	'pageTypes' => array(
-		'add' => 'add',
 		'export' => 'export',
 		'import' => 'import',
-		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
 	),
 	'defaultPages' => array(
-		'add' => 'add',
 		'export' => 'export',
 		'import' => 'import',
-		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
 	),
-	'audit' => true,
-	'afterEditDetails' => 'transaction_guarantor',
-	'afterAddDetail' => 'transaction_guarantor',
+	'afterEditDetails' => 'uhs_audit',
+	'afterAddDetail' => 'uhs_audit',
 	'detailsBadgeColor' => '5f9ea0',
+	'strOrderBy' => 'ORDER BY `datetime` DESC',
+	'orderInfo' => array( 
+		array(
+			'index' => 2,
+			'dir' => 'DESC',
+			'field' => 'datetime' 
+		) 
+	),
 	'sql' => 'SELECT
 	id,
-	transaction_number,
-	guarantor_id,
-	placed_by,
-	`group`,
-	timestamps
+	`datetime`,
+	ip,
+	`user`,
+	`table`,
+	`action`,
+	description
 FROM
-	transaction_guarantor',
+	uhs_audit
+ORDER BY `datetime` DESC',
 	'keyFields' => array( 
 		'id' 
 	),
@@ -92,104 +86,15 @@ FROM
 					 
 				) 
 			),
-			'tableName' => 'transaction_guarantor' 
+			'tableName' => 'uhs_audit' 
 		),
-		'transaction_number' => array(
-			'name' => 'transaction_number',
-			'goodName' => 'transaction_number',
-			'strField' => 'transaction_number',
+		'datetime' => array(
+			'name' => 'datetime',
+			'goodName' => 'datetime',
+			'strField' => 'datetime',
 			'index' => 2,
-			'sqlExpression' => 'transaction_number',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'format' => 'Lookup wizard',
-					'lookupType' => 2,
-					'lookupTable' => 'transactions',
-					'lookupTableConnection' => 'conn',
-					'lookupLinkField' => 'transaction_number',
-					'lookupDisplayField' => 'transaction_number',
-					'lookupControlType' => 2,
-					'lookupListPage' => 'list' 
-				) 
-			),
-			'tableName' => 'transaction_guarantor' 
-		),
-		'guarantor_id' => array(
-			'name' => 'guarantor_id',
-			'goodName' => 'guarantor_id',
-			'strField' => 'guarantor_id',
-			'index' => 3,
-			'type' => 3,
-			'sqlExpression' => 'guarantor_id',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'format' => 'Lookup wizard',
-					'lookupType' => 2,
-					'lookupTable' => 'guarantors',
-					'lookupTableConnection' => 'conn',
-					'lookupLinkField' => 'id',
-					'lookupDisplayField' => 'full_name',
-					'lookupControlType' => 2,
-					'lookupListPage' => 'list' 
-				) 
-			),
-			'tableName' => 'transaction_guarantor' 
-		),
-		'placed_by' => array(
-			'name' => 'placed_by',
-			'goodName' => 'placed_by',
-			'strField' => 'placed_by',
-			'index' => 4,
-			'sqlExpression' => 'placed_by',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'format' => 'Readonly',
-					'defaultValue' => 'getFullname($_SESSION[\'full_name\']);' 
-				) 
-			),
-			'tableName' => 'transaction_guarantor' 
-		),
-		'group' => array(
-			'name' => 'group',
-			'goodName' => 'group',
-			'strField' => 'group',
-			'index' => 5,
-			'sqlExpression' => '`group`',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'format' => 'Readonly',
-					'defaultValue' => 'getGroup($_SESSION[\'group\']);' 
-				) 
-			),
-			'tableName' => 'transaction_guarantor' 
-		),
-		'timestamps' => array(
-			'name' => 'timestamps',
-			'goodName' => 'timestamps',
-			'strField' => 'timestamps',
-			'index' => 6,
 			'type' => 135,
-			'sqlExpression' => 'timestamps',
+			'sqlExpression' => '`datetime`',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Short Date' 
@@ -197,35 +102,116 @@ FROM
 			),
 			'editFormats' => array(
 				'edit' => array(
-					'format' => 'Readonly',
-					'defaultValue' => 'now();',
+					'format' => 'Date',
 					'dateEditType' => 11 
 				) 
 			),
-			'tableName' => 'transaction_guarantor' 
-		) 
-	),
-	'masterTables' => array( 
-		array(
-			'table' => 'transactions',
-			'detailsKeys' => array( 
-				'transaction_number' 
+			'tableName' => 'uhs_audit' 
+		),
+		'ip' => array(
+			'name' => 'ip',
+			'goodName' => 'ip',
+			'strField' => 'ip',
+			'index' => 3,
+			'sqlExpression' => 'ip',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
 			),
-			'masterKeys' => array( 
-				'transaction_number' 
-			) 
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'uhs_audit' 
+		),
+		'user' => array(
+			'name' => 'user',
+			'goodName' => 'user',
+			'strField' => 'user',
+			'index' => 4,
+			'sqlExpression' => '`user`',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'uhs_audit' 
+		),
+		'table' => array(
+			'name' => 'table',
+			'goodName' => 'table',
+			'strField' => 'table',
+			'index' => 5,
+			'sqlExpression' => '`table`',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'uhs_audit' 
+		),
+		'action' => array(
+			'name' => 'action',
+			'goodName' => 'action',
+			'strField' => 'action',
+			'index' => 6,
+			'sqlExpression' => '`action`',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'uhs_audit' 
+		),
+		'description' => array(
+			'name' => 'description',
+			'goodName' => 'description',
+			'strField' => 'description',
+			'index' => 7,
+			'type' => 201,
+			'sqlExpression' => 'description',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					'format' => 'Text area' 
+				) 
+			),
+			'tableName' => 'uhs_audit' 
 		) 
 	),
 	'query' => array(
 		'sql' => 'SELECT
 	id,
-	transaction_number,
-	guarantor_id,
-	placed_by,
-	`group`,
-	timestamps
+	`datetime`,
+	ip,
+	`user`,
+	`table`,
+	`action`,
+	description
 FROM
-	transaction_guarantor',
+	uhs_audit
+ORDER BY `datetime` DESC',
 		'parsed' => true,
 		'type' => 'SQLQuery',
 		'fieldList' => array( 
@@ -238,14 +224,14 @@ FROM
 					'sql' => '',
 					'parsed' => true,
 					'type' => 'SQLField',
-					'table' => 'transaction_guarantor',
+					'table' => 'uhs_audit',
 					'name' => 'id' 
 				),
 				'encrypted' => false,
 				'columnName' => 'id' 
 			),
 			array(
-				'sql' => 'transaction_number',
+				'sql' => '`datetime`',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -253,14 +239,14 @@ FROM
 					'sql' => '',
 					'parsed' => true,
 					'type' => 'SQLField',
-					'table' => 'transaction_guarantor',
-					'name' => 'transaction_number' 
+					'table' => 'uhs_audit',
+					'name' => 'datetime' 
 				),
 				'encrypted' => false,
-				'columnName' => 'transaction_number' 
+				'columnName' => 'datetime' 
 			),
 			array(
-				'sql' => 'guarantor_id',
+				'sql' => 'ip',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -268,14 +254,14 @@ FROM
 					'sql' => '',
 					'parsed' => true,
 					'type' => 'SQLField',
-					'table' => 'transaction_guarantor',
-					'name' => 'guarantor_id' 
+					'table' => 'uhs_audit',
+					'name' => 'ip' 
 				),
 				'encrypted' => false,
-				'columnName' => 'guarantor_id' 
+				'columnName' => 'ip' 
 			),
 			array(
-				'sql' => 'placed_by',
+				'sql' => '`user`',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -283,14 +269,14 @@ FROM
 					'sql' => '',
 					'parsed' => true,
 					'type' => 'SQLField',
-					'table' => 'transaction_guarantor',
-					'name' => 'placed_by' 
+					'table' => 'uhs_audit',
+					'name' => 'user' 
 				),
 				'encrypted' => false,
-				'columnName' => 'placed_by' 
+				'columnName' => 'user' 
 			),
 			array(
-				'sql' => '`group`',
+				'sql' => '`table`',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -298,14 +284,14 @@ FROM
 					'sql' => '',
 					'parsed' => true,
 					'type' => 'SQLField',
-					'table' => 'transaction_guarantor',
-					'name' => 'group' 
+					'table' => 'uhs_audit',
+					'name' => 'table' 
 				),
 				'encrypted' => false,
-				'columnName' => 'group' 
+				'columnName' => 'table' 
 			),
 			array(
-				'sql' => 'timestamps',
+				'sql' => '`action`',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -313,31 +299,47 @@ FROM
 					'sql' => '',
 					'parsed' => true,
 					'type' => 'SQLField',
-					'table' => 'transaction_guarantor',
-					'name' => 'timestamps' 
+					'table' => 'uhs_audit',
+					'name' => 'action' 
 				),
 				'encrypted' => false,
-				'columnName' => 'timestamps' 
+				'columnName' => 'action' 
+			),
+			array(
+				'sql' => 'description',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'uhs_audit',
+					'name' => 'description' 
+				),
+				'encrypted' => false,
+				'columnName' => 'description' 
 			) 
 		),
 		'fromList' => array( 
 			array(
-				'sql' => 'transaction_guarantor',
+				'sql' => 'uhs_audit',
 				'parsed' => true,
 				'type' => 'FromListItem',
 				'table' => array(
-					'sql' => 'transaction_guarantor',
+					'sql' => 'uhs_audit',
 					'parsed' => true,
 					'type' => 'SQLTable',
 					'columns' => array( 
 						'id',
-						'transaction_number',
-						'guarantor_id',
-						'placed_by',
-						'group',
-						'timestamps' 
+						'datetime',
+						'ip',
+						'user',
+						'table',
+						'action',
+						'description' 
 					),
-					'name' => 'transaction_guarantor' 
+					'name' => 'uhs_audit' 
 				),
 				'joinOn' => array(
 					'sql' => '',
@@ -387,7 +389,20 @@ FROM
 			'column' => null 
 		),
 		'orderBy' => array( 
-			 
+			array(
+				'sql' => '`datetime` DESC',
+				'parsed' => true,
+				'type' => 'OrderByListItem',
+				'column' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'uhs_audit',
+					'name' => 'datetime' 
+				),
+				'asc' => false,
+				'columnNumber' => 2 
+			) 
 		),
 		'colsIndex' => array( 
 			array(
@@ -399,7 +414,7 @@ FROM
 			),
 			array(
 				'fieldIndex' => 1,
-				'orderByIndex' => -1,
+				'orderByIndex' => 0,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
@@ -431,37 +446,35 @@ FROM
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 6,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
 			) 
 		),
 		'headSql' => 'SELECT',
 		'fieldListSql' => 'id,
-	transaction_number,
-	guarantor_id,
-	placed_by,
-	`group`,
-	timestamps',
+	`datetime`,
+	ip,
+	`user`,
+	`table`,
+	`action`,
+	description',
 		'fromListSql' => 'FROM
-	transaction_guarantor',
-		'orderBySql' => '',
+	uhs_audit',
+		'orderBySql' => 'ORDER BY `datetime` DESC',
 		'tailSql' => '' 
 	),
-	'hasEvents' => true,
-	'originalTable' => 'transaction_guarantor',
+	'originalTable' => 'uhs_audit',
 	'originalPagesByType' => array(
-		'add' => array( 
-			'add' 
-		),
 		'export' => array( 
 			'export' 
 		),
 		'import' => array( 
 			'import' 
-		),
-		'edit' => array( 
-			'edit' 
-		),
-		'view' => array( 
-			'view' 
 		),
 		'list' => array( 
 			'list' 
@@ -474,21 +487,15 @@ FROM
 		) 
 	),
 	'originalPageTypes' => array(
-		'add' => 'add',
 		'export' => 'export',
 		'import' => 'import',
-		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
 	),
 	'originalDefaultPages' => array(
-		'add' => 'add',
 		'export' => 'export',
 		'import' => 'import',
-		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
@@ -497,11 +504,12 @@ FROM
 		'caseSensitiveSearch' => false,
 		'searchableFields' => array( 
 			'id',
-			'transaction_number',
-			'guarantor_id',
-			'placed_by',
-			'group',
-			'timestamps' 
+			'datetime',
+			'ip',
+			'user',
+			'table',
+			'action',
+			'description' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -509,11 +517,12 @@ FROM
 		'hideFilterUntilSearch' => false,
 		'googleLikeSearchFields' => array( 
 			'id',
-			'transaction_number',
-			'guarantor_id',
-			'placed_by',
-			'group',
-			'timestamps' 
+			'datetime',
+			'ip',
+			'user',
+			'table',
+			'action',
+			'description' 
 		) 
 	),
 	'connId' => 'conn',
@@ -559,31 +568,34 @@ FROM
 
 global $runnerTableLabels;
 if( mlang_getcurrentlang() === 'English' ) {
-	$runnerTableLabels['transaction_guarantor'] = array(
-	'tableCaption' => 'Transaction Guarantor',
+	$runnerTableLabels['uhs_audit'] = array(
+	'tableCaption' => 'Uhs Audit',
 	'fieldLabels' => array(
 		'id' => 'Id',
-		'transaction_number' => 'Transaction Number',
-		'guarantor_id' => 'Guarantor Id',
-		'placed_by' => 'Placed By',
-		'group' => 'Group',
-		'timestamps' => 'Timestamps' 
+		'datetime' => 'Datetime',
+		'ip' => 'Ip',
+		'user' => 'User',
+		'table' => 'Table',
+		'action' => 'Action',
+		'description' => 'Description' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
-		'transaction_number' => '',
-		'guarantor_id' => '',
-		'placed_by' => '',
-		'group' => '',
-		'timestamps' => '' 
+		'datetime' => '',
+		'ip' => '',
+		'user' => '',
+		'table' => '',
+		'action' => '',
+		'description' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
-		'transaction_number' => '',
-		'guarantor_id' => '',
-		'placed_by' => '',
-		'group' => '',
-		'timestamps' => '' 
+		'datetime' => '',
+		'ip' => '',
+		'user' => '',
+		'table' => '',
+		'action' => '',
+		'description' => '' 
 	),
 	'pageTitles' => array(
 		 

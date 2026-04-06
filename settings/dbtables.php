@@ -3,6 +3,12 @@ global $runnerDbTables;
 $runnerDbTables = array( 
 	array(
 		'connId' => 'conn',
+		'table' => 'uhs_audit',
+		'schema' => '',
+		'filename' => 'uhs_audit' 
+	),
+	array(
+		'connId' => 'conn',
 		'table' => 'patients',
 		'schema' => '',
 		'filename' => 'patients' 
@@ -15,15 +21,21 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'hospital_accounts',
+		'table' => 'guarantors',
 		'schema' => '',
-		'filename' => 'hospital_accounts' 
+		'filename' => 'guarantors' 
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'transactions',
+		'table' => 'offices',
 		'schema' => '',
-		'filename' => 'transactions' 
+		'filename' => 'offices' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'professionals',
+		'schema' => '',
+		'filename' => 'professionals' 
 	),
 	array(
 		'connId' => 'conn',
@@ -45,33 +57,27 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'users',
+		'table' => 'hospital_accounts',
 		'schema' => '',
-		'filename' => 'users' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'offices',
-		'schema' => '',
-		'filename' => 'offices' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'professionals',
-		'schema' => '',
-		'filename' => 'professionals' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'guarantors',
-		'schema' => '',
-		'filename' => 'guarantors' 
+		'filename' => 'hospital_accounts' 
 	),
 	array(
 		'connId' => 'conn',
 		'table' => 'transaction_guarantor',
 		'schema' => '',
 		'filename' => 'transaction_guarantor' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'transactions',
+		'schema' => '',
+		'filename' => 'transactions' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'users',
+		'schema' => '',
+		'filename' => 'users' 
 	),
 	array(
 		'connId' => 'conn',

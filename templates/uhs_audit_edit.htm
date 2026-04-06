@@ -1,0 +1,330 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+						<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		{BEGIN styleCSSFiles}
+<link REL="stylesheet" href="{$stylepath}" type="text/css">
+{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-edit" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="edit_header" data-itemid="edit_header" {$item_edit_header} data-pageid="{$pageid}" >{$pagetitlelabel uhs_audit edit}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<div data-itemtype="edit_message" data-itemid="edit_message" {$item_edit_message} data-pageid="{$pageid}" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN message_back_button}
+			<button class="btn btn-sm btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+	{END message_back_button}
+{BEGIN message_view_page_button}
+		<a class="btn btn-sm btn-default" href="uhs_audit_view.php?{$editlink}" {$view_page_button_attrs}>{mlang_message VIEW}</a>
+{END message_view_page_button}
+</div>
+</div>
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN datetime_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_datetime}  r-vertical-field" 
+	data-signal-error-for="datetime{$id}" {$required_attr_datetime}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="datetime" data-fieldname="datetime" >
+
+	<label class="r-edit-label control-label {$datetime_label_class}" for="{$labelfor_datetime}">
+		{BEGIN datetime_label}
+			{$datetime_forward_control}
+			{$label uhs_audit datetime }			{END datetime_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$datetime_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="datetime" {$tooltipAttr uhs_audit datetime } >
+		<div class="text-muted" >
+		{$tooltip uhs_audit datetime }		</div>
+	</div>
+	</div>
+
+
+{END datetime_fieldblock}
+											
+{BEGIN ip_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_ip}  r-vertical-field" 
+	data-signal-error-for="ip{$id}" {$required_attr_ip}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="ip" data-fieldname="ip" >
+
+	<label class="r-edit-label control-label {$ip_label_class}" for="{$labelfor_ip}">
+		{BEGIN ip_label}
+			{$ip_forward_control}
+			{$label uhs_audit ip }			{END ip_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$ip_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="ip" {$tooltipAttr uhs_audit ip } >
+		<div class="text-muted" >
+		{$tooltip uhs_audit ip }		</div>
+	</div>
+	</div>
+
+
+{END ip_fieldblock}
+											
+{BEGIN user_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_user}  r-vertical-field" 
+	data-signal-error-for="user{$id}" {$required_attr_user}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="user" data-fieldname="user" >
+
+	<label class="r-edit-label control-label {$user_label_class}" for="{$labelfor_user}">
+		{BEGIN user_label}
+			{$user_forward_control}
+			{$label uhs_audit user }			{END user_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$user_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="user" {$tooltipAttr uhs_audit user } >
+		<div class="text-muted" >
+		{$tooltip uhs_audit user }		</div>
+	</div>
+	</div>
+
+
+{END user_fieldblock}
+											
+{BEGIN table_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_table}  r-vertical-field" 
+	data-signal-error-for="table{$id}" {$required_attr_table}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="table" data-fieldname="table" >
+
+	<label class="r-edit-label control-label {$table_label_class}" for="{$labelfor_table}">
+		{BEGIN table_label}
+			{$table_forward_control}
+			{$label uhs_audit table }			{END table_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$table_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="table" {$tooltipAttr uhs_audit table } >
+		<div class="text-muted" >
+		{$tooltip uhs_audit table }		</div>
+	</div>
+	</div>
+
+
+{END table_fieldblock}
+											
+{BEGIN action_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_action}  r-vertical-field" 
+	data-signal-error-for="action{$id}" {$required_attr_action}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="action" data-fieldname="action" >
+
+	<label class="r-edit-label control-label {$action_label_class}" for="{$labelfor_action}">
+		{BEGIN action_label}
+			{$action_forward_control}
+			{$label uhs_audit action }			{END action_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$action_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="action" {$tooltipAttr uhs_audit action } >
+		<div class="text-muted" >
+		{$tooltip uhs_audit action }		</div>
+	</div>
+	</div>
+
+
+{END action_fieldblock}
+											
+{BEGIN description_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_description}  r-vertical-field" 
+	data-signal-error-for="description{$id}" {$required_attr_description}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="description" data-fieldname="description" >
+
+	<label class="r-edit-label control-label {$description_label_class}" for="{$labelfor_description}">
+		{BEGIN description_label}
+			{$description_forward_control}
+			{$label uhs_audit description }			{END description_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$description_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="description" {$tooltipAttr uhs_audit description } >
+		<div class="text-muted" >
+		{$tooltip uhs_audit description }		</div>
+	</div>
+	</div>
+
+
+{END description_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-6
+	">
+	 
+		{BEGIN save_edit}
+<span data-itemtype="edit_save" data-itemid="edit_save" {$item_edit_save} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$savebutton_attrs} >
+							{mlang_message SAVE}			</a>
+</span>
+{END save_edit}
+	 
+		{BEGIN back_button}
+<span data-itemtype="edit_back_list" data-itemid="edit_back_list" {$item_edit_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							{mlang_message BACK_TO_LIST}			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN close_button}
+<span data-itemtype="edit_close" data-itemid="edit_close" {$item_edit_close} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$closebutton_attrs} >
+							{mlang_message CANCEL}			</a>
+</span>
+{END close_button}
+	</div>			 
+				<div 
+	data-cellId="below-grid_c2" data-pageid="{$pageid}"	{$cell_below-grid_c2}
+	class="r-align-right r-ori-vert			col-md-6
+	">
+	 
+		<span data-itemtype="hamburger" data-itemid="hamburger" {$item_hamburger} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown dropup">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+												<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN reset_button}
+	<li data-itemtype="edit_reset" data-itemid="edit_reset" {$item_edit_reset} data-pageid="{$pageid}" data-small >
+				<a  {$resetbutton_attrs}  title="" >
+				
+		{mlang_message RESET}		
+		</a>
+	</li>
+{END reset_button}
+							{BEGIN view_page_button}
+	<li data-itemtype="edit_view" data-itemid="edit_view" {$item_edit_view} data-pageid="{$pageid}" data-small >
+				<a  href="uhs_audit_view.php?{$editlink}" {$view_page_button_attrs}  title="" >
+				
+		{mlang_message VIEW}		
+		</a>
+	</li>
+{END view_page_button}
+					</ul>
+	</span>
+</span>
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

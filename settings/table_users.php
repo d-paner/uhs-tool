@@ -44,6 +44,7 @@ $runnerTableSettings['users'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'users',
 	'afterAddDetail' => 'users',
 	'detailsBadgeColor' => 'b22222',

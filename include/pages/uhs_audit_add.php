@@ -5,15 +5,12 @@
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'transaction_number',
-			'amount',
-			'date',
-			'payment_method',
-			'placed_by',
-			'group_id',
-			'service_type',
-			'hospital_service_id',
-			'professional_service_id' 
+			'datetime',
+			'ip',
+			'user',
+			'table',
+			'action',
+			'description' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -22,32 +19,23 @@
 			 
 		),
 		'fieldItems' => array(
-			'transaction_number' => array( 
+			'datetime' => array( 
 				'integrated_edit_field' 
 			),
-			'amount' => array( 
+			'ip' => array( 
 				'integrated_edit_field1' 
 			),
-			'date' => array( 
+			'user' => array( 
 				'integrated_edit_field2' 
 			),
-			'payment_method' => array( 
+			'table' => array( 
 				'integrated_edit_field3' 
 			),
-			'placed_by' => array( 
+			'action' => array( 
 				'integrated_edit_field4' 
 			),
-			'group_id' => array( 
+			'description' => array( 
 				'integrated_edit_field5' 
-			),
-			'service_type' => array( 
-				'integrated_edit_field6' 
-			),
-			'hospital_service_id' => array( 
-				'integrated_edit_field7' 
-			),
-			'professional_service_id' => array( 
-				'integrated_edit_field8' 
 			) 
 		) 
 	),
@@ -74,12 +62,9 @@
 				),
 				'grid' => array( 
 					'integrated_edit_field',
-					'integrated_edit_field6',
-					'integrated_edit_field7',
-					'integrated_edit_field8',
 					'integrated_edit_field1',
-					'integrated_edit_field3',
 					'integrated_edit_field2',
+					'integrated_edit_field3',
 					'integrated_edit_field4',
 					'integrated_edit_field5' 
 				) 
@@ -97,12 +82,9 @@
 				'add_cancel' => 'below-grid',
 				'add_header' => 'top',
 				'integrated_edit_field' => 'grid',
-				'integrated_edit_field6' => 'grid',
-				'integrated_edit_field7' => 'grid',
-				'integrated_edit_field8' => 'grid',
 				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field2' => 'grid',
+				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field5' => 'grid' 
 			),
@@ -111,27 +93,15 @@
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field6' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field7' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field8' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
 				'integrated_edit_field1' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field3' => array(
+				'integrated_edit_field2' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field2' => array(
+				'integrated_edit_field3' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -173,10 +143,7 @@
 				'integrated_edit_field2',
 				'integrated_edit_field3',
 				'integrated_edit_field4',
-				'integrated_edit_field5',
-				'integrated_edit_field6',
-				'integrated_edit_field7',
-				'integrated_edit_field8' 
+				'integrated_edit_field5' 
 			) 
 		),
 		'cellMaps' => array(
@@ -194,12 +161,9 @@
 						),
 						'items' => array( 
 							'integrated_edit_field',
-							'integrated_edit_field6',
-							'integrated_edit_field7',
-							'integrated_edit_field8',
 							'integrated_edit_field1',
-							'integrated_edit_field3',
 							'integrated_edit_field2',
+							'integrated_edit_field3',
 							'integrated_edit_field4',
 							'integrated_edit_field5' 
 						),
@@ -366,12 +330,9 @@
 					'model' => 'c3',
 					'items' => array( 
 						'integrated_edit_field',
-						'integrated_edit_field6',
-						'integrated_edit_field7',
-						'integrated_edit_field8',
 						'integrated_edit_field1',
-						'integrated_edit_field3',
 						'integrated_edit_field2',
+						'integrated_edit_field3',
 						'integrated_edit_field4',
 						'integrated_edit_field5' 
 					) 
@@ -405,59 +366,34 @@
 			'type' => 'add_reset' 
 		),
 		'integrated_edit_field' => array(
-			'field' => 'transaction_number',
+			'field' => 'datetime',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
 		'integrated_edit_field1' => array(
-			'field' => 'amount',
+			'field' => 'ip',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
 		'integrated_edit_field2' => array(
-			'field' => 'date',
+			'field' => 'user',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
 		'integrated_edit_field3' => array(
-			'field' => 'payment_method',
+			'field' => 'table',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
 		'integrated_edit_field4' => array(
-			'field' => 'placed_by',
+			'field' => 'action',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
 		'integrated_edit_field5' => array(
-			'field' => 'group_id',
+			'field' => 'description',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
-		),
-		'integrated_edit_field6' => array(
-			'field' => 'service_type',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field7' => array(
-			'field' => 'hospital_service_id',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0,
-			'label' => array(
-				'field' => 'hospital_service_id',
-				'table' => 'payments',
-				'type' => 3 
-			) 
-		),
-		'integrated_edit_field8' => array(
-			'field' => 'professional_service_id',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0,
-			'label' => array(
-				'field' => 'professional_service_id',
-				'table' => 'payments',
-				'type' => 3 
-			) 
 		) 
 	),
 	'version' => 13,

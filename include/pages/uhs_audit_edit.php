@@ -5,15 +5,12 @@
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'transaction_number',
-			'amount',
-			'date',
-			'payment_method',
-			'placed_by',
-			'group_id',
-			'service_type',
-			'hospital_service_id',
-			'professional_service_id' 
+			'datetime',
+			'ip',
+			'user',
+			'table',
+			'action',
+			'description' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -21,65 +18,56 @@
 		'searchPanelFields' => array( 
 			 
 		),
+		'updateOnEditFields' => array( 
+			 
+		),
 		'fieldItems' => array(
-			'transaction_number' => array( 
+			'datetime' => array( 
 				'integrated_edit_field' 
 			),
-			'amount' => array( 
+			'ip' => array( 
 				'integrated_edit_field1' 
 			),
-			'date' => array( 
+			'user' => array( 
 				'integrated_edit_field2' 
 			),
-			'payment_method' => array( 
+			'table' => array( 
 				'integrated_edit_field3' 
 			),
-			'placed_by' => array( 
+			'action' => array( 
 				'integrated_edit_field4' 
 			),
-			'group_id' => array( 
+			'description' => array( 
 				'integrated_edit_field5' 
-			),
-			'service_type' => array( 
-				'integrated_edit_field6' 
-			),
-			'hospital_service_id' => array( 
-				'integrated_edit_field7' 
-			),
-			'professional_service_id' => array( 
-				'integrated_edit_field8' 
 			) 
 		) 
 	),
 	'pageLinks' => array(
 		'edit' => false,
 		'add' => false,
-		'view' => false,
+		'view' => true,
 		'print' => false 
 	),
 	'layoutHelper' => array(
 		'formItems' => array(
 			'formItems' => array(
 				'above-grid' => array( 
-					'add_message' 
+					'edit_message' 
 				),
 				'below-grid' => array( 
-					'add_save',
-					'add_reset',
-					'add_back_list',
-					'add_cancel' 
+					'edit_save',
+					'edit_back_list',
+					'edit_close',
+					'hamburger' 
 				),
 				'top' => array( 
-					'add_header' 
+					'edit_header' 
 				),
 				'grid' => array( 
 					'integrated_edit_field',
-					'integrated_edit_field6',
-					'integrated_edit_field7',
-					'integrated_edit_field8',
 					'integrated_edit_field1',
-					'integrated_edit_field3',
 					'integrated_edit_field2',
+					'integrated_edit_field3',
 					'integrated_edit_field4',
 					'integrated_edit_field5' 
 				) 
@@ -90,19 +78,16 @@
 				) 
 			),
 			'itemForms' => array(
-				'add_message' => 'above-grid',
-				'add_save' => 'below-grid',
-				'add_reset' => 'below-grid',
-				'add_back_list' => 'below-grid',
-				'add_cancel' => 'below-grid',
-				'add_header' => 'top',
+				'edit_message' => 'above-grid',
+				'edit_save' => 'below-grid',
+				'edit_back_list' => 'below-grid',
+				'edit_close' => 'below-grid',
+				'hamburger' => 'below-grid',
+				'edit_header' => 'top',
 				'integrated_edit_field' => 'grid',
-				'integrated_edit_field6' => 'grid',
-				'integrated_edit_field7' => 'grid',
-				'integrated_edit_field8' => 'grid',
 				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field2' => 'grid',
+				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field5' => 'grid' 
 			),
@@ -111,27 +96,15 @@
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field6' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field7' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field8' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
 				'integrated_edit_field1' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field3' => array(
+				'integrated_edit_field2' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field2' => array(
+				'integrated_edit_field3' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -149,23 +122,26 @@
 			) 
 		),
 		'itemsByType' => array(
-			'add_header' => array( 
-				'add_header' 
+			'edit_header' => array( 
+				'edit_header' 
 			),
-			'add_back_list' => array( 
-				'add_back_list' 
+			'hamburger' => array( 
+				'hamburger' 
 			),
-			'add_cancel' => array( 
-				'add_cancel' 
+			'edit_reset' => array( 
+				'edit_reset' 
 			),
-			'add_message' => array( 
-				'add_message' 
+			'edit_message' => array( 
+				'edit_message' 
 			),
-			'add_save' => array( 
-				'add_save' 
+			'edit_save' => array( 
+				'edit_save' 
 			),
-			'add_reset' => array( 
-				'add_reset' 
+			'edit_back_list' => array( 
+				'edit_back_list' 
+			),
+			'edit_close' => array( 
+				'edit_close' 
 			),
 			'integrated_edit_field' => array( 
 				'integrated_edit_field',
@@ -173,10 +149,10 @@
 				'integrated_edit_field2',
 				'integrated_edit_field3',
 				'integrated_edit_field4',
-				'integrated_edit_field5',
-				'integrated_edit_field6',
-				'integrated_edit_field7',
-				'integrated_edit_field8' 
+				'integrated_edit_field5' 
+			),
+			'edit_view' => array( 
+				'edit_view' 
 			) 
 		),
 		'cellMaps' => array(
@@ -194,12 +170,9 @@
 						),
 						'items' => array( 
 							'integrated_edit_field',
-							'integrated_edit_field6',
-							'integrated_edit_field7',
-							'integrated_edit_field8',
 							'integrated_edit_field1',
-							'integrated_edit_field3',
 							'integrated_edit_field2',
+							'integrated_edit_field3',
 							'integrated_edit_field4',
 							'integrated_edit_field5' 
 						),
@@ -249,8 +222,9 @@
 		'hasCharts' => false 
 	),
 	'misc' => array(
-		'type' => 'add',
-		'breadcrumb' => false 
+		'type' => 'edit',
+		'breadcrumb' => false,
+		'nextPrev' => false 
 	),
 	'events' => array(
 		'maps' => array( 
@@ -262,17 +236,20 @@
 		'buttons' => array( 
 			 
 		) 
+	),
+	'edit' => array(
+		'updateSelected' => false 
 	) 
 );
 			$pageArray = array(
-	'id' => 'add',
-	'type' => 'add',
+	'id' => 'edit',
+	'type' => 'edit',
 	'layoutId' => 'nomenu',
 	'disabled' => false,
 	'default' => 0,
 	'forms' => array(
 		'above-grid' => array(
-			'modelId' => 'add-above-grid',
+			'modelId' => 'edit-above-grid',
 			'grid' => array( 
 				array(
 					'cells' => array( 
@@ -287,7 +264,7 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'add_message' 
+						'edit_message' 
 					) 
 				) 
 			),
@@ -297,12 +274,15 @@
 			'recsPerRow' => 1 
 		),
 		'below-grid' => array(
-			'modelId' => 'add-below-grid',
+			'modelId' => 'edit-below-grid',
 			'grid' => array( 
 				array(
 					'cells' => array( 
 						array(
 							'cell' => 'c1' 
+						),
+						array(
+							'cell' => 'c2' 
 						) 
 					),
 					'section' => '' 
@@ -312,10 +292,15 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'add_save',
-						'add_reset',
-						'add_back_list',
-						'add_cancel' 
+						'edit_save',
+						'edit_back_list',
+						'edit_close' 
+					) 
+				),
+				'c2' => array(
+					'model' => 'c2',
+					'items' => array( 
+						'hamburger' 
 					) 
 				) 
 			),
@@ -325,7 +310,7 @@
 			'recsPerRow' => 1 
 		),
 		'top' => array(
-			'modelId' => 'add-header',
+			'modelId' => 'edit-header',
 			'grid' => array( 
 				array(
 					'cells' => array( 
@@ -340,7 +325,7 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'add_header' 
+						'edit_header' 
 					) 
 				) 
 			),
@@ -366,12 +351,9 @@
 					'model' => 'c3',
 					'items' => array( 
 						'integrated_edit_field',
-						'integrated_edit_field6',
-						'integrated_edit_field7',
-						'integrated_edit_field8',
 						'integrated_edit_field1',
-						'integrated_edit_field3',
 						'integrated_edit_field2',
+						'integrated_edit_field3',
 						'integrated_edit_field4',
 						'integrated_edit_field5' 
 					) 
@@ -386,78 +368,69 @@
 		) 
 	),
 	'items' => array(
-		'add_header' => array(
-			'type' => 'add_header' 
+		'edit_header' => array(
+			'type' => 'edit_header' 
 		),
-		'add_back_list' => array(
-			'type' => 'add_back_list' 
+		'hamburger' => array(
+			'type' => 'hamburger',
+			'items' => array( 
+				'edit_reset',
+				'edit_view' 
+			) 
 		),
-		'add_cancel' => array(
-			'type' => 'add_cancel' 
+		'edit_reset' => array(
+			'type' => 'edit_reset' 
 		),
-		'add_message' => array(
-			'type' => 'add_message' 
+		'edit_message' => array(
+			'type' => 'edit_message' 
 		),
-		'add_save' => array(
-			'type' => 'add_save' 
+		'edit_save' => array(
+			'type' => 'edit_save' 
 		),
-		'add_reset' => array(
-			'type' => 'add_reset' 
+		'edit_back_list' => array(
+			'type' => 'edit_back_list' 
+		),
+		'edit_close' => array(
+			'type' => 'edit_close' 
 		),
 		'integrated_edit_field' => array(
-			'field' => 'transaction_number',
+			'field' => 'datetime',
 			'type' => 'integrated_edit_field',
-			'orientation' => 0 
+			'orientation' => 0,
+			'updateOnEdit' => false 
 		),
 		'integrated_edit_field1' => array(
-			'field' => 'amount',
+			'field' => 'ip',
 			'type' => 'integrated_edit_field',
-			'orientation' => 0 
+			'orientation' => 0,
+			'updateOnEdit' => false 
 		),
 		'integrated_edit_field2' => array(
-			'field' => 'date',
+			'field' => 'user',
 			'type' => 'integrated_edit_field',
-			'orientation' => 0 
+			'orientation' => 0,
+			'updateOnEdit' => false 
 		),
 		'integrated_edit_field3' => array(
-			'field' => 'payment_method',
+			'field' => 'table',
 			'type' => 'integrated_edit_field',
-			'orientation' => 0 
+			'orientation' => 0,
+			'updateOnEdit' => false 
 		),
 		'integrated_edit_field4' => array(
-			'field' => 'placed_by',
+			'field' => 'action',
 			'type' => 'integrated_edit_field',
-			'orientation' => 0 
+			'orientation' => 0,
+			'updateOnEdit' => false 
 		),
 		'integrated_edit_field5' => array(
-			'field' => 'group_id',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field6' => array(
-			'field' => 'service_type',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field7' => array(
-			'field' => 'hospital_service_id',
+			'field' => 'description',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0,
-			'label' => array(
-				'field' => 'hospital_service_id',
-				'table' => 'payments',
-				'type' => 3 
-			) 
+			'updateOnEdit' => false 
 		),
-		'integrated_edit_field8' => array(
-			'field' => 'professional_service_id',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0,
-			'label' => array(
-				'field' => 'professional_service_id',
-				'table' => 'payments',
-				'type' => 3 
-			) 
+		'edit_view' => array(
+			'type' => 'edit_view' 
 		) 
 	),
 	'version' => 13,
