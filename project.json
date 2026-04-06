@@ -69,7 +69,7 @@
 			},
 			{
 				"gid": 767438990,
-				"y": 387,
+				"y": 349,
 				"x": 0,
 				"width": 149.15625,
 				"height": 263.3333435058594
@@ -188,7 +188,7 @@
 				"table": "uhs_audit"
 			},
 			"loggingFile": "audit.log",
-			"logSecurityActions": false,
+			"logSecurityActions": true,
 			"lockAfterUnsuccessfulLogin": false,
 			"enableLocking": false,
 			"lockingTable": {
@@ -204,6 +204,7 @@
 					"logModifications": false,
 					"logFieldValues": false
 				},
+				"726749642": {},
 				"751578668": {
 					"logModifications": true,
 					"logFieldValues": true
