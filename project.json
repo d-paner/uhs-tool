@@ -101,6 +101,13 @@
 				"x": 398,
 				"width": 141.125,
 				"height": 291.3333435058594
+			},
+			{
+				"gid": 726749642,
+				"y": 660,
+				"x": 400,
+				"width": 127.38542175292969,
+				"height": 235.33334350585938
 			}
 		]
 	},
@@ -175,20 +182,77 @@
 			"allowGuestLogin": false
 		},
 		"auditAndLocking": {
-			"loggingMode": 0,
+			"loggingMode": 1,
 			"loggingTable": {
-				"connId": "",
-				"table": ""
+				"connId": "conn",
+				"table": "uhs_audit"
 			},
 			"loggingFile": "audit.log",
 			"logSecurityActions": false,
 			"lockAfterUnsuccessfulLogin": false,
 			"enableLocking": false,
 			"lockingTable": {
-				"connId": "",
-				"table": ""
+				"connId": "conn",
+				"table": "˂Create new˃"
 			},
-			"tables": {}
+			"tables": {
+				"344172009": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"631629026": {
+					"logModifications": false,
+					"logFieldValues": false
+				},
+				"751578668": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"767438990": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"1498301457": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"1504671644": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"1653239510": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"1708301106": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"2605319477": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"3422966527": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"3763669081": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"3769908180": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"3936885324": {
+					"logModifications": true,
+					"logFieldValues": true
+				},
+				"4118085452": {
+					"logModifications": true,
+					"logFieldValues": true
+				}
+			}
 		},
 		"twoFactorSettings": {
 			"available": false,
@@ -281,6 +345,11 @@
 						"professional_accounts": {
 							"mask": "ADESPI",
 							"table": "professional_accounts",
+							"restrictedPages": {}
+						},
+						"uhs_audit": {
+							"mask": "ADESPI",
+							"table": "uhs_audit",
 							"restrictedPages": {}
 						}
 					},
@@ -520,6 +589,19 @@
 							"mask": "AEDSPI",
 							"table": "",
 							"restrictedPages": {}
+						},
+						"uhs_audit": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
 						}
 					}
 				}
@@ -776,6 +858,21 @@
 									"table": 344172009,
 									"pageType": "list"
 								}
+							},
+							{
+								"id": "20",
+								"parent": "15",
+								"data": {
+									"name": {
+										"text": "Audit Log",
+										"type": 0
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 726749642,
+									"pageType": "list"
+								}
 							}
 						],
 						"data": {
@@ -909,7 +1006,8 @@
 								"welcome_item11",
 								"welcome_item12",
 								"welcome_item13",
-								"welcome_item14"
+								"welcome_item14",
+								"welcome_item5"
 							]
 						}
 					},
@@ -1148,6 +1246,18 @@
 					"linkPage": "list",
 					"linkText": {
 						"table": "professional_accounts",
+						"type": 6
+					},
+					"background": "#5f9ea0",
+					"linkType": 0
+				},
+				"welcome_item5": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "uhs_audit",
+					"linkPage": "list",
+					"linkText": {
+						"table": "uhs_audit",
 						"type": 6
 					},
 					"background": "#5f9ea0",
