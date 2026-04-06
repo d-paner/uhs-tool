@@ -144,7 +144,7 @@ $runnerProjectSettings = array(
 				'table' => 'uhs_audit' 
 			),
 			'loggingFile' => 'audit.log',
-			'logSecurityActions' => false,
+			'logSecurityActions' => true,
 			'lockAfterUnsuccessfulLogin' => false,
 			'enableLocking' => false,
 			'lockingTable' => array(
@@ -207,6 +207,9 @@ $runnerProjectSettings = array(
 				'professional_accounts' => array(
 					'logModifications' => true,
 					'logFieldValues' => true 
+				),
+				'uhs_audit' => array(
+					 
 				) 
 			) 
 		),
@@ -905,7 +908,7 @@ $runnerProjectSettings = array(
 		'table' => '' 
 	),
 	'wizardBuild' => '43917',
-	'projectBuild' => 'MDr56hn0DEKM',
+	'projectBuild' => 'h78j6sqdBVRY',
 	'projectTheme' => 'flatly',
 	'projectSize' => 'normal',
 	'customErrorMsg' => array(
