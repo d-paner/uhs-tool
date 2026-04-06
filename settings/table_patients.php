@@ -51,6 +51,7 @@ $runnerTableSettings['patients'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'patients',
 	'afterAddDetail' => 'patients',
 	'detailsBadgeColor' => '2f4f4f',

@@ -51,6 +51,7 @@ $runnerTableSettings['professional_services'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'professional_services',
 	'afterAddDetail' => 'professional_services',
 	'detailsBadgeColor' => '9acd32',
@@ -320,7 +321,7 @@ FROM
 					'lookupDisplayField' => 'label' 
 				) 
 			),
-			'tableName' => '' 
+			'tableName' => 'professional_services' 
 		) 
 	),
 	'masterTables' => array( 
@@ -397,9 +398,11 @@ FROM
 				'type' => 'FieldListItem',
 				'alias' => '',
 				'expression' => array(
-					'sql' => 'pf_account',
+					'sql' => '',
 					'parsed' => true,
-					'type' => 'NonParsedEntity' 
+					'type' => 'SQLField',
+					'table' => 'professional_services',
+					'name' => 'pf_account' 
 				),
 				'encrypted' => false,
 				'columnName' => 'pf_account' 
@@ -537,7 +540,7 @@ FROM
 					'columns' => array( 
 						'id',
 						'transaction_number',
-						'pf_account_id',
+						'pf_account',
 						'amount',
 						'professional_id',
 						'type_of_account_due',

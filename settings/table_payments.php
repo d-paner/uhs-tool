@@ -39,6 +39,7 @@ $runnerTableSettings['payments'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'payments',
 	'afterAddDetail' => 'payments',
 	'detailsBadgeColor' => '5f9ea0',
@@ -602,7 +603,7 @@ ORDER BY `date` DESC',
 					'columns' => array( 
 						'id',
 						'transaction_number',
-						'hospital_account_id',
+						'hospital_account',
 						'amount',
 						'status',
 						'placed_by',
@@ -667,7 +668,7 @@ ORDER BY `date` DESC',
 					'columns' => array( 
 						'id',
 						'transaction_number',
-						'pf_account_id',
+						'pf_account',
 						'amount',
 						'professional_id',
 						'type_of_account_due',
@@ -775,9 +776,11 @@ ORDER BY `date` DESC',
 					),
 					'field2' => array( 
 						array(
-							'sql' => 'hs.hospital_account',
+							'sql' => '',
 							'parsed' => true,
-							'type' => 'NonParsedEntity' 
+							'type' => 'SQLField',
+							'table' => 'hs',
+							'name' => 'hospital_account' 
 						) 
 					) 
 				),
@@ -834,9 +837,11 @@ ORDER BY `date` DESC',
 					),
 					'field2' => array( 
 						array(
-							'sql' => 'ps.pf_account',
+							'sql' => '',
 							'parsed' => true,
-							'type' => 'NonParsedEntity' 
+							'type' => 'SQLField',
+							'table' => 'ps',
+							'name' => 'pf_account' 
 						) 
 					) 
 				),

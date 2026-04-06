@@ -1,6 +1,6 @@
 <?php
 global $runnerDbTableInfo;
-$runnerDbTableInfo['hospital_services'] = array(
+$runnerDbTableInfo['university_health_service_audit'] = array(
 	'type' => 0,
 	'foreignKeys' => array( 
 		 
@@ -18,73 +18,7 @@ $runnerDbTableInfo['hospital_services'] = array(
 			'defaultValue' => '' 
 		),
 		array(
-			'name' => 'transaction_number',
-			'type' => 200,
-			'size' => 250,
-			'scale' => 0,
-			'typeName' => 'varchar(250)',
-			'nullable' => false,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'hospital_account',
-			'type' => 200,
-			'size' => 250,
-			'scale' => 0,
-			'typeName' => 'varchar(250)',
-			'nullable' => false,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'amount',
-			'type' => 14,
-			'size' => 10,
-			'scale' => 2,
-			'typeName' => 'decimal(10,2)',
-			'nullable' => false,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'status',
-			'type' => 200,
-			'size' => 250,
-			'scale' => 0,
-			'typeName' => 'varchar(250)',
-			'nullable' => false,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'placed_by',
-			'type' => 200,
-			'size' => 250,
-			'scale' => 0,
-			'typeName' => 'varchar(250)',
-			'nullable' => false,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'group_id',
-			'type' => 200,
-			'size' => 250,
-			'scale' => 0,
-			'typeName' => 'varchar(250)',
-			'nullable' => false,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'created_at',
+			'name' => 'datetime',
 			'type' => 135,
 			'size' => 0,
 			'scale' => 0,
@@ -95,12 +29,56 @@ $runnerDbTableInfo['hospital_services'] = array(
 			'defaultValue' => '' 
 		),
 		array(
-			'name' => 'updated_at',
-			'type' => 135,
+			'name' => 'ip',
+			'type' => 200,
+			'size' => 40,
+			'scale' => 0,
+			'typeName' => 'varchar(40)',
+			'nullable' => false,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'user',
+			'type' => 200,
+			'size' => 255,
+			'scale' => 0,
+			'typeName' => 'varchar(255)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'table',
+			'type' => 200,
+			'size' => 300,
+			'scale' => 0,
+			'typeName' => 'varchar(300)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'action',
+			'type' => 200,
+			'size' => 250,
+			'scale' => 0,
+			'typeName' => 'varchar(250)',
+			'nullable' => false,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'description',
+			'type' => 201,
 			'size' => 0,
 			'scale' => 0,
-			'typeName' => 'datetime',
-			'nullable' => false,
+			'typeName' => 'longtext',
+			'nullable' => true,
 			'autoinc' => false,
 			'defaultValueSQL' => null,
 			'defaultValue' => '' 
@@ -112,6 +90,6 @@ $runnerDbTableInfo['hospital_services'] = array(
 	'uniqueFields' => array( 
 		 
 	),
-	'name' => 'hospital_services' 
+	'name' => 'university-health-service_audit' 
 );
 ?>

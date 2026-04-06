@@ -51,6 +51,7 @@ $runnerTableSettings['hospital_services'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'hospital_services',
 	'afterAddDetail' => 'hospital_services',
 	'detailsBadgeColor' => '4682b4',
@@ -276,7 +277,7 @@ FROM
 					'lookupListPage' => 'list' 
 				) 
 			),
-			'tableName' => '' 
+			'tableName' => 'hospital_services' 
 		) 
 	),
 	'masterTables' => array( 
@@ -351,9 +352,11 @@ FROM
 				'type' => 'FieldListItem',
 				'alias' => '',
 				'expression' => array(
-					'sql' => 'hospital_account',
+					'sql' => '',
 					'parsed' => true,
-					'type' => 'NonParsedEntity' 
+					'type' => 'SQLField',
+					'table' => 'hospital_services',
+					'name' => 'hospital_account' 
 				),
 				'encrypted' => false,
 				'columnName' => 'hospital_account' 
@@ -461,7 +464,7 @@ FROM
 					'columns' => array( 
 						'id',
 						'transaction_number',
-						'hospital_account_id',
+						'hospital_account',
 						'amount',
 						'status',
 						'placed_by',

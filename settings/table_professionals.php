@@ -49,6 +49,7 @@ $runnerTableSettings['professionals'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'professionals',
 	'afterAddDetail' => 'professionals',
 	'detailsBadgeColor' => '008b8b',

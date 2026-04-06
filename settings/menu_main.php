@@ -467,6 +467,37 @@ $runnerMenus['main'] = array(
 							'table' => 7315,
 							'pageType' => 'list' 
 						) 
+					),
+					array(
+						'id' => '20',
+						'parent' => '15',
+						'children' => array( 
+							 
+						),
+						'data' => array(
+							'name' => array(
+								'text' => 'Audit Log',
+								'type' => 0 
+							),
+							'comments' => array(
+								'text' => '',
+								'type' => 0 
+							),
+							'style' => '',
+							'href' => '',
+							'params' => '',
+							'pageId' => '',
+							'itemType' => 2,
+							'linkType' => 0,
+							'openType' => 0,
+							'iconType' => 0,
+							'iconName' => '',
+							'iconStyle' => 0,
+							'showIconType' => 1,
+							'linkToAnotherApp' => false,
+							'table' => 8274,
+							'pageType' => 'list' 
+						) 
 					) 
 				),
 				'data' => array(

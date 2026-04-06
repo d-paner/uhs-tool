@@ -49,6 +49,7 @@ $runnerTableSettings['professional_accounts'] = array(
 		'print' => 'print',
 		'search' => 'search' 
 	),
+	'audit' => true,
 	'afterEditDetails' => 'professional_accounts',
 	'afterAddDetail' => 'professional_accounts',
 	'detailsBadgeColor' => '5f9ea0',
