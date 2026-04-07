@@ -14,7 +14,11 @@
 			'updated_at',
 			'classification',
 			'office',
-			'college' 
+			'college',
+			'uhs_id_no',
+			'emed_no',
+			'ihomis_no',
+			'philhealth_no' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -55,6 +59,18 @@
 			),
 			'college' => array( 
 				'integrated_edit_field9' 
+			),
+			'uhs_id_no' => array( 
+				'integrated_edit_field10' 
+			),
+			'emed_no' => array( 
+				'integrated_edit_field11' 
+			),
+			'ihomis_no' => array( 
+				'integrated_edit_field12' 
+			),
+			'philhealth_no' => array( 
+				'integrated_edit_field13' 
 			) 
 		) 
 	),
@@ -85,11 +101,15 @@
 					'integrated_edit_field2',
 					'integrated_edit_field3',
 					'integrated_edit_field4',
-					'integrated_edit_field5',
-					'integrated_edit_field6',
 					'integrated_edit_field7',
 					'integrated_edit_field8',
-					'integrated_edit_field9' 
+					'integrated_edit_field9',
+					'integrated_edit_field10',
+					'integrated_edit_field11',
+					'integrated_edit_field12',
+					'integrated_edit_field13',
+					'integrated_edit_field5',
+					'integrated_edit_field6' 
 				) 
 			),
 			'formXtTags' => array(
@@ -109,11 +129,15 @@
 				'integrated_edit_field2' => 'grid',
 				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field4' => 'grid',
-				'integrated_edit_field5' => 'grid',
-				'integrated_edit_field6' => 'grid',
 				'integrated_edit_field7' => 'grid',
 				'integrated_edit_field8' => 'grid',
-				'integrated_edit_field9' => 'grid' 
+				'integrated_edit_field9' => 'grid',
+				'integrated_edit_field10' => 'grid',
+				'integrated_edit_field11' => 'grid',
+				'integrated_edit_field12' => 'grid',
+				'integrated_edit_field13' => 'grid',
+				'integrated_edit_field5' => 'grid',
+				'integrated_edit_field6' => 'grid' 
 			),
 			'itemLocations' => array(
 				'integrated_edit_field' => array(
@@ -136,14 +160,6 @@
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field5' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field6' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
 				'integrated_edit_field7' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
@@ -153,6 +169,30 @@
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field9' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field10' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field11' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field12' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field13' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field5' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field6' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				) 
@@ -193,7 +233,11 @@
 				'integrated_edit_field6',
 				'integrated_edit_field7',
 				'integrated_edit_field8',
-				'integrated_edit_field9' 
+				'integrated_edit_field9',
+				'integrated_edit_field10',
+				'integrated_edit_field11',
+				'integrated_edit_field12',
+				'integrated_edit_field13' 
 			),
 			'edit_view' => array( 
 				'edit_view' 
@@ -218,11 +262,15 @@
 							'integrated_edit_field2',
 							'integrated_edit_field3',
 							'integrated_edit_field4',
-							'integrated_edit_field5',
-							'integrated_edit_field6',
 							'integrated_edit_field7',
 							'integrated_edit_field8',
-							'integrated_edit_field9' 
+							'integrated_edit_field9',
+							'integrated_edit_field10',
+							'integrated_edit_field11',
+							'integrated_edit_field12',
+							'integrated_edit_field13',
+							'integrated_edit_field5',
+							'integrated_edit_field6' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -403,11 +451,15 @@
 						'integrated_edit_field2',
 						'integrated_edit_field3',
 						'integrated_edit_field4',
-						'integrated_edit_field5',
-						'integrated_edit_field6',
 						'integrated_edit_field7',
 						'integrated_edit_field8',
-						'integrated_edit_field9' 
+						'integrated_edit_field9',
+						'integrated_edit_field10',
+						'integrated_edit_field11',
+						'integrated_edit_field12',
+						'integrated_edit_field13',
+						'integrated_edit_field5',
+						'integrated_edit_field6' 
 					) 
 				) 
 			),
@@ -504,6 +556,30 @@
 		),
 		'integrated_edit_field9' => array(
 			'field' => 'college',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'updateOnEdit' => false 
+		),
+		'integrated_edit_field10' => array(
+			'field' => 'uhs_id_no',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'updateOnEdit' => false 
+		),
+		'integrated_edit_field11' => array(
+			'field' => 'emed_no',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'updateOnEdit' => false 
+		),
+		'integrated_edit_field12' => array(
+			'field' => 'ihomis_no',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'updateOnEdit' => false 
+		),
+		'integrated_edit_field13' => array(
+			'field' => 'philhealth_no',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0,
 			'updateOnEdit' => false 

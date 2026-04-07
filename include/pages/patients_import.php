@@ -11,7 +11,11 @@
 			'updated_at',
 			'classification',
 			'office',
-			'college' 
+			'college',
+			'uhs_id_no',
+			'emed_no',
+			'ihomis_no',
+			'philhealth_no' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -49,6 +53,18 @@
 			),
 			'college' => array( 
 				'import_field9' 
+			),
+			'uhs_id_no' => array( 
+				'import_field10' 
+			),
+			'emed_no' => array( 
+				'import_field11' 
+			),
+			'ihomis_no' => array( 
+				'import_field12' 
+			),
+			'philhealth_no' => array( 
+				'import_field13' 
 			) 
 		) 
 	),
@@ -77,7 +93,11 @@
 					'import_field7',
 					'import_field',
 					'import_field8',
-					'import_field9' 
+					'import_field9',
+					'import_field10',
+					'import_field11',
+					'import_field12',
+					'import_field13' 
 				) 
 			),
 			'formXtTags' => array(
@@ -96,7 +116,11 @@
 				'import_field7' => 'grid',
 				'import_field' => 'grid',
 				'import_field8' => 'grid',
-				'import_field9' => 'grid' 
+				'import_field9' => 'grid',
+				'import_field10' => 'grid',
+				'import_field11' => 'grid',
+				'import_field12' => 'grid',
+				'import_field13' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -119,7 +143,11 @@
 				'import_field7',
 				'import_field',
 				'import_field8',
-				'import_field9' 
+				'import_field9',
+				'import_field10',
+				'import_field11',
+				'import_field12',
+				'import_field13' 
 			) 
 		),
 		'cellMaps' => array(
@@ -256,7 +284,11 @@
 						'import_field7',
 						'import_field',
 						'import_field8',
-						'import_field9' 
+						'import_field9',
+						'import_field10',
+						'import_field11',
+						'import_field12',
+						'import_field13' 
 					) 
 				) 
 			),
@@ -308,6 +340,22 @@
 		),
 		'import_field9' => array(
 			'field' => 'college',
+			'type' => 'import_field' 
+		),
+		'import_field10' => array(
+			'field' => 'uhs_id_no',
+			'type' => 'import_field' 
+		),
+		'import_field11' => array(
+			'field' => 'emed_no',
+			'type' => 'import_field' 
+		),
+		'import_field12' => array(
+			'field' => 'ihomis_no',
+			'type' => 'import_field' 
+		),
+		'import_field13' => array(
+			'field' => 'philhealth_no',
 			'type' => 'import_field' 
 		) 
 	),
