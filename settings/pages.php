@@ -298,20 +298,6 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'uhs_audit' => array(
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
 		'payments' => array(
 			'add' => array( 
 				'add' 
@@ -345,24 +331,38 @@ $runnerPageInfo = array(
 			'changepwd_success' => array( 
 				'changepwd_success' 
 			) 
+		),
+		'uhs_audit' => array(
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'list' => array( 
+				'list' 
+			),
+			'print' => array( 
+				'print' 
+			) 
 		) 
 	),
 	'tableMasks' => array(
 		'patients' => 'ADESPI',
-		'transactions' => 'ADESPI',
-		'transaction_guarantor' => 'ADESPI',
 		'payments' => 'ADESPI',
 		'professionals' => 'ADESPI',
 		'hospital_accounts' => 'ADESPI',
+		'guarantors' => 'ADESPI',
+		'offices' => 'ADESPI',
+		'transactions' => 'ADESPI',
 		'users' => 'ADESPI',
 		'patient_types' => 'ADESPI',
 		'professional_services' => 'ADESPI',
-		'guarantors' => 'ADESPI',
 		'hospital_services' => 'ADESPI',
-		'offices' => 'ADESPI',
+		'transaction_guarantor' => 'ADESPI',
 		'Viewing List' => 'ADESP',
-		'professional_accounts' => 'ADESPI',
 		'uhs_audit' => 'ADESPI',
+		'professional_accounts' => 'ADESPI',
 		'<global>' => 'S' 
 	) 
 );
