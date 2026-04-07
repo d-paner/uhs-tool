@@ -50,6 +50,18 @@ $runnerProjectSettings = array(
 		),
 		'uhs_audit' => array(
 			'table' => 8274 
+		),
+		'patient_classifications' => array(
+			'table' => 8377 
+		),
+		'guarantor_classifications' => array(
+			'table' => 8402 
+		),
+		'fund_type' => array(
+			'table' => 8427 
+		),
+		'fund_code' => array(
+			'table' => 8452 
 		) 
 	),
 	'userTableKeys' => array( 
@@ -232,73 +244,137 @@ $runnerProjectSettings = array(
 				'<Default>' => array(
 					'permissions' => array(
 						'patients' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'patients',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'forTransactions' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'transactions' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'transactions',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'transactionsList' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'patient_types' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'patient_types',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'hospital_accounts' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'hospital_accounts',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'guarantors' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'guarantors',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'professionals' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'professionals',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'offices' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'offices',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'professional_services' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'professional_services',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'transactionsChild' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'hospital_services' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'hospital_services',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'transactionsChild' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'users' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'users',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'<global>' => array(
@@ -309,38 +385,118 @@ $runnerProjectSettings = array(
 							) 
 						),
 						'payments' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'payments',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'transaction_guarantor' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'transaction_guarantor',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'Viewing List' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'Viewing List',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'list' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'professional_accounts' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'professional_accounts',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						),
 						'uhs_audit' => array(
-							'mask' => 'ADESPI',
+							'mask' => '',
 							'table' => 'uhs_audit',
 							'restrictedPages' => array(
-								 
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
+							) 
+						),
+						'patient_classifications' => array(
+							'mask' => '',
+							'table' => 'patient_classifications',
+							'restrictedPages' => array(
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
+							) 
+						),
+						'guarantor_classifications' => array(
+							'mask' => '',
+							'table' => 'guarantor_classifications',
+							'restrictedPages' => array(
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
+							) 
+						),
+						'fund_type' => array(
+							'mask' => '',
+							'table' => 'fund_type',
+							'restrictedPages' => array(
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
+							) 
+						),
+						'fund_code' => array(
+							'mask' => '',
+							'table' => 'fund_code',
+							'restrictedPages' => array(
+								'add' => true,
+								'edit' => true,
+								'list' => true,
+								'view' => true,
+								'print' => true,
+								'export' => true,
+								'import' => true 
 							) 
 						) 
 					),
@@ -623,6 +779,58 @@ $runnerProjectSettings = array(
 								'export' => false,
 								'import' => false 
 							) 
+						),
+						'fund_code' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								'add' => false,
+								'edit' => false,
+								'list' => false,
+								'view' => false,
+								'print' => false,
+								'export' => false,
+								'import' => false 
+							) 
+						),
+						'fund_type' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								'add' => false,
+								'edit' => false,
+								'list' => false,
+								'view' => false,
+								'print' => false,
+								'export' => false,
+								'import' => false 
+							) 
+						),
+						'guarantor_classifications' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								'add' => false,
+								'edit' => false,
+								'list' => false,
+								'view' => false,
+								'print' => false,
+								'export' => false,
+								'import' => false 
+							) 
+						),
+						'patient_classifications' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								'add' => false,
+								'edit' => false,
+								'list' => false,
+								'view' => false,
+								'print' => false,
+								'export' => false,
+								'import' => false 
+							) 
 						) 
 					) 
 				) 
@@ -847,6 +1055,54 @@ $runnerProjectSettings = array(
 			'connId' => 'conn',
 			'color' => '5f9ea0',
 			'originalTable' => 'uhs_audit' 
+		),
+		'patient_classifications' => array(
+			'gid' => 8377,
+			'name' => 'patient_classifications',
+			'shortName' => 'patient_classifications',
+			'type' => 0,
+			'caption' => array(
+				'English' => 'Patient Classifications' 
+			),
+			'connId' => 'conn',
+			'color' => 'd2af80',
+			'originalTable' => 'patient_classifications' 
+		),
+		'guarantor_classifications' => array(
+			'gid' => 8402,
+			'name' => 'guarantor_classifications',
+			'shortName' => 'guarantor_classifications',
+			'type' => 0,
+			'caption' => array(
+				'English' => 'Guarantor Classifications' 
+			),
+			'connId' => 'conn',
+			'color' => 'e07878',
+			'originalTable' => 'guarantor_classifications' 
+		),
+		'fund_type' => array(
+			'gid' => 8427,
+			'name' => 'fund_type',
+			'shortName' => 'fund_type',
+			'type' => 0,
+			'caption' => array(
+				'English' => 'Fund Type' 
+			),
+			'connId' => 'conn',
+			'color' => '5f9ea0',
+			'originalTable' => 'fund_type' 
+		),
+		'fund_code' => array(
+			'gid' => 8452,
+			'name' => 'fund_code',
+			'shortName' => 'fund_code',
+			'type' => 0,
+			'caption' => array(
+				'English' => 'Fund Code' 
+			),
+			'connId' => 'conn',
+			'color' => 'd2af80',
+			'originalTable' => 'fund_code' 
 		) 
 	),
 	'tablesByShort' => array(
@@ -864,7 +1120,11 @@ $runnerProjectSettings = array(
 		'transaction_guarantor' => 'transaction_guarantor',
 		'Viewing_List' => 'Viewing List',
 		'professional_accounts' => 'professional_accounts',
-		'uhs_audit' => 'uhs_audit' 
+		'uhs_audit' => 'uhs_audit',
+		'patient_classifications' => 'patient_classifications',
+		'guarantor_classifications' => 'guarantor_classifications',
+		'fund_type' => 'fund_type',
+		'fund_code' => 'fund_code' 
 	),
 	'tablesByGood' => array(
 		'patients' => 'patients',
@@ -881,7 +1141,11 @@ $runnerProjectSettings = array(
 		'transaction_guarantor' => 'transaction_guarantor',
 		'Viewing_List' => 'Viewing List',
 		'professional_accounts' => 'professional_accounts',
-		'uhs_audit' => 'uhs_audit' 
+		'uhs_audit' => 'uhs_audit',
+		'patient_classifications' => 'patient_classifications',
+		'guarantor_classifications' => 'guarantor_classifications',
+		'fund_type' => 'fund_type',
+		'fund_code' => 'fund_code' 
 	),
 	'events' => array( 
 		 
@@ -908,7 +1172,7 @@ $runnerProjectSettings = array(
 		'table' => '' 
 	),
 	'wizardBuild' => '43917',
-	'projectBuild' => 'h78j6sqdBVRY',
+	'projectBuild' => 'hko2qxKKgRT7',
 	'projectTheme' => 'flatly',
 	'projectSize' => 'normal',
 	'customErrorMsg' => array(

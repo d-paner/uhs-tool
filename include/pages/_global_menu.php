@@ -134,6 +134,38 @@
 				'items' => null,
 				'table' => 'uhs_audit',
 				'page' => 'list' 
+			),
+			'welcome_item15' => array(
+				'menutItem' => true,
+				'group' => false,
+				'linkType' => 0,
+				'items' => null,
+				'table' => 'patient_classifications',
+				'page' => 'list' 
+			),
+			'welcome_item16' => array(
+				'menutItem' => true,
+				'group' => false,
+				'linkType' => 0,
+				'items' => null,
+				'table' => 'guarantor_classifications',
+				'page' => 'list' 
+			),
+			'welcome_item17' => array(
+				'menutItem' => true,
+				'group' => false,
+				'linkType' => 0,
+				'items' => null,
+				'table' => 'fund_type',
+				'page' => 'list' 
+			),
+			'welcome_item18' => array(
+				'menutItem' => true,
+				'group' => false,
+				'linkType' => 0,
+				'items' => null,
+				'table' => 'fund_code',
+				'page' => 'list' 
 			) 
 		) 
 	),
@@ -178,7 +210,11 @@
 					'welcome_item12',
 					'welcome_item13',
 					'welcome_item14',
-					'welcome_item5' 
+					'welcome_item5',
+					'welcome_item15',
+					'welcome_item16',
+					'welcome_item17',
+					'welcome_item18' 
 				) 
 			),
 			'formXtTags' => array(
@@ -205,7 +241,11 @@
 				'welcome_item12' => 'grid',
 				'welcome_item13' => 'grid',
 				'welcome_item14' => 'grid',
-				'welcome_item5' => 'grid' 
+				'welcome_item5' => 'grid',
+				'welcome_item15' => 'grid',
+				'welcome_item16' => 'grid',
+				'welcome_item17' => 'grid',
+				'welcome_item18' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -238,7 +278,11 @@
 				'welcome_item12',
 				'welcome_item13',
 				'welcome_item14',
-				'welcome_item5' 
+				'welcome_item5',
+				'welcome_item15',
+				'welcome_item16',
+				'welcome_item17',
+				'welcome_item18' 
 			),
 			'username_button' => array( 
 				'username_button' 
@@ -406,7 +450,11 @@
 						'welcome_item12',
 						'welcome_item13',
 						'welcome_item14',
-						'welcome_item5' 
+						'welcome_item5',
+						'welcome_item15',
+						'welcome_item16',
+						'welcome_item17',
+						'welcome_item18' 
 					) 
 				) 
 			),
@@ -662,6 +710,54 @@
 				'type' => 6 
 			),
 			'background' => '#5f9ea0',
+			'linkType' => 0 
+		),
+		'welcome_item15' => array(
+			'type' => 'welcome_item',
+			'linkUrl' => '',
+			'linkTable' => 'patient_classifications',
+			'linkPage' => 'list',
+			'linkText' => array(
+				'table' => 'patient_classifications',
+				'type' => 6 
+			),
+			'background' => '#d2af80',
+			'linkType' => 0 
+		),
+		'welcome_item16' => array(
+			'type' => 'welcome_item',
+			'linkUrl' => '',
+			'linkTable' => 'guarantor_classifications',
+			'linkPage' => 'list',
+			'linkText' => array(
+				'table' => 'guarantor_classifications',
+				'type' => 6 
+			),
+			'background' => '#e07878',
+			'linkType' => 0 
+		),
+		'welcome_item17' => array(
+			'type' => 'welcome_item',
+			'linkUrl' => '',
+			'linkTable' => 'fund_type',
+			'linkPage' => 'list',
+			'linkText' => array(
+				'table' => 'fund_type',
+				'type' => 6 
+			),
+			'background' => '#5f9ea0',
+			'linkType' => 0 
+		),
+		'welcome_item18' => array(
+			'type' => 'welcome_item',
+			'linkUrl' => '',
+			'linkTable' => 'fund_code',
+			'linkPage' => 'list',
+			'linkText' => array(
+				'table' => 'fund_code',
+				'type' => 6 
+			),
+			'background' => '#d2af80',
 			'linkType' => 0 
 		) 
 	),

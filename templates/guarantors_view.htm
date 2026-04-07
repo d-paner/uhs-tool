@@ -90,26 +90,6 @@
 >
 	<div edit-form-cell class="clearfix">
 				
-{BEGIN full_name_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_full_name}  r-vertical-field" 
-	data-signal-error-for="full_name{$id}" {$required_attr_full_name}
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="full_name" data-fieldname="full_name" >
-
-	<label class="r-edit-label control-label {$full_name_label_class}" for="{$labelfor_full_name}">
-		{BEGIN full_name_label}
-			{$full_name_forward_control}
-			{$label guarantors full_name }			{END full_name_label}
-		<span class="icon-required"></span>
-	</label>
-	<div class="r-edit-field">
-		{$full_name_value}	</div>
-	</div>
-
-
-{END full_name_fieldblock}
-											
 {BEGIN sex_fieldblock}
 
 
@@ -229,6 +209,106 @@
 
 
 {END office_fieldblock}
+											
+{BEGIN first_name_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_first_name}  r-vertical-field" 
+	data-signal-error-for="first_name{$id}" {$required_attr_first_name}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="first_name" data-fieldname="first_name" >
+
+	<label class="r-edit-label control-label {$first_name_label_class}" for="{$labelfor_first_name}">
+		{BEGIN first_name_label}
+			{$first_name_forward_control}
+			{$label guarantors first_name }			{END first_name_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$first_name_value}	</div>
+	</div>
+
+
+{END first_name_fieldblock}
+											
+{BEGIN middle_name_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_middle_name}  r-vertical-field" 
+	data-signal-error-for="middle_name{$id}" {$required_attr_middle_name}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="middle_name" data-fieldname="middle_name" >
+
+	<label class="r-edit-label control-label {$middle_name_label_class}" for="{$labelfor_middle_name}">
+		{BEGIN middle_name_label}
+			{$middle_name_forward_control}
+			{$label guarantors middle_name }			{END middle_name_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$middle_name_value}	</div>
+	</div>
+
+
+{END middle_name_fieldblock}
+											
+{BEGIN last_name_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_last_name}  r-vertical-field" 
+	data-signal-error-for="last_name{$id}" {$required_attr_last_name}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="last_name" data-fieldname="last_name" >
+
+	<label class="r-edit-label control-label {$last_name_label_class}" for="{$labelfor_last_name}">
+		{BEGIN last_name_label}
+			{$last_name_forward_control}
+			{$label guarantors last_name }			{END last_name_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$last_name_value}	</div>
+	</div>
+
+
+{END last_name_fieldblock}
+											
+{BEGIN college_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_college}  r-vertical-field" 
+	data-signal-error-for="college{$id}" {$required_attr_college}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="college" data-fieldname="college" >
+
+	<label class="r-edit-label control-label {$college_label_class}" for="{$labelfor_college}">
+		{BEGIN college_label}
+			{$college_forward_control}
+			{$label guarantors college }			{END college_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$college_value}	</div>
+	</div>
+
+
+{END college_fieldblock}
+											
+{BEGIN unit_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_unit}  r-vertical-field" 
+	data-signal-error-for="unit{$id}" {$required_attr_unit}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" {$item_integrated_edit_field10} data-pageid="{$pageid}" data-field="unit" data-fieldname="unit" >
+
+	<label class="r-edit-label control-label {$unit_label_class}" for="{$labelfor_unit}">
+		{BEGIN unit_label}
+			{$unit_forward_control}
+			{$label guarantors unit }			{END unit_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$unit_value}	</div>
+	</div>
+
+
+{END unit_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

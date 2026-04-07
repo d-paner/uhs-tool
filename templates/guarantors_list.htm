@@ -254,6 +254,71 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_updated_at}</span>
 						</div>
 		{END searchCtrlBlock_updated_at}
+																{BEGIN searchCtrlBlock_unit}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_unit}" {$filterRow_attrs_unit}>
+			<label>{$label guarantors unit }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_unit}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_unit}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_unit}</span>
+						</div>
+		{END searchCtrlBlock_unit}
+																{BEGIN searchCtrlBlock_college}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_college}" {$filterRow_attrs_college}>
+			<label>{$label guarantors college }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_college}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_college}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_college}</span>
+						</div>
+		{END searchCtrlBlock_college}
+																{BEGIN searchCtrlBlock_last_name}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_last_name}" {$filterRow_attrs_last_name}>
+			<label>{$label guarantors last_name }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_last_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_last_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_last_name}</span>
+						</div>
+		{END searchCtrlBlock_last_name}
+																{BEGIN searchCtrlBlock_middle_name}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_middle_name}" {$filterRow_attrs_middle_name}>
+			<label>{$label guarantors middle_name }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_middle_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_middle_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_middle_name}</span>
+						</div>
+		{END searchCtrlBlock_middle_name}
+																{BEGIN searchCtrlBlock_first_name}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_first_name}" {$filterRow_attrs_first_name}>
+			<label>{$label guarantors first_name }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_first_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_first_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_first_name}</span>
+						</div>
+		{END searchCtrlBlock_first_name}
 																{BEGIN searchCtrlBlock_office}
 
 
@@ -319,19 +384,6 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_sex}</span>
 						</div>
 		{END searchCtrlBlock_sex}
-																{BEGIN searchCtrlBlock_full_name}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_full_name}" {$filterRow_attrs_full_name}>
-			<label>{$label guarantors full_name }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_full_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_full_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_full_name}</span>
-						</div>
-		{END searchCtrlBlock_full_name}
 		
 
 	</div>
@@ -661,9 +713,6 @@
 <div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
 {END message_block}	<style>
 @media screen and (max-width: 767px) {
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="full_name"]:before {
-		content: "{$label guarantors full_name}";
-	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="sex"]:before {
 		content: "{$label guarantors sex}";
 	}
@@ -681,6 +730,21 @@
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="office"]:before {
 		content: "{$label guarantors office}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="first_name"]:before {
+		content: "{$label guarantors first_name}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="middle_name"]:before {
+		content: "{$label guarantors middle_name}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="last_name"]:before {
+		content: "{$label guarantors last_name}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="college"]:before {
+		content: "{$label guarantors college}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="unit"]:before {
+		content: "{$label guarantors unit}";
 	}
 	}
 </style>
@@ -740,30 +804,30 @@
 	{$cell_grid_headcell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$full_name_class}	"
+		 r-ori-vert		 {$last_name_class}	"
 
-			data-field="full_name"
+			data-field="last_name"
 	
 	data-cellId="grid_headcell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN full_name_fieldheadercolumn}
-	{BEGIN full_name_fieldheader}
+		{BEGIN last_name_fieldheadercolumn}
+	{BEGIN last_name_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="full_name" data-fieldname="full_name" 
+	data-itemtype="grid_field_label" data-itemid="grid_field5" {$item_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="last_name" data-fieldname="last_name" 
 
-			{$full_name_orderlinkattrs}
+			{$last_name_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label guarantors full_name }</span>
-					{$arrow_icon_full_name}
+		<span>{$label guarantors last_name }</span>
+					{$arrow_icon_last_name}
 			</span>
 	</span>
-	{END full_name_fieldheader}
-{END full_name_fieldheadercolumn}
+	{END last_name_fieldheader}
+{END last_name_fieldheadercolumn}
 
 	
 	</th>
@@ -774,18 +838,86 @@
 	{$cell_grid_headcell_field1}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$first_name_class}	"
+
+			data-field="first_name"
+	
+	data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN first_name_fieldheadercolumn}
+	{BEGIN first_name_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="first_name" data-fieldname="first_name" 
+
+			{$first_name_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label guarantors first_name }</span>
+					{$arrow_icon_first_name}
+			</span>
+	</span>
+	{END first_name_fieldheader}
+{END first_name_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field1}
+									{BEGIN cellblock_grid_headcell_field2}
+	<th
+	
+	{$cell_grid_headcell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$middle_name_class}	"
+
+			data-field="middle_name"
+	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN middle_name_fieldheadercolumn}
+	{BEGIN middle_name_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="middle_name" data-fieldname="middle_name" 
+
+			{$middle_name_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label guarantors middle_name }</span>
+					{$arrow_icon_middle_name}
+			</span>
+	</span>
+	{END middle_name_fieldheader}
+{END middle_name_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
+	<th
+	
+	{$cell_grid_headcell_field3}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$sex_class}	"
 
 			data-field="sex"
 	
-	data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN sex_fieldheadercolumn}
 	{BEGIN sex_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field4" {$item_simple_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="sex" data-fieldname="sex" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="sex" data-fieldname="sex" 
 
 			{$sex_orderlinkattrs}
 	
@@ -801,25 +933,25 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field1}
-									{BEGIN cellblock_grid_headcell_field2}
+	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field4}
 	<th
 	
-	{$cell_grid_headcell_field2}
+	{$cell_grid_headcell_field4}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$birthday_class}	"
 
 			data-field="birthday"
 	
-	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN birthday_fieldheadercolumn}
 	{BEGIN birthday_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="birthday" data-fieldname="birthday" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field4" {$item_simple_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="birthday" data-fieldname="birthday" 
 
 			{$birthday_orderlinkattrs}
 	
@@ -835,18 +967,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field2}
-									{BEGIN cellblock_grid_headcell_field3}
+	{END cellblock_grid_headcell_field4}
+									{BEGIN cellblock_grid_headcell_field5}
 	<th
 	
-	{$cell_grid_headcell_field3}
+	{$cell_grid_headcell_field5}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$office_class}	"
 
 			data-field="office"
 	
-	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -869,25 +1001,25 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field3}
-									{BEGIN cellblock_grid_headcell_field4}
+	{END cellblock_grid_headcell_field5}
+									{BEGIN cellblock_grid_headcell_field6}
 	<th
 	
-	{$cell_grid_headcell_field4}
+	{$cell_grid_headcell_field6}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$classification_class}	"
 
 			data-field="classification"
 	
-	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN classification_fieldheadercolumn}
 	{BEGIN classification_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="classification" data-fieldname="classification" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="classification" data-fieldname="classification" 
 
 			{$classification_orderlinkattrs}
 	
@@ -903,25 +1035,93 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field4}
-									{BEGIN cellblock_grid_headcell_field5}
+	{END cellblock_grid_headcell_field6}
+									{BEGIN cellblock_grid_headcell_field7}
 	<th
 	
-	{$cell_grid_headcell_field5}
+	{$cell_grid_headcell_field7}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$college_class}	"
+
+			data-field="college"
+	
+	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN college_fieldheadercolumn}
+	{BEGIN college_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field10" {$item_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="college" data-fieldname="college" 
+
+			{$college_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label guarantors college }</span>
+					{$arrow_icon_college}
+			</span>
+	</span>
+	{END college_fieldheader}
+{END college_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field7}
+									{BEGIN cellblock_grid_headcell_field8}
+	<th
+	
+	{$cell_grid_headcell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$unit_class}	"
+
+			data-field="unit"
+	
+	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN unit_fieldheadercolumn}
+	{BEGIN unit_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field11" {$item_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="unit" data-fieldname="unit" 
+
+			{$unit_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label guarantors unit }</span>
+					{$arrow_icon_unit}
+			</span>
+	</span>
+	{END unit_fieldheader}
+{END unit_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field8}
+									{BEGIN cellblock_grid_headcell_field9}
+	<th
+	
+	{$cell_grid_headcell_field9}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN created_at_fieldheadercolumn}
 	{BEGIN created_at_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="created_at" data-fieldname="created_at" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="created_at" data-fieldname="created_at" 
 
 			{$created_at_orderlinkattrs}
 	
@@ -937,25 +1137,25 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field5}
-									{BEGIN cellblock_grid_headcell_field6}
+	{END cellblock_grid_headcell_field9}
+									{BEGIN cellblock_grid_headcell_field10}
 	<th
 	
-	{$cell_grid_headcell_field6}
+	{$cell_grid_headcell_field10}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN updated_at_fieldheadercolumn}
 	{BEGIN updated_at_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="updated_at" data-fieldname="updated_at" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="updated_at" data-fieldname="updated_at" 
 
 			{$updated_at_orderlinkattrs}
 	
@@ -971,7 +1171,7 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field6}
+	{END cellblock_grid_headcell_field10}
 							</tr>
 															
 					{END grid_header}
@@ -1051,19 +1251,19 @@
 	{$cell_grid_cell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$full_name_class}	"
+		 r-ori-vert		 {$last_name_class}	"
 
-			data-field="full_name"
+			data-field="last_name"
 	
 	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN full_name_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field1" {$item_simple_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="full_name" data-fieldname="full_name" data-default-width >
-{$full_name_value}
+		{BEGIN last_name_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field4" {$item_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="last_name" data-fieldname="last_name" data-default-width >
+{$last_name_value}
 </span>
-{END full_name_fieldcolumn}	
+{END last_name_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field}
 									{BEGIN cellblock_grid_cell_field1}
@@ -1072,11 +1272,53 @@
 	{$cell_grid_cell_field1}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$first_name_class}	"
+
+			data-field="first_name"
+	
+	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN first_name_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="first_name" data-fieldname="first_name" data-default-width >
+{$first_name_value}
+</span>
+{END first_name_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field1}
+									{BEGIN cellblock_grid_cell_field2}
+	<td
+	
+	{$cell_grid_cell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$middle_name_class}	"
+
+			data-field="middle_name"
+	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN middle_name_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="middle_name" data-fieldname="middle_name" data-default-width >
+{$middle_name_value}
+</span>
+{END middle_name_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
+	<td
+	
+	{$cell_grid_cell_field3}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$sex_class}	"
 
 			data-field="sex"
 	
-	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1086,18 +1328,18 @@
 </span>
 {END sex_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field1}
-									{BEGIN cellblock_grid_cell_field2}
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field4}
 	<td
 	
-	{$cell_grid_cell_field2}
+	{$cell_grid_cell_field4}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$birthday_class}	"
 
 			data-field="birthday"
 	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1107,18 +1349,18 @@
 </span>
 {END birthday_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
+	{END cellblock_grid_cell_field4}
+									{BEGIN cellblock_grid_cell_field5}
 	<td
 	
-	{$cell_grid_cell_field3}
+	{$cell_grid_cell_field5}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$office_class}	"
 
 			data-field="office"
 	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1128,18 +1370,18 @@
 </span>
 {END office_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field3}
-									{BEGIN cellblock_grid_cell_field4}
+	{END cellblock_grid_cell_field5}
+									{BEGIN cellblock_grid_cell_field6}
 	<td
 	
-	{$cell_grid_cell_field4}
+	{$cell_grid_cell_field6}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$classification_class}	"
 
 			data-field="classification"
 	
-	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1149,18 +1391,60 @@
 </span>
 {END classification_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field4}
-									{BEGIN cellblock_grid_cell_field5}
+	{END cellblock_grid_cell_field6}
+									{BEGIN cellblock_grid_cell_field7}
 	<td
 	
-	{$cell_grid_cell_field5}
+	{$cell_grid_cell_field7}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$college_class}	"
+
+			data-field="college"
+	
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN college_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field8" {$item_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="college" data-fieldname="college" data-default-width >
+{$college_value}
+</span>
+{END college_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field7}
+									{BEGIN cellblock_grid_cell_field8}
+	<td
+	
+	{$cell_grid_cell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$unit_class}	"
+
+			data-field="unit"
+	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN unit_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="unit" data-fieldname="unit" data-default-width >
+{$unit_value}
+</span>
+{END unit_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field8}
+									{BEGIN cellblock_grid_cell_field9}
+	<td
+	
+	{$cell_grid_cell_field9}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1170,18 +1454,18 @@
 </span>
 {END created_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field5}
-									{BEGIN cellblock_grid_cell_field6}
+	{END cellblock_grid_cell_field9}
+									{BEGIN cellblock_grid_cell_field10}
 	<td
 	
-	{$cell_grid_cell_field6}
+	{$cell_grid_cell_field10}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1191,7 +1475,7 @@
 </span>
 {END updated_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field6}
+	{END cellblock_grid_cell_field10}
 							</tr>
 										
 											{END grid_row}
@@ -1239,7 +1523,7 @@
 	{$cell_grid_footcell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$full_name_class}	"
+		 r-ori-vert		 {$last_name_class}	"
 
 	
 	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
@@ -1254,7 +1538,7 @@
 	{$cell_grid_footcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$sex_class}	"
+		 r-ori-vert		 {$first_name_class}	"
 
 	
 	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
@@ -1269,7 +1553,7 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$birthday_class}	"
+		 r-ori-vert		 {$middle_name_class}	"
 
 	
 	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
@@ -1284,7 +1568,7 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$office_class}	"
+		 r-ori-vert		 {$sex_class}	"
 
 	
 	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
@@ -1299,7 +1583,7 @@
 	{$cell_grid_footcell_field4}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$classification_class}	"
+		 r-ori-vert		 {$birthday_class}	"
 
 	
 	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
@@ -1314,7 +1598,7 @@
 	{$cell_grid_footcell_field5}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$created_at_class}	"
+		 r-ori-vert		 {$office_class}	"
 
 	
 	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
@@ -1329,7 +1613,7 @@
 	{$cell_grid_footcell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$updated_at_class}	"
+		 r-ori-vert		 {$classification_class}	"
 
 	
 	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
@@ -1338,6 +1622,66 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field6}
+									{BEGIN cellblock_grid_footcell_field7}
+	<td
+	
+	{$cell_grid_footcell_field7}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$college_class}	"
+
+	
+	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field7}
+									{BEGIN cellblock_grid_footcell_field8}
+	<td
+	
+	{$cell_grid_footcell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$unit_class}	"
+
+	
+	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field8}
+									{BEGIN cellblock_grid_footcell_field9}
+	<td
+	
+	{$cell_grid_footcell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$created_at_class}	"
+
+	
+	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field9}
+									{BEGIN cellblock_grid_footcell_field10}
+	<td
+	
+	{$cell_grid_footcell_field10}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$updated_at_class}	"
+
+	
+	data-cellId="grid_footcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="guarantors_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field10}
 							</tr>
 					
 					</tfoot>

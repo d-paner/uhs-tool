@@ -60,6 +60,7 @@ $runnerTableSettings['Viewing List'] = array(
 			'goodName' => 'guarantor_name',
 			'strField' => 'guarantor_name',
 			'index' => 1,
+			'type' => 201,
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -337,7 +338,7 @@ $runnerTableSettings['Viewing List'] = array(
 			'subtype' => 'sql',
 			'enabled' => true,
 			'sql' => 'SELECT
-    g.full_name AS guarantor_name,
+    CONCAT_WS(\' \', g.first_name, g.middle_name, g.last_name) AS guarantor_name,
     g.office AS guarantor_office,
     ts.transaction_number,
     ts.created_at AS transaction_date,

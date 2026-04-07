@@ -8,7 +8,10 @@
 			'sex',
 			'birthday',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'classification',
+			'office',
+			'college' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -37,6 +40,15 @@
 			),
 			'updated_at' => array( 
 				'import_field7' 
+			),
+			'classification' => array( 
+				'import_field' 
+			),
+			'office' => array( 
+				'import_field8' 
+			),
+			'college' => array( 
+				'import_field9' 
 			) 
 		) 
 	),
@@ -62,7 +74,10 @@
 					'import_field4',
 					'import_field5',
 					'import_field6',
-					'import_field7' 
+					'import_field7',
+					'import_field',
+					'import_field8',
+					'import_field9' 
 				) 
 			),
 			'formXtTags' => array(
@@ -78,7 +93,10 @@
 				'import_field4' => 'grid',
 				'import_field5' => 'grid',
 				'import_field6' => 'grid',
-				'import_field7' => 'grid' 
+				'import_field7' => 'grid',
+				'import_field' => 'grid',
+				'import_field8' => 'grid',
+				'import_field9' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -98,7 +116,10 @@
 				'import_field4',
 				'import_field5',
 				'import_field6',
-				'import_field7' 
+				'import_field7',
+				'import_field',
+				'import_field8',
+				'import_field9' 
 			) 
 		),
 		'cellMaps' => array(
@@ -232,7 +253,10 @@
 						'import_field4',
 						'import_field5',
 						'import_field6',
-						'import_field7' 
+						'import_field7',
+						'import_field',
+						'import_field8',
+						'import_field9' 
 					) 
 				) 
 			),
@@ -272,6 +296,18 @@
 		),
 		'import_field7' => array(
 			'field' => 'updated_at',
+			'type' => 'import_field' 
+		),
+		'import_field' => array(
+			'field' => 'classification',
+			'type' => 'import_field' 
+		),
+		'import_field8' => array(
+			'field' => 'office',
+			'type' => 'import_field' 
+		),
+		'import_field9' => array(
+			'field' => 'college',
 			'type' => 'import_field' 
 		) 
 	),

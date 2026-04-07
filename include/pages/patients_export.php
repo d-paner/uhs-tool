@@ -27,6 +27,15 @@
 		),
 		'full_name' => array(
 			'totalsType' => '' 
+		),
+		'classification' => array(
+			'totalsType' => '' 
+		),
+		'office' => array(
+			'totalsType' => '' 
+		),
+		'college' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
@@ -38,7 +47,10 @@
 			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name' 
+			'full_name',
+			'classification',
+			'office',
+			'college' 
 		),
 		'exportFields' => array( 
 			'first_name',
@@ -48,7 +60,10 @@
 			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name' 
+			'full_name',
+			'classification',
+			'office',
+			'college' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -80,6 +95,15 @@
 			),
 			'full_name' => array( 
 				'export_field' 
+			),
+			'classification' => array( 
+				'export_field8' 
+			),
+			'office' => array( 
+				'export_field9' 
+			),
+			'college' => array( 
+				'export_field10' 
 			) 
 		) 
 	),
@@ -106,7 +130,10 @@
 					'export_field5',
 					'export_field6',
 					'export_field7',
-					'export_field' 
+					'export_field',
+					'export_field8',
+					'export_field9',
+					'export_field10' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -128,6 +155,9 @@
 				'export_field6' => 'grid',
 				'export_field7' => 'grid',
 				'export_field' => 'grid',
+				'export_field8' => 'grid',
+				'export_field9' => 'grid',
+				'export_field10' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -156,7 +186,10 @@
 				'export_field5',
 				'export_field6',
 				'export_field7',
-				'export_field' 
+				'export_field',
+				'export_field8',
+				'export_field9',
+				'export_field10' 
 			) 
 		),
 		'cellMaps' => array(
@@ -303,7 +336,10 @@
 						'export_field5',
 						'export_field6',
 						'export_field7',
-						'export_field' 
+						'export_field',
+						'export_field8',
+						'export_field9',
+						'export_field10' 
 					) 
 				) 
 			),
@@ -388,6 +424,18 @@
 		),
 		'export_field' => array(
 			'field' => 'full_name',
+			'type' => 'export_field' 
+		),
+		'export_field8' => array(
+			'field' => 'classification',
+			'type' => 'export_field' 
+		),
+		'export_field9' => array(
+			'field' => 'office',
+			'type' => 'export_field' 
+		),
+		'export_field10' => array(
+			'field' => 'college',
 			'type' => 'export_field' 
 		) 
 	),

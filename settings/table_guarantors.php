@@ -55,10 +55,14 @@ $runnerTableSettings['guarantors'] = array(
 	'detailsBadgeColor' => '1e90ff',
 	'sql' => 'SELECT
 	id,
-	full_name,
+	first_name,
+	middle_name,
+	last_name,
 	sex,
 	birthday,
 	office,
+	college,
+	unit,
 	classification,
 	created_at,
 	updated_at
@@ -96,29 +100,11 @@ FROM
 			),
 			'tableName' => 'guarantors' 
 		),
-		'full_name' => array(
-			'name' => 'full_name',
-			'goodName' => 'full_name',
-			'strField' => 'full_name',
-			'index' => 2,
-			'sqlExpression' => 'full_name',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'required' => true 
-				) 
-			),
-			'tableName' => 'guarantors' 
-		),
 		'sex' => array(
 			'name' => 'sex',
 			'goodName' => 'sex',
 			'strField' => 'sex',
-			'index' => 3,
+			'index' => 5,
 			'sqlExpression' => 'sex',
 			'viewFormats' => array(
 				'view' => array(
@@ -142,7 +128,7 @@ FROM
 			'name' => 'birthday',
 			'goodName' => 'birthday',
 			'strField' => 'birthday',
-			'index' => 4,
+			'index' => 6,
 			'type' => 7,
 			'sqlExpression' => 'birthday',
 			'viewFormats' => array(
@@ -162,7 +148,7 @@ FROM
 			'name' => 'classification',
 			'goodName' => 'classification',
 			'strField' => 'classification',
-			'index' => 6,
+			'index' => 10,
 			'sqlExpression' => 'classification',
 			'viewFormats' => array(
 				'view' => array(
@@ -173,7 +159,7 @@ FROM
 				'edit' => array(
 					'format' => 'Lookup wizard',
 					'required' => true,
-					'lookupType' => 0,
+					'lookupType' => 2,
 					'lookupValues' => array( 
 						'Administrative Employee',
 						'Faculty',
@@ -181,7 +167,11 @@ FROM
 						'Student',
 						'Other UP Units',
 						'Non-UP' 
-					) 
+					),
+					'lookupTable' => 'guarantor_classifications',
+					'lookupTableConnection' => 'conn',
+					'lookupLinkField' => 'id',
+					'lookupDisplayField' => 'label' 
 				) 
 			),
 			'tableName' => 'guarantors' 
@@ -190,7 +180,7 @@ FROM
 			'name' => 'created_at',
 			'goodName' => 'created_at',
 			'strField' => 'created_at',
-			'index' => 7,
+			'index' => 11,
 			'type' => 135,
 			'sqlExpression' => 'created_at',
 			'viewFormats' => array(
@@ -211,7 +201,7 @@ FROM
 			'name' => 'updated_at',
 			'goodName' => 'updated_at',
 			'strField' => 'updated_at',
-			'index' => 8,
+			'index' => 12,
 			'type' => 135,
 			'sqlExpression' => 'updated_at',
 			'viewFormats' => array(
@@ -233,7 +223,7 @@ FROM
 			'name' => 'office',
 			'goodName' => 'office',
 			'strField' => 'office',
-			'index' => 5,
+			'index' => 7,
 			'sqlExpression' => 'office',
 			'viewFormats' => array(
 				'view' => array(
@@ -252,15 +242,109 @@ FROM
 				) 
 			),
 			'tableName' => 'guarantors' 
+		),
+		'first_name' => array(
+			'name' => 'first_name',
+			'goodName' => 'first_name',
+			'strField' => 'first_name',
+			'index' => 2,
+			'sqlExpression' => 'first_name',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					'required' => true 
+				) 
+			),
+			'tableName' => 'guarantors' 
+		),
+		'middle_name' => array(
+			'name' => 'middle_name',
+			'goodName' => 'middle_name',
+			'strField' => 'middle_name',
+			'index' => 3,
+			'sqlExpression' => 'middle_name',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'guarantors' 
+		),
+		'last_name' => array(
+			'name' => 'last_name',
+			'goodName' => 'last_name',
+			'strField' => 'last_name',
+			'index' => 4,
+			'sqlExpression' => 'last_name',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					'required' => true 
+				) 
+			),
+			'tableName' => 'guarantors' 
+		),
+		'college' => array(
+			'name' => 'college',
+			'goodName' => 'college',
+			'strField' => 'college',
+			'index' => 8,
+			'sqlExpression' => 'college',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'guarantors' 
+		),
+		'unit' => array(
+			'name' => 'unit',
+			'goodName' => 'unit',
+			'strField' => 'unit',
+			'index' => 9,
+			'sqlExpression' => 'unit',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'guarantors' 
 		) 
 	),
 	'query' => array(
 		'sql' => 'SELECT
 	id,
-	full_name,
+	first_name,
+	middle_name,
+	last_name,
 	sex,
 	birthday,
 	office,
+	college,
+	unit,
 	classification,
 	created_at,
 	updated_at
@@ -285,7 +369,7 @@ FROM
 				'columnName' => 'id' 
 			),
 			array(
-				'sql' => 'full_name',
+				'sql' => 'first_name',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -294,10 +378,40 @@ FROM
 					'parsed' => true,
 					'type' => 'SQLField',
 					'table' => 'guarantors',
-					'name' => 'full_name' 
+					'name' => 'first_name' 
 				),
 				'encrypted' => false,
-				'columnName' => 'full_name' 
+				'columnName' => 'first_name' 
+			),
+			array(
+				'sql' => 'middle_name',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'guarantors',
+					'name' => 'middle_name' 
+				),
+				'encrypted' => false,
+				'columnName' => 'middle_name' 
+			),
+			array(
+				'sql' => 'last_name',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'guarantors',
+					'name' => 'last_name' 
+				),
+				'encrypted' => false,
+				'columnName' => 'last_name' 
 			),
 			array(
 				'sql' => 'sex',
@@ -343,6 +457,36 @@ FROM
 				),
 				'encrypted' => false,
 				'columnName' => 'office' 
+			),
+			array(
+				'sql' => 'college',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'guarantors',
+					'name' => 'college' 
+				),
+				'encrypted' => false,
+				'columnName' => 'college' 
+			),
+			array(
+				'sql' => 'unit',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'guarantors',
+					'name' => 'unit' 
+				),
+				'encrypted' => false,
+				'columnName' => 'unit' 
 			),
 			array(
 				'sql' => 'classification',
@@ -407,7 +551,12 @@ FROM
 						'office',
 						'classification',
 						'created_at',
-						'updated_at' 
+						'updated_at',
+						'first_name',
+						'middle_name',
+						'last_name',
+						'college',
+						'unit' 
 					),
 					'name' => 'guarantors' 
 				),
@@ -517,14 +666,46 @@ FROM
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 8,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 9,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 10,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 11,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
 			) 
 		),
 		'headSql' => 'SELECT',
 		'fieldListSql' => 'id,
-	full_name,
+	first_name,
+	middle_name,
+	last_name,
 	sex,
 	birthday,
 	office,
+	college,
+	unit,
 	classification,
 	created_at,
 	updated_at',
@@ -585,13 +766,17 @@ FROM
 		'caseSensitiveSearch' => false,
 		'searchableFields' => array( 
 			'id',
-			'full_name',
 			'sex',
 			'birthday',
 			'classification',
 			'created_at',
 			'updated_at',
-			'office' 
+			'office',
+			'first_name',
+			'middle_name',
+			'last_name',
+			'college',
+			'unit' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -599,13 +784,17 @@ FROM
 		'hideFilterUntilSearch' => false,
 		'googleLikeSearchFields' => array( 
 			'id',
-			'full_name',
 			'sex',
 			'birthday',
 			'classification',
 			'created_at',
 			'updated_at',
-			'office' 
+			'office',
+			'first_name',
+			'middle_name',
+			'last_name',
+			'college',
+			'unit' 
 		) 
 	),
 	'connId' => 'conn',
@@ -655,33 +844,45 @@ if( mlang_getcurrentlang() === 'English' ) {
 	'tableCaption' => 'Guarantors',
 	'fieldLabels' => array(
 		'id' => 'Id',
-		'full_name' => 'Full Name',
 		'sex' => 'Sex',
 		'birthday' => 'Birthday',
 		'classification' => 'Classification',
 		'created_at' => 'Created At',
 		'updated_at' => 'Updated At',
-		'office' => 'Office' 
+		'office' => 'Office',
+		'first_name' => 'First Name',
+		'middle_name' => 'Middle Name',
+		'last_name' => 'Last Name',
+		'college' => 'College',
+		'unit' => 'Unit' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
-		'full_name' => '',
 		'sex' => '',
 		'birthday' => '',
 		'classification' => '',
 		'created_at' => '',
 		'updated_at' => '',
-		'office' => '' 
+		'office' => '',
+		'first_name' => '',
+		'middle_name' => '',
+		'last_name' => '',
+		'college' => '',
+		'unit' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
-		'full_name' => '',
 		'sex' => '',
 		'birthday' => '',
 		'classification' => '',
 		'created_at' => '',
 		'updated_at' => '',
-		'office' => '' 
+		'office' => '',
+		'first_name' => '',
+		'middle_name' => '',
+		'last_name' => '',
+		'college' => '',
+		'unit' => '' 
 	),
 	'pageTitles' => array(
 		 

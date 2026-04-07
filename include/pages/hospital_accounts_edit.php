@@ -45,7 +45,7 @@
 	'pageLinks' => array(
 		'edit' => false,
 		'add' => false,
-		'view' => true,
+		'view' => false,
 		'print' => false 
 	),
 	'layoutHelper' => array(
@@ -66,8 +66,8 @@
 				'grid' => array( 
 					'integrated_edit_field',
 					'integrated_edit_field1',
-					'integrated_edit_field4',
 					'integrated_edit_field5',
+					'integrated_edit_field4',
 					'integrated_edit_field2',
 					'integrated_edit_field3' 
 				) 
@@ -86,8 +86,8 @@
 				'edit_header' => 'top',
 				'integrated_edit_field' => 'grid',
 				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field5' => 'grid',
+				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field2' => 'grid',
 				'integrated_edit_field3' => 'grid' 
 			),
@@ -100,11 +100,11 @@
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field4' => array(
+				'integrated_edit_field5' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field5' => array(
+				'integrated_edit_field4' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -150,9 +150,6 @@
 				'integrated_edit_field3',
 				'integrated_edit_field5',
 				'integrated_edit_field4' 
-			),
-			'edit_view' => array( 
-				'edit_view' 
 			) 
 		),
 		'cellMaps' => array(
@@ -171,8 +168,8 @@
 						'items' => array( 
 							'integrated_edit_field',
 							'integrated_edit_field1',
-							'integrated_edit_field4',
 							'integrated_edit_field5',
+							'integrated_edit_field4',
 							'integrated_edit_field2',
 							'integrated_edit_field3' 
 						),
@@ -352,8 +349,8 @@
 					'items' => array( 
 						'integrated_edit_field',
 						'integrated_edit_field1',
-						'integrated_edit_field4',
 						'integrated_edit_field5',
+						'integrated_edit_field4',
 						'integrated_edit_field2',
 						'integrated_edit_field3' 
 					) 
@@ -374,8 +371,7 @@
 		'hamburger' => array(
 			'type' => 'hamburger',
 			'items' => array( 
-				'edit_reset',
-				'edit_view' 
+				'edit_reset' 
 			) 
 		),
 		'edit_reset' => array(
@@ -416,9 +412,6 @@
 			'type' => 'integrated_edit_field',
 			'orientation' => 0,
 			'updateOnEdit' => false 
-		),
-		'edit_view' => array(
-			'type' => 'edit_view' 
 		),
 		'integrated_edit_field5' => array(
 			'field' => 'fund_type',

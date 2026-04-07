@@ -468,6 +468,7 @@ ORDER BY `datetime` DESC',
 		'orderBySql' => 'ORDER BY `datetime` DESC',
 		'tailSql' => '' 
 	),
+	'hasEvents' => true,
 	'originalTable' => 'uhs_audit',
 	'originalPagesByType' => array(
 		'export' => array( 

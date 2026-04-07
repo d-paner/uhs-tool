@@ -9,7 +9,7 @@
 		'updateSelected' => false,
 		'addInPopup' => true,
 		'editInPopup' => true,
-		'viewInPopup' => true,
+		'viewInPopup' => null,
 		'clickSort' => true,
 		'sortDropdown' => false,
 		'showHideFields' => false,
@@ -101,7 +101,7 @@
 	'pageLinks' => array(
 		'edit' => true,
 		'add' => true,
-		'view' => true,
+		'view' => false,
 		'print' => true 
 	),
 	'layoutHelper' => array(
@@ -148,8 +148,7 @@
 					'simple_grid_field',
 					'grid_checkbox_head',
 					'grid_checkbox',
-					'grid_edit',
-					'grid_view' 
+					'grid_edit' 
 				) 
 			),
 			'formXtTags' => array(
@@ -197,8 +196,7 @@
 				'simple_grid_field' => 'grid',
 				'grid_checkbox_head' => 'grid',
 				'grid_checkbox' => 'grid',
-				'grid_edit' => 'grid',
-				'grid_view' => 'grid' 
+				'grid_edit' => 'grid' 
 			),
 			'itemLocations' => array(
 				'simple_grid_field5' => array(
@@ -250,10 +248,6 @@
 					'cellId' => 'cell_checkbox' 
 				),
 				'grid_edit' => array(
-					'location' => 'grid',
-					'cellId' => 'cell_icons' 
-				),
-				'grid_view' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_icons' 
 				) 
@@ -385,9 +379,6 @@
 			'grid_edit' => array( 
 				'grid_edit' 
 			),
-			'grid_view' => array( 
-				'grid_view' 
-			),
 			'expand_button' => array( 
 				'expand_button' 
 			) 
@@ -515,12 +506,10 @@
 							1 
 						),
 						'tags' => array( 
-							'edit_column',
-							'view_column' 
+							'edit_column' 
 						),
 						'items' => array( 
-							'grid_edit',
-							'grid_view' 
+							'grid_edit' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -1186,8 +1175,7 @@
 				'cell_icons' => array(
 					'model' => 'cell_icons',
 					'items' => array( 
-						'grid_edit',
-						'grid_view' 
+						'grid_edit' 
 					) 
 				),
 				'footcell_icons' => array(
@@ -1401,10 +1389,6 @@
 		),
 		'grid_edit' => array(
 			'type' => 'grid_edit',
-			'popup' => true 
-		),
-		'grid_view' => array(
-			'type' => 'grid_view',
 			'popup' => true 
 		),
 		'-3' => array(

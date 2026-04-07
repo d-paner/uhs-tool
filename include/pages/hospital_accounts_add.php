@@ -63,8 +63,8 @@
 				'grid' => array( 
 					'integrated_edit_field',
 					'integrated_edit_field1',
-					'integrated_edit_field4',
 					'integrated_edit_field5',
+					'integrated_edit_field4',
 					'integrated_edit_field2',
 					'integrated_edit_field3' 
 				) 
@@ -83,8 +83,8 @@
 				'add_header' => 'top',
 				'integrated_edit_field' => 'grid',
 				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field5' => 'grid',
+				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field2' => 'grid',
 				'integrated_edit_field3' => 'grid' 
 			),
@@ -97,11 +97,11 @@
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field4' => array(
+				'integrated_edit_field5' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field5' => array(
+				'integrated_edit_field4' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -162,8 +162,8 @@
 						'items' => array( 
 							'integrated_edit_field',
 							'integrated_edit_field1',
-							'integrated_edit_field4',
 							'integrated_edit_field5',
+							'integrated_edit_field4',
 							'integrated_edit_field2',
 							'integrated_edit_field3' 
 						),
@@ -331,8 +331,8 @@
 					'items' => array( 
 						'integrated_edit_field',
 						'integrated_edit_field1',
-						'integrated_edit_field4',
 						'integrated_edit_field5',
+						'integrated_edit_field4',
 						'integrated_edit_field2',
 						'integrated_edit_field3' 
 					) 

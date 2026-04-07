@@ -3,7 +3,7 @@ class eventclass_uhs_audit  extends TableEventsBase {
 	
 	function init() {
 		$this->events = array(
-	 
+	'BeforeShowList' => true 
 );
 		$this->fieldValues = array(
 	'filterLimit' => array(
@@ -38,7 +38,11 @@ class eventclass_uhs_audit  extends TableEventsBase {
 	) 
 );
 			}
-	
+		function BeforeShowList( &$xt, &$templatefile, $pageObject ) {
+		$xt->assign("pagetitle", "Audit Log");
+		;
+		
+	}
 		
 
 }

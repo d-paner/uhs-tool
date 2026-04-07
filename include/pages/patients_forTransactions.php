@@ -53,6 +53,15 @@
 		),
 		'full_name' => array(
 			'totalsType' => '' 
+		),
+		'classification' => array(
+			'totalsType' => '' 
+		),
+		'office' => array(
+			'totalsType' => '' 
+		),
+		'college' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
@@ -61,13 +70,19 @@
 			'full_name',
 			'sex',
 			'birthday',
-			'created_at' 
+			'created_at',
+			'classification',
+			'office',
+			'college' 
 		),
 		'searchRequiredFields' => array( 
 			 
 		),
 		'searchPanelFields' => array( 
 			'updated_at',
+			'college',
+			'office',
+			'classification',
 			'full_name',
 			'created_at',
 			'birthday',
@@ -105,6 +120,18 @@
 			'full_name' => array( 
 				'grid_field2',
 				'grid_field_label' 
+			),
+			'classification' => array( 
+				'grid_field3',
+				'grid_field_label1' 
+			),
+			'office' => array( 
+				'grid_field4',
+				'grid_field_label2' 
+			),
+			'college' => array( 
+				'grid_field5',
+				'grid_field_label3' 
 			) 
 		),
 		'hideEmptyFields' => array( 
@@ -161,7 +188,13 @@
 					'simple_grid_field11',
 					'simple_grid_field5',
 					'simple_grid_field12',
-					'simple_grid_field6' 
+					'simple_grid_field6',
+					'grid_field_label1',
+					'grid_field3',
+					'grid_field_label2',
+					'grid_field4',
+					'grid_field_label3',
+					'grid_field5' 
 				) 
 			),
 			'formXtTags' => array(
@@ -206,7 +239,13 @@
 				'simple_grid_field11' => 'grid',
 				'simple_grid_field5' => 'grid',
 				'simple_grid_field12' => 'grid',
-				'simple_grid_field6' => 'grid' 
+				'simple_grid_field6' => 'grid',
+				'grid_field_label1' => 'grid',
+				'grid_field3' => 'grid',
+				'grid_field_label2' => 'grid',
+				'grid_field4' => 'grid',
+				'grid_field_label3' => 'grid',
+				'grid_field5' => 'grid' 
 			),
 			'itemLocations' => array(
 				'grid_field1' => array(
@@ -248,6 +287,30 @@
 				'simple_grid_field6' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field6' 
+				),
+				'grid_field_label1' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field2' 
+				),
+				'grid_field3' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field2' 
+				),
+				'grid_field_label2' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field3' 
+				),
+				'grid_field4' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field3' 
+				),
+				'grid_field_label3' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field7' 
+				),
+				'grid_field5' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field7' 
 				) 
 			),
 			'itemVisiblity' => array(
@@ -299,7 +362,10 @@
 				'search_panel_field5',
 				'search_panel_field6',
 				'search_panel_field7',
-				'search_panel_field' 
+				'search_panel_field',
+				'search_panel_field8',
+				'search_panel_field9',
+				'search_panel_field10' 
 			),
 			'expand_menu_button' => array( 
 				'expand_menu_button' 
@@ -348,14 +414,20 @@
 				'simple_grid_field10',
 				'simple_grid_field11',
 				'simple_grid_field12',
-				'grid_field_label' 
+				'grid_field_label',
+				'grid_field_label1',
+				'grid_field_label2',
+				'grid_field_label3' 
 			),
 			'grid_field' => array( 
 				'grid_field',
 				'simple_grid_field4',
 				'simple_grid_field5',
 				'simple_grid_field6',
-				'grid_field2' 
+				'grid_field2',
+				'grid_field3',
+				'grid_field4',
+				'grid_field5' 
 			),
 			'username_button' => array( 
 				'username_button' 
@@ -456,6 +528,54 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
+					'headcell_field2' => array(
+						'cols' => array( 
+							5 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'classification_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'grid_field_label1' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field3' => array(
+						'cols' => array( 
+							6 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'office_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'grid_field_label2' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field7' => array(
+						'cols' => array( 
+							7 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'college_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'grid_field_label3' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
 					'cell_field' => array(
 						'cols' => array( 
 							0 
@@ -532,6 +652,54 @@
 						),
 						'items' => array( 
 							'simple_grid_field6' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field2' => array(
+						'cols' => array( 
+							5 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'classification_fieldcolumn' 
+						),
+						'items' => array( 
+							'grid_field3' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field3' => array(
+						'cols' => array( 
+							6 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'office_fieldcolumn' 
+						),
+						'items' => array( 
+							'grid_field4' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field7' => array(
+						'cols' => array( 
+							7 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'college_fieldcolumn' 
+						),
+						'items' => array( 
+							'grid_field5' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -615,9 +783,57 @@
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
+					),
+					'footcell_field2' => array(
+						'cols' => array( 
+							5 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'footcell_field3' => array(
+						'cols' => array( 
+							6 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'footcell_field7' => array(
+						'cols' => array( 
+							7 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
 					) 
 				),
-				'width' => 5,
+				'width' => 8,
 				'height' => 3 
 			) 
 		) 
@@ -869,6 +1085,15 @@
 						),
 						array(
 							'cell' => 'headcell_field6' 
+						),
+						array(
+							'cell' => 'headcell_field2' 
+						),
+						array(
+							'cell' => 'headcell_field3' 
+						),
+						array(
+							'cell' => 'headcell_field7' 
 						) 
 					) 
 				),
@@ -889,6 +1114,15 @@
 						),
 						array(
 							'cell' => 'cell_field6' 
+						),
+						array(
+							'cell' => 'cell_field2' 
+						),
+						array(
+							'cell' => 'cell_field3' 
+						),
+						array(
+							'cell' => 'cell_field7' 
 						) 
 					) 
 				),
@@ -909,6 +1143,15 @@
 						),
 						array(
 							'cell' => 'footcell_field6' 
+						),
+						array(
+							'cell' => 'footcell_field2' 
+						),
+						array(
+							'cell' => 'footcell_field3' 
+						),
+						array(
+							'cell' => 'footcell_field7' 
 						) 
 					) 
 				) 
@@ -1023,6 +1266,72 @@
 					'items' => array( 
 						 
 					) 
+				),
+				'headcell_field2' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'grid_field_label1' 
+					),
+					'field' => 'classification',
+					'columnName' => 'field' 
+				),
+				'cell_field2' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'grid_field3' 
+					),
+					'field' => 'classification',
+					'columnName' => 'field' 
+				),
+				'footcell_field2' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'headcell_field3' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'grid_field_label2' 
+					),
+					'field' => 'office',
+					'columnName' => 'field' 
+				),
+				'cell_field3' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'grid_field4' 
+					),
+					'field' => 'office',
+					'columnName' => 'field' 
+				),
+				'footcell_field3' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'headcell_field7' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'grid_field_label3' 
+					),
+					'field' => 'college',
+					'columnName' => 'field' 
+				),
+				'cell_field7' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'grid_field5' 
+					),
+					'field' => 'college',
+					'columnName' => 'field' 
+				),
+				'footcell_field7' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
 				) 
 			),
 			'deferredItems' => array( 
@@ -1060,6 +1369,9 @@
 			'type' => 'search_panel',
 			'items' => array( 
 				'search_panel_field7',
+				'search_panel_field10',
+				'search_panel_field9',
+				'search_panel_field8',
 				'search_panel_field',
 				'search_panel_field6',
 				'search_panel_field5',
@@ -1234,6 +1546,42 @@
 		),
 		'search_panel_field' => array(
 			'field' => 'full_name',
+			'type' => 'search_panel_field' 
+		),
+		'grid_field3' => array(
+			'field' => 'classification',
+			'type' => 'grid_field' 
+		),
+		'grid_field_label1' => array(
+			'type' => 'grid_field_label',
+			'field' => 'classification' 
+		),
+		'grid_field4' => array(
+			'field' => 'office',
+			'type' => 'grid_field' 
+		),
+		'grid_field_label2' => array(
+			'type' => 'grid_field_label',
+			'field' => 'office' 
+		),
+		'search_panel_field8' => array(
+			'field' => 'classification',
+			'type' => 'search_panel_field' 
+		),
+		'search_panel_field9' => array(
+			'field' => 'office',
+			'type' => 'search_panel_field' 
+		),
+		'grid_field5' => array(
+			'field' => 'college',
+			'type' => 'grid_field' 
+		),
+		'grid_field_label3' => array(
+			'type' => 'grid_field_label',
+			'field' => 'college' 
+		),
+		'search_panel_field10' => array(
+			'field' => 'college',
 			'type' => 'search_panel_field' 
 		),
 		'-3' => array(

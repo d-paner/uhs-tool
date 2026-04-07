@@ -12,7 +12,10 @@
 			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name' 
+			'full_name',
+			'classification',
+			'office',
+			'college' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -44,6 +47,15 @@
 			),
 			'full_name' => array( 
 				'integrated_edit_field' 
+			),
+			'classification' => array( 
+				'integrated_edit_field8' 
+			),
+			'office' => array( 
+				'integrated_edit_field9' 
+			),
+			'college' => array( 
+				'integrated_edit_field10' 
 			) 
 		) 
 	),
@@ -75,7 +87,10 @@
 					'integrated_edit_field5',
 					'integrated_edit_field6',
 					'integrated_edit_field7',
-					'integrated_edit_field' 
+					'integrated_edit_field',
+					'integrated_edit_field8',
+					'integrated_edit_field9',
+					'integrated_edit_field10' 
 				) 
 			),
 			'formXtTags' => array(
@@ -95,7 +110,10 @@
 				'integrated_edit_field5' => 'grid',
 				'integrated_edit_field6' => 'grid',
 				'integrated_edit_field7' => 'grid',
-				'integrated_edit_field' => 'grid' 
+				'integrated_edit_field' => 'grid',
+				'integrated_edit_field8' => 'grid',
+				'integrated_edit_field9' => 'grid',
+				'integrated_edit_field10' => 'grid' 
 			),
 			'itemLocations' => array(
 				'integrated_edit_field1' => array(
@@ -129,6 +147,18 @@
 				'integrated_edit_field' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
+				),
+				'integrated_edit_field8' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field9' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field10' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
 				) 
 			),
 			'itemVisiblity' => array(
@@ -153,7 +183,10 @@
 				'integrated_edit_field5',
 				'integrated_edit_field6',
 				'integrated_edit_field7',
-				'integrated_edit_field' 
+				'integrated_edit_field',
+				'integrated_edit_field8',
+				'integrated_edit_field9',
+				'integrated_edit_field10' 
 			),
 			'hamburger' => array( 
 				'hamburger' 
@@ -183,7 +216,10 @@
 							'integrated_edit_field5',
 							'integrated_edit_field6',
 							'integrated_edit_field7',
-							'integrated_edit_field' 
+							'integrated_edit_field',
+							'integrated_edit_field8',
+							'integrated_edit_field9',
+							'integrated_edit_field10' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -363,7 +399,10 @@
 						'integrated_edit_field5',
 						'integrated_edit_field6',
 						'integrated_edit_field7',
-						'integrated_edit_field' 
+						'integrated_edit_field',
+						'integrated_edit_field8',
+						'integrated_edit_field9',
+						'integrated_edit_field10' 
 					) 
 				) 
 			),
@@ -431,6 +470,21 @@
 		),
 		'integrated_edit_field' => array(
 			'field' => 'full_name',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field8' => array(
+			'field' => 'classification',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field9' => array(
+			'field' => 'office',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field10' => array(
+			'field' => 'college',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		) 
