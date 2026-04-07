@@ -1,13 +1,13 @@
 {
 	"orderInfo": [
 		{
-			"index": 11,
-			"field": "office",
+			"index": 15,
+			"field": "ihomis_no",
 			"expr": "created_at",
 			"asc": false
 		}
 	],
-	"sql": "SELECT\r\n\tid,\r\n\tfirst_name,\r\n\tlast_name,\r\n\tmiddle_name,\r\n\tCONCAT_WS(' ',first_name, middle_name, last_name) AS full_name,\r\n\tsex,\r\n\tbirthday,\r\n\tclassification,\r\n\toffice,\r\n\tcollege,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\tpatients\r\nORDER BY created_at DESC",
+	"sql": "SELECT\r\n\tid,\r\n\tfirst_name,\r\n\tlast_name,\r\n\tmiddle_name,\r\n\tCONCAT_WS(' ',first_name, middle_name, last_name) AS full_name,\r\n\tsex,\r\n\tbirthday,\r\n\tclassification,\r\n\toffice,\r\n\tcollege,\r\n\tuhs_id_no,\r\n\temed_no,\r\n\tihomis_no,\r\n\tphilhealth_no,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\tpatients\r\nORDER BY created_at DESC",
 	"connId": "conn",
 	"originalTable": "patients",
 	"name": "patients",
@@ -141,7 +141,7 @@
 		{
 			"name": "created_at",
 			"sqlExpression": "created_at",
-			"index": 11,
+			"index": 15,
 			"strField": "created_at",
 			"type": 135,
 			"viewFormats": [
@@ -164,7 +164,7 @@
 		{
 			"name": "updated_at",
 			"sqlExpression": "updated_at",
-			"index": 12,
+			"index": 16,
 			"strField": "updated_at",
 			"type": 135,
 			"viewFormats": [
@@ -267,6 +267,74 @@
 			],
 			"label": {
 				"English": "College"
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "uhs_id_no",
+			"sqlExpression": "uhs_id_no",
+			"index": 11,
+			"strField": "uhs_id_no",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "UHS ID No."
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "emed_no",
+			"sqlExpression": "emed_no",
+			"index": 12,
+			"strField": "emed_no",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "E-Med No."
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "ihomis_no",
+			"sqlExpression": "ihomis_no",
+			"index": 13,
+			"strField": "ihomis_no",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "IHOMIS No."
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "philhealth_no",
+			"sqlExpression": "philhealth_no",
+			"index": 14,
+			"strField": "philhealth_no",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Philhealth No."
 			},
 			"tableName": "patients"
 		}
@@ -403,6 +471,50 @@
 				"autoinc": false,
 				"defaultValueSQL": null,
 				"defaultValue": ""
+			},
+			{
+				"name": "uhs_id_no",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "emed_no",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "ihomis_no",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "philhealth_no",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
 			}
 		],
 		"primaryKeys": [
@@ -515,6 +627,10 @@
 								"integrated_edit_field7",
 								"integrated_edit_field8",
 								"integrated_edit_field9",
+								"integrated_edit_field10",
+								"integrated_edit_field11",
+								"integrated_edit_field12",
+								"integrated_edit_field13",
 								"integrated_edit_field5",
 								"integrated_edit_field6"
 							]
@@ -597,6 +713,26 @@
 				},
 				"integrated_edit_field9": {
 					"field": "college",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field10": {
+					"field": "uhs_id_no",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field11": {
+					"field": "emed_no",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field12": {
+					"field": "ihomis_no",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field13": {
+					"field": "philhealth_no",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				}
@@ -688,7 +824,11 @@
 								"export_field",
 								"export_field8",
 								"export_field9",
-								"export_field10"
+								"export_field10",
+								"export_field11",
+								"export_field12",
+								"export_field13",
+								"export_field14"
 							]
 						}
 					},
@@ -779,6 +919,22 @@
 				},
 				"export_field10": {
 					"field": "college",
+					"type": "export_field"
+				},
+				"export_field11": {
+					"field": "uhs_id_no",
+					"type": "export_field"
+				},
+				"export_field12": {
+					"field": "emed_no",
+					"type": "export_field"
+				},
+				"export_field13": {
+					"field": "ihomis_no",
+					"type": "export_field"
+				},
+				"export_field14": {
+					"field": "philhealth_no",
 					"type": "export_field"
 				}
 			},
@@ -872,7 +1028,11 @@
 								"import_field7",
 								"import_field",
 								"import_field8",
-								"import_field9"
+								"import_field9",
+								"import_field10",
+								"import_field11",
+								"import_field12",
+								"import_field13"
 							]
 						}
 					},
@@ -922,6 +1082,22 @@
 				},
 				"import_field9": {
 					"field": "college",
+					"type": "import_field"
+				},
+				"import_field10": {
+					"field": "uhs_id_no",
+					"type": "import_field"
+				},
+				"import_field11": {
+					"field": "emed_no",
+					"type": "import_field"
+				},
+				"import_field12": {
+					"field": "ihomis_no",
+					"type": "import_field"
+				},
+				"import_field13": {
+					"field": "philhealth_no",
 					"type": "import_field"
 				}
 			},
@@ -1043,11 +1219,15 @@
 								"integrated_edit_field2",
 								"integrated_edit_field3",
 								"integrated_edit_field4",
-								"integrated_edit_field5",
-								"integrated_edit_field6",
 								"integrated_edit_field7",
 								"integrated_edit_field8",
-								"integrated_edit_field9"
+								"integrated_edit_field9",
+								"integrated_edit_field10",
+								"integrated_edit_field11",
+								"integrated_edit_field12",
+								"integrated_edit_field13",
+								"integrated_edit_field5",
+								"integrated_edit_field6"
 							]
 						}
 					},
@@ -1142,6 +1322,30 @@
 				},
 				"integrated_edit_field9": {
 					"field": "college",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field10": {
+					"field": "uhs_id_no",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field11": {
+					"field": "emed_no",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field12": {
+					"field": "ihomis_no",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field13": {
+					"field": "philhealth_no",
 					"type": "integrated_edit_field",
 					"orientation": 0,
 					"updateOnEdit": false
@@ -1263,12 +1467,16 @@
 								"integrated_edit_field3",
 								"integrated_edit_field4",
 								"integrated_edit_field5",
-								"integrated_edit_field6",
-								"integrated_edit_field7",
 								"integrated_edit_field",
 								"integrated_edit_field8",
 								"integrated_edit_field9",
-								"integrated_edit_field10"
+								"integrated_edit_field10",
+								"integrated_edit_field11",
+								"integrated_edit_field12",
+								"integrated_edit_field13",
+								"integrated_edit_field14",
+								"integrated_edit_field6",
+								"integrated_edit_field7"
 							]
 						}
 					},
@@ -1349,6 +1557,26 @@
 				},
 				"integrated_edit_field10": {
 					"field": "college",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field11": {
+					"field": "uhs_id_no",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field12": {
+					"field": "emed_no",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field13": {
+					"field": "ihomis_no",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field14": {
+					"field": "philhealth_no",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				}
@@ -1551,6 +1779,18 @@
 								},
 								{
 									"cell": "headcell_field9"
+								},
+								{
+									"cell": "headcell_field10"
+								},
+								{
+									"cell": "headcell_field11"
+								},
+								{
+									"cell": "headcell_field12"
+								},
+								{
+									"cell": "headcell_field13"
 								}
 							]
 						},
@@ -1592,6 +1832,18 @@
 								},
 								{
 									"cell": "cell_field9"
+								},
+								{
+									"cell": "cell_field10"
+								},
+								{
+									"cell": "cell_field11"
+								},
+								{
+									"cell": "cell_field12"
+								},
+								{
+									"cell": "cell_field13"
 								}
 							]
 						},
@@ -1633,6 +1885,18 @@
 								},
 								{
 									"cell": "footcell_field9"
+								},
+								{
+									"cell": "footcell_field10"
+								},
+								{
+									"cell": "footcell_field11"
+								},
+								{
+									"cell": "footcell_field12"
+								},
+								{
+									"cell": "footcell_field13"
 								}
 							]
 						}
@@ -1643,221 +1907,351 @@
 							"items": [
 								"simple_grid_field"
 							],
-							"field": "first_name"
+							"field": "first_name",
+							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field1"
 							],
-							"field": "first_name"
+							"field": "first_name",
+							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "first_name"
+							"field": "first_name",
+							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field8"
 							],
-							"field": "last_name"
+							"field": "last_name",
+							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field2"
 							],
-							"field": "last_name"
+							"field": "last_name",
+							"columnName": "field"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "last_name"
+							"field": "last_name",
+							"columnName": "field"
 						},
 						"headcell_field2": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field9"
 							],
-							"field": "middle_name"
+							"field": "middle_name",
+							"columnName": "field"
 						},
 						"cell_field2": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field3"
 							],
-							"field": "middle_name"
+							"field": "middle_name",
+							"columnName": "field"
 						},
 						"footcell_field2": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "middle_name"
+							"field": "middle_name",
+							"columnName": "field"
 						},
 						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field10"
 							],
-							"field": "sex"
+							"field": "sex",
+							"columnName": "field"
 						},
 						"cell_field3": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field4"
 							],
-							"field": "sex"
+							"field": "sex",
+							"columnName": "field"
 						},
 						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "sex"
+							"field": "sex",
+							"columnName": "field"
 						},
 						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field11"
 							],
-							"field": "birthday"
+							"field": "birthday",
+							"columnName": "field"
 						},
 						"cell_field4": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field5"
 							],
-							"field": "birthday"
+							"field": "birthday",
+							"columnName": "field"
 						},
 						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "birthday"
+							"field": "birthday",
+							"columnName": "field"
 						},
 						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field3"
 							],
-							"field": "classification"
+							"field": "classification",
+							"columnName": "field"
 						},
 						"cell_field5": {
 							"model": "cell_field",
 							"items": [
 								"grid_field"
 							],
-							"field": "classification"
+							"field": "classification",
+							"columnName": "field"
 						},
 						"footcell_field5": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "classification"
+							"field": "classification",
+							"columnName": "field"
 						},
 						"headcell_field6": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field4"
 							],
-							"field": "office"
+							"field": "office",
+							"columnName": "field"
 						},
 						"cell_field6": {
 							"model": "cell_field",
 							"items": [
 								"grid_field1"
 							],
-							"field": "office"
+							"field": "office",
+							"columnName": "field"
 						},
 						"footcell_field6": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "office"
+							"field": "office",
+							"columnName": "field"
 						},
 						"headcell_field7": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field5"
 							],
-							"field": "college"
+							"field": "college",
+							"columnName": "field"
 						},
 						"cell_field7": {
 							"model": "cell_field",
 							"items": [
 								"grid_field2"
 							],
-							"field": "college"
+							"field": "college",
+							"columnName": "field"
 						},
 						"footcell_field7": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "college"
+							"field": "college",
+							"columnName": "field"
 						},
 						"headcell_field8": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field12"
+								"grid_field10"
 							],
-							"field": "created_at"
+							"field": "uhs_id_no",
+							"columnName": "field"
 						},
 						"cell_field8": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field6"
+								"grid_field6"
 							],
-							"field": "created_at"
+							"field": "uhs_id_no",
+							"columnName": "field"
 						},
 						"footcell_field8": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "created_at"
+							"field": "uhs_id_no",
+							"columnName": "field"
 						},
 						"headcell_field9": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field13"
+								"grid_field11"
 							],
-							"field": "updated_at"
+							"field": "emed_no",
+							"columnName": "field"
 						},
 						"cell_field9": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field7"
+								"grid_field7"
 							],
-							"field": "updated_at"
+							"field": "emed_no",
+							"columnName": "field"
 						},
 						"footcell_field9": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "updated_at"
+							"field": "emed_no",
+							"columnName": "field"
+						},
+						"headcell_field10": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field12"
+							],
+							"field": "ihomis_no",
+							"columnName": "field"
+						},
+						"cell_field10": {
+							"model": "cell_field",
+							"items": [
+								"grid_field8"
+							],
+							"field": "ihomis_no",
+							"columnName": "field"
+						},
+						"footcell_field10": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "ihomis_no",
+							"columnName": "field"
+						},
+						"headcell_field11": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field13"
+							],
+							"field": "philhealth_no",
+							"columnName": "field"
+						},
+						"cell_field11": {
+							"model": "cell_field",
+							"items": [
+								"grid_field9"
+							],
+							"field": "philhealth_no",
+							"columnName": "field"
+						},
+						"footcell_field11": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "philhealth_no",
+							"columnName": "field"
+						},
+						"headcell_field12": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field12"
+							],
+							"field": "created_at",
+							"columnName": "field"
+						},
+						"cell_field12": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field6"
+							],
+							"field": "created_at",
+							"columnName": "field"
+						},
+						"footcell_field12": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "created_at",
+							"columnName": "field"
+						},
+						"headcell_field13": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field13"
+							],
+							"field": "updated_at",
+							"columnName": "field"
+						},
+						"cell_field13": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field7"
+							],
+							"field": "updated_at",
+							"columnName": "field"
+						},
+						"footcell_field13": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "updated_at",
+							"columnName": "field"
 						},
 						"headcell_checkbox": {
 							"model": "headcell_checkbox",
 							"items": [
 								"grid_checkbox_head"
-							]
+							],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"cell_checkbox": {
 							"model": "cell_checkbox",
 							"items": [
 								"grid_checkbox"
-							]
+							],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"footcell_checkbox": {
 							"model": "footcell_checkbox",
-							"items": []
+							"items": [],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"headcell_icons": {
 							"model": "headcell_icons",
-							"items": []
+							"items": [],
+							"columnName": "list-icons",
+							"field": ""
 						},
 						"cell_icons": {
 							"model": "cell_icons",
 							"items": [
 								"grid_edit",
 								"grid_view"
-							]
+							],
+							"columnName": "list-icons",
+							"field": ""
 						},
 						"footcell_icons": {
 							"model": "footcell_icons",
-							"items": []
+							"items": [],
+							"columnName": "list-icons",
+							"field": ""
 						}
 					},
 					"deferredItems": [],
@@ -1893,6 +2287,10 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field7",
+						"search_panel_field14",
+						"search_panel_field13",
+						"search_panel_field12",
+						"search_panel_field11",
 						"search_panel_field10",
 						"search_panel_field9",
 						"search_panel_field8",
@@ -2043,6 +2441,22 @@
 					"field": "college",
 					"type": "search_panel_field"
 				},
+				"search_panel_field11": {
+					"field": "uhs_id_no",
+					"type": "search_panel_field"
+				},
+				"search_panel_field12": {
+					"field": "emed_no",
+					"type": "search_panel_field"
+				},
+				"search_panel_field13": {
+					"field": "ihomis_no",
+					"type": "search_panel_field"
+				},
+				"search_panel_field14": {
+					"field": "philhealth_no",
+					"type": "search_panel_field"
+				},
 				"simple_grid_field1": {
 					"field": "first_name",
 					"type": "grid_field",
@@ -2122,6 +2536,66 @@
 				"grid_field5": {
 					"type": "grid_field_label",
 					"field": "college"
+				},
+				"grid_field6": {
+					"field": "uhs_id_no",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"label": {
+						"field": "uhs_id_no",
+						"table": "patients",
+						"type": 3
+					}
+				},
+				"grid_field10": {
+					"type": "grid_field_label",
+					"field": "uhs_id_no"
+				},
+				"grid_field7": {
+					"field": "emed_no",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"label": {
+						"field": "emed_no",
+						"table": "patients",
+						"type": 3
+					}
+				},
+				"grid_field11": {
+					"type": "grid_field_label",
+					"field": "emed_no"
+				},
+				"grid_field8": {
+					"field": "ihomis_no",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"label": {
+						"field": "ihomis_no",
+						"table": "patients",
+						"type": 3
+					}
+				},
+				"grid_field12": {
+					"type": "grid_field_label",
+					"field": "ihomis_no"
+				},
+				"grid_field9": {
+					"field": "philhealth_no",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"label": {
+						"field": "philhealth_no",
+						"table": "patients",
+						"type": 3
+					}
+				},
+				"grid_field13": {
+					"type": "grid_field_label",
+					"field": "philhealth_no"
 				},
 				"simple_grid_field6": {
 					"field": "created_at",
@@ -2269,7 +2743,11 @@
 								"simple_grid_field",
 								"simple_grid_field8",
 								"simple_grid_field9",
-								"simple_grid_field10"
+								"simple_grid_field10",
+								"simple_grid_field11",
+								"simple_grid_field12",
+								"simple_grid_field13",
+								"simple_grid_field14"
 							]
 						}
 					},
@@ -2329,6 +2807,22 @@
 				},
 				"simple_grid_field10": {
 					"field": "college",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field11": {
+					"field": "uhs_id_no",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field12": {
+					"field": "emed_no",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field13": {
+					"field": "ihomis_no",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field14": {
+					"field": "philhealth_no",
 					"type": "simple_grid_field"
 				}
 			},
@@ -2518,6 +3012,18 @@
 								},
 								{
 									"cell": "headcell_field7"
+								},
+								{
+									"cell": "headcell_field8"
+								},
+								{
+									"cell": "headcell_field9"
+								},
+								{
+									"cell": "headcell_field10"
+								},
+								{
+									"cell": "headcell_field11"
 								}
 							]
 						},
@@ -2547,6 +3053,18 @@
 								},
 								{
 									"cell": "cell_field7"
+								},
+								{
+									"cell": "cell_field8"
+								},
+								{
+									"cell": "cell_field9"
+								},
+								{
+									"cell": "cell_field10"
+								},
+								{
+									"cell": "cell_field11"
 								}
 							]
 						},
@@ -2576,6 +3094,18 @@
 								},
 								{
 									"cell": "footcell_field7"
+								},
+								{
+									"cell": "footcell_field8"
+								},
+								{
+									"cell": "footcell_field9"
+								},
+								{
+									"cell": "footcell_field10"
+								},
+								{
+									"cell": "footcell_field11"
 								}
 							]
 						}
@@ -2732,6 +3262,82 @@
 							"model": "footcell_field",
 							"items": [],
 							"field": "college"
+						},
+						"headcell_field8": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label4"
+							],
+							"field": "uhs_id_no"
+						},
+						"cell_field8": {
+							"model": "cell_field",
+							"items": [
+								"grid_field6"
+							],
+							"field": "uhs_id_no"
+						},
+						"footcell_field8": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "uhs_id_no"
+						},
+						"headcell_field9": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label5"
+							],
+							"field": "emed_no"
+						},
+						"cell_field9": {
+							"model": "cell_field",
+							"items": [
+								"grid_field7"
+							],
+							"field": "emed_no"
+						},
+						"footcell_field9": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "emed_no"
+						},
+						"headcell_field10": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label6"
+							],
+							"field": "ihomis_no"
+						},
+						"cell_field10": {
+							"model": "cell_field",
+							"items": [
+								"grid_field8"
+							],
+							"field": "ihomis_no"
+						},
+						"footcell_field10": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "ihomis_no"
+						},
+						"headcell_field11": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label7"
+							],
+							"field": "philhealth_no"
+						},
+						"cell_field11": {
+							"model": "cell_field",
+							"items": [
+								"grid_field9"
+							],
+							"field": "philhealth_no"
+						},
+						"footcell_field11": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "philhealth_no"
 						}
 					},
 					"deferredItems": [],
@@ -2767,6 +3373,10 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field7",
+						"search_panel_field14",
+						"search_panel_field13",
+						"search_panel_field12",
+						"search_panel_field11",
 						"search_panel_field10",
 						"search_panel_field9",
 						"search_panel_field8",
@@ -2980,6 +3590,54 @@
 				},
 				"search_panel_field10": {
 					"field": "college",
+					"type": "search_panel_field"
+				},
+				"grid_field6": {
+					"field": "uhs_id_no",
+					"type": "grid_field"
+				},
+				"grid_field_label4": {
+					"type": "grid_field_label",
+					"field": "uhs_id_no"
+				},
+				"grid_field7": {
+					"field": "emed_no",
+					"type": "grid_field"
+				},
+				"grid_field_label5": {
+					"type": "grid_field_label",
+					"field": "emed_no"
+				},
+				"grid_field8": {
+					"field": "ihomis_no",
+					"type": "grid_field"
+				},
+				"grid_field_label6": {
+					"type": "grid_field_label",
+					"field": "ihomis_no"
+				},
+				"grid_field9": {
+					"field": "philhealth_no",
+					"type": "grid_field"
+				},
+				"grid_field_label7": {
+					"type": "grid_field_label",
+					"field": "philhealth_no"
+				},
+				"search_panel_field11": {
+					"field": "uhs_id_no",
+					"type": "search_panel_field"
+				},
+				"search_panel_field12": {
+					"field": "emed_no",
+					"type": "search_panel_field"
+				},
+				"search_panel_field13": {
+					"field": "ihomis_no",
+					"type": "search_panel_field"
+				},
+				"search_panel_field14": {
+					"field": "philhealth_no",
 					"type": "search_panel_field"
 				}
 			},
