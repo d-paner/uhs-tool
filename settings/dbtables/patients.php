@@ -126,6 +126,50 @@ $runnerDbTableInfo['patients'] = array(
 			'autoinc' => false,
 			'defaultValueSQL' => null,
 			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'uhs_id_no',
+			'type' => 200,
+			'size' => 100,
+			'scale' => 0,
+			'typeName' => 'varchar(100)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'emed_no',
+			'type' => 200,
+			'size' => 100,
+			'scale' => 0,
+			'typeName' => 'varchar(100)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'ihomis_no',
+			'type' => 200,
+			'size' => 100,
+			'scale' => 0,
+			'typeName' => 'varchar(100)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'philhealth_no',
+			'type' => 200,
+			'size' => 100,
+			'scale' => 0,
+			'typeName' => 'varchar(100)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
 		) 
 	),
 	'primaryKeys' => array( 

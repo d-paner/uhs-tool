@@ -219,30 +219,6 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'patients' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list',
-				'forTransactions' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
 		'guarantors' => array(
 			'add' => array( 
 				'add' 
@@ -409,6 +385,30 @@ $runnerPageInfo = array(
 				'masterprint' 
 			) 
 		),
+		'patients' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'forTransactions' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
 		'<global>' => array(
 			'menu' => array( 
 				'menu' 
@@ -428,25 +428,25 @@ $runnerPageInfo = array(
 		) 
 	),
 	'tableMasks' => array(
-		'patients' => 'ADESPI',
-		'payments' => 'ADESPI',
 		'transactions' => 'ADESPI',
-		'hospital_services' => 'ADESPI',
-		'guarantors' => 'ADESPI',
+		'patients' => 'ADESPI',
 		'professionals' => 'ADESPI',
-		'patient_types' => 'ADESPI',
-		'professional_services' => 'ADESPI',
 		'hospital_accounts' => 'ADESPI',
-		'users' => 'ADESPI',
-		'offices' => 'ADESPI',
+		'patient_types' => 'ADESPI',
+		'guarantors' => 'ADESPI',
+		'payments' => 'ADESPI',
 		'transaction_guarantor' => 'ADESPI',
 		'Viewing List' => 'ADESP',
-		'professional_accounts' => 'ADESPI',
 		'uhs_audit' => 'ADESPI',
-		'guarantor_classifications' => 'ADESPI',
-		'fund_code' => 'ADESPI',
-		'fund_type' => 'ADESPI',
+		'professional_accounts' => 'ADESPI',
+		'users' => 'ADESPI',
+		'professional_services' => 'ADESPI',
+		'offices' => 'ADESPI',
 		'patient_classifications' => 'ADESPI',
+		'hospital_services' => 'ADESPI',
+		'guarantor_classifications' => 'ADESPI',
+		'fund_type' => 'ADESPI',
+		'fund_code' => 'ADESPI',
 		'<global>' => 'S' 
 	) 
 );

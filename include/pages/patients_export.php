@@ -36,6 +36,18 @@
 		),
 		'college' => array(
 			'totalsType' => '' 
+		),
+		'uhs_id_no' => array(
+			'totalsType' => '' 
+		),
+		'emed_no' => array(
+			'totalsType' => '' 
+		),
+		'ihomis_no' => array(
+			'totalsType' => '' 
+		),
+		'philhealth_no' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
@@ -50,7 +62,11 @@
 			'full_name',
 			'classification',
 			'office',
-			'college' 
+			'college',
+			'uhs_id_no',
+			'emed_no',
+			'ihomis_no',
+			'philhealth_no' 
 		),
 		'exportFields' => array( 
 			'first_name',
@@ -63,7 +79,11 @@
 			'full_name',
 			'classification',
 			'office',
-			'college' 
+			'college',
+			'uhs_id_no',
+			'emed_no',
+			'ihomis_no',
+			'philhealth_no' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -104,6 +124,18 @@
 			),
 			'college' => array( 
 				'export_field10' 
+			),
+			'uhs_id_no' => array( 
+				'export_field11' 
+			),
+			'emed_no' => array( 
+				'export_field12' 
+			),
+			'ihomis_no' => array( 
+				'export_field13' 
+			),
+			'philhealth_no' => array( 
+				'export_field14' 
 			) 
 		) 
 	),
@@ -133,7 +165,11 @@
 					'export_field',
 					'export_field8',
 					'export_field9',
-					'export_field10' 
+					'export_field10',
+					'export_field11',
+					'export_field12',
+					'export_field13',
+					'export_field14' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -158,6 +194,10 @@
 				'export_field8' => 'grid',
 				'export_field9' => 'grid',
 				'export_field10' => 'grid',
+				'export_field11' => 'grid',
+				'export_field12' => 'grid',
+				'export_field13' => 'grid',
+				'export_field14' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -189,7 +229,11 @@
 				'export_field',
 				'export_field8',
 				'export_field9',
-				'export_field10' 
+				'export_field10',
+				'export_field11',
+				'export_field12',
+				'export_field13',
+				'export_field14' 
 			) 
 		),
 		'cellMaps' => array(
@@ -339,7 +383,11 @@
 						'export_field',
 						'export_field8',
 						'export_field9',
-						'export_field10' 
+						'export_field10',
+						'export_field11',
+						'export_field12',
+						'export_field13',
+						'export_field14' 
 					) 
 				) 
 			),
@@ -436,6 +484,22 @@
 		),
 		'export_field10' => array(
 			'field' => 'college',
+			'type' => 'export_field' 
+		),
+		'export_field11' => array(
+			'field' => 'uhs_id_no',
+			'type' => 'export_field' 
+		),
+		'export_field12' => array(
+			'field' => 'emed_no',
+			'type' => 'export_field' 
+		),
+		'export_field13' => array(
+			'field' => 'ihomis_no',
+			'type' => 'export_field' 
+		),
+		'export_field14' => array(
+			'field' => 'philhealth_no',
 			'type' => 'export_field' 
 		) 
 	),

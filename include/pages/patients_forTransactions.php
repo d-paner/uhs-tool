@@ -62,6 +62,18 @@
 		),
 		'college' => array(
 			'totalsType' => '' 
+		),
+		'uhs_id_no' => array(
+			'totalsType' => '' 
+		),
+		'emed_no' => array(
+			'totalsType' => '' 
+		),
+		'ihomis_no' => array(
+			'totalsType' => '' 
+		),
+		'philhealth_no' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
@@ -73,13 +85,21 @@
 			'created_at',
 			'classification',
 			'office',
-			'college' 
+			'college',
+			'uhs_id_no',
+			'emed_no',
+			'ihomis_no',
+			'philhealth_no' 
 		),
 		'searchRequiredFields' => array( 
 			 
 		),
 		'searchPanelFields' => array( 
 			'updated_at',
+			'philhealth_no',
+			'ihomis_no',
+			'emed_no',
+			'uhs_id_no',
 			'college',
 			'office',
 			'classification',
@@ -132,6 +152,22 @@
 			'college' => array( 
 				'grid_field5',
 				'grid_field_label3' 
+			),
+			'uhs_id_no' => array( 
+				'grid_field6',
+				'grid_field_label4' 
+			),
+			'emed_no' => array( 
+				'grid_field7',
+				'grid_field_label5' 
+			),
+			'ihomis_no' => array( 
+				'grid_field8',
+				'grid_field_label6' 
+			),
+			'philhealth_no' => array( 
+				'grid_field9',
+				'grid_field_label7' 
 			) 
 		),
 		'hideEmptyFields' => array( 
@@ -194,7 +230,15 @@
 					'grid_field_label2',
 					'grid_field4',
 					'grid_field_label3',
-					'grid_field5' 
+					'grid_field5',
+					'grid_field_label4',
+					'grid_field6',
+					'grid_field_label5',
+					'grid_field7',
+					'grid_field_label6',
+					'grid_field8',
+					'grid_field_label7',
+					'grid_field9' 
 				) 
 			),
 			'formXtTags' => array(
@@ -245,7 +289,15 @@
 				'grid_field_label2' => 'grid',
 				'grid_field4' => 'grid',
 				'grid_field_label3' => 'grid',
-				'grid_field5' => 'grid' 
+				'grid_field5' => 'grid',
+				'grid_field_label4' => 'grid',
+				'grid_field6' => 'grid',
+				'grid_field_label5' => 'grid',
+				'grid_field7' => 'grid',
+				'grid_field_label6' => 'grid',
+				'grid_field8' => 'grid',
+				'grid_field_label7' => 'grid',
+				'grid_field9' => 'grid' 
 			),
 			'itemLocations' => array(
 				'grid_field1' => array(
@@ -311,6 +363,38 @@
 				'grid_field5' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field7' 
+				),
+				'grid_field_label4' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field8' 
+				),
+				'grid_field6' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field8' 
+				),
+				'grid_field_label5' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field9' 
+				),
+				'grid_field7' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field9' 
+				),
+				'grid_field_label6' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field10' 
+				),
+				'grid_field8' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field10' 
+				),
+				'grid_field_label7' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field11' 
+				),
+				'grid_field9' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field11' 
 				) 
 			),
 			'itemVisiblity' => array(
@@ -365,7 +449,11 @@
 				'search_panel_field',
 				'search_panel_field8',
 				'search_panel_field9',
-				'search_panel_field10' 
+				'search_panel_field10',
+				'search_panel_field11',
+				'search_panel_field12',
+				'search_panel_field13',
+				'search_panel_field14' 
 			),
 			'expand_menu_button' => array( 
 				'expand_menu_button' 
@@ -417,7 +505,11 @@
 				'grid_field_label',
 				'grid_field_label1',
 				'grid_field_label2',
-				'grid_field_label3' 
+				'grid_field_label3',
+				'grid_field_label4',
+				'grid_field_label5',
+				'grid_field_label6',
+				'grid_field_label7' 
 			),
 			'grid_field' => array( 
 				'grid_field',
@@ -427,7 +519,11 @@
 				'grid_field2',
 				'grid_field3',
 				'grid_field4',
-				'grid_field5' 
+				'grid_field5',
+				'grid_field6',
+				'grid_field7',
+				'grid_field8',
+				'grid_field9' 
 			),
 			'username_button' => array( 
 				'username_button' 
@@ -576,6 +672,70 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
+					'headcell_field8' => array(
+						'cols' => array( 
+							8 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'uhs_id_no_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'grid_field_label4' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'emed_no_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'grid_field_label5' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field10' => array(
+						'cols' => array( 
+							10 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'ihomis_no_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'grid_field_label6' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field11' => array(
+						'cols' => array( 
+							11 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'philhealth_no_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'grid_field_label7' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
 					'cell_field' => array(
 						'cols' => array( 
 							0 
@@ -700,6 +860,70 @@
 						),
 						'items' => array( 
 							'grid_field5' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field8' => array(
+						'cols' => array( 
+							8 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'uhs_id_no_fieldcolumn' 
+						),
+						'items' => array( 
+							'grid_field6' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'emed_no_fieldcolumn' 
+						),
+						'items' => array( 
+							'grid_field7' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field10' => array(
+						'cols' => array( 
+							10 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'ihomis_no_fieldcolumn' 
+						),
+						'items' => array( 
+							'grid_field8' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field11' => array(
+						'cols' => array( 
+							11 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'philhealth_no_fieldcolumn' 
+						),
+						'items' => array( 
+							'grid_field9' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -831,9 +1055,73 @@
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
+					),
+					'footcell_field8' => array(
+						'cols' => array( 
+							8 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'footcell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'footcell_field10' => array(
+						'cols' => array( 
+							10 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'footcell_field11' => array(
+						'cols' => array( 
+							11 
+						),
+						'rows' => array( 
+							2 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
 					) 
 				),
-				'width' => 8,
+				'width' => 12,
 				'height' => 3 
 			) 
 		) 
@@ -1094,6 +1382,18 @@
 						),
 						array(
 							'cell' => 'headcell_field7' 
+						),
+						array(
+							'cell' => 'headcell_field8' 
+						),
+						array(
+							'cell' => 'headcell_field9' 
+						),
+						array(
+							'cell' => 'headcell_field10' 
+						),
+						array(
+							'cell' => 'headcell_field11' 
 						) 
 					) 
 				),
@@ -1123,6 +1423,18 @@
 						),
 						array(
 							'cell' => 'cell_field7' 
+						),
+						array(
+							'cell' => 'cell_field8' 
+						),
+						array(
+							'cell' => 'cell_field9' 
+						),
+						array(
+							'cell' => 'cell_field10' 
+						),
+						array(
+							'cell' => 'cell_field11' 
 						) 
 					) 
 				),
@@ -1152,6 +1464,18 @@
 						),
 						array(
 							'cell' => 'footcell_field7' 
+						),
+						array(
+							'cell' => 'footcell_field8' 
+						),
+						array(
+							'cell' => 'footcell_field9' 
+						),
+						array(
+							'cell' => 'footcell_field10' 
+						),
+						array(
+							'cell' => 'footcell_field11' 
 						) 
 					) 
 				) 
@@ -1332,6 +1656,94 @@
 					'items' => array( 
 						 
 					) 
+				),
+				'headcell_field8' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'grid_field_label4' 
+					),
+					'field' => 'uhs_id_no',
+					'columnName' => 'field' 
+				),
+				'cell_field8' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'grid_field6' 
+					),
+					'field' => 'uhs_id_no',
+					'columnName' => 'field' 
+				),
+				'footcell_field8' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'headcell_field9' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'grid_field_label5' 
+					),
+					'field' => 'emed_no',
+					'columnName' => 'field' 
+				),
+				'cell_field9' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'grid_field7' 
+					),
+					'field' => 'emed_no',
+					'columnName' => 'field' 
+				),
+				'footcell_field9' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'headcell_field10' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'grid_field_label6' 
+					),
+					'field' => 'ihomis_no',
+					'columnName' => 'field' 
+				),
+				'cell_field10' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'grid_field8' 
+					),
+					'field' => 'ihomis_no',
+					'columnName' => 'field' 
+				),
+				'footcell_field10' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'headcell_field11' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'grid_field_label7' 
+					),
+					'field' => 'philhealth_no',
+					'columnName' => 'field' 
+				),
+				'cell_field11' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'grid_field9' 
+					),
+					'field' => 'philhealth_no',
+					'columnName' => 'field' 
+				),
+				'footcell_field11' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
 				) 
 			),
 			'deferredItems' => array( 
@@ -1369,6 +1781,10 @@
 			'type' => 'search_panel',
 			'items' => array( 
 				'search_panel_field7',
+				'search_panel_field14',
+				'search_panel_field13',
+				'search_panel_field12',
+				'search_panel_field11',
 				'search_panel_field10',
 				'search_panel_field9',
 				'search_panel_field8',
@@ -1582,6 +1998,54 @@
 		),
 		'search_panel_field10' => array(
 			'field' => 'college',
+			'type' => 'search_panel_field' 
+		),
+		'grid_field6' => array(
+			'field' => 'uhs_id_no',
+			'type' => 'grid_field' 
+		),
+		'grid_field_label4' => array(
+			'type' => 'grid_field_label',
+			'field' => 'uhs_id_no' 
+		),
+		'grid_field7' => array(
+			'field' => 'emed_no',
+			'type' => 'grid_field' 
+		),
+		'grid_field_label5' => array(
+			'type' => 'grid_field_label',
+			'field' => 'emed_no' 
+		),
+		'grid_field8' => array(
+			'field' => 'ihomis_no',
+			'type' => 'grid_field' 
+		),
+		'grid_field_label6' => array(
+			'type' => 'grid_field_label',
+			'field' => 'ihomis_no' 
+		),
+		'grid_field9' => array(
+			'field' => 'philhealth_no',
+			'type' => 'grid_field' 
+		),
+		'grid_field_label7' => array(
+			'type' => 'grid_field_label',
+			'field' => 'philhealth_no' 
+		),
+		'search_panel_field11' => array(
+			'field' => 'uhs_id_no',
+			'type' => 'search_panel_field' 
+		),
+		'search_panel_field12' => array(
+			'field' => 'emed_no',
+			'type' => 'search_panel_field' 
+		),
+		'search_panel_field13' => array(
+			'field' => 'ihomis_no',
+			'type' => 'search_panel_field' 
+		),
+		'search_panel_field14' => array(
+			'field' => 'philhealth_no',
 			'type' => 'search_panel_field' 
 		),
 		'-3' => array(

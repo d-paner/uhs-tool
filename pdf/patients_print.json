@@ -97,6 +97,18 @@ pdfDocument = {
 										{BEGIN col_grid_10}
 					"%",
 					{END col_grid_10}
+										{BEGIN col_grid_11}
+					"%",
+					{END col_grid_11}
+										{BEGIN col_grid_12}
+					"%",
+					{END col_grid_12}
+										{BEGIN col_grid_13}
+					"%",
+					{END col_grid_13}
+										{BEGIN col_grid_14}
+					"%",
+					{END col_grid_14}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -244,7 +256,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients first_name }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
+			{"text":"{$jslabel patients first_name }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -273,7 +285,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients last_name }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
+			{"text":"{$jslabel patients last_name }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -302,7 +314,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients middle_name }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
+			{"text":"{$jslabel patients middle_name }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -331,7 +343,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients sex }","hidden":"{$item_hide_simple_grid_field14}","bold":true},
+			{"text":"{$jslabel patients sex }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -360,7 +372,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients birthday }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
+			{"text":"{$jslabel patients birthday }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -389,7 +401,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients created_at }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
+			{"text":"{$jslabel patients created_at }","hidden":"{$item_hide_simple_grid_field20}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -418,7 +430,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients updated_at }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
+			{"text":"{$jslabel patients updated_at }","hidden":"{$item_hide_simple_grid_field21}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -447,7 +459,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients full_name }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
+			{"text":"{$jslabel patients full_name }","hidden":"{$item_hide_simple_grid_field22}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -476,7 +488,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients classification }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
+			{"text":"{$jslabel patients classification }","hidden":"{$item_hide_simple_grid_field23}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -505,7 +517,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients office }","hidden":"{$item_hide_simple_grid_field20}","bold":true},
+			{"text":"{$jslabel patients office }","hidden":"{$item_hide_simple_grid_field24}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -534,7 +546,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel patients college }","hidden":"{$item_hide_simple_grid_field21}","bold":true},
+			{"text":"{$jslabel patients college }","hidden":"{$item_hide_simple_grid_field25}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -544,6 +556,122 @@ pdfDocument = {
       },
 
 {END cellblock_grid_headcell_field10}
+																							{BEGIN cellblock_grid_headcell_field11}
+{
+	cellId: 'headcell_field11',
+	col:0,
+	row:0,
+			fieldName: 'uhs_id_no',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel patients uhs_id_no }","hidden":"{$item_hide_simple_grid_field26}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$uhs_id_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field11}
+																							{BEGIN cellblock_grid_headcell_field12}
+{
+	cellId: 'headcell_field12',
+	col:0,
+	row:0,
+			fieldName: 'emed_no',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel patients emed_no }","hidden":"{$item_hide_simple_grid_field27}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$emed_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field12}
+																							{BEGIN cellblock_grid_headcell_field13}
+{
+	cellId: 'headcell_field13',
+	col:0,
+	row:0,
+			fieldName: 'ihomis_no',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel patients ihomis_no }","hidden":"{$item_hide_simple_grid_field28}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$ihomis_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field13}
+																							{BEGIN cellblock_grid_headcell_field14}
+{
+	cellId: 'headcell_field14',
+	col:0,
+	row:0,
+			fieldName: 'philhealth_no',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel patients philhealth_no }","hidden":"{$item_hide_simple_grid_field29}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$philhealth_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field14}
 											],
 				{END row_grid_0}
 		
@@ -872,6 +1000,122 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_field10}
+																							{BEGIN cellblock_grid_cell_field11}
+{
+	cellId: 'cell_field11',
+	col:0,
+	row:0,
+			fieldName: 'uhs_id_no',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$uhs_id_no_pdfvalue},"hidden":"{$item_hide_simple_grid_field11}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$uhs_id_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field11}
+																							{BEGIN cellblock_grid_cell_field12}
+{
+	cellId: 'cell_field12',
+	col:0,
+	row:0,
+			fieldName: 'emed_no',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$emed_no_pdfvalue},"hidden":"{$item_hide_simple_grid_field12}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$emed_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field12}
+																							{BEGIN cellblock_grid_cell_field13}
+{
+	cellId: 'cell_field13',
+	col:0,
+	row:0,
+			fieldName: 'ihomis_no',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$ihomis_no_pdfvalue},"hidden":"{$item_hide_simple_grid_field13}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$ihomis_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field13}
+																							{BEGIN cellblock_grid_cell_field14}
+{
+	cellId: 'cell_field14',
+	col:0,
+	row:0,
+			fieldName: 'philhealth_no',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$philhealth_no_pdfvalue},"hidden":"{$item_hide_simple_grid_field14}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$philhealth_no_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field14}
 											],
 				{END row_grid_1}
 		
@@ -1167,6 +1411,110 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field10}
+																							{BEGIN cellblock_grid_footcell_field11}
+{
+	cellId: 'footcell_field11',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field11}
+																							{BEGIN cellblock_grid_footcell_field12}
+{
+	cellId: 'footcell_field12',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field12}
+																							{BEGIN cellblock_grid_footcell_field13}
+{
+	cellId: 'footcell_field13',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field13}
+																							{BEGIN cellblock_grid_footcell_field14}
+{
+	cellId: 'footcell_field14',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field14}
 											],
 				{END row_grid_2}
 		

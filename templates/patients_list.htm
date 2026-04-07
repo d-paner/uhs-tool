@@ -254,6 +254,58 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_updated_at}</span>
 						</div>
 		{END searchCtrlBlock_updated_at}
+																{BEGIN searchCtrlBlock_philhealth_no}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_philhealth_no}" {$filterRow_attrs_philhealth_no}>
+			<label>{$label patients philhealth_no }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_philhealth_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_philhealth_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_philhealth_no}</span>
+						</div>
+		{END searchCtrlBlock_philhealth_no}
+																{BEGIN searchCtrlBlock_ihomis_no}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_ihomis_no}" {$filterRow_attrs_ihomis_no}>
+			<label>{$label patients ihomis_no }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_ihomis_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_ihomis_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_ihomis_no}</span>
+						</div>
+		{END searchCtrlBlock_ihomis_no}
+																{BEGIN searchCtrlBlock_emed_no}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_emed_no}" {$filterRow_attrs_emed_no}>
+			<label>{$label patients emed_no }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_emed_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_emed_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_emed_no}</span>
+						</div>
+		{END searchCtrlBlock_emed_no}
+																{BEGIN searchCtrlBlock_uhs_id_no}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_uhs_id_no}" {$filterRow_attrs_uhs_id_no}>
+			<label>{$label patients uhs_id_no }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_uhs_id_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_uhs_id_no}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_uhs_id_no}</span>
+						</div>
+		{END searchCtrlBlock_uhs_id_no}
 																{BEGIN searchCtrlBlock_college}
 
 
@@ -743,6 +795,18 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="college"]:before {
 		content: "{$label patients college}";
 	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="uhs_id_no"]:before {
+		content: "{$label patients uhs_id_no}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="emed_no"]:before {
+		content: "{$label patients emed_no}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="ihomis_no"]:before {
+		content: "{$label patients ihomis_no}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="philhealth_no"]:before {
+		content: "{$label patients philhealth_no}";
+	}
 	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
@@ -1073,11 +1137,147 @@
 	{$cell_grid_headcell_field8}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$uhs_id_no_class}	"
+
+			data-field="uhs_id_no"
+	
+	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN uhs_id_no_fieldheadercolumn}
+	{BEGIN uhs_id_no_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field10" {$item_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="uhs_id_no" data-fieldname="uhs_id_no" 
+
+			{$uhs_id_no_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label patients uhs_id_no }</span>
+					{$arrow_icon_uhs_id_no}
+			</span>
+	</span>
+	{END uhs_id_no_fieldheader}
+{END uhs_id_no_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field8}
+									{BEGIN cellblock_grid_headcell_field9}
+	<th
+	
+	{$cell_grid_headcell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$emed_no_class}	"
+
+			data-field="emed_no"
+	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN emed_no_fieldheadercolumn}
+	{BEGIN emed_no_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field11" {$item_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="emed_no" data-fieldname="emed_no" 
+
+			{$emed_no_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label patients emed_no }</span>
+					{$arrow_icon_emed_no}
+			</span>
+	</span>
+	{END emed_no_fieldheader}
+{END emed_no_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field9}
+									{BEGIN cellblock_grid_headcell_field10}
+	<th
+	
+	{$cell_grid_headcell_field10}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$ihomis_no_class}	"
+
+			data-field="ihomis_no"
+	
+	data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN ihomis_no_fieldheadercolumn}
+	{BEGIN ihomis_no_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field12" {$item_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="ihomis_no" data-fieldname="ihomis_no" 
+
+			{$ihomis_no_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label patients ihomis_no }</span>
+					{$arrow_icon_ihomis_no}
+			</span>
+	</span>
+	{END ihomis_no_fieldheader}
+{END ihomis_no_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field10}
+									{BEGIN cellblock_grid_headcell_field11}
+	<th
+	
+	{$cell_grid_headcell_field11}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$philhealth_no_class}	"
+
+			data-field="philhealth_no"
+	
+	data-cellId="grid_headcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN philhealth_no_fieldheadercolumn}
+	{BEGIN philhealth_no_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field13" {$item_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="philhealth_no" data-fieldname="philhealth_no" 
+
+			{$philhealth_no_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label patients philhealth_no }</span>
+					{$arrow_icon_philhealth_no}
+			</span>
+	</span>
+	{END philhealth_no_fieldheader}
+{END philhealth_no_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field11}
+									{BEGIN cellblock_grid_headcell_field12}
+	<th
+	
+	{$cell_grid_headcell_field12}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1100,18 +1300,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field8}
-									{BEGIN cellblock_grid_headcell_field9}
+	{END cellblock_grid_headcell_field12}
+									{BEGIN cellblock_grid_headcell_field13}
 	<th
 	
-	{$cell_grid_headcell_field9}
+	{$cell_grid_headcell_field13}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1134,7 +1334,7 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field9}
+	{END cellblock_grid_headcell_field13}
 							</tr>
 															
 					{END grid_header}
@@ -1382,11 +1582,95 @@
 	{$cell_grid_cell_field8}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$uhs_id_no_class}	"
+
+			data-field="uhs_id_no"
+	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN uhs_id_no_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="uhs_id_no" data-fieldname="uhs_id_no" data-default-width >
+{$uhs_id_no_value}
+</span>
+{END uhs_id_no_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field8}
+									{BEGIN cellblock_grid_cell_field9}
+	<td
+	
+	{$cell_grid_cell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$emed_no_class}	"
+
+			data-field="emed_no"
+	
+	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN emed_no_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="emed_no" data-fieldname="emed_no" data-default-width >
+{$emed_no_value}
+</span>
+{END emed_no_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field9}
+									{BEGIN cellblock_grid_cell_field10}
+	<td
+	
+	{$cell_grid_cell_field10}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$ihomis_no_class}	"
+
+			data-field="ihomis_no"
+	
+	data-cellId="grid_cell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN ihomis_no_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field8" {$item_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="ihomis_no" data-fieldname="ihomis_no" data-default-width >
+{$ihomis_no_value}
+</span>
+{END ihomis_no_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field10}
+									{BEGIN cellblock_grid_cell_field11}
+	<td
+	
+	{$cell_grid_cell_field11}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$philhealth_no_class}	"
+
+			data-field="philhealth_no"
+	
+	data-cellId="grid_cell_field11" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN philhealth_no_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="philhealth_no" data-fieldname="philhealth_no" data-default-width >
+{$philhealth_no_value}
+</span>
+{END philhealth_no_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field11}
+									{BEGIN cellblock_grid_cell_field12}
+	<td
+	
+	{$cell_grid_cell_field12}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field12" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1396,18 +1680,18 @@
 </span>
 {END created_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field8}
-									{BEGIN cellblock_grid_cell_field9}
+	{END cellblock_grid_cell_field12}
+									{BEGIN cellblock_grid_cell_field13}
 	<td
 	
-	{$cell_grid_cell_field9}
+	{$cell_grid_cell_field13}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1417,7 +1701,7 @@
 </span>
 {END updated_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field9}
+	{END cellblock_grid_cell_field13}
 							</tr>
 										
 											{END grid_row}
@@ -1585,7 +1869,7 @@
 	{$cell_grid_footcell_field8}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$created_at_class}	"
+		 r-ori-vert		 {$uhs_id_no_class}	"
 
 	
 	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1600,7 +1884,7 @@
 	{$cell_grid_footcell_field9}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$updated_at_class}	"
+		 r-ori-vert		 {$emed_no_class}	"
 
 	
 	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1609,6 +1893,66 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field9}
+									{BEGIN cellblock_grid_footcell_field10}
+	<td
+	
+	{$cell_grid_footcell_field10}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$ihomis_no_class}	"
+
+	
+	data-cellId="grid_footcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field10}
+									{BEGIN cellblock_grid_footcell_field11}
+	<td
+	
+	{$cell_grid_footcell_field11}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$philhealth_no_class}	"
+
+	
+	data-cellId="grid_footcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field11}
+									{BEGIN cellblock_grid_footcell_field12}
+	<td
+	
+	{$cell_grid_footcell_field12}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$created_at_class}	"
+
+	
+	data-cellId="grid_footcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field12}
+									{BEGIN cellblock_grid_footcell_field13}
+	<td
+	
+	{$cell_grid_footcell_field13}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$updated_at_class}	"
+
+	
+	data-cellId="grid_footcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field13}
 							</tr>
 					
 					</tfoot>

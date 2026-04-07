@@ -58,9 +58,9 @@ $runnerTableSettings['patients'] = array(
 	'strOrderBy' => 'ORDER BY created_at DESC',
 	'orderInfo' => array( 
 		array(
-			'index' => 11,
+			'index' => 15,
 			'dir' => 'DESC',
-			'field' => 'office' 
+			'field' => 'ihomis_no' 
 		) 
 	),
 	'sql' => 'SELECT
@@ -74,6 +74,10 @@ $runnerTableSettings['patients'] = array(
 	classification,
 	office,
 	college,
+	uhs_id_no,
+	emed_no,
+	ihomis_no,
+	philhealth_no,
 	created_at,
 	updated_at
 FROM
@@ -213,7 +217,7 @@ ORDER BY created_at DESC',
 			'name' => 'created_at',
 			'goodName' => 'created_at',
 			'strField' => 'created_at',
-			'index' => 11,
+			'index' => 15,
 			'type' => 135,
 			'sqlExpression' => 'created_at',
 			'viewFormats' => array(
@@ -234,7 +238,7 @@ ORDER BY created_at DESC',
 			'name' => 'updated_at',
 			'goodName' => 'updated_at',
 			'strField' => 'updated_at',
-			'index' => 12,
+			'index' => 16,
 			'type' => 135,
 			'sqlExpression' => 'updated_at',
 			'viewFormats' => array(
@@ -339,6 +343,78 @@ ORDER BY created_at DESC',
 				) 
 			),
 			'tableName' => 'patients' 
+		),
+		'uhs_id_no' => array(
+			'name' => 'uhs_id_no',
+			'goodName' => 'uhs_id_no',
+			'strField' => 'uhs_id_no',
+			'index' => 11,
+			'sqlExpression' => 'uhs_id_no',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'patients' 
+		),
+		'emed_no' => array(
+			'name' => 'emed_no',
+			'goodName' => 'emed_no',
+			'strField' => 'emed_no',
+			'index' => 12,
+			'sqlExpression' => 'emed_no',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'patients' 
+		),
+		'ihomis_no' => array(
+			'name' => 'ihomis_no',
+			'goodName' => 'ihomis_no',
+			'strField' => 'ihomis_no',
+			'index' => 13,
+			'sqlExpression' => 'ihomis_no',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'patients' 
+		),
+		'philhealth_no' => array(
+			'name' => 'philhealth_no',
+			'goodName' => 'philhealth_no',
+			'strField' => 'philhealth_no',
+			'index' => 14,
+			'sqlExpression' => 'philhealth_no',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'patients' 
 		) 
 	),
 	'query' => array(
@@ -353,6 +429,10 @@ ORDER BY created_at DESC',
 	classification,
 	office,
 	college,
+	uhs_id_no,
+	emed_no,
+	ihomis_no,
+	philhealth_no,
 	created_at,
 	updated_at
 FROM
@@ -534,6 +614,66 @@ ORDER BY created_at DESC',
 				'columnName' => 'college' 
 			),
 			array(
+				'sql' => 'uhs_id_no',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'patients',
+					'name' => 'uhs_id_no' 
+				),
+				'encrypted' => false,
+				'columnName' => 'uhs_id_no' 
+			),
+			array(
+				'sql' => 'emed_no',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'patients',
+					'name' => 'emed_no' 
+				),
+				'encrypted' => false,
+				'columnName' => 'emed_no' 
+			),
+			array(
+				'sql' => 'ihomis_no',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'patients',
+					'name' => 'ihomis_no' 
+				),
+				'encrypted' => false,
+				'columnName' => 'ihomis_no' 
+			),
+			array(
+				'sql' => 'philhealth_no',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'patients',
+					'name' => 'philhealth_no' 
+				),
+				'encrypted' => false,
+				'columnName' => 'philhealth_no' 
+			),
+			array(
 				'sql' => 'created_at',
 				'parsed' => true,
 				'type' => 'FieldListItem',
@@ -584,7 +724,11 @@ ORDER BY created_at DESC',
 						'updated_at',
 						'classification',
 						'office',
-						'college' 
+						'college',
+						'uhs_id_no',
+						'emed_no',
+						'ihomis_no',
+						'philhealth_no' 
 					),
 					'name' => 'patients' 
 				),
@@ -648,7 +792,7 @@ ORDER BY created_at DESC',
 					'name' => 'created_at' 
 				),
 				'asc' => false,
-				'columnNumber' => 11 
+				'columnNumber' => 15 
 			) 
 		),
 		'colsIndex' => array( 
@@ -724,13 +868,41 @@ ORDER BY created_at DESC',
 			),
 			array(
 				'fieldIndex' => 10,
-				'orderByIndex' => 0,
+				'orderByIndex' => -1,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
 			),
 			array(
 				'fieldIndex' => 11,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 12,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 13,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 14,
+				'orderByIndex' => 0,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 15,
 				'orderByIndex' => -1,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
@@ -748,6 +920,10 @@ ORDER BY created_at DESC',
 	classification,
 	office,
 	college,
+	uhs_id_no,
+	emed_no,
+	ihomis_no,
+	philhealth_no,
 	created_at,
 	updated_at',
 		'fromListSql' => 'FROM
@@ -819,7 +995,11 @@ ORDER BY created_at DESC',
 			'full_name',
 			'classification',
 			'office',
-			'college' 
+			'college',
+			'uhs_id_no',
+			'emed_no',
+			'ihomis_no',
+			'philhealth_no' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -837,7 +1017,11 @@ ORDER BY created_at DESC',
 			'full_name',
 			'classification',
 			'office',
-			'college' 
+			'college',
+			'uhs_id_no',
+			'emed_no',
+			'ihomis_no',
+			'philhealth_no' 
 		) 
 	),
 	'connId' => 'conn',
@@ -897,7 +1081,11 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'full_name' => 'Full Name',
 		'classification' => 'Patient Classification',
 		'office' => 'Office',
-		'college' => 'College' 
+		'college' => 'College',
+		'uhs_id_no' => 'UHS ID No.',
+		'emed_no' => 'E-Med No.',
+		'ihomis_no' => 'IHOMIS No.',
+		'philhealth_no' => 'Philhealth No.' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
@@ -911,7 +1099,11 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'full_name' => '',
 		'classification' => '',
 		'office' => '',
-		'college' => '' 
+		'college' => '',
+		'uhs_id_no' => '',
+		'emed_no' => '',
+		'ihomis_no' => '',
+		'philhealth_no' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
@@ -925,7 +1117,11 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'full_name' => '',
 		'classification' => '',
 		'office' => '',
-		'college' => '' 
+		'college' => '',
+		'uhs_id_no' => '',
+		'emed_no' => '',
+		'ihomis_no' => '',
+		'philhealth_no' => '' 
 	),
 	'pageTitles' => array(
 		 
