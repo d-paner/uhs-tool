@@ -5,6 +5,20 @@
 	"mainDiagram": {
 		"tables": [
 			{
+				"gid": 1928714671,
+				"y": 923,
+				"x": 476,
+				"width": 128.1666717529297,
+				"height": 123.33333587646484
+			},
+			{
+				"gid": 462728446,
+				"y": 920,
+				"x": 20,
+				"width": 220.75,
+				"height": 123.33333587646484
+			},
+			{
 				"gid": 2605319477,
 				"y": 0,
 				"x": 1081.6666717529297,
@@ -33,6 +47,13 @@
 				"height": 207.33334350585938
 			},
 			{
+				"gid": 2871078218,
+				"y": 915,
+				"x": 255,
+				"width": 202.8541717529297,
+				"height": 123.33333587646484
+			},
+			{
 				"gid": 3422966527,
 				"y": 346,
 				"x": 840,
@@ -42,9 +63,9 @@
 			{
 				"gid": 751578668,
 				"y": 36,
-				"x": 17,
-				"width": 115.70833587646484,
-				"height": 263.3333435058594
+				"x": 3.666667938232422,
+				"width": 129.04166793823242,
+				"height": 281.3333435058594
 			},
 			{
 				"gid": 1708301106,
@@ -89,6 +110,13 @@
 				"height": 291.3333435058594
 			},
 			{
+				"gid": 726749642,
+				"y": 660,
+				"x": 400,
+				"width": 127.38542175292969,
+				"height": 235.33334350585938
+			},
+			{
 				"gid": 344172009,
 				"y": 268,
 				"x": 1043,
@@ -103,11 +131,11 @@
 				"height": 291.3333435058594
 			},
 			{
-				"gid": 726749642,
-				"y": 660,
-				"x": 400,
-				"width": 127.38542175292969,
-				"height": 235.33334350585938
+				"gid": 2302590494,
+				"y": 922,
+				"x": 694,
+				"width": 132.0625,
+				"height": 151.33334350585938
 			}
 		]
 	},
@@ -272,54 +300,138 @@
 				"<Default>": {
 					"permissions": {
 						"patients": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "patients",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"forTransactions": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"transactions": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "transactions",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"transactionsList": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"patient_types": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "patient_types",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"hospital_accounts": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "hospital_accounts",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"guarantors": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "guarantors",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"professionals": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "professionals",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"offices": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "offices",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"professional_services": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "professional_services",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"transactionsChild": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"hospital_services": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "hospital_services",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"transactionsChild": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"users": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "users",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"<global>": {
 							"mask": "AEDSPI",
@@ -329,29 +441,119 @@
 							}
 						},
 						"payments": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "payments",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"transaction_guarantor": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "transaction_guarantor",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"Viewing List": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "Viewing List",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"list": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"professional_accounts": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "professional_accounts",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						},
 						"uhs_audit": {
-							"mask": "ADESPI",
+							"mask": "",
 							"table": "uhs_audit",
-							"restrictedPages": {}
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"patient_classifications": {
+							"mask": "",
+							"table": "patient_classifications",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"guarantor_classifications": {
+							"mask": "",
+							"table": "guarantor_classifications",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"fund_type": {
+							"mask": "",
+							"table": "fund_type",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
+						},
+						"fund_code": {
+							"mask": "",
+							"table": "fund_code",
+							"restrictedPages": {
+								"add": true,
+								"edit": true,
+								"list": true,
+								"view": true,
+								"print": true,
+								"export": true,
+								"import": true
+							}
 						}
 					},
 					"admin": false,
@@ -603,6 +805,58 @@
 								"export": false,
 								"import": false
 							}
+						},
+						"fund_code": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						},
+						"fund_type": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						},
+						"guarantor_classifications": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						},
+						"patient_classifications": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
 						}
 					}
 				}
@@ -833,6 +1087,66 @@
 									"table": 3422966527,
 									"pageType": "list"
 								}
+							},
+							{
+								"id": "21",
+								"parent": "5",
+								"data": {
+									"name": {
+										"table": "patient_classifications",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 2871078218,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "22",
+								"parent": "5",
+								"data": {
+									"name": {
+										"table": "guarantor_classifications",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 462728446,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "23",
+								"parent": "5",
+								"data": {
+									"name": {
+										"table": "fund_type",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 1928714671,
+									"pageType": "list"
+								}
+							},
+							{
+								"id": "24",
+								"parent": "5",
+								"data": {
+									"name": {
+										"table": "fund_code",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 2302590494,
+									"pageType": "list"
+								}
 							}
 						],
 						"data": {
@@ -1008,7 +1322,11 @@
 								"welcome_item12",
 								"welcome_item13",
 								"welcome_item14",
-								"welcome_item5"
+								"welcome_item5",
+								"welcome_item15",
+								"welcome_item16",
+								"welcome_item17",
+								"welcome_item18"
 							]
 						}
 					},
@@ -1262,6 +1580,54 @@
 						"type": 6
 					},
 					"background": "#5f9ea0",
+					"linkType": 0
+				},
+				"welcome_item15": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "patient_classifications",
+					"linkPage": "list",
+					"linkText": {
+						"table": "patient_classifications",
+						"type": 6
+					},
+					"background": "#d2af80",
+					"linkType": 0
+				},
+				"welcome_item16": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "guarantor_classifications",
+					"linkPage": "list",
+					"linkText": {
+						"table": "guarantor_classifications",
+						"type": 6
+					},
+					"background": "#e07878",
+					"linkType": 0
+				},
+				"welcome_item17": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "fund_type",
+					"linkPage": "list",
+					"linkText": {
+						"table": "fund_type",
+						"type": 6
+					},
+					"background": "#5f9ea0",
+					"linkType": 0
+				},
+				"welcome_item18": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "fund_code",
+					"linkPage": "list",
+					"linkText": {
+						"table": "fund_code",
+						"type": 6
+					},
+					"background": "#d2af80",
 					"linkType": 0
 				}
 			},

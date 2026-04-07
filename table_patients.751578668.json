@@ -1,13 +1,13 @@
 {
 	"orderInfo": [
 		{
-			"index": 8,
-			"field": "updated_at",
+			"index": 11,
+			"field": "office",
 			"expr": "created_at",
 			"asc": false
 		}
 	],
-	"sql": "SELECT\r\n\tid,\r\n\tfirst_name,\r\n\tlast_name,\r\n\tmiddle_name,\r\n\tCONCAT_WS(' ',first_name, middle_name, last_name) AS full_name,\r\n\tsex,\r\n\tbirthday,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\tpatients\r\nORDER BY created_at DESC",
+	"sql": "SELECT\r\n\tid,\r\n\tfirst_name,\r\n\tlast_name,\r\n\tmiddle_name,\r\n\tCONCAT_WS(' ',first_name, middle_name, last_name) AS full_name,\r\n\tsex,\r\n\tbirthday,\r\n\tclassification,\r\n\toffice,\r\n\tcollege,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\tpatients\r\nORDER BY created_at DESC",
 	"connId": "conn",
 	"originalTable": "patients",
 	"name": "patients",
@@ -141,7 +141,7 @@
 		{
 			"name": "created_at",
 			"sqlExpression": "created_at",
-			"index": 8,
+			"index": 11,
 			"strField": "created_at",
 			"type": 135,
 			"viewFormats": [
@@ -164,7 +164,7 @@
 		{
 			"name": "updated_at",
 			"sqlExpression": "updated_at",
-			"index": 9,
+			"index": 12,
 			"strField": "updated_at",
 			"type": 135,
 			"viewFormats": [
@@ -201,6 +201,74 @@
 				"English": "Full Name"
 			},
 			"tableName": ""
+		},
+		{
+			"name": "classification",
+			"sqlExpression": "classification",
+			"index": 8,
+			"strField": "classification",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"required": true,
+					"lookupValues": [
+						"Student",
+						"Administrative Employee",
+						"Faculty REPS",
+						"AdmEmpDep",
+						"FacDep",
+						"REPSDep",
+						"Faculty",
+						"Non-UP"
+					],
+					"lookupTable": "patient_classifications",
+					"lookupTableConnection": "conn",
+					"lookupLinkField": "id",
+					"lookupDisplayField": "label"
+				}
+			],
+			"label": {
+				"English": "Patient Classification"
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "office",
+			"sqlExpression": "office",
+			"index": 9,
+			"strField": "office",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Office"
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "college",
+			"sqlExpression": "college",
+			"index": 10,
+			"strField": "college",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "College"
+			},
+			"tableName": "patients"
 		}
 	],
 	"eventHandlers": [
@@ -298,6 +366,39 @@
 				"size": 0,
 				"scale": 0,
 				"typeName": "datetime",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "classification",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "office",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "college",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
 				"nullable": true,
 				"autoinc": false,
 				"defaultValueSQL": null,
@@ -411,6 +512,9 @@
 								"integrated_edit_field2",
 								"integrated_edit_field3",
 								"integrated_edit_field4",
+								"integrated_edit_field7",
+								"integrated_edit_field8",
+								"integrated_edit_field9",
 								"integrated_edit_field5",
 								"integrated_edit_field6"
 							]
@@ -473,6 +577,26 @@
 				},
 				"integrated_edit_field6": {
 					"field": "updated_at",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field7": {
+					"field": "classification",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"label": {
+						"field": "classification",
+						"table": "patients",
+						"type": 3
+					}
+				},
+				"integrated_edit_field8": {
+					"field": "office",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field9": {
+					"field": "college",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				}
@@ -561,7 +685,10 @@
 								"export_field5",
 								"export_field6",
 								"export_field7",
-								"export_field"
+								"export_field",
+								"export_field8",
+								"export_field9",
+								"export_field10"
 							]
 						}
 					},
@@ -640,6 +767,18 @@
 				},
 				"export_field": {
 					"field": "full_name",
+					"type": "export_field"
+				},
+				"export_field8": {
+					"field": "classification",
+					"type": "export_field"
+				},
+				"export_field9": {
+					"field": "office",
+					"type": "export_field"
+				},
+				"export_field10": {
+					"field": "college",
 					"type": "export_field"
 				}
 			},
@@ -730,7 +869,10 @@
 								"import_field4",
 								"import_field5",
 								"import_field6",
-								"import_field7"
+								"import_field7",
+								"import_field",
+								"import_field8",
+								"import_field9"
 							]
 						}
 					},
@@ -768,6 +910,18 @@
 				},
 				"import_field7": {
 					"field": "updated_at",
+					"type": "import_field"
+				},
+				"import_field": {
+					"field": "classification",
+					"type": "import_field"
+				},
+				"import_field8": {
+					"field": "office",
+					"type": "import_field"
+				},
+				"import_field9": {
+					"field": "college",
 					"type": "import_field"
 				}
 			},
@@ -890,7 +1044,10 @@
 								"integrated_edit_field3",
 								"integrated_edit_field4",
 								"integrated_edit_field5",
-								"integrated_edit_field6"
+								"integrated_edit_field6",
+								"integrated_edit_field7",
+								"integrated_edit_field8",
+								"integrated_edit_field9"
 							]
 						}
 					},
@@ -970,6 +1127,24 @@
 				},
 				"edit_view": {
 					"type": "edit_view"
+				},
+				"integrated_edit_field7": {
+					"field": "classification",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field8": {
+					"field": "office",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field9": {
+					"field": "college",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
 				}
 			},
 			"version": 13,
@@ -1090,7 +1265,10 @@
 								"integrated_edit_field5",
 								"integrated_edit_field6",
 								"integrated_edit_field7",
-								"integrated_edit_field"
+								"integrated_edit_field",
+								"integrated_edit_field8",
+								"integrated_edit_field9",
+								"integrated_edit_field10"
 							]
 						}
 					},
@@ -1156,6 +1334,21 @@
 				},
 				"integrated_edit_field": {
 					"field": "full_name",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field8": {
+					"field": "classification",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field9": {
+					"field": "office",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field10": {
+					"field": "college",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				}
@@ -1349,6 +1542,15 @@
 								},
 								{
 									"cell": "headcell_field6"
+								},
+								{
+									"cell": "headcell_field7"
+								},
+								{
+									"cell": "headcell_field8"
+								},
+								{
+									"cell": "headcell_field9"
 								}
 							]
 						},
@@ -1381,6 +1583,15 @@
 								},
 								{
 									"cell": "cell_field6"
+								},
+								{
+									"cell": "cell_field7"
+								},
+								{
+									"cell": "cell_field8"
+								},
+								{
+									"cell": "cell_field9"
 								}
 							]
 						},
@@ -1413,6 +1624,15 @@
 								},
 								{
 									"cell": "footcell_field6"
+								},
+								{
+									"cell": "footcell_field7"
+								},
+								{
+									"cell": "footcell_field8"
+								},
+								{
+									"cell": "footcell_field9"
 								}
 							]
 						}
@@ -1423,197 +1643,221 @@
 							"items": [
 								"simple_grid_field"
 							],
-							"field": "first_name",
-							"columnName": "field"
+							"field": "first_name"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field1"
 							],
-							"field": "first_name",
-							"columnName": "field"
+							"field": "first_name"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "first_name",
-							"columnName": "field"
+							"field": "first_name"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field8"
 							],
-							"field": "last_name",
-							"columnName": "field"
+							"field": "last_name"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field2"
 							],
-							"field": "last_name",
-							"columnName": "field"
+							"field": "last_name"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "last_name",
-							"columnName": "field"
+							"field": "last_name"
 						},
 						"headcell_field2": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field9"
 							],
-							"field": "middle_name",
-							"columnName": "field"
+							"field": "middle_name"
 						},
 						"cell_field2": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field3"
 							],
-							"field": "middle_name",
-							"columnName": "field"
+							"field": "middle_name"
 						},
 						"footcell_field2": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "middle_name",
-							"columnName": "field"
+							"field": "middle_name"
 						},
 						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field10"
 							],
-							"field": "sex",
-							"columnName": "field"
+							"field": "sex"
 						},
 						"cell_field3": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field4"
 							],
-							"field": "sex",
-							"columnName": "field"
+							"field": "sex"
 						},
 						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "sex",
-							"columnName": "field"
+							"field": "sex"
 						},
 						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field11"
 							],
-							"field": "birthday",
-							"columnName": "field"
+							"field": "birthday"
 						},
 						"cell_field4": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field5"
 							],
-							"field": "birthday",
-							"columnName": "field"
+							"field": "birthday"
 						},
 						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "birthday",
-							"columnName": "field"
+							"field": "birthday"
 						},
 						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field12"
+								"grid_field3"
 							],
-							"field": "created_at",
-							"columnName": "field"
+							"field": "classification"
 						},
 						"cell_field5": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field6"
+								"grid_field"
 							],
-							"field": "created_at",
-							"columnName": "field"
+							"field": "classification"
 						},
 						"footcell_field5": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "created_at",
-							"columnName": "field"
+							"field": "classification"
 						},
 						"headcell_field6": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field13"
+								"grid_field4"
 							],
-							"field": "updated_at",
-							"columnName": "field"
+							"field": "office"
 						},
 						"cell_field6": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field7"
+								"grid_field1"
 							],
-							"field": "updated_at",
-							"columnName": "field"
+							"field": "office"
 						},
 						"footcell_field6": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "updated_at",
-							"columnName": "field"
+							"field": "office"
+						},
+						"headcell_field7": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field5"
+							],
+							"field": "college"
+						},
+						"cell_field7": {
+							"model": "cell_field",
+							"items": [
+								"grid_field2"
+							],
+							"field": "college"
+						},
+						"footcell_field7": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "college"
+						},
+						"headcell_field8": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field12"
+							],
+							"field": "created_at"
+						},
+						"cell_field8": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field6"
+							],
+							"field": "created_at"
+						},
+						"footcell_field8": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "created_at"
+						},
+						"headcell_field9": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field13"
+							],
+							"field": "updated_at"
+						},
+						"cell_field9": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field7"
+							],
+							"field": "updated_at"
+						},
+						"footcell_field9": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "updated_at"
 						},
 						"headcell_checkbox": {
 							"model": "headcell_checkbox",
 							"items": [
 								"grid_checkbox_head"
-							],
-							"columnName": "checkbox",
-							"field": ""
+							]
 						},
 						"cell_checkbox": {
 							"model": "cell_checkbox",
 							"items": [
 								"grid_checkbox"
-							],
-							"columnName": "checkbox",
-							"field": ""
+							]
 						},
 						"footcell_checkbox": {
 							"model": "footcell_checkbox",
-							"items": [],
-							"columnName": "checkbox",
-							"field": ""
+							"items": []
 						},
 						"headcell_icons": {
 							"model": "headcell_icons",
-							"items": [],
-							"columnName": "list-icons",
-							"field": ""
+							"items": []
 						},
 						"cell_icons": {
 							"model": "cell_icons",
 							"items": [
 								"grid_edit",
 								"grid_view"
-							],
-							"columnName": "list-icons",
-							"field": ""
+							]
 						},
 						"footcell_icons": {
 							"model": "footcell_icons",
-							"items": [],
-							"columnName": "list-icons",
-							"field": ""
+							"items": []
 						}
 					},
 					"deferredItems": [],
@@ -1649,6 +1893,9 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field7",
+						"search_panel_field10",
+						"search_panel_field9",
+						"search_panel_field8",
 						"search_panel_field",
 						"search_panel_field6",
 						"search_panel_field5",
@@ -1763,6 +2010,39 @@
 				"delete_selected": {
 					"type": "delete_selected"
 				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"search_panel_field": {
+					"field": "full_name",
+					"type": "search_panel_field"
+				},
+				"search_panel_field8": {
+					"field": "classification",
+					"type": "search_panel_field"
+				},
+				"search_panel_field9": {
+					"field": "office",
+					"type": "search_panel_field"
+				},
+				"search_panel_field10": {
+					"field": "college",
+					"type": "search_panel_field"
+				},
 				"simple_grid_field1": {
 					"field": "first_name",
 					"type": "grid_field",
@@ -1813,6 +2093,36 @@
 					"type": "grid_field_label",
 					"field": "birthday"
 				},
+				"grid_field": {
+					"field": "classification",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field3": {
+					"type": "grid_field_label",
+					"field": "classification"
+				},
+				"grid_field1": {
+					"field": "office",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field4": {
+					"type": "grid_field_label",
+					"field": "office"
+				},
+				"grid_field2": {
+					"field": "college",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field5": {
+					"type": "grid_field_label",
+					"field": "college"
+				},
 				"simple_grid_field6": {
 					"field": "created_at",
 					"type": "grid_field",
@@ -1833,9 +2143,6 @@
 					"type": "grid_field_label",
 					"field": "updated_at"
 				},
-				"grid_checkbox": {
-					"type": "grid_checkbox"
-				},
 				"grid_checkbox_head": {
 					"type": "grid_checkbox_head"
 				},
@@ -1847,26 +2154,8 @@
 					"type": "grid_view",
 					"popup": true
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"userinfo_link",
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
-				"userinfo_link": {
-					"type": "userinfo_link"
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"search_panel_field": {
-					"field": "full_name",
-					"type": "search_panel_field"
+				"grid_checkbox": {
+					"type": "grid_checkbox"
 				}
 			},
 			"version": 13,
@@ -1977,7 +2266,10 @@
 								"simple_grid_field5",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field"
+								"simple_grid_field",
+								"simple_grid_field8",
+								"simple_grid_field9",
+								"simple_grid_field10"
 							]
 						}
 					},
@@ -2025,6 +2317,18 @@
 				},
 				"simple_grid_field": {
 					"field": "full_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field8": {
+					"field": "classification",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field9": {
+					"field": "office",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field10": {
+					"field": "college",
 					"type": "simple_grid_field"
 				}
 			},
@@ -2205,6 +2509,15 @@
 								},
 								{
 									"cell": "headcell_field6"
+								},
+								{
+									"cell": "headcell_field2"
+								},
+								{
+									"cell": "headcell_field3"
+								},
+								{
+									"cell": "headcell_field7"
 								}
 							]
 						},
@@ -2225,6 +2538,15 @@
 								},
 								{
 									"cell": "cell_field6"
+								},
+								{
+									"cell": "cell_field2"
+								},
+								{
+									"cell": "cell_field3"
+								},
+								{
+									"cell": "cell_field7"
 								}
 							]
 						},
@@ -2245,6 +2567,15 @@
 								},
 								{
 									"cell": "footcell_field6"
+								},
+								{
+									"cell": "footcell_field2"
+								},
+								{
+									"cell": "footcell_field3"
+								},
+								{
+									"cell": "footcell_field7"
 								}
 							]
 						}
@@ -2344,6 +2675,63 @@
 							"model": "footcell_field",
 							"items": [],
 							"field": "created_at"
+						},
+						"headcell_field2": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label1"
+							],
+							"field": "classification"
+						},
+						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"grid_field3"
+							],
+							"field": "classification"
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "classification"
+						},
+						"headcell_field3": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label2"
+							],
+							"field": "office"
+						},
+						"cell_field3": {
+							"model": "cell_field",
+							"items": [
+								"grid_field4"
+							],
+							"field": "office"
+						},
+						"footcell_field3": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "office"
+						},
+						"headcell_field7": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label3"
+							],
+							"field": "college"
+						},
+						"cell_field7": {
+							"model": "cell_field",
+							"items": [
+								"grid_field5"
+							],
+							"field": "college"
+						},
+						"footcell_field7": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "college"
 						}
 					},
 					"deferredItems": [],
@@ -2379,6 +2767,9 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field7",
+						"search_panel_field10",
+						"search_panel_field9",
+						"search_panel_field8",
 						"search_panel_field",
 						"search_panel_field6",
 						"search_panel_field5",
@@ -2553,6 +2944,42 @@
 				},
 				"search_panel_field": {
 					"field": "full_name",
+					"type": "search_panel_field"
+				},
+				"grid_field3": {
+					"field": "classification",
+					"type": "grid_field"
+				},
+				"grid_field_label1": {
+					"type": "grid_field_label",
+					"field": "classification"
+				},
+				"grid_field4": {
+					"field": "office",
+					"type": "grid_field"
+				},
+				"grid_field_label2": {
+					"type": "grid_field_label",
+					"field": "office"
+				},
+				"search_panel_field8": {
+					"field": "classification",
+					"type": "search_panel_field"
+				},
+				"search_panel_field9": {
+					"field": "office",
+					"type": "search_panel_field"
+				},
+				"grid_field5": {
+					"field": "college",
+					"type": "grid_field"
+				},
+				"grid_field_label3": {
+					"type": "grid_field_label",
+					"field": "college"
+				},
+				"search_panel_field10": {
+					"field": "college",
 					"type": "search_panel_field"
 				}
 			},

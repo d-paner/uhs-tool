@@ -1,19 +1,18 @@
 {
-	"sql": "SELECT\r\n\tid,\r\n\t`label`,\r\n\tdescription,\r\n\tfund_code,\r\n\tfund_type,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\thospital_accounts",
+	"sql": "SELECT\r\n\tid,\r\n\t`label`,\r\n\tdescription\r\nFROM\r\n\tguarantor_classifications",
 	"connId": "conn",
-	"originalTable": "hospital_accounts",
-	"name": "hospital_accounts",
-	"shortTableName": "hospital_accounts",
+	"originalTable": "guarantor_classifications",
+	"name": "guarantor_classifications",
+	"shortTableName": "guarantor_classifications",
 	"dbType": 0,
 	"keyFields": [
 		"id"
 	],
-	"detailsBadgeColor": "6da5c8",
+	"detailsBadgeColor": "e07878",
 	"fields": [
 		{
 			"name": "id",
 			"sqlExpression": "id",
-			"index": 1,
 			"strField": "id",
 			"type": 3,
 			"autoinc": true,
@@ -26,12 +25,11 @@
 			"label": {
 				"English": "Id"
 			},
-			"tableName": "hospital_accounts"
+			"tableName": "guarantor_classifications"
 		},
 		{
 			"name": "label",
 			"sqlExpression": "`label`",
-			"index": 2,
 			"strField": "label",
 			"type": 200,
 			"viewFormats": [
@@ -45,132 +43,25 @@
 			"label": {
 				"English": "Label"
 			},
-			"tableName": "hospital_accounts"
+			"tableName": "guarantor_classifications"
 		},
 		{
 			"name": "description",
 			"sqlExpression": "description",
-			"index": 3,
 			"strField": "description",
-			"type": 200,
+			"type": 201,
 			"viewFormats": [
 				{}
 			],
 			"editFormats": [
-				{}
+				{
+					"format": "Text area"
+				}
 			],
 			"label": {
 				"English": "Description"
 			},
-			"tableName": "hospital_accounts"
-		},
-		{
-			"name": "created_at",
-			"sqlExpression": "created_at",
-			"index": 6,
-			"strField": "created_at",
-			"type": 135,
-			"viewFormats": [
-				{
-					"format": "Short Date"
-				}
-			],
-			"editFormats": [
-				{
-					"format": "Readonly",
-					"defaultValue": "now();",
-					"dateEditType": 11
-				}
-			],
-			"label": {
-				"English": "Created At"
-			},
-			"tableName": "hospital_accounts"
-		},
-		{
-			"name": "updated_at",
-			"sqlExpression": "updated_at",
-			"index": 7,
-			"strField": "updated_at",
-			"type": 135,
-			"viewFormats": [
-				{
-					"format": "Short Date"
-				}
-			],
-			"editFormats": [
-				{
-					"format": "Readonly",
-					"defaultValue": "now();",
-					"autoUpdateValue": "now();",
-					"dateEditType": 11
-				}
-			],
-			"label": {
-				"English": "Updated At"
-			},
-			"tableName": "hospital_accounts"
-		},
-		{
-			"name": "fund_type",
-			"sqlExpression": "fund_type",
-			"index": 5,
-			"strField": "fund_type",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{
-					"format": "Lookup wizard",
-					"lookupType": 2,
-					"lookupTable": "fund_type",
-					"lookupTableConnection": "conn",
-					"lookupLinkField": "id",
-					"lookupDisplayField": "label",
-					"lookupDependentFields": [
-						{
-							"masterField": "fund_code",
-							"lookupField": "description"
-						}
-					]
-				}
-			],
-			"label": {
-				"English": "Fund Type"
-			},
-			"tableName": "hospital_accounts"
-		},
-		{
-			"name": "fund_code",
-			"sqlExpression": "fund_code",
-			"index": 4,
-			"strField": "fund_code",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{
-					"format": "Lookup wizard",
-					"lookupType": 2,
-					"lookupTable": "fund_code",
-					"lookupTableConnection": "conn",
-					"lookupLinkField": "id",
-					"lookupDisplayField": "fund_code",
-					"lookupDependent": true,
-					"lookupDependentFields": [
-						{
-							"masterField": "fund_type",
-							"lookupField": "fund_type_id"
-						}
-					]
-				}
-			],
-			"label": {
-				"English": "Fund Code"
-			},
-			"tableName": "hospital_accounts"
+			"tableName": "guarantor_classifications"
 		}
 	],
 	"dbTableInfo": {
@@ -179,10 +70,10 @@
 		"fields": [
 			{
 				"name": "id",
-				"type": 20,
-				"size": 20,
+				"type": 3,
+				"size": 11,
 				"scale": 0,
-				"typeName": "bigint(20)",
+				"typeName": "int(11)",
 				"nullable": false,
 				"autoinc": true,
 				"defaultValueSQL": null,
@@ -191,9 +82,9 @@
 			{
 				"name": "label",
 				"type": 200,
-				"size": 250,
+				"size": 255,
 				"scale": 0,
-				"typeName": "varchar(250)",
+				"typeName": "varchar(255)",
 				"nullable": false,
 				"autoinc": false,
 				"defaultValueSQL": null,
@@ -201,54 +92,10 @@
 			},
 			{
 				"name": "description",
-				"type": 200,
-				"size": 250,
-				"scale": 0,
-				"typeName": "varchar(250)",
-				"nullable": false,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "fund_code",
-				"type": 200,
-				"size": 250,
-				"scale": 0,
-				"typeName": "varchar(250)",
-				"nullable": true,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "fund_type",
-				"type": 200,
-				"size": 250,
-				"scale": 0,
-				"typeName": "varchar(250)",
-				"nullable": true,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "created_at",
-				"type": 135,
+				"type": 201,
 				"size": 0,
 				"scale": 0,
-				"typeName": "datetime",
-				"nullable": true,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "updated_at",
-				"type": 135,
-				"size": 0,
-				"scale": 0,
-				"typeName": "datetime",
+				"typeName": "text",
 				"nullable": true,
 				"autoinc": false,
 				"defaultValueSQL": null,
@@ -259,7 +106,7 @@
 			"id"
 		],
 		"uniqueFields": [],
-		"name": "hospital_accounts"
+		"name": "guarantor_classifications"
 	},
 	"pages": [
 		{
@@ -358,11 +205,7 @@
 							"model": "c3",
 							"items": [
 								"integrated_edit_field",
-								"integrated_edit_field1",
-								"integrated_edit_field5",
-								"integrated_edit_field4",
-								"integrated_edit_field2",
-								"integrated_edit_field3"
+								"integrated_edit_field1"
 							]
 						}
 					},
@@ -398,26 +241,6 @@
 				},
 				"integrated_edit_field1": {
 					"field": "description",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field2": {
-					"field": "created_at",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field3": {
-					"field": "updated_at",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field5": {
-					"field": "fund_type",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field4": {
-					"field": "fund_code",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				}
@@ -499,13 +322,8 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"export_field",
 								"export_field1",
-								"export_field2",
-								"export_field3",
-								"export_field4",
-								"export_field6",
-								"export_field5"
+								"export_field2"
 							]
 						}
 					},
@@ -554,32 +372,12 @@
 				"export_cancel": {
 					"type": "export_cancel"
 				},
-				"export_field": {
-					"field": "id",
-					"type": "export_field"
-				},
 				"export_field1": {
 					"field": "label",
 					"type": "export_field"
 				},
 				"export_field2": {
 					"field": "description",
-					"type": "export_field"
-				},
-				"export_field3": {
-					"field": "created_at",
-					"type": "export_field"
-				},
-				"export_field4": {
-					"field": "updated_at",
-					"type": "export_field"
-				},
-				"export_field6": {
-					"field": "fund_type",
-					"type": "export_field"
-				},
-				"export_field5": {
-					"field": "fund_code",
 					"type": "export_field"
 				}
 			},
@@ -664,13 +462,8 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"import_field",
 								"import_field1",
-								"import_field2",
-								"import_field3",
-								"import_field4",
-								"import_field6",
-								"import_field5"
+								"import_field2"
 							]
 						}
 					},
@@ -682,32 +475,12 @@
 				"import_header": {
 					"type": "import_header"
 				},
-				"import_field": {
-					"field": "id",
-					"type": "import_field"
-				},
 				"import_field1": {
 					"field": "label",
 					"type": "import_field"
 				},
 				"import_field2": {
 					"field": "description",
-					"type": "import_field"
-				},
-				"import_field3": {
-					"field": "created_at",
-					"type": "import_field"
-				},
-				"import_field4": {
-					"field": "updated_at",
-					"type": "import_field"
-				},
-				"import_field6": {
-					"field": "fund_type",
-					"type": "import_field"
-				},
-				"import_field5": {
-					"field": "fund_code",
 					"type": "import_field"
 				}
 			},
@@ -825,11 +598,7 @@
 							"model": "c3",
 							"items": [
 								"integrated_edit_field",
-								"integrated_edit_field1",
-								"integrated_edit_field5",
-								"integrated_edit_field4",
-								"integrated_edit_field2",
-								"integrated_edit_field3"
+								"integrated_edit_field1"
 							]
 						}
 					},
@@ -872,30 +641,6 @@
 				},
 				"integrated_edit_field1": {
 					"field": "description",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field2": {
-					"field": "created_at",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field3": {
-					"field": "updated_at",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field5": {
-					"field": "fund_type",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field4": {
-					"field": "fund_code",
 					"type": "integrated_edit_field",
 					"orientation": 0,
 					"updateOnEdit": false
@@ -1012,13 +757,8 @@
 						"c3": {
 							"model": "c3",
 							"items": [
-								"integrated_edit_field",
 								"integrated_edit_field1",
-								"integrated_edit_field2",
-								"integrated_edit_field5",
-								"integrated_edit_field6",
-								"integrated_edit_field3",
-								"integrated_edit_field4"
+								"integrated_edit_field2"
 							]
 						}
 					},
@@ -1038,11 +778,6 @@
 				"view_close": {
 					"type": "view_close"
 				},
-				"integrated_edit_field": {
-					"field": "id",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
 				"integrated_edit_field1": {
 					"field": "label",
 					"type": "integrated_edit_field",
@@ -1050,16 +785,6 @@
 				},
 				"integrated_edit_field2": {
 					"field": "description",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field3": {
-					"field": "created_at",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field4": {
-					"field": "updated_at",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				},
@@ -1071,16 +796,6 @@
 				},
 				"view_edit": {
 					"type": "view_edit"
-				},
-				"integrated_edit_field6": {
-					"field": "fund_type",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field5": {
-					"field": "fund_code",
-					"type": "integrated_edit_field",
-					"orientation": 0
 				}
 			},
 			"version": 13,
@@ -1233,278 +948,38 @@
 					"deferredItems": [],
 					"recsPerRow": 1
 				},
+				"grid": {
+					"modelId": "simple-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"simple_grid_field1",
+								"simple_grid_field2"
+							]
+						}
+					},
+					"deferredItems": [
+						"grid_checkbox",
+						"grid_checkbox_head",
+						"grid_edit"
+					],
+					"recsPerRow": 1
+				},
 				"top": {
 					"modelId": "list-sidebar-top",
 					"grid": [],
 					"cells": {},
-					"deferredItems": [],
-					"recsPerRow": 1
-				},
-				"grid": {
-					"modelId": "horizontal-grid",
-					"grid": [
-						{
-							"section": "head",
-							"cells": [
-								{
-									"cell": "headcell_icons"
-								},
-								{
-									"cell": "headcell_checkbox"
-								},
-								{
-									"cell": "headcell_field"
-								},
-								{
-									"cell": "headcell_field1"
-								},
-								{
-									"cell": "headcell_field2"
-								},
-								{
-									"cell": "headcell_field3"
-								},
-								{
-									"cell": "headcell_field4"
-								},
-								{
-									"cell": "headcell_field5"
-								},
-								{
-									"cell": "headcell_field6"
-								}
-							]
-						},
-						{
-							"section": "body",
-							"cells": [
-								{
-									"cell": "cell_icons"
-								},
-								{
-									"cell": "cell_checkbox"
-								},
-								{
-									"cell": "cell_field"
-								},
-								{
-									"cell": "cell_field1"
-								},
-								{
-									"cell": "cell_field2"
-								},
-								{
-									"cell": "cell_field3"
-								},
-								{
-									"cell": "cell_field4"
-								},
-								{
-									"cell": "cell_field5"
-								},
-								{
-									"cell": "cell_field6"
-								}
-							]
-						},
-						{
-							"section": "foot",
-							"cells": [
-								{
-									"cell": "footcell_icons"
-								},
-								{
-									"cell": "footcell_checkbox"
-								},
-								{
-									"cell": "footcell_field"
-								},
-								{
-									"cell": "footcell_field1"
-								},
-								{
-									"cell": "footcell_field2"
-								},
-								{
-									"cell": "footcell_field3"
-								},
-								{
-									"cell": "footcell_field4"
-								},
-								{
-									"cell": "footcell_field5"
-								},
-								{
-									"cell": "footcell_field6"
-								}
-							]
-						}
-					],
-					"cells": {
-						"headcell_field": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field5"
-							],
-							"field": "id"
-						},
-						"cell_field": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field"
-							],
-							"field": "id"
-						},
-						"footcell_field": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "id"
-						},
-						"headcell_field1": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field6"
-							],
-							"field": "label"
-						},
-						"cell_field1": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field1"
-							],
-							"field": "label"
-						},
-						"footcell_field1": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "label"
-						},
-						"headcell_field2": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field7"
-							],
-							"field": "description"
-						},
-						"cell_field2": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field2"
-							],
-							"field": "description"
-						},
-						"footcell_field2": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "description"
-						},
-						"headcell_field3": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field2"
-							],
-							"field": "fund_code"
-						},
-						"cell_field3": {
-							"model": "cell_field",
-							"items": [
-								"grid_field"
-							],
-							"field": "fund_code"
-						},
-						"footcell_field3": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "fund_code"
-						},
-						"headcell_field4": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field3"
-							],
-							"field": "fund_type"
-						},
-						"cell_field4": {
-							"model": "cell_field",
-							"items": [
-								"grid_field1"
-							],
-							"field": "fund_type"
-						},
-						"footcell_field4": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "fund_type"
-						},
-						"headcell_field5": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field8"
-							],
-							"field": "created_at"
-						},
-						"cell_field5": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field3"
-							],
-							"field": "created_at"
-						},
-						"footcell_field5": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "created_at"
-						},
-						"headcell_field6": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field9"
-							],
-							"field": "updated_at"
-						},
-						"cell_field6": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field4"
-							],
-							"field": "updated_at"
-						},
-						"footcell_field6": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "updated_at"
-						},
-						"headcell_checkbox": {
-							"model": "headcell_checkbox",
-							"items": [
-								"grid_checkbox_head"
-							]
-						},
-						"cell_checkbox": {
-							"model": "cell_checkbox",
-							"items": [
-								"grid_checkbox"
-							]
-						},
-						"footcell_checkbox": {
-							"model": "footcell_checkbox",
-							"items": []
-						},
-						"headcell_icons": {
-							"model": "headcell_icons",
-							"items": []
-						},
-						"cell_icons": {
-							"model": "cell_icons",
-							"items": [
-								"grid_edit"
-							]
-						},
-						"footcell_icons": {
-							"model": "footcell_icons",
-							"items": []
-						}
-					},
 					"deferredItems": [],
 					"recsPerRow": 1
 				}
@@ -1528,17 +1003,30 @@
 				"pagination": {
 					"type": "pagination"
 				},
+				"grid_checkbox": {
+					"type": "grid_checkbox"
+				},
+				"grid_checkbox_head": {
+					"type": "grid_checkbox_head"
+				},
 				"details_found": {
 					"type": "details_found"
+				},
+				"simple_grid_field1": {
+					"field": "label",
+					"type": "simple_grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field2": {
+					"field": "description",
+					"type": "simple_grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
 				},
 				"search_panel": {
 					"type": "search_panel",
 					"items": [
-						"search_panel_field",
-						"search_panel_field5",
-						"search_panel_field6",
-						"search_panel_field4",
-						"search_panel_field3",
 						"search_panel_field2",
 						"search_panel_field1"
 					],
@@ -1564,10 +1052,6 @@
 				"hide_search_panel": {
 					"type": "hide_search_panel"
 				},
-				"search_panel_field": {
-					"field": "id",
-					"type": "search_panel_field"
-				},
 				"search_panel_field1": {
 					"field": "label",
 					"type": "search_panel_field"
@@ -1576,19 +1060,36 @@
 					"field": "description",
 					"type": "search_panel_field"
 				},
-				"search_panel_field3": {
-					"field": "created_at",
-					"type": "search_panel_field"
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"changepassword_link"
+					]
 				},
-				"search_panel_field4": {
-					"field": "updated_at",
-					"type": "search_panel_field"
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"changepassword_link": {
+					"type": "changepassword_link"
 				},
 				"expand_menu_button": {
 					"type": "expand_menu_button"
 				},
 				"collapse_button": {
 					"type": "collapse_button"
+				},
+				"add": {
+					"type": "add",
+					"popup": true
 				},
 				"export": {
 					"type": "export"
@@ -1607,6 +1108,10 @@
 				},
 				"-2": {
 					"type": "-"
+				},
+				"grid_edit": {
+					"type": "grid_edit",
+					"popup": true
 				},
 				"print_panel": {
 					"type": "print_panel",
@@ -1630,115 +1135,6 @@
 				},
 				"delete_selected": {
 					"type": "delete_selected"
-				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"userinfo_link",
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
-				"userinfo_link": {
-					"type": "userinfo_link"
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"add": {
-					"type": "add",
-					"popup": true
-				},
-				"search_panel_field6": {
-					"field": "fund_type",
-					"type": "search_panel_field"
-				},
-				"search_panel_field5": {
-					"field": "fund_code",
-					"type": "search_panel_field"
-				},
-				"simple_grid_field": {
-					"field": "id",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field5": {
-					"type": "grid_field_label",
-					"field": "id"
-				},
-				"simple_grid_field1": {
-					"field": "label",
-					"type": "grid_field",
-					"inlineAdd": true,
-					"inlineEdit": false
-				},
-				"simple_grid_field6": {
-					"type": "grid_field_label",
-					"field": "label"
-				},
-				"simple_grid_field2": {
-					"field": "description",
-					"type": "grid_field",
-					"inlineAdd": true,
-					"inlineEdit": false
-				},
-				"simple_grid_field7": {
-					"type": "grid_field_label",
-					"field": "description"
-				},
-				"grid_field": {
-					"field": "fund_code",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field2": {
-					"type": "grid_field_label",
-					"field": "fund_code"
-				},
-				"grid_field1": {
-					"field": "fund_type",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field3": {
-					"type": "grid_field_label",
-					"field": "fund_type"
-				},
-				"simple_grid_field3": {
-					"field": "created_at",
-					"type": "grid_field",
-					"inlineAdd": true,
-					"inlineEdit": false
-				},
-				"simple_grid_field8": {
-					"type": "grid_field_label",
-					"field": "created_at"
-				},
-				"simple_grid_field4": {
-					"field": "updated_at",
-					"type": "grid_field",
-					"inlineAdd": true,
-					"inlineEdit": false
-				},
-				"simple_grid_field9": {
-					"type": "grid_field_label",
-					"field": "updated_at"
-				},
-				"grid_checkbox_head": {
-					"type": "grid_checkbox_head"
-				},
-				"grid_edit": {
-					"type": "grid_edit",
-					"popup": true
-				},
-				"grid_checkbox": {
-					"type": "grid_checkbox"
 				}
 			},
 			"version": 13,
@@ -1842,13 +1238,8 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"simple_grid_field",
 								"simple_grid_field1",
-								"simple_grid_field2",
-								"simple_grid_field3",
-								"simple_grid_field4",
-								"simple_grid_field6",
-								"simple_grid_field5"
+								"simple_grid_field2"
 							]
 						}
 					},
@@ -1866,32 +1257,12 @@
 				"print_pages": {
 					"type": "print_pages"
 				},
-				"simple_grid_field": {
-					"field": "id",
-					"type": "simple_grid_field"
-				},
 				"simple_grid_field1": {
 					"field": "label",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field2": {
 					"field": "description",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field3": {
-					"field": "created_at",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field4": {
-					"field": "updated_at",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field6": {
-					"field": "fund_type",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field5": {
-					"field": "fund_code",
 					"type": "simple_grid_field"
 				}
 			},
@@ -1913,6 +1284,6 @@
 		"addressFields": []
 	},
 	"caption": {
-		"English": "Hospital Accounts"
+		"English": "Guarantor Classifications"
 	}
 }

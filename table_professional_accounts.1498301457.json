@@ -721,8 +721,7 @@
 				"hamburger": {
 					"type": "hamburger",
 					"items": [
-						"edit_reset",
-						"edit_view"
+						"edit_reset"
 					]
 				},
 				"edit_reset": {
@@ -763,9 +762,6 @@
 					"type": "integrated_edit_field",
 					"orientation": 0,
 					"updateOnEdit": false
-				},
-				"edit_view": {
-					"type": "edit_view"
 				}
 			},
 			"version": 13,
@@ -782,7 +778,7 @@
 			"id": "view",
 			"type": "view",
 			"layoutId": "nomenu",
-			"disabled": false,
+			"disabled": true,
 			"default": 0,
 			"forms": {
 				"above-grid": {
@@ -1290,8 +1286,7 @@
 						"cell_icons": {
 							"model": "cell_icons",
 							"items": [
-								"grid_edit",
-								"grid_view"
+								"grid_edit"
 							]
 						},
 						"footcell_icons": {
@@ -1501,10 +1496,6 @@
 				},
 				"grid_edit": {
 					"type": "grid_edit",
-					"popup": true
-				},
-				"grid_view": {
-					"type": "grid_view",
 					"popup": true
 				}
 			},
