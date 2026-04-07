@@ -16,9 +16,6 @@ $runnerTableSettings['hospital_accounts'] = array(
 		'edit' => array( 
 			'edit' 
 		),
-		'view' => array( 
-			'view' 
-		),
 		'list' => array( 
 			'list' 
 		),
@@ -34,7 +31,6 @@ $runnerTableSettings['hospital_accounts'] = array(
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
@@ -44,7 +40,6 @@ $runnerTableSettings['hospital_accounts'] = array(
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
@@ -108,7 +103,7 @@ FROM
 			),
 			'editFormats' => array(
 				'edit' => array(
-					 
+					'required' => true 
 				) 
 			),
 			'tableName' => 'hospital_accounts' 
@@ -187,7 +182,18 @@ FROM
 			),
 			'editFormats' => array(
 				'edit' => array(
-					 
+					'format' => 'Lookup wizard',
+					'lookupType' => 2,
+					'lookupTable' => 'fund_type',
+					'lookupTableConnection' => 'conn',
+					'lookupLinkField' => 'id',
+					'lookupDisplayField' => 'label',
+					'lookupDependentFields' => array( 
+						array(
+							'masterField' => 'fund_code',
+							'lookupField' => 'description' 
+						) 
+					) 
 				) 
 			),
 			'tableName' => 'hospital_accounts' 
@@ -205,7 +211,19 @@ FROM
 			),
 			'editFormats' => array(
 				'edit' => array(
-					 
+					'format' => 'Lookup wizard',
+					'lookupType' => 2,
+					'lookupTable' => 'fund_code',
+					'lookupTableConnection' => 'conn',
+					'lookupLinkField' => 'id',
+					'lookupDisplayField' => 'fund_code',
+					'lookupDependent' => true,
+					'lookupDependentFields' => array( 
+						array(
+							'masterField' => 'fund_type',
+							'lookupField' => 'fund_type_id' 
+						) 
+					) 
 				) 
 			),
 			'tableName' => 'hospital_accounts' 
@@ -479,9 +497,6 @@ FROM
 		'edit' => array( 
 			'edit' 
 		),
-		'view' => array( 
-			'view' 
-		),
 		'list' => array( 
 			'list' 
 		),
@@ -497,7 +512,6 @@ FROM
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
@@ -507,7 +521,6 @@ FROM
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 

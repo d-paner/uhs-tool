@@ -254,6 +254,45 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_updated_at}</span>
 						</div>
 		{END searchCtrlBlock_updated_at}
+																{BEGIN searchCtrlBlock_college}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_college}" {$filterRow_attrs_college}>
+			<label>{$label patients college }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_college}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_college}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_college}</span>
+						</div>
+		{END searchCtrlBlock_college}
+																{BEGIN searchCtrlBlock_office}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_office}" {$filterRow_attrs_office}>
+			<label>{$label patients office }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_office}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_office}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_office}</span>
+						</div>
+		{END searchCtrlBlock_office}
+																{BEGIN searchCtrlBlock_classification}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_classification}" {$filterRow_attrs_classification}>
+			<label>{$label patients classification }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_classification}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_classification}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_classification}</span>
+						</div>
+		{END searchCtrlBlock_classification}
 																{BEGIN searchCtrlBlock_full_name}
 
 
@@ -688,6 +727,15 @@
 				[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="full_name"]:before {
 		content: "{$label patients full_name}";
 	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="classification"]:before {
+		content: "{$label patients classification}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="office"]:before {
+		content: "{$label patients office}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="college"]:before {
+		content: "{$label patients college}";
+	}
 	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
@@ -872,6 +920,108 @@
 	
 	</th>
 	{END cellblock_grid_headcell_field6}
+									{BEGIN cellblock_grid_headcell_field2}
+	<th
+	
+	{$cell_grid_headcell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$classification_class}	"
+
+			data-field="classification"
+	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN classification_fieldheadercolumn}
+	{BEGIN classification_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label1" {$item_grid_field_label1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="classification" data-fieldname="classification" 
+
+			{$classification_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label patients classification }</span>
+					{$arrow_icon_classification}
+			</span>
+	</span>
+	{END classification_fieldheader}
+{END classification_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
+	<th
+	
+	{$cell_grid_headcell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$office_class}	"
+
+			data-field="office"
+	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN office_fieldheadercolumn}
+	{BEGIN office_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label2" {$item_grid_field_label2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="office" data-fieldname="office" 
+
+			{$office_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label patients office }</span>
+					{$arrow_icon_office}
+			</span>
+	</span>
+	{END office_fieldheader}
+{END office_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field7}
+	<th
+	
+	{$cell_grid_headcell_field7}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$college_class}	"
+
+			data-field="college"
+	
+	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN college_fieldheadercolumn}
+	{BEGIN college_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label3" {$item_grid_field_label3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="college" data-fieldname="college" 
+
+			{$college_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label patients college }</span>
+					{$arrow_icon_college}
+			</span>
+	</span>
+	{END college_fieldheader}
+{END college_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field7}
 							</tr>
 															
 					{END grid_header}
@@ -988,6 +1138,69 @@
 {END created_at_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field6}
+									{BEGIN cellblock_grid_cell_field2}
+	<td
+	
+	{$cell_grid_cell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$classification_class}	"
+
+			data-field="classification"
+	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN classification_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="classification" data-fieldname="classification" data-default-width >
+{$classification_value}
+</span>
+{END classification_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
+	<td
+	
+	{$cell_grid_cell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$office_class}	"
+
+			data-field="office"
+	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN office_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field4" {$item_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="office" data-fieldname="office" data-default-width >
+{$office_value}
+</span>
+{END office_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field7}
+	<td
+	
+	{$cell_grid_cell_field7}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$college_class}	"
+
+			data-field="college"
+	
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN college_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field5" {$item_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="college" data-fieldname="college" data-default-width >
+{$college_value}
+</span>
+{END college_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field7}
 							</tr>
 										
 											{END grid_row}
@@ -1074,6 +1287,51 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field6}
+									{BEGIN cellblock_grid_footcell_field2}
+	<td
+	
+	{$cell_grid_footcell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$classification_class}	"
+
+	
+	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_forTransactions"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field2}
+									{BEGIN cellblock_grid_footcell_field3}
+	<td
+	
+	{$cell_grid_footcell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$office_class}	"
+
+	
+	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_forTransactions"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field3}
+									{BEGIN cellblock_grid_footcell_field7}
+	<td
+	
+	{$cell_grid_footcell_field7}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$college_class}	"
+
+	
+	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_forTransactions"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field7}
 							</tr>
 					
 					</tfoot>

@@ -167,9 +167,6 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel guarantors full_name }","bold":true},{"text":{$full_name_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
 			{"hidden":"{$item_hide_integrated_edit_field2}","stack":[{"text":"{$jslabel guarantors sex }","bold":true},{"text":{$sex_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
@@ -186,6 +183,21 @@ pdfDocument = {
 				
 				
 			{"hidden":"{$item_hide_integrated_edit_field}","stack":[{"text":"{$jslabel guarantors office }","bold":true},{"text":{$office_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field4}","stack":[{"text":"{$jslabel guarantors first_name }","bold":true},{"text":{$first_name_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field8}","stack":[{"text":"{$jslabel guarantors middle_name }","bold":true},{"text":{$middle_name_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field9}","stack":[{"text":"{$jslabel guarantors last_name }","bold":true},{"text":{$last_name_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel guarantors college }","bold":true},{"text":{$college_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field10}","stack":[{"text":"{$jslabel guarantors unit }","bold":true},{"text":{$unit_pdfvalue}}],"margin":[0,0,0,15]},
 				
 		  ],
   "border": [ false, false, false, false ],

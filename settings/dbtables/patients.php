@@ -93,6 +93,39 @@ $runnerDbTableInfo['patients'] = array(
 			'autoinc' => false,
 			'defaultValueSQL' => null,
 			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'classification',
+			'type' => 200,
+			'size' => 100,
+			'scale' => 0,
+			'typeName' => 'varchar(100)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'office',
+			'type' => 200,
+			'size' => 100,
+			'scale' => 0,
+			'typeName' => 'varchar(100)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'college',
+			'type' => 200,
+			'size' => 100,
+			'scale' => 0,
+			'typeName' => 'varchar(100)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
 		) 
 	),
 	'primaryKeys' => array( 

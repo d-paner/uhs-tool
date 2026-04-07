@@ -155,30 +155,6 @@
 
 {END description_fieldblock}
 											
-{BEGIN fund_code_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_fund_code}  r-vertical-field" 
-	data-signal-error-for="fund_code{$id}" {$required_attr_fund_code}
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="fund_code" data-fieldname="fund_code" >
-
-	<label class="r-edit-label control-label {$fund_code_label_class}" for="{$labelfor_fund_code}">
-		{BEGIN fund_code_label}
-			{$fund_code_forward_control}
-			{$label hospital_accounts fund_code }			{END fund_code_label}
-		<span class="icon-required"></span>
-	</label>
-	<div class="r-edit-field">
-		{$fund_code_editcontrol}	</div>
-		<div class="r-edit-tooltip" data-helpfor="fund_code" {$tooltipAttr hospital_accounts fund_code } >
-		<div class="text-muted" >
-		{$tooltip hospital_accounts fund_code }		</div>
-	</div>
-	</div>
-
-
-{END fund_code_fieldblock}
-											
 {BEGIN fund_type_fieldblock}
 
 
@@ -202,6 +178,30 @@
 
 
 {END fund_type_fieldblock}
+											
+{BEGIN fund_code_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fund_code}  r-vertical-field" 
+	data-signal-error-for="fund_code{$id}" {$required_attr_fund_code}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="fund_code" data-fieldname="fund_code" >
+
+	<label class="r-edit-label control-label {$fund_code_label_class}" for="{$labelfor_fund_code}">
+		{BEGIN fund_code_label}
+			{$fund_code_forward_control}
+			{$label hospital_accounts fund_code }			{END fund_code_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$fund_code_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="fund_code" {$tooltipAttr hospital_accounts fund_code } >
+		<div class="text-muted" >
+		{$tooltip hospital_accounts fund_code }		</div>
+	</div>
+	</div>
+
+
+{END fund_code_fieldblock}
 											
 {BEGIN created_at_fieldblock}
 

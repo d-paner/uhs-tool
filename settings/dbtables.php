@@ -21,15 +21,15 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'professionals',
+		'table' => 'transactions',
 		'schema' => '',
-		'filename' => 'professionals' 
+		'filename' => 'transactions' 
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'hospital_accounts',
+		'table' => 'hospital_services',
 		'schema' => '',
-		'filename' => 'hospital_accounts' 
+		'filename' => 'hospital_services' 
 	),
 	array(
 		'connId' => 'conn',
@@ -39,21 +39,9 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'offices',
+		'table' => 'professionals',
 		'schema' => '',
-		'filename' => 'offices' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'transactions',
-		'schema' => '',
-		'filename' => 'transactions' 
-	),
-	array(
-		'connId' => 'conn',
-		'table' => 'users',
-		'schema' => '',
-		'filename' => 'users' 
+		'filename' => 'professionals' 
 	),
 	array(
 		'connId' => 'conn',
@@ -69,9 +57,21 @@ $runnerDbTables = array(
 	),
 	array(
 		'connId' => 'conn',
-		'table' => 'hospital_services',
+		'table' => 'hospital_accounts',
 		'schema' => '',
-		'filename' => 'hospital_services' 
+		'filename' => 'hospital_accounts' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'users',
+		'schema' => '',
+		'filename' => 'users' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'offices',
+		'schema' => '',
+		'filename' => 'offices' 
 	),
 	array(
 		'connId' => 'conn',
@@ -84,6 +84,30 @@ $runnerDbTables = array(
 		'table' => 'professional_accounts',
 		'schema' => '',
 		'filename' => 'professional_accounts' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'guarantor_classifications',
+		'schema' => '',
+		'filename' => 'guarantor_classifications' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'fund_code',
+		'schema' => '',
+		'filename' => 'fund_code' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'fund_type',
+		'schema' => '',
+		'filename' => 'fund_type' 
+	),
+	array(
+		'connId' => 'conn',
+		'table' => 'patient_classifications',
+		'schema' => '',
+		'filename' => 'patient_classifications' 
 	) 
 );
 ?>

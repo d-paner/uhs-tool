@@ -58,9 +58,9 @@ $runnerTableSettings['patients'] = array(
 	'strOrderBy' => 'ORDER BY created_at DESC',
 	'orderInfo' => array( 
 		array(
-			'index' => 8,
+			'index' => 11,
 			'dir' => 'DESC',
-			'field' => 'updated_at' 
+			'field' => 'office' 
 		) 
 	),
 	'sql' => 'SELECT
@@ -71,6 +71,9 @@ $runnerTableSettings['patients'] = array(
 	CONCAT_WS(\' \',first_name, middle_name, last_name) AS full_name,
 	sex,
 	birthday,
+	classification,
+	office,
+	college,
 	created_at,
 	updated_at
 FROM
@@ -210,7 +213,7 @@ ORDER BY created_at DESC',
 			'name' => 'created_at',
 			'goodName' => 'created_at',
 			'strField' => 'created_at',
-			'index' => 8,
+			'index' => 11,
 			'type' => 135,
 			'sqlExpression' => 'created_at',
 			'viewFormats' => array(
@@ -231,7 +234,7 @@ ORDER BY created_at DESC',
 			'name' => 'updated_at',
 			'goodName' => 'updated_at',
 			'strField' => 'updated_at',
-			'index' => 9,
+			'index' => 12,
 			'type' => 135,
 			'sqlExpression' => 'updated_at',
 			'viewFormats' => array(
@@ -266,6 +269,76 @@ ORDER BY created_at DESC',
 				) 
 			),
 			'tableName' => '' 
+		),
+		'classification' => array(
+			'name' => 'classification',
+			'goodName' => 'classification',
+			'strField' => 'classification',
+			'index' => 8,
+			'sqlExpression' => 'classification',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					'format' => 'Lookup wizard',
+					'required' => true,
+					'lookupType' => 2,
+					'lookupValues' => array( 
+						'Student',
+						'Administrative Employee',
+						'Faculty REPS',
+						'AdmEmpDep',
+						'FacDep',
+						'REPSDep',
+						'Faculty',
+						'Non-UP' 
+					),
+					'lookupTable' => 'patient_classifications',
+					'lookupTableConnection' => 'conn',
+					'lookupLinkField' => 'id',
+					'lookupDisplayField' => 'label' 
+				) 
+			),
+			'tableName' => 'patients' 
+		),
+		'office' => array(
+			'name' => 'office',
+			'goodName' => 'office',
+			'strField' => 'office',
+			'index' => 9,
+			'sqlExpression' => 'office',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'patients' 
+		),
+		'college' => array(
+			'name' => 'college',
+			'goodName' => 'college',
+			'strField' => 'college',
+			'index' => 10,
+			'sqlExpression' => 'college',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'patients' 
 		) 
 	),
 	'query' => array(
@@ -277,6 +350,9 @@ ORDER BY created_at DESC',
 	CONCAT_WS(\' \',first_name, middle_name, last_name) AS full_name,
 	sex,
 	birthday,
+	classification,
+	office,
+	college,
 	created_at,
 	updated_at
 FROM
@@ -413,6 +489,51 @@ ORDER BY created_at DESC',
 				'columnName' => 'birthday' 
 			),
 			array(
+				'sql' => 'classification',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'patients',
+					'name' => 'classification' 
+				),
+				'encrypted' => false,
+				'columnName' => 'classification' 
+			),
+			array(
+				'sql' => 'office',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'patients',
+					'name' => 'office' 
+				),
+				'encrypted' => false,
+				'columnName' => 'office' 
+			),
+			array(
+				'sql' => 'college',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'patients',
+					'name' => 'college' 
+				),
+				'encrypted' => false,
+				'columnName' => 'college' 
+			),
+			array(
 				'sql' => 'created_at',
 				'parsed' => true,
 				'type' => 'FieldListItem',
@@ -460,7 +581,10 @@ ORDER BY created_at DESC',
 						'sex',
 						'birthday',
 						'created_at',
-						'updated_at' 
+						'updated_at',
+						'classification',
+						'office',
+						'college' 
 					),
 					'name' => 'patients' 
 				),
@@ -524,7 +648,7 @@ ORDER BY created_at DESC',
 					'name' => 'created_at' 
 				),
 				'asc' => false,
-				'columnNumber' => 8 
+				'columnNumber' => 11 
 			) 
 		),
 		'colsIndex' => array( 
@@ -579,13 +703,34 @@ ORDER BY created_at DESC',
 			),
 			array(
 				'fieldIndex' => 7,
-				'orderByIndex' => 0,
+				'orderByIndex' => -1,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
 			),
 			array(
 				'fieldIndex' => 8,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 9,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 10,
+				'orderByIndex' => 0,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 11,
 				'orderByIndex' => -1,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
@@ -600,6 +745,9 @@ ORDER BY created_at DESC',
 	CONCAT_WS(\' \',first_name, middle_name, last_name) AS full_name,
 	sex,
 	birthday,
+	classification,
+	office,
+	college,
 	created_at,
 	updated_at',
 		'fromListSql' => 'FROM
@@ -668,7 +816,10 @@ ORDER BY created_at DESC',
 			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name' 
+			'full_name',
+			'classification',
+			'office',
+			'college' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -683,7 +834,10 @@ ORDER BY created_at DESC',
 			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name' 
+			'full_name',
+			'classification',
+			'office',
+			'college' 
 		) 
 	),
 	'connId' => 'conn',
@@ -740,7 +894,10 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'birthday' => 'Birthday',
 		'created_at' => 'Created At',
 		'updated_at' => 'Updated At',
-		'full_name' => 'Full Name' 
+		'full_name' => 'Full Name',
+		'classification' => 'Patient Classification',
+		'office' => 'Office',
+		'college' => 'College' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
@@ -751,7 +908,10 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'birthday' => '',
 		'created_at' => '',
 		'updated_at' => '',
-		'full_name' => '' 
+		'full_name' => '',
+		'classification' => '',
+		'office' => '',
+		'college' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
@@ -762,7 +922,10 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'birthday' => '',
 		'created_at' => '',
 		'updated_at' => '',
-		'full_name' => '' 
+		'full_name' => '',
+		'classification' => '',
+		'office' => '',
+		'college' => '' 
 	),
 	'pageTitles' => array(
 		 

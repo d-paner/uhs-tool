@@ -93,6 +93,61 @@ $runnerDbTableInfo['guarantors'] = array(
 			'autoinc' => false,
 			'defaultValueSQL' => null,
 			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'first_name',
+			'type' => 200,
+			'size' => 250,
+			'scale' => 0,
+			'typeName' => 'varchar(250)',
+			'nullable' => false,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'middle_name',
+			'type' => 200,
+			'size' => 250,
+			'scale' => 0,
+			'typeName' => 'varchar(250)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'last_name',
+			'type' => 200,
+			'size' => 250,
+			'scale' => 0,
+			'typeName' => 'varchar(250)',
+			'nullable' => false,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'college',
+			'type' => 200,
+			'size' => 255,
+			'scale' => 0,
+			'typeName' => 'varchar(255)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'unit',
+			'type' => 200,
+			'size' => 255,
+			'scale' => 0,
+			'typeName' => 'varchar(255)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
 		) 
 	),
 	'primaryKeys' => array( 

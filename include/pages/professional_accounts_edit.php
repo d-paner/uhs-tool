@@ -37,7 +37,7 @@
 	'pageLinks' => array(
 		'edit' => false,
 		'add' => false,
-		'view' => true,
+		'view' => false,
 		'print' => false 
 	),
 	'layoutHelper' => array(
@@ -128,9 +128,6 @@
 				'integrated_edit_field1',
 				'integrated_edit_field2',
 				'integrated_edit_field3' 
-			),
-			'edit_view' => array( 
-				'edit_view' 
 			) 
 		),
 		'cellMaps' => array(
@@ -348,8 +345,7 @@
 		'hamburger' => array(
 			'type' => 'hamburger',
 			'items' => array( 
-				'edit_reset',
-				'edit_view' 
+				'edit_reset' 
 			) 
 		),
 		'edit_reset' => array(
@@ -390,9 +386,6 @@
 			'type' => 'integrated_edit_field',
 			'orientation' => 0,
 			'updateOnEdit' => false 
-		),
-		'edit_view' => array(
-			'type' => 'edit_view' 
 		) 
 	),
 	'version' => 13,

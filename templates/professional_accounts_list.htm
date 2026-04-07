@@ -883,7 +883,7 @@
 	{$cell_grid_cell_icons}
 	{$recordattrs}
 	class="
-					"
+		 r-ori-vert			"
 
 	
 	data-cellId="grid_cell_icons" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="professional_accounts_list"		data-control-cell
@@ -901,17 +901,6 @@
 </span>
 {END edit_link}
 {END edit_column}
-	 
-		{BEGIN view_column}
-{BEGIN view_link}
-<span data-itemtype="grid_view" data-itemid="grid_view" {$item_grid_view} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
-	<a type="button" title="{mlang_message VIEW_RECORD}" class="btn-link   
-	 glyphicon glyphicon-search" href="professional_accounts_view.php?{$editlink}" {$viewlink_attrs} title="{mlang_message VIEW}" data-popup >		
-				
-								</a>
-</span>
-{END view_link}
-{END view_column}
 	
 	</td>
 	{END cellblock_grid_cell_icons}

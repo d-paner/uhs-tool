@@ -16,9 +16,6 @@ $runnerTableSettings['professional_accounts'] = array(
 		'edit' => array( 
 			'edit' 
 		),
-		'view' => array( 
-			'view' 
-		),
 		'list' => array( 
 			'list' 
 		),
@@ -34,7 +31,6 @@ $runnerTableSettings['professional_accounts'] = array(
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
@@ -44,7 +40,6 @@ $runnerTableSettings['professional_accounts'] = array(
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
@@ -392,9 +387,6 @@ FROM
 		'edit' => array( 
 			'edit' 
 		),
-		'view' => array( 
-			'view' 
-		),
 		'list' => array( 
 			'list' 
 		),
@@ -410,7 +402,6 @@ FROM
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 
@@ -420,7 +411,6 @@ FROM
 		'export' => 'export',
 		'import' => 'import',
 		'edit' => 'edit',
-		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
 		'search' => 'search' 

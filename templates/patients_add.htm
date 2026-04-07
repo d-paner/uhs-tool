@@ -227,6 +227,78 @@
 
 {END birthday_fieldblock}
 											
+{BEGIN classification_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_classification}  r-vertical-field" 
+	data-signal-error-for="classification{$id}" {$required_attr_classification}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="classification" data-fieldname="classification" >
+
+	<label class="r-edit-label control-label {$classification_label_class}" for="{$labelfor_classification}">
+		{BEGIN classification_label}
+			{$classification_forward_control}
+			{$label patients classification }			{END classification_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$classification_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="classification" {$tooltipAttr patients classification } >
+		<div class="text-muted" >
+		{$tooltip patients classification }		</div>
+	</div>
+	</div>
+
+
+{END classification_fieldblock}
+											
+{BEGIN office_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_office}  r-vertical-field" 
+	data-signal-error-for="office{$id}" {$required_attr_office}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="office" data-fieldname="office" >
+
+	<label class="r-edit-label control-label {$office_label_class}" for="{$labelfor_office}">
+		{BEGIN office_label}
+			{$office_forward_control}
+			{$label patients office }			{END office_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$office_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="office" {$tooltipAttr patients office } >
+		<div class="text-muted" >
+		{$tooltip patients office }		</div>
+	</div>
+	</div>
+
+
+{END office_fieldblock}
+											
+{BEGIN college_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_college}  r-vertical-field" 
+	data-signal-error-for="college{$id}" {$required_attr_college}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="college" data-fieldname="college" >
+
+	<label class="r-edit-label control-label {$college_label_class}" for="{$labelfor_college}">
+		{BEGIN college_label}
+			{$college_forward_control}
+			{$label patients college }			{END college_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$college_editcontrol}	</div>
+		<div class="r-edit-tooltip" data-helpfor="college" {$tooltipAttr patients college } >
+		<div class="text-muted" >
+		{$tooltip patients college }		</div>
+	</div>
+	</div>
+
+
+{END college_fieldblock}
+											
 {BEGIN created_at_fieldblock}
 
 
