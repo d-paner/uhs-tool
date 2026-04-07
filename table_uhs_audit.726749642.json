@@ -146,6 +146,13 @@
 			"tableName": "uhs_audit"
 		}
 	],
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_BEFORESHOW_LIST",
+			"pageType": "list",
+			"code": "$xt->assign(\"pagetitle\", \"Audit Log\");"
+		}
+	],
 	"strOrderBy": "ORDER BY `datetime` DESC",
 	"dbTableInfo": {
 		"type": 0,
