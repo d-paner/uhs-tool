@@ -1,13 +1,13 @@
 {
 	"orderInfo": [
 		{
-			"index": 8,
-			"field": "created_at",
-			"expr": "created_at",
+			"index": 10,
+			"field": "patient_name",
+			"expr": "transactions.created_at",
 			"asc": false
 		}
 	],
-	"sql": "SELECT\r\n\tid,\r\n\ttransaction_number,\r\n\tpatient_id,\r\n\tpatient_type,\r\n\tstatus,\r\n\ttotal_due,\r\n\ttotal_paid,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\ttransactions\r\nORDER BY created_at DESC",
+	"sql": "SELECT\n\ttransactions.id,\n\ttransactions.transaction_number,\n\ttransactions.patient_id,\n\tCONCAT_WS(' ', persons.first_name, NULLIF(persons.middle_name, ''), persons.last_name) AS patient_name,\n\ttransactions.patient_type,\n\ttransactions.status,\n\ttransactions.total_due,\n\ttransactions.total_paid,\n\ttransactions.opd_attendance,\n\ttransactions.created_at,\n\ttransactions.updated_at\nFROM\n\ttransactions\n\tINNER JOIN patients ON patients.patient_id = transactions.patient_id\n\tINNER JOIN persons ON persons.master_person_id = patients.person_id\nORDER BY\n\ttransactions.created_at DESC\n",
 	"connId": "conn",
 	"originalTable": "transactions",
 	"name": "transactions",
@@ -25,7 +25,7 @@
 	"fields": [
 		{
 			"name": "id",
-			"sqlExpression": "id",
+			"sqlExpression": "transactions.id",
 			"index": 1,
 			"strField": "id",
 			"type": 3,
@@ -43,7 +43,7 @@
 		},
 		{
 			"name": "transaction_number",
-			"sqlExpression": "transaction_number",
+			"sqlExpression": "transactions.transaction_number",
 			"index": 2,
 			"strField": "transaction_number",
 			"type": 200,
@@ -63,7 +63,7 @@
 		},
 		{
 			"name": "patient_id",
-			"sqlExpression": "patient_id",
+			"sqlExpression": "transactions.patient_id",
 			"index": 3,
 			"strField": "patient_id",
 			"type": 3,
@@ -77,22 +77,21 @@
 					"lookupType": 2,
 					"lookupTable": "patients",
 					"lookupTableConnection": "conn",
-					"lookupLinkField": "id",
-					"lookupDisplayField": "CONCAT_WS(' ', first_name, middle_name, last_name)",
-					"lookupCustomDisplay": true,
+					"lookupLinkField": "patient_id",
+					"lookupDisplayField": "patient_id",
 					"lookupControlType": 2,
 					"lookupListPage": "forTransactions"
 				}
 			],
 			"label": {
-				"English": "Patient"
+				"English": "Patient ID"
 			},
 			"tableName": "transactions"
 		},
 		{
 			"name": "patient_type",
-			"sqlExpression": "patient_type",
-			"index": 4,
+			"sqlExpression": "transactions.patient_type",
+			"index": 5,
 			"strField": "patient_type",
 			"type": 200,
 			"viewFormats": [
@@ -102,9 +101,10 @@
 				{
 					"format": "Lookup wizard",
 					"required": true,
+					"lookupType": 2,
 					"lookupTable": "patient_types",
 					"lookupTableConnection": "conn",
-					"lookupLinkField": "type",
+					"lookupLinkField": "id",
 					"lookupDisplayField": "type"
 				}
 			],
@@ -115,8 +115,8 @@
 		},
 		{
 			"name": "status",
-			"sqlExpression": "status",
-			"index": 5,
+			"sqlExpression": "transactions.status",
+			"index": 6,
 			"strField": "status",
 			"type": 200,
 			"viewFormats": [
@@ -135,8 +135,8 @@
 		},
 		{
 			"name": "total_due",
-			"sqlExpression": "total_due",
-			"index": 6,
+			"sqlExpression": "transactions.total_due",
+			"index": 7,
 			"strField": "total_due",
 			"type": 14,
 			"viewFormats": [
@@ -156,8 +156,8 @@
 		},
 		{
 			"name": "total_paid",
-			"sqlExpression": "total_paid",
-			"index": 7,
+			"sqlExpression": "transactions.total_paid",
+			"index": 8,
 			"strField": "total_paid",
 			"type": 14,
 			"viewFormats": [
@@ -177,8 +177,8 @@
 		},
 		{
 			"name": "created_at",
-			"sqlExpression": "created_at",
-			"index": 8,
+			"sqlExpression": "transactions.created_at",
+			"index": 10,
 			"strField": "created_at",
 			"type": 135,
 			"viewFormats": [
@@ -200,8 +200,8 @@
 		},
 		{
 			"name": "updated_at",
-			"sqlExpression": "updated_at",
-			"index": 9,
+			"sqlExpression": "transactions.updated_at",
+			"index": 11,
 			"strField": "updated_at",
 			"type": 135,
 			"viewFormats": [
@@ -221,6 +221,46 @@
 				"English": "Updated At"
 			},
 			"tableName": "transactions"
+		},
+		{
+			"name": "patient_name",
+			"sqlExpression": "CONCAT_WS(' ', persons.first_name, NULLIF(persons.middle_name, ''), persons.last_name)",
+			"index": 4,
+			"strField": "patient_name",
+			"type": 201,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Patient Name"
+			},
+			"tableName": ""
+		},
+		{
+			"name": "opd_attendance",
+			"sqlExpression": "transactions.opd_attendance",
+			"index": 9,
+			"strField": "opd_attendance",
+			"type": 200,
+			"viewFormats": [
+				{
+					"format": "Short Date"
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Date",
+					"dateEditType": 11
+				}
+			],
+			"label": {
+				"English": "Date of OPD Attendance"
+			},
+			"tableName": "transactions"
 		}
 	],
 	"whereTabs": [
@@ -233,7 +273,7 @@
 			"code": "include_once('custom/generate_transaction_number.php');"
 		}
 	],
-	"strOrderBy": "ORDER BY created_at DESC",
+	"strOrderBy": "ORDER BY\n\ttransactions.created_at DESC",
 	"dbTableInfo": {
 		"type": 0,
 		"foreignKeys": [],
@@ -322,6 +362,17 @@
 				"scale": 2,
 				"typeName": "decimal(10,2)",
 				"nullable": false,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "opd_attendance",
+				"type": 200,
+				"size": 20,
+				"scale": 0,
+				"typeName": "varchar(20)",
+				"nullable": true,
 				"autoinc": false,
 				"defaultValueSQL": null,
 				"defaultValue": ""
@@ -455,6 +506,7 @@
 								"integrated_edit_field1",
 								"integrated_edit_field2",
 								"integrated_edit_field3",
+								"integrated_edit_field4",
 								"integrated_edit_field6",
 								"integrated_edit_field7"
 							]
@@ -516,6 +568,11 @@
 					"orientation": 0,
 					"color": "#0026ff",
 					"bold": true
+				},
+				"integrated_edit_field4": {
+					"field": "opd_attendance",
+					"type": "integrated_edit_field",
+					"orientation": 0
 				}
 			},
 			"version": 13,
@@ -602,7 +659,9 @@
 								"export_field5",
 								"export_field6",
 								"export_field7",
-								"export_field8"
+								"export_field8",
+								"export_field",
+								"export_field9"
 							]
 						}
 					},
@@ -681,6 +740,14 @@
 				},
 				"export_field8": {
 					"field": "updated_at",
+					"type": "export_field"
+				},
+				"export_field": {
+					"field": "patient_name",
+					"type": "export_field"
+				},
+				"export_field9": {
+					"field": "opd_attendance",
 					"type": "export_field"
 				}
 			},
@@ -769,8 +836,6 @@
 								"import_field2",
 								"import_field3",
 								"import_field4",
-								"import_field5",
-								"import_field6",
 								"import_field7",
 								"import_field8"
 							]
@@ -798,14 +863,6 @@
 				},
 				"import_field4": {
 					"field": "status",
-					"type": "import_field"
-				},
-				"import_field5": {
-					"field": "total_due",
-					"type": "import_field"
-				},
-				"import_field6": {
-					"field": "total_paid",
 					"type": "import_field"
 				},
 				"import_field7": {
@@ -937,7 +994,8 @@
 								"integrated_edit_field4",
 								"integrated_edit_field5",
 								"integrated_edit_field6",
-								"integrated_edit_field7"
+								"integrated_edit_field7",
+								"integrated_edit_field8"
 							]
 						}
 					},
@@ -1023,6 +1081,12 @@
 				},
 				"edit_view": {
 					"type": "edit_view"
+				},
+				"integrated_edit_field8": {
+					"field": "opd_attendance",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
 				}
 			},
 			"version": 13,
@@ -1143,7 +1207,9 @@
 								"integrated_edit_field5",
 								"integrated_edit_field6",
 								"integrated_edit_field7",
-								"integrated_edit_field8"
+								"integrated_edit_field8",
+								"integrated_edit_field",
+								"integrated_edit_field9"
 							]
 						}
 					},
@@ -1211,6 +1277,16 @@
 				},
 				"view_edit": {
 					"type": "view_edit"
+				},
+				"integrated_edit_field": {
+					"field": "patient_name",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field9": {
+					"field": "opd_attendance",
+					"type": "integrated_edit_field",
+					"orientation": 0
 				}
 			},
 			"version": 13,
@@ -1353,7 +1429,6 @@
 						"c2": {
 							"model": "c2",
 							"items": [
-								"simple_search",
 								"list_options",
 								"loginform_login",
 								"username_button"
@@ -1408,6 +1483,12 @@
 								},
 								{
 									"cell": "headcell_field7"
+								},
+								{
+									"cell": "headcell_field8"
+								},
+								{
+									"cell": "headcell_field9"
 								}
 							]
 						},
@@ -1446,6 +1527,12 @@
 								},
 								{
 									"cell": "cell_field7"
+								},
+								{
+									"cell": "cell_field8"
+								},
+								{
+									"cell": "cell_field9"
 								}
 							]
 						},
@@ -1453,7 +1540,7 @@
 							"cells": [
 								{
 									"cell": "cell_dpreview",
-									"colspan": 11
+									"colspan": 13
 								}
 							],
 							"section": "body"
@@ -1493,6 +1580,12 @@
 								},
 								{
 									"cell": "footcell_field7"
+								},
+								{
+									"cell": "footcell_field8"
+								},
+								{
+									"cell": "footcell_field9"
 								}
 							]
 						}
@@ -1504,7 +1597,7 @@
 								"simple_grid_field"
 							],
 							"field": "transaction_number",
-							"align": "center"
+							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
@@ -1512,12 +1605,13 @@
 								"simple_grid_field1"
 							],
 							"field": "transaction_number",
-							"align": "center"
+							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "transaction_number"
+							"field": "transaction_number",
+							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
@@ -1525,7 +1619,7 @@
 								"simple_grid_field9"
 							],
 							"field": "patient_id",
-							"align": "center"
+							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
@@ -1533,186 +1627,190 @@
 								"simple_grid_field2"
 							],
 							"field": "patient_id",
-							"align": "center"
+							"columnName": "field"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "patient_id"
+							"field": "patient_id",
+							"columnName": "field"
 						},
 						"headcell_field2": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field1"
+							],
+							"field": "patient_name",
+							"columnName": "field"
+						},
+						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"grid_field"
+							],
+							"field": "patient_name",
+							"columnName": "field",
+							"nowrap": true
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "patient_name",
+							"columnName": "field"
+						},
+						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field10"
 							],
 							"field": "patient_type",
-							"align": "center"
+							"columnName": "field"
 						},
-						"cell_field2": {
+						"cell_field3": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field3"
 							],
 							"field": "patient_type",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field2": {
+						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "patient_type"
+							"field": "patient_type",
+							"columnName": "field"
 						},
-						"headcell_field3": {
+						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field11"
 							],
 							"field": "status",
-							"align": "center"
+							"columnName": "field"
 						},
-						"cell_field3": {
+						"cell_field4": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field4"
 							],
 							"field": "status",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field3": {
+						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "status"
+							"field": "status",
+							"columnName": "field"
 						},
-						"headcell_field4": {
+						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field12"
 							],
 							"field": "total_due",
-							"align": "center"
+							"columnName": "field"
 						},
-						"cell_field4": {
+						"cell_field5": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field5"
 							],
 							"field": "total_due",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field4": {
+						"footcell_field5": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "total_due"
+							"field": "total_due",
+							"columnName": "field"
 						},
-						"headcell_field5": {
+						"headcell_field6": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field13"
 							],
 							"field": "total_paid",
-							"align": "center"
+							"columnName": "field"
 						},
-						"cell_field5": {
+						"cell_field6": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field6"
 							],
 							"field": "total_paid",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field5": {
+						"footcell_field6": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "total_paid"
+							"field": "total_paid",
+							"columnName": "field"
 						},
-						"headcell_field6": {
+						"headcell_field7": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field3"
+							],
+							"field": "opd_attendance",
+							"columnName": "field"
+						},
+						"cell_field7": {
+							"model": "cell_field",
+							"items": [
+								"grid_field2"
+							],
+							"field": "opd_attendance",
+							"columnName": "field"
+						},
+						"footcell_field7": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "opd_attendance",
+							"columnName": "field"
+						},
+						"headcell_field8": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field14"
 							],
 							"field": "created_at",
-							"align": "center"
+							"columnName": "field"
 						},
-						"cell_field6": {
+						"cell_field8": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field7"
 							],
 							"field": "created_at",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field6": {
+						"footcell_field8": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "created_at"
+							"field": "created_at",
+							"columnName": "field"
 						},
-						"headcell_field7": {
+						"headcell_field9": {
 							"model": "headcell_field",
 							"items": [
 								"simple_grid_field15"
 							],
 							"field": "updated_at",
-							"align": "center"
+							"columnName": "field"
 						},
-						"cell_field7": {
+						"cell_field9": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field8"
 							],
 							"field": "updated_at",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field7": {
+						"footcell_field9": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "updated_at"
-						},
-						"headcell_checkbox": {
-							"model": "headcell_checkbox",
-							"items": [
-								"grid_checkbox_head"
-							]
-						},
-						"cell_checkbox": {
-							"model": "cell_checkbox",
-							"items": [
-								"grid_checkbox"
-							]
-						},
-						"footcell_checkbox": {
-							"model": "footcell_checkbox",
-							"items": []
-						},
-						"headcell_icons": {
-							"model": "headcell_icons",
-							"items": []
-						},
-						"cell_icons": {
-							"model": "cell_icons",
-							"items": [
-								"grid_edit",
-								"grid_view"
-							]
-						},
-						"footcell_icons": {
-							"model": "footcell_icons",
-							"items": []
-						},
-						"headcell_details": {
-							"model": "headcell_details",
-							"items": []
-						},
-						"cell_details": {
-							"model": "cell_details",
-							"items": [
-								"grid_alldetails_link",
-								"grid_details_link",
-								"grid_details_link1",
-								"grid_details_link2"
-							]
-						},
-						"footcell_details": {
-							"model": "footcell_details",
-							"items": []
+							"field": "updated_at",
+							"columnName": "field"
 						},
 						"cell_dpreview": {
 							"model": "cell_dpreview",
@@ -1720,7 +1818,75 @@
 								"details_preview1",
 								"details_preview",
 								"details_preview2"
-							]
+							],
+							"columnName": "field",
+							"field": "updated_at"
+						},
+						"headcell_checkbox": {
+							"model": "headcell_checkbox",
+							"items": [
+								"grid_checkbox_head"
+							],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"cell_checkbox": {
+							"model": "cell_checkbox",
+							"items": [
+								"grid_checkbox"
+							],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"footcell_checkbox": {
+							"model": "footcell_checkbox",
+							"items": [],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"headcell_icons": {
+							"model": "headcell_icons",
+							"items": [],
+							"columnName": "list-icons",
+							"field": ""
+						},
+						"cell_icons": {
+							"model": "cell_icons",
+							"items": [
+								"grid_edit",
+								"grid_view"
+							],
+							"columnName": "list-icons",
+							"field": ""
+						},
+						"footcell_icons": {
+							"model": "footcell_icons",
+							"items": [],
+							"columnName": "list-icons",
+							"field": ""
+						},
+						"headcell_details": {
+							"model": "headcell_details",
+							"items": [],
+							"columnName": "details",
+							"field": ""
+						},
+						"cell_details": {
+							"model": "cell_details",
+							"items": [
+								"grid_alldetails_link",
+								"grid_details_link1",
+								"grid_details_link",
+								"grid_details_link2"
+							],
+							"columnName": "details",
+							"field": ""
+						},
+						"footcell_details": {
+							"model": "footcell_details",
+							"items": [],
+							"columnName": "details",
+							"field": ""
 						}
 					},
 					"deferredItems": [],
@@ -1740,9 +1906,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"simple_search": {
-					"type": "simple_search"
-				},
 				"pagination": {
 					"type": "pagination"
 				},
@@ -1752,16 +1915,18 @@
 				"search_panel": {
 					"type": "search_panel",
 					"items": [
+						"search_panel_field1",
+						"search_panel_field",
+						"search_panel_field3",
+						"search_panel_field4",
 						"search_panel_field8",
+						"search_panel_field9",
 						"search_panel_field7",
 						"search_panel_field6",
 						"search_panel_field5",
-						"search_panel_field4",
-						"search_panel_field3",
-						"search_panel_field2",
-						"search_panel_field1"
+						"search_panel_field2"
 					],
-					"_flexiblePanel": true
+					"_flexiblePanel": false
 				},
 				"list_options": {
 					"type": "list_options",
@@ -1775,45 +1940,59 @@
 						"export",
 						"-2",
 						"import"
-					]
-				},
-				"show_search_panel": {
-					"type": "show_search_panel"
-				},
-				"hide_search_panel": {
-					"type": "hide_search_panel"
+					],
+					"icon": {
+						"glyph": "cog",
+						"style": 0
+					}
 				},
 				"search_panel_field1": {
 					"field": "transaction_number",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
 				},
 				"search_panel_field2": {
 					"field": "patient_id",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field3": {
 					"field": "patient_type",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
 				},
 				"search_panel_field4": {
 					"field": "status",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
 				},
 				"search_panel_field5": {
 					"field": "total_due",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field6": {
 					"field": "total_paid",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field7": {
 					"field": "created_at",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field8": {
 					"field": "updated_at",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"expand_menu_button": {
 					"type": "expand_menu_button"
@@ -1838,9 +2017,6 @@
 				},
 				"export_selected": {
 					"type": "export_selected"
-				},
-				"-1": {
-					"type": "-"
 				},
 				"import": {
 					"type": "import"
@@ -1870,7 +2046,45 @@
 					"type": "delete"
 				},
 				"delete_selected": {
-					"type": "delete_selected"
+					"type": "delete_selected",
+					"icon": {}
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"print_details": {
+					"type": "print_details",
+					"tables": {
+						"1504671644": true,
+						"1653239510": true,
+						"3769908180": true
+					}
+				},
+				"search_panel_field": {
+					"field": "patient_name",
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
+				},
+				"search_panel_field9": {
+					"field": "opd_attendance",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"simple_grid_field1": {
 					"field": "transaction_number",
@@ -1890,12 +2104,17 @@
 				},
 				"simple_grid_field9": {
 					"type": "grid_field_label",
-					"field": "patient_id",
-					"label": {
-						"field": "patient_id",
-						"table": "transactions",
-						"type": 3
-					}
+					"field": "patient_id"
+				},
+				"grid_field": {
+					"field": "patient_name",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field1": {
+					"type": "grid_field_label",
+					"field": "patient_name"
 				},
 				"simple_grid_field3": {
 					"field": "patient_type",
@@ -1925,12 +2144,7 @@
 				},
 				"simple_grid_field12": {
 					"type": "grid_field_label",
-					"field": "total_due",
-					"label": {
-						"field": "total_due",
-						"table": "transactions",
-						"type": 3
-					}
+					"field": "total_due"
 				},
 				"simple_grid_field6": {
 					"field": "total_paid",
@@ -1941,6 +2155,21 @@
 				"simple_grid_field13": {
 					"type": "grid_field_label",
 					"field": "total_paid"
+				},
+				"grid_field2": {
+					"field": "opd_attendance",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field3": {
+					"type": "grid_field_label",
+					"field": "opd_attendance",
+					"label": {
+						"field": "opd_attendance",
+						"table": "transactions",
+						"type": 3
+					}
 				},
 				"simple_grid_field7": {
 					"field": "created_at",
@@ -1962,8 +2191,32 @@
 					"type": "grid_field_label",
 					"field": "updated_at"
 				},
-				"grid_checkbox": {
-					"type": "grid_checkbox"
+				"details_preview1": {
+					"type": "details_preview",
+					"table": 1504671644,
+					"items": [],
+					"proceedLink": true,
+					"popup": false,
+					"pageId": "transactionsChild",
+					"hideEmptyPreview": false
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 3769908180,
+					"items": [],
+					"proceedLink": true,
+					"popup": false,
+					"pageId": "transactionsChild",
+					"hideEmptyPreview": false
+				},
+				"details_preview2": {
+					"type": "details_preview",
+					"table": 1653239510,
+					"items": [],
+					"proceedLink": true,
+					"popup": false,
+					"hideEmptyPreview": false,
+					"pageId": "list"
 				},
 				"grid_checkbox_head": {
 					"type": "grid_checkbox_head"
@@ -1976,49 +2229,11 @@
 					"type": "grid_view",
 					"popup": true
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"userinfo_link",
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
-				"userinfo_link": {
-					"type": "userinfo_link"
-				},
-				"logout_link": {
-					"type": "logout_link"
+				"grid_checkbox": {
+					"type": "grid_checkbox"
 				},
 				"grid_alldetails_link": {
 					"type": "grid_alldetails_link"
-				},
-				"grid_details_link": {
-					"type": "grid_details_link",
-					"table": 3769908180,
-					"badge": true,
-					"hideIfNone": false,
-					"showCount": false
-				},
-				"details_preview": {
-					"type": "details_preview",
-					"table": 3769908180,
-					"items": [],
-					"proceedLink": true,
-					"popup": false,
-					"pageId": "transactionsChild",
-					"hideEmptyPreview": false
-				},
-				"print_details": {
-					"type": "print_details",
-					"tables": {
-						"1504671644": true,
-						"1653239510": true,
-						"3769908180": true
-					}
 				},
 				"grid_details_link1": {
 					"type": "grid_details_link",
@@ -2027,14 +2242,12 @@
 					"showCount": false,
 					"hideIfNone": false
 				},
-				"details_preview1": {
-					"type": "details_preview",
-					"table": 1504671644,
-					"items": [],
-					"proceedLink": true,
-					"popup": false,
-					"pageId": "transactionsChild",
-					"hideEmptyPreview": false
+				"grid_details_link": {
+					"type": "grid_details_link",
+					"table": 3769908180,
+					"badge": true,
+					"hideIfNone": false,
+					"showCount": false
 				},
 				"grid_details_link2": {
 					"type": "grid_details_link",
@@ -2043,14 +2256,14 @@
 					"showCount": false,
 					"hideIfNone": false
 				},
-				"details_preview2": {
-					"type": "details_preview",
-					"table": 1653239510,
-					"items": [],
-					"proceedLink": true,
-					"popup": false,
-					"hideEmptyPreview": false,
-					"pageId": "list"
+				"show_search_panel": {
+					"type": "show_search_panel"
+				},
+				"-1": {
+					"type": "-"
+				},
+				"hide_search_panel": {
+					"type": "hide_search_panel"
 				}
 			},
 			"version": 13,
@@ -2169,7 +2382,9 @@
 								"simple_grid_field5",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field8"
+								"simple_grid_field8",
+								"simple_grid_field",
+								"simple_grid_field9"
 							]
 						},
 						"c2": {
@@ -2244,6 +2459,14 @@
 					"table": 1653239510,
 					"items": [],
 					"popup": false
+				},
+				"simple_grid_field": {
+					"field": "patient_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field9": {
+					"field": "opd_attendance",
+					"type": "simple_grid_field"
 				}
 			},
 			"version": 13,
@@ -2353,7 +2576,9 @@
 								"simple_grid_field5",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field8"
+								"simple_grid_field8",
+								"simple_grid_field9",
+								"simple_grid_field10"
 							]
 						}
 					},
@@ -2402,6 +2627,14 @@
 				},
 				"simple_grid_field8": {
 					"field": "updated_at",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field9": {
+					"field": "patient_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field10": {
+					"field": "opd_attendance",
 					"type": "simple_grid_field"
 				}
 			},
@@ -2511,7 +2744,9 @@
 								"simple_grid_field5",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field8"
+								"simple_grid_field8",
+								"simple_grid_field9",
+								"simple_grid_field10"
 							]
 						}
 					},
@@ -2557,6 +2792,14 @@
 				},
 				"simple_grid_field8": {
 					"field": "updated_at",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field9": {
+					"field": "patient_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field10": {
+					"field": "opd_attendance",
 					"type": "simple_grid_field"
 				}
 			},
@@ -2734,6 +2977,12 @@
 								},
 								{
 									"cell": "headcell_field3"
+								},
+								{
+									"cell": "headcell_field4"
+								},
+								{
+									"cell": "headcell_field5"
 								}
 							]
 						},
@@ -2751,17 +3000,14 @@
 								},
 								{
 									"cell": "cell_field3"
+								},
+								{
+									"cell": "cell_field4"
+								},
+								{
+									"cell": "cell_field5"
 								}
 							]
-						},
-						{
-							"cells": [
-								{
-									"cell": "cell_dpreview",
-									"colspan": 4
-								}
-							],
-							"section": "body"
 						},
 						{
 							"section": "foot",
@@ -2777,6 +3023,12 @@
 								},
 								{
 									"cell": "footcell_field3"
+								},
+								{
+									"cell": "footcell_field4"
+								},
+								{
+									"cell": "footcell_field5"
 								}
 							]
 						}
@@ -2788,7 +3040,7 @@
 								"simple_grid_field"
 							],
 							"field": "transaction_number",
-							"align": "center"
+							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
@@ -2796,20 +3048,21 @@
 								"simple_grid_field1"
 							],
 							"field": "transaction_number",
-							"align": "center"
+							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "transaction_number"
+							"field": "transaction_number",
+							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field9"
+								"simple_grid_field5"
 							],
 							"field": "patient_id",
-							"align": "center"
+							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
@@ -2817,58 +3070,101 @@
 								"simple_grid_field2"
 							],
 							"field": "patient_id",
-							"align": "center"
+							"columnName": "field"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "patient_id"
+							"field": "patient_id",
+							"columnName": "field"
 						},
 						"headcell_field2": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field10"
+								"grid_field2"
 							],
-							"field": "patient_type",
-							"align": "center"
+							"field": "patient_name",
+							"columnName": "field"
 						},
 						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"grid_field"
+							],
+							"field": "patient_name",
+							"columnName": "field"
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "patient_name",
+							"columnName": "field"
+						},
+						"headcell_field3": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field6"
+							],
+							"field": "patient_type",
+							"columnName": "field"
+						},
+						"cell_field3": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field3"
 							],
 							"field": "patient_type",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field2": {
+						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "patient_type"
+							"field": "patient_type",
+							"columnName": "field"
 						},
-						"headcell_field3": {
+						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field11"
+								"simple_grid_field7"
 							],
 							"field": "status",
-							"align": "center"
+							"columnName": "field"
 						},
-						"cell_field3": {
+						"cell_field4": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field4"
 							],
 							"field": "status",
-							"align": "center"
+							"columnName": "field"
 						},
-						"footcell_field3": {
+						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "status"
+							"field": "status",
+							"columnName": "field"
 						},
-						"cell_dpreview": {
-							"model": "cell_dpreview",
-							"items": []
+						"headcell_field5": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field3"
+							],
+							"field": "opd_attendance",
+							"columnName": "field"
+						},
+						"cell_field5": {
+							"model": "cell_field",
+							"items": [
+								"grid_field1"
+							],
+							"field": "opd_attendance",
+							"columnName": "field"
+						},
+						"footcell_field5": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "opd_attendance",
+							"columnName": "field"
 						}
 					},
 					"deferredItems": [],
@@ -2901,6 +3197,8 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field8",
+						"search_panel_field9",
+						"search_panel_field",
 						"search_panel_field7",
 						"search_panel_field6",
 						"search_panel_field5",
@@ -3020,51 +3318,6 @@
 				"delete_selected": {
 					"type": "delete_selected"
 				},
-				"simple_grid_field1": {
-					"field": "transaction_number",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field": {
-					"type": "grid_field_label",
-					"field": "transaction_number"
-				},
-				"simple_grid_field2": {
-					"field": "patient_id",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field9": {
-					"type": "grid_field_label",
-					"field": "patient_id",
-					"label": {
-						"field": "patient_id",
-						"table": "transactions",
-						"type": 3
-					}
-				},
-				"simple_grid_field3": {
-					"field": "patient_type",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field10": {
-					"type": "grid_field_label",
-					"field": "patient_type"
-				},
-				"simple_grid_field4": {
-					"field": "status",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field11": {
-					"type": "grid_field_label",
-					"field": "status"
-				},
 				"username_button": {
 					"type": "username_button",
 					"items": [
@@ -3089,6 +3342,70 @@
 						"1653239510": true,
 						"3769908180": true
 					}
+				},
+				"search_panel_field": {
+					"field": "patient_name",
+					"type": "search_panel_field"
+				},
+				"search_panel_field9": {
+					"field": "opd_attendance",
+					"type": "search_panel_field"
+				},
+				"simple_grid_field1": {
+					"field": "transaction_number",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field": {
+					"type": "grid_field_label",
+					"field": "transaction_number"
+				},
+				"simple_grid_field2": {
+					"field": "patient_id",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field5": {
+					"type": "grid_field_label",
+					"field": "patient_id"
+				},
+				"grid_field": {
+					"field": "patient_name",
+					"type": "grid_field"
+				},
+				"grid_field2": {
+					"type": "grid_field_label",
+					"field": "patient_name"
+				},
+				"simple_grid_field3": {
+					"field": "patient_type",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field6": {
+					"type": "grid_field_label",
+					"field": "patient_type"
+				},
+				"simple_grid_field4": {
+					"field": "status",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field7": {
+					"type": "grid_field_label",
+					"field": "status"
+				},
+				"grid_field1": {
+					"field": "opd_attendance",
+					"type": "grid_field"
+				},
+				"grid_field3": {
+					"type": "grid_field_label",
+					"field": "opd_attendance"
 				}
 			},
 			"version": 13,

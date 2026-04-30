@@ -1,5 +1,5 @@
 {
-	"sql": "SELECT\r\n\tid,\r\n\t`label`,\r\n\tdescription,\r\n\tfund_code,\r\n\tfund_type,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\thospital_accounts",
+	"sql": "SELECT\r\n\tid,\r\n\taccount_number,\r\n\t`label`,\r\n\tdescription,\r\n\tfund_code,\r\n\tfund_type,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\thospital_accounts",
 	"connId": "conn",
 	"originalTable": "hospital_accounts",
 	"name": "hospital_accounts",
@@ -31,7 +31,7 @@
 		{
 			"name": "label",
 			"sqlExpression": "`label`",
-			"index": 2,
+			"index": 3,
 			"strField": "label",
 			"type": 200,
 			"viewFormats": [
@@ -50,7 +50,7 @@
 		{
 			"name": "description",
 			"sqlExpression": "description",
-			"index": 3,
+			"index": 4,
 			"strField": "description",
 			"type": 200,
 			"viewFormats": [
@@ -67,7 +67,7 @@
 		{
 			"name": "created_at",
 			"sqlExpression": "created_at",
-			"index": 6,
+			"index": 7,
 			"strField": "created_at",
 			"type": 135,
 			"viewFormats": [
@@ -90,7 +90,7 @@
 		{
 			"name": "updated_at",
 			"sqlExpression": "updated_at",
-			"index": 7,
+			"index": 8,
 			"strField": "updated_at",
 			"type": 135,
 			"viewFormats": [
@@ -114,7 +114,7 @@
 		{
 			"name": "fund_type",
 			"sqlExpression": "fund_type",
-			"index": 5,
+			"index": 6,
 			"strField": "fund_type",
 			"type": 200,
 			"viewFormats": [
@@ -144,7 +144,7 @@
 		{
 			"name": "fund_code",
 			"sqlExpression": "fund_code",
-			"index": 4,
+			"index": 5,
 			"strField": "fund_code",
 			"type": 200,
 			"viewFormats": [
@@ -171,6 +171,23 @@
 				"English": "Fund Code"
 			},
 			"tableName": "hospital_accounts"
+		},
+		{
+			"name": "account_number",
+			"sqlExpression": "account_number",
+			"index": 2,
+			"strField": "account_number",
+			"type": 3,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Account Number"
+			},
+			"tableName": "hospital_accounts"
 		}
 	],
 	"dbTableInfo": {
@@ -185,6 +202,17 @@
 				"typeName": "bigint(20)",
 				"nullable": false,
 				"autoinc": true,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "account_number",
+				"type": 3,
+				"size": 11,
+				"scale": 0,
+				"typeName": "int(11)",
+				"nullable": true,
+				"autoinc": false,
 				"defaultValueSQL": null,
 				"defaultValue": ""
 			},
@@ -362,7 +390,8 @@
 								"integrated_edit_field5",
 								"integrated_edit_field4",
 								"integrated_edit_field2",
-								"integrated_edit_field3"
+								"integrated_edit_field3",
+								"integrated_edit_field6"
 							]
 						}
 					},
@@ -418,6 +447,11 @@
 				},
 				"integrated_edit_field4": {
 					"field": "fund_code",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field6": {
+					"field": "account_number",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				}
@@ -499,13 +533,13 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"export_field",
 								"export_field1",
 								"export_field2",
 								"export_field3",
 								"export_field4",
 								"export_field6",
-								"export_field5"
+								"export_field5",
+								"export_field7"
 							]
 						}
 					},
@@ -554,10 +588,6 @@
 				"export_cancel": {
 					"type": "export_cancel"
 				},
-				"export_field": {
-					"field": "id",
-					"type": "export_field"
-				},
 				"export_field1": {
 					"field": "label",
 					"type": "export_field"
@@ -580,6 +610,10 @@
 				},
 				"export_field5": {
 					"field": "fund_code",
+					"type": "export_field"
+				},
+				"export_field7": {
+					"field": "account_number",
 					"type": "export_field"
 				}
 			},
@@ -664,13 +698,13 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"import_field",
 								"import_field1",
 								"import_field2",
 								"import_field3",
 								"import_field4",
 								"import_field6",
-								"import_field5"
+								"import_field5",
+								"import_field7"
 							]
 						}
 					},
@@ -681,10 +715,6 @@
 			"items": {
 				"import_header": {
 					"type": "import_header"
-				},
-				"import_field": {
-					"field": "id",
-					"type": "import_field"
 				},
 				"import_field1": {
 					"field": "label",
@@ -708,6 +738,10 @@
 				},
 				"import_field5": {
 					"field": "fund_code",
+					"type": "import_field"
+				},
+				"import_field7": {
+					"field": "account_number",
 					"type": "import_field"
 				}
 			},
@@ -829,7 +863,8 @@
 								"integrated_edit_field5",
 								"integrated_edit_field4",
 								"integrated_edit_field2",
-								"integrated_edit_field3"
+								"integrated_edit_field3",
+								"integrated_edit_field6"
 							]
 						}
 					},
@@ -896,6 +931,12 @@
 				},
 				"integrated_edit_field4": {
 					"field": "fund_code",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field6": {
+					"field": "account_number",
 					"type": "integrated_edit_field",
 					"orientation": 0,
 					"updateOnEdit": false
@@ -1344,165 +1385,198 @@
 						"headcell_field": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field5"
+								"grid_field5"
 							],
-							"field": "id"
+							"field": "account_number",
+							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field"
+								"grid_field4"
 							],
-							"field": "id"
+							"field": "account_number",
+							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "id"
+							"field": "account_number",
+							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field6"
+								"simple_grid_field"
 							],
-							"field": "label"
+							"field": "label",
+							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field1"
 							],
-							"field": "label"
+							"field": "label",
+							"columnName": "field"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "label"
+							"field": "label",
+							"columnName": "field"
 						},
 						"headcell_field2": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field7"
+								"simple_grid_field5"
 							],
-							"field": "description"
+							"field": "description",
+							"columnName": "field"
 						},
 						"cell_field2": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field2"
 							],
-							"field": "description"
+							"field": "description",
+							"columnName": "field"
 						},
 						"footcell_field2": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "description"
+							"field": "description",
+							"columnName": "field"
 						},
 						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field2"
 							],
-							"field": "fund_code"
+							"field": "fund_code",
+							"columnName": "field"
 						},
 						"cell_field3": {
 							"model": "cell_field",
 							"items": [
 								"grid_field"
 							],
-							"field": "fund_code"
+							"field": "fund_code",
+							"columnName": "field"
 						},
 						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "fund_code"
+							"field": "fund_code",
+							"columnName": "field"
 						},
 						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field3"
 							],
-							"field": "fund_type"
+							"field": "fund_type",
+							"columnName": "field"
 						},
 						"cell_field4": {
 							"model": "cell_field",
 							"items": [
 								"grid_field1"
 							],
-							"field": "fund_type"
+							"field": "fund_type",
+							"columnName": "field"
 						},
 						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "fund_type"
+							"field": "fund_type",
+							"columnName": "field"
 						},
 						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field8"
+								"simple_grid_field6"
 							],
-							"field": "created_at"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"cell_field5": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field3"
 							],
-							"field": "created_at"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"footcell_field5": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "created_at"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"headcell_field6": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field9"
+								"simple_grid_field7"
 							],
-							"field": "updated_at"
+							"field": "updated_at",
+							"columnName": "field"
 						},
 						"cell_field6": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field4"
 							],
-							"field": "updated_at"
+							"field": "updated_at",
+							"columnName": "field"
 						},
 						"footcell_field6": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "updated_at"
+							"field": "updated_at",
+							"columnName": "field"
 						},
 						"headcell_checkbox": {
 							"model": "headcell_checkbox",
 							"items": [
 								"grid_checkbox_head"
-							]
+							],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"cell_checkbox": {
 							"model": "cell_checkbox",
 							"items": [
 								"grid_checkbox"
-							]
+							],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"footcell_checkbox": {
 							"model": "footcell_checkbox",
-							"items": []
+							"items": [],
+							"columnName": "checkbox",
+							"field": ""
 						},
 						"headcell_icons": {
 							"model": "headcell_icons",
-							"items": []
+							"items": [],
+							"columnName": "edit",
+							"field": ""
 						},
 						"cell_icons": {
 							"model": "cell_icons",
 							"items": [
 								"grid_edit"
-							]
+							],
+							"columnName": "edit",
+							"field": ""
 						},
 						"footcell_icons": {
 							"model": "footcell_icons",
-							"items": []
+							"items": [],
+							"columnName": "edit",
+							"field": ""
 						}
 					},
 					"deferredItems": [],
@@ -1534,7 +1608,7 @@
 				"search_panel": {
 					"type": "search_panel",
 					"items": [
-						"search_panel_field",
+						"search_panel_field7",
 						"search_panel_field5",
 						"search_panel_field6",
 						"search_panel_field4",
@@ -1563,10 +1637,6 @@
 				},
 				"hide_search_panel": {
 					"type": "hide_search_panel"
-				},
-				"search_panel_field": {
-					"field": "id",
-					"type": "search_panel_field"
 				},
 				"search_panel_field1": {
 					"field": "label",
@@ -1660,15 +1730,19 @@
 					"field": "fund_code",
 					"type": "search_panel_field"
 				},
-				"simple_grid_field": {
-					"field": "id",
+				"search_panel_field7": {
+					"field": "account_number",
+					"type": "search_panel_field"
+				},
+				"grid_field4": {
+					"field": "account_number",
 					"type": "grid_field",
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"simple_grid_field5": {
+				"grid_field5": {
 					"type": "grid_field_label",
-					"field": "id"
+					"field": "account_number"
 				},
 				"simple_grid_field1": {
 					"field": "label",
@@ -1676,7 +1750,7 @@
 					"inlineAdd": true,
 					"inlineEdit": false
 				},
-				"simple_grid_field6": {
+				"simple_grid_field": {
 					"type": "grid_field_label",
 					"field": "label"
 				},
@@ -1686,7 +1760,7 @@
 					"inlineAdd": true,
 					"inlineEdit": false
 				},
-				"simple_grid_field7": {
+				"simple_grid_field5": {
 					"type": "grid_field_label",
 					"field": "description"
 				},
@@ -1716,7 +1790,7 @@
 					"inlineAdd": true,
 					"inlineEdit": false
 				},
-				"simple_grid_field8": {
+				"simple_grid_field6": {
 					"type": "grid_field_label",
 					"field": "created_at"
 				},
@@ -1726,7 +1800,7 @@
 					"inlineAdd": true,
 					"inlineEdit": false
 				},
-				"simple_grid_field9": {
+				"simple_grid_field7": {
 					"type": "grid_field_label",
 					"field": "updated_at"
 				},
@@ -1842,13 +1916,13 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"simple_grid_field",
 								"simple_grid_field1",
 								"simple_grid_field2",
 								"simple_grid_field3",
 								"simple_grid_field4",
 								"simple_grid_field6",
-								"simple_grid_field5"
+								"simple_grid_field5",
+								"simple_grid_field7"
 							]
 						}
 					},
@@ -1865,10 +1939,6 @@
 				},
 				"print_pages": {
 					"type": "print_pages"
-				},
-				"simple_grid_field": {
-					"field": "id",
-					"type": "simple_grid_field"
 				},
 				"simple_grid_field1": {
 					"field": "label",
@@ -1892,6 +1962,10 @@
 				},
 				"simple_grid_field5": {
 					"field": "fund_code",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field7": {
+					"field": "account_number",
 					"type": "simple_grid_field"
 				}
 			},

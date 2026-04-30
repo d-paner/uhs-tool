@@ -1,13 +1,13 @@
 {
 	"orderInfo": [
 		{
-			"index": 15,
-			"field": "ihomis_no",
-			"expr": "created_at",
+			"index": 13,
+			"field": "full_name",
+			"expr": "patients.created_at",
 			"asc": false
 		}
 	],
-	"sql": "SELECT\r\n\tid,\r\n\tfirst_name,\r\n\tlast_name,\r\n\tmiddle_name,\r\n\tCONCAT_WS(' ',first_name, middle_name, last_name) AS full_name,\r\n\tsex,\r\n\tbirthday,\r\n\tclassification,\r\n\toffice,\r\n\tcollege,\r\n\tuhs_id_no,\r\n\temed_no,\r\n\tihomis_no,\r\n\tphilhealth_no,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\tpatients\r\nORDER BY created_at DESC",
+	"sql": "SELECT\r\n\tpatients.id,\r\n\tpatients.patient_id,\r\n\tpatients.person_id,\r\n\tCONCAT_WS(' ', persons.first_name, NULLIF(persons.middle_name, ''), persons.last_name) AS full_name,\r\n\tpatients.person_type_id,\r\n\tpatients.classification,\r\n\tpatients.office,\r\n\tpatients.college,\r\n\tpatients.uhs_id_no,\r\n\tpatients.emed_no,\r\n\tpatients.ihomis_no,\r\n\tpatients.philhealth_no,\r\n\tpatients.created_at,\r\n\tpatients.updated_at\r\nFROM\r\n\tpatients\r\nJOIN persons ON persons.master_person_id = patients.person_id\r\nORDER BY\r\n\tcreated_at DESC",
 	"connId": "conn",
 	"originalTable": "patients",
 	"name": "patients",
@@ -20,7 +20,7 @@
 	"fields": [
 		{
 			"name": "id",
-			"sqlExpression": "id",
+			"sqlExpression": "patients.id",
 			"index": 1,
 			"strField": "id",
 			"type": 3,
@@ -32,116 +32,14 @@
 				{}
 			],
 			"label": {
-				"English": "Id"
-			},
-			"tableName": "patients"
-		},
-		{
-			"name": "first_name",
-			"sqlExpression": "first_name",
-			"index": 2,
-			"strField": "first_name",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{
-					"required": true
-				}
-			],
-			"label": {
-				"English": "First Name"
-			},
-			"tableName": "patients"
-		},
-		{
-			"name": "last_name",
-			"sqlExpression": "last_name",
-			"index": 3,
-			"strField": "last_name",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{
-					"required": true
-				}
-			],
-			"label": {
-				"English": "Last Name"
-			},
-			"tableName": "patients"
-		},
-		{
-			"name": "middle_name",
-			"sqlExpression": "middle_name",
-			"index": 4,
-			"strField": "middle_name",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{}
-			],
-			"label": {
-				"English": "Middle Name"
-			},
-			"tableName": "patients"
-		},
-		{
-			"name": "sex",
-			"sqlExpression": "sex",
-			"index": 6,
-			"strField": "sex",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{
-					"format": "Lookup wizard",
-					"required": true,
-					"lookupType": 0,
-					"lookupValues": [
-						"Male",
-						"Female"
-					]
-				}
-			],
-			"label": {
-				"English": "Sex"
-			},
-			"tableName": "patients"
-		},
-		{
-			"name": "birthday",
-			"sqlExpression": "birthday",
-			"index": 7,
-			"strField": "birthday",
-			"type": 7,
-			"viewFormats": [
-				{
-					"format": "Short Date"
-				}
-			],
-			"editFormats": [
-				{
-					"format": "Date",
-					"dateEditType": 11
-				}
-			],
-			"label": {
-				"English": "Birthday"
+				"English": "Patient ID"
 			},
 			"tableName": "patients"
 		},
 		{
 			"name": "created_at",
-			"sqlExpression": "created_at",
-			"index": 15,
+			"sqlExpression": "patients.created_at",
+			"index": 13,
 			"strField": "created_at",
 			"type": 135,
 			"viewFormats": [
@@ -163,8 +61,8 @@
 		},
 		{
 			"name": "updated_at",
-			"sqlExpression": "updated_at",
-			"index": 16,
+			"sqlExpression": "patients.updated_at",
+			"index": 14,
 			"strField": "updated_at",
 			"type": 135,
 			"viewFormats": [
@@ -186,26 +84,9 @@
 			"tableName": "patients"
 		},
 		{
-			"name": "full_name",
-			"sqlExpression": "CONCAT_WS(' ',first_name, middle_name, last_name)",
-			"index": 5,
-			"strField": "full_name",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{}
-			],
-			"label": {
-				"English": "Full Name"
-			},
-			"tableName": ""
-		},
-		{
 			"name": "classification",
-			"sqlExpression": "classification",
-			"index": 8,
+			"sqlExpression": "patients.classification",
+			"index": 6,
 			"strField": "classification",
 			"type": 200,
 			"viewFormats": [
@@ -238,8 +119,8 @@
 		},
 		{
 			"name": "office",
-			"sqlExpression": "office",
-			"index": 9,
+			"sqlExpression": "patients.office",
+			"index": 7,
 			"strField": "office",
 			"type": 200,
 			"viewFormats": [
@@ -255,8 +136,8 @@
 		},
 		{
 			"name": "college",
-			"sqlExpression": "college",
-			"index": 10,
+			"sqlExpression": "patients.college",
+			"index": 8,
 			"strField": "college",
 			"type": 200,
 			"viewFormats": [
@@ -272,8 +153,8 @@
 		},
 		{
 			"name": "uhs_id_no",
-			"sqlExpression": "uhs_id_no",
-			"index": 11,
+			"sqlExpression": "patients.uhs_id_no",
+			"index": 9,
 			"strField": "uhs_id_no",
 			"type": 200,
 			"viewFormats": [
@@ -289,8 +170,8 @@
 		},
 		{
 			"name": "emed_no",
-			"sqlExpression": "emed_no",
-			"index": 12,
+			"sqlExpression": "patients.emed_no",
+			"index": 10,
 			"strField": "emed_no",
 			"type": 200,
 			"viewFormats": [
@@ -306,8 +187,8 @@
 		},
 		{
 			"name": "ihomis_no",
-			"sqlExpression": "ihomis_no",
-			"index": 13,
+			"sqlExpression": "patients.ihomis_no",
+			"index": 11,
 			"strField": "ihomis_no",
 			"type": 200,
 			"viewFormats": [
@@ -323,8 +204,8 @@
 		},
 		{
 			"name": "philhealth_no",
-			"sqlExpression": "philhealth_no",
-			"index": 14,
+			"sqlExpression": "patients.philhealth_no",
+			"index": 12,
 			"strField": "philhealth_no",
 			"type": 200,
 			"viewFormats": [
@@ -337,16 +218,112 @@
 				"English": "Philhealth No."
 			},
 			"tableName": "patients"
+		},
+		{
+			"name": "person_id",
+			"sqlExpression": "patients.person_id",
+			"index": 3,
+			"strField": "person_id",
+			"type": 3,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"lookupType": 2,
+					"lookupTable": "persons",
+					"lookupTableConnection": "conn",
+					"lookupLinkField": "id",
+					"lookupDisplayField": "id",
+					"lookupCustomDisplay": true,
+					"lookupControlType": 2,
+					"lookupListPage": "addPerson"
+				}
+			],
+			"label": {
+				"English": "Person ID"
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "person_type_id",
+			"sqlExpression": "patients.person_type_id",
+			"index": 5,
+			"strField": "person_type_id",
+			"type": 3,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"lookupType": 2,
+					"lookupTable": "person_types",
+					"lookupTableConnection": "conn",
+					"lookupLinkField": "id",
+					"lookupDisplayField": "type_name"
+				}
+			],
+			"label": {
+				"English": "Type"
+			},
+			"tableName": "patients"
+		},
+		{
+			"name": "full_name",
+			"sqlExpression": "CONCAT_WS(' ', persons.first_name, NULLIF(persons.middle_name, ''), persons.last_name)",
+			"index": 4,
+			"strField": "full_name",
+			"type": 201,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Text area"
+				}
+			],
+			"label": {
+				"English": "Full Name"
+			},
+			"tableName": ""
+		},
+		{
+			"name": "patient_id",
+			"sqlExpression": "patients.patient_id",
+			"index": 2,
+			"strField": "patient_id",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "Patient ID"
+			},
+			"tableName": "patients"
 		}
 	],
 	"eventHandlers": [
 		{
+			"eventId": "EVENT_BEFOREPROCESS_ADD",
+			"pageType": "add",
+			"code": "include_once('custom/set_type.php');"
+		},
+		{
+			"eventId": "EVENT_JS_ONLOAD",
+			"pageType": "add",
+			"code": "$(\"[data-field='person_type_id']\").hide();"
+		},
+		{
 			"eventId": "EVENT_BEFOREADD",
 			"pageType": "add",
-			"code": "$values['first_name'] = ucwords($values['first_name']);\n$values['last_name'] = ucwords($values['last_name']);\n$values['middle_name'] = ucwords($values['middle_name']);\n\nreturn true;"
+			"code": "$type = 'Patient';\n$values['person_type_id'] = setPersonType($type);\n\n// check if data exists\n/*\n$query = \"SELECT * FROM person_type_map \n          WHERE person_id = \".$values['person_id'].\" \n          AND type_id = \".$values['person_type_id'].\"\n        \";\n\n$runSql = DB::Query($query);\n\nif($runSql->fetchAssoc()) {\n    $message = 'Already have patient profile.';\n    return false;\n} else {\n    $queryInsert = \"INSERT INTO person_type_map VALUES (\".$values['person_id'].\", \".$values['person_type_id'].\", now(), now())\";\n    $exec = DB::Query($queryInsert);\n    return true;\n}\n*/\nreturn true;"
 		}
 	],
-	"strOrderBy": "ORDER BY created_at DESC",
+	"strOrderBy": "ORDER BY\r\n\tcreated_at DESC",
 	"dbTableInfo": {
 		"type": 0,
 		"foreignKeys": [],
@@ -363,55 +340,33 @@
 				"defaultValue": ""
 			},
 			{
-				"name": "first_name",
+				"name": "patient_id",
 				"type": 200,
-				"size": 255,
+				"size": 100,
 				"scale": 0,
-				"typeName": "varchar(255)",
-				"nullable": false,
+				"typeName": "varchar(100)",
+				"nullable": true,
 				"autoinc": false,
 				"defaultValueSQL": null,
 				"defaultValue": ""
 			},
 			{
-				"name": "last_name",
-				"type": 200,
-				"size": 255,
+				"name": "person_id",
+				"type": 3,
+				"size": 11,
 				"scale": 0,
-				"typeName": "varchar(255)",
-				"nullable": false,
+				"typeName": "int(11)",
+				"nullable": true,
 				"autoinc": false,
 				"defaultValueSQL": null,
 				"defaultValue": ""
 			},
 			{
-				"name": "middle_name",
-				"type": 200,
-				"size": 255,
+				"name": "person_type_id",
+				"type": 3,
+				"size": 11,
 				"scale": 0,
-				"typeName": "varchar(255)",
-				"nullable": false,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "sex",
-				"type": 200,
-				"size": 255,
-				"scale": 0,
-				"typeName": "varchar(255)",
-				"nullable": false,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "birthday",
-				"type": 7,
-				"size": 0,
-				"scale": 0,
-				"typeName": "date",
+				"typeName": "int(11)",
 				"nullable": true,
 				"autoinc": false,
 				"defaultValueSQL": null,
@@ -621,9 +576,6 @@
 							"items": [
 								"integrated_edit_field",
 								"integrated_edit_field1",
-								"integrated_edit_field2",
-								"integrated_edit_field3",
-								"integrated_edit_field4",
 								"integrated_edit_field7",
 								"integrated_edit_field8",
 								"integrated_edit_field9",
@@ -660,31 +612,6 @@
 				},
 				"add_reset": {
 					"type": "add_reset"
-				},
-				"integrated_edit_field": {
-					"field": "first_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field1": {
-					"field": "last_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field2": {
-					"field": "middle_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field3": {
-					"field": "sex",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field4": {
-					"field": "birthday",
-					"type": "integrated_edit_field",
-					"orientation": 0
 				},
 				"integrated_edit_field5": {
 					"field": "created_at",
@@ -735,6 +662,26 @@
 					"field": "philhealth_no",
 					"type": "integrated_edit_field",
 					"orientation": 0
+				},
+				"integrated_edit_field": {
+					"field": "person_id",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"label": {
+						"field": "person_id",
+						"table": "patients",
+						"type": 3
+					}
+				},
+				"integrated_edit_field1": {
+					"field": "person_type_id",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"label": {
+						"field": "person_type_id",
+						"table": "patients",
+						"type": 3
+					}
 				}
 			},
 			"version": 13,
@@ -814,21 +761,19 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"export_field1",
-								"export_field2",
-								"export_field3",
-								"export_field4",
-								"export_field5",
 								"export_field6",
 								"export_field7",
-								"export_field",
 								"export_field8",
 								"export_field9",
 								"export_field10",
 								"export_field11",
 								"export_field12",
 								"export_field13",
-								"export_field14"
+								"export_field14",
+								"export_field",
+								"export_field1",
+								"export_field2",
+								"export_field3"
 							]
 						}
 					},
@@ -877,36 +822,12 @@
 				"export_cancel": {
 					"type": "export_cancel"
 				},
-				"export_field1": {
-					"field": "first_name",
-					"type": "export_field"
-				},
-				"export_field2": {
-					"field": "last_name",
-					"type": "export_field"
-				},
-				"export_field3": {
-					"field": "middle_name",
-					"type": "export_field"
-				},
-				"export_field4": {
-					"field": "sex",
-					"type": "export_field"
-				},
-				"export_field5": {
-					"field": "birthday",
-					"type": "export_field"
-				},
 				"export_field6": {
 					"field": "created_at",
 					"type": "export_field"
 				},
 				"export_field7": {
 					"field": "updated_at",
-					"type": "export_field"
-				},
-				"export_field": {
-					"field": "full_name",
 					"type": "export_field"
 				},
 				"export_field8": {
@@ -935,6 +856,22 @@
 				},
 				"export_field14": {
 					"field": "philhealth_no",
+					"type": "export_field"
+				},
+				"export_field": {
+					"field": "person_id",
+					"type": "export_field"
+				},
+				"export_field1": {
+					"field": "person_type_id",
+					"type": "export_field"
+				},
+				"export_field2": {
+					"field": "full_name",
+					"type": "export_field"
+				},
+				"export_field3": {
+					"field": "patient_id",
 					"type": "export_field"
 				}
 			},
@@ -1019,11 +956,6 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"import_field1",
-								"import_field2",
-								"import_field3",
-								"import_field4",
-								"import_field5",
 								"import_field6",
 								"import_field7",
 								"import_field",
@@ -1032,7 +964,10 @@
 								"import_field10",
 								"import_field11",
 								"import_field12",
-								"import_field13"
+								"import_field13",
+								"import_field1",
+								"import_field2",
+								"import_field3"
 							]
 						}
 					},
@@ -1043,26 +978,6 @@
 			"items": {
 				"import_header": {
 					"type": "import_header"
-				},
-				"import_field1": {
-					"field": "first_name",
-					"type": "import_field"
-				},
-				"import_field2": {
-					"field": "last_name",
-					"type": "import_field"
-				},
-				"import_field3": {
-					"field": "middle_name",
-					"type": "import_field"
-				},
-				"import_field4": {
-					"field": "sex",
-					"type": "import_field"
-				},
-				"import_field5": {
-					"field": "birthday",
-					"type": "import_field"
 				},
 				"import_field6": {
 					"field": "created_at",
@@ -1098,6 +1013,18 @@
 				},
 				"import_field13": {
 					"field": "philhealth_no",
+					"type": "import_field"
+				},
+				"import_field1": {
+					"field": "person_id",
+					"type": "import_field"
+				},
+				"import_field2": {
+					"field": "person_type_id",
+					"type": "import_field"
+				},
+				"import_field3": {
+					"field": "patient_id",
 					"type": "import_field"
 				}
 			},
@@ -1214,11 +1141,6 @@
 						"c3": {
 							"model": "c3",
 							"items": [
-								"integrated_edit_field",
-								"integrated_edit_field1",
-								"integrated_edit_field2",
-								"integrated_edit_field3",
-								"integrated_edit_field4",
 								"integrated_edit_field7",
 								"integrated_edit_field8",
 								"integrated_edit_field9",
@@ -1227,7 +1149,9 @@
 								"integrated_edit_field12",
 								"integrated_edit_field13",
 								"integrated_edit_field5",
-								"integrated_edit_field6"
+								"integrated_edit_field6",
+								"integrated_edit_field",
+								"integrated_edit_field1"
 							]
 						}
 					},
@@ -1262,36 +1186,6 @@
 				},
 				"edit_close": {
 					"type": "edit_close"
-				},
-				"integrated_edit_field": {
-					"field": "first_name",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field1": {
-					"field": "last_name",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field2": {
-					"field": "middle_name",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field3": {
-					"field": "sex",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field4": {
-					"field": "birthday",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
 				},
 				"integrated_edit_field5": {
 					"field": "created_at",
@@ -1346,6 +1240,18 @@
 				},
 				"integrated_edit_field13": {
 					"field": "philhealth_no",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field": {
+					"field": "person_id",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
+				"integrated_edit_field1": {
+					"field": "person_type_id",
 					"type": "integrated_edit_field",
 					"orientation": 0,
 					"updateOnEdit": false
@@ -1462,12 +1368,6 @@
 						"c3": {
 							"model": "c3",
 							"items": [
-								"integrated_edit_field1",
-								"integrated_edit_field2",
-								"integrated_edit_field3",
-								"integrated_edit_field4",
-								"integrated_edit_field5",
-								"integrated_edit_field",
 								"integrated_edit_field8",
 								"integrated_edit_field9",
 								"integrated_edit_field10",
@@ -1476,7 +1376,11 @@
 								"integrated_edit_field13",
 								"integrated_edit_field14",
 								"integrated_edit_field6",
-								"integrated_edit_field7"
+								"integrated_edit_field7",
+								"integrated_edit_field",
+								"integrated_edit_field1",
+								"integrated_edit_field2",
+								"integrated_edit_field3"
 							]
 						}
 					},
@@ -1496,31 +1400,6 @@
 				"view_close": {
 					"type": "view_close"
 				},
-				"integrated_edit_field1": {
-					"field": "first_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field2": {
-					"field": "last_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field3": {
-					"field": "middle_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field4": {
-					"field": "sex",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field5": {
-					"field": "birthday",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
 				"integrated_edit_field6": {
 					"field": "created_at",
 					"type": "integrated_edit_field",
@@ -1539,11 +1418,6 @@
 				},
 				"view_edit": {
 					"type": "view_edit"
-				},
-				"integrated_edit_field": {
-					"field": "full_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
 				},
 				"integrated_edit_field8": {
 					"field": "classification",
@@ -1579,6 +1453,26 @@
 					"field": "philhealth_no",
 					"type": "integrated_edit_field",
 					"orientation": 0
+				},
+				"integrated_edit_field": {
+					"field": "person_id",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field1": {
+					"field": "person_type_id",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field2": {
+					"field": "full_name",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field3": {
+					"field": "patient_id",
+					"type": "integrated_edit_field",
+					"orientation": 0
 				}
 			},
 			"version": 13,
@@ -1596,7 +1490,7 @@
 			"type": "list",
 			"layoutId": "leftbar",
 			"disabled": false,
-			"default": 0,
+			"default": 2,
 			"forms": {
 				"above-grid": {
 					"modelId": "list-above-grid",
@@ -1782,15 +1676,6 @@
 								},
 								{
 									"cell": "headcell_field10"
-								},
-								{
-									"cell": "headcell_field11"
-								},
-								{
-									"cell": "headcell_field12"
-								},
-								{
-									"cell": "headcell_field13"
 								}
 							]
 						},
@@ -1835,15 +1720,6 @@
 								},
 								{
 									"cell": "cell_field10"
-								},
-								{
-									"cell": "cell_field11"
-								},
-								{
-									"cell": "cell_field12"
-								},
-								{
-									"cell": "cell_field13"
 								}
 							]
 						},
@@ -1888,15 +1764,6 @@
 								},
 								{
 									"cell": "footcell_field10"
-								},
-								{
-									"cell": "footcell_field11"
-								},
-								{
-									"cell": "footcell_field12"
-								},
-								{
-									"cell": "footcell_field13"
 								}
 							]
 						}
@@ -1905,114 +1772,49 @@
 						"headcell_field": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field"
+								"grid_field19"
 							],
-							"field": "first_name",
+							"field": "patient_id",
 							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field1"
+								"grid_field18"
 							],
-							"field": "first_name",
+							"field": "patient_id",
 							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "first_name",
+							"field": "patient_id",
 							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field8"
+								"grid_field16"
 							],
-							"field": "last_name",
+							"field": "full_name",
 							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field2"
+								"grid_field15"
 							],
-							"field": "last_name",
-							"columnName": "field"
+							"field": "full_name",
+							"columnName": "field",
+							"nowrap": true
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "last_name",
+							"field": "full_name",
 							"columnName": "field"
 						},
 						"headcell_field2": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field9"
-							],
-							"field": "middle_name",
-							"columnName": "field"
-						},
-						"cell_field2": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field3"
-							],
-							"field": "middle_name",
-							"columnName": "field"
-						},
-						"footcell_field2": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "middle_name",
-							"columnName": "field"
-						},
-						"headcell_field3": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field10"
-							],
-							"field": "sex",
-							"columnName": "field"
-						},
-						"cell_field3": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field4"
-							],
-							"field": "sex",
-							"columnName": "field"
-						},
-						"footcell_field3": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "sex",
-							"columnName": "field"
-						},
-						"headcell_field4": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field11"
-							],
-							"field": "birthday",
-							"columnName": "field"
-						},
-						"cell_field4": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field5"
-							],
-							"field": "birthday",
-							"columnName": "field"
-						},
-						"footcell_field4": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "birthday",
-							"columnName": "field"
-						},
-						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field3"
@@ -2020,7 +1822,7 @@
 							"field": "classification",
 							"columnName": "field"
 						},
-						"cell_field5": {
+						"cell_field2": {
 							"model": "cell_field",
 							"items": [
 								"grid_field"
@@ -2028,13 +1830,13 @@
 							"field": "classification",
 							"columnName": "field"
 						},
-						"footcell_field5": {
+						"footcell_field2": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "classification",
 							"columnName": "field"
 						},
-						"headcell_field6": {
+						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field4"
@@ -2042,7 +1844,7 @@
 							"field": "office",
 							"columnName": "field"
 						},
-						"cell_field6": {
+						"cell_field3": {
 							"model": "cell_field",
 							"items": [
 								"grid_field1"
@@ -2050,13 +1852,13 @@
 							"field": "office",
 							"columnName": "field"
 						},
-						"footcell_field6": {
+						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "office",
 							"columnName": "field"
 						},
-						"headcell_field7": {
+						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field5"
@@ -2064,7 +1866,7 @@
 							"field": "college",
 							"columnName": "field"
 						},
-						"cell_field7": {
+						"cell_field4": {
 							"model": "cell_field",
 							"items": [
 								"grid_field2"
@@ -2072,13 +1874,13 @@
 							"field": "college",
 							"columnName": "field"
 						},
-						"footcell_field7": {
+						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "college",
 							"columnName": "field"
 						},
-						"headcell_field8": {
+						"headcell_field5": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field10"
@@ -2086,7 +1888,7 @@
 							"field": "uhs_id_no",
 							"columnName": "field"
 						},
-						"cell_field8": {
+						"cell_field5": {
 							"model": "cell_field",
 							"items": [
 								"grid_field6"
@@ -2094,13 +1896,13 @@
 							"field": "uhs_id_no",
 							"columnName": "field"
 						},
-						"footcell_field8": {
+						"footcell_field5": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "uhs_id_no",
 							"columnName": "field"
 						},
-						"headcell_field9": {
+						"headcell_field6": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field11"
@@ -2108,7 +1910,7 @@
 							"field": "emed_no",
 							"columnName": "field"
 						},
-						"cell_field9": {
+						"cell_field6": {
 							"model": "cell_field",
 							"items": [
 								"grid_field7"
@@ -2116,13 +1918,13 @@
 							"field": "emed_no",
 							"columnName": "field"
 						},
-						"footcell_field9": {
+						"footcell_field6": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "emed_no",
 							"columnName": "field"
 						},
-						"headcell_field10": {
+						"headcell_field7": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field12"
@@ -2130,7 +1932,7 @@
 							"field": "ihomis_no",
 							"columnName": "field"
 						},
-						"cell_field10": {
+						"cell_field7": {
 							"model": "cell_field",
 							"items": [
 								"grid_field8"
@@ -2138,13 +1940,13 @@
 							"field": "ihomis_no",
 							"columnName": "field"
 						},
-						"footcell_field10": {
+						"footcell_field7": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "ihomis_no",
 							"columnName": "field"
 						},
-						"headcell_field11": {
+						"headcell_field8": {
 							"model": "headcell_field",
 							"items": [
 								"grid_field13"
@@ -2152,7 +1954,7 @@
 							"field": "philhealth_no",
 							"columnName": "field"
 						},
-						"cell_field11": {
+						"cell_field8": {
 							"model": "cell_field",
 							"items": [
 								"grid_field9"
@@ -2160,21 +1962,21 @@
 							"field": "philhealth_no",
 							"columnName": "field"
 						},
-						"footcell_field11": {
+						"footcell_field8": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "philhealth_no",
 							"columnName": "field"
 						},
-						"headcell_field12": {
+						"headcell_field9": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field12"
+								"simple_grid_field"
 							],
 							"field": "created_at",
 							"columnName": "field"
 						},
-						"cell_field12": {
+						"cell_field9": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field6"
@@ -2182,21 +1984,21 @@
 							"field": "created_at",
 							"columnName": "field"
 						},
-						"footcell_field12": {
+						"footcell_field9": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "created_at",
 							"columnName": "field"
 						},
-						"headcell_field13": {
+						"headcell_field10": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field13"
+								"simple_grid_field8"
 							],
 							"field": "updated_at",
 							"columnName": "field"
 						},
-						"cell_field13": {
+						"cell_field10": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field7"
@@ -2204,7 +2006,7 @@
 							"field": "updated_at",
 							"columnName": "field"
 						},
-						"footcell_field13": {
+						"footcell_field10": {
 							"model": "footcell_field",
 							"items": [],
 							"field": "updated_at",
@@ -2287,6 +2089,10 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field7",
+						"search_panel_field3",
+						"search_panel_field2",
+						"search_panel_field1",
+						"search_panel_field",
 						"search_panel_field14",
 						"search_panel_field13",
 						"search_panel_field12",
@@ -2294,15 +2100,9 @@
 						"search_panel_field10",
 						"search_panel_field9",
 						"search_panel_field8",
-						"search_panel_field",
-						"search_panel_field6",
-						"search_panel_field5",
-						"search_panel_field4",
-						"search_panel_field3",
-						"search_panel_field2",
-						"search_panel_field1"
+						"search_panel_field6"
 					],
-					"_flexiblePanel": true
+					"_flexiblePanel": false
 				},
 				"list_options": {
 					"type": "list_options",
@@ -2324,33 +2124,17 @@
 				"hide_search_panel": {
 					"type": "hide_search_panel"
 				},
-				"search_panel_field1": {
-					"field": "first_name",
-					"type": "search_panel_field"
-				},
-				"search_panel_field2": {
-					"field": "last_name",
-					"type": "search_panel_field"
-				},
-				"search_panel_field3": {
-					"field": "middle_name",
-					"type": "search_panel_field"
-				},
-				"search_panel_field4": {
-					"field": "sex",
-					"type": "search_panel_field"
-				},
-				"search_panel_field5": {
-					"field": "birthday",
-					"type": "search_panel_field"
-				},
 				"search_panel_field6": {
 					"field": "created_at",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field7": {
 					"field": "updated_at",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"expand_menu_button": {
 					"type": "expand_menu_button"
@@ -2425,87 +2209,96 @@
 				"logout_link": {
 					"type": "logout_link"
 				},
-				"search_panel_field": {
-					"field": "full_name",
-					"type": "search_panel_field"
-				},
 				"search_panel_field8": {
 					"field": "classification",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field9": {
 					"field": "office",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field10": {
 					"field": "college",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field11": {
 					"field": "uhs_id_no",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field12": {
 					"field": "emed_no",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field13": {
 					"field": "ihomis_no",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
 				"search_panel_field14": {
 					"field": "philhealth_no",
-					"type": "search_panel_field"
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
 				},
-				"simple_grid_field1": {
-					"field": "first_name",
+				"search_panel_field": {
+					"field": "person_id",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"search_panel_field1": {
+					"field": "person_type_id",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"search_panel_field2": {
+					"field": "full_name",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"search_panel_field3": {
+					"field": "patient_id",
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
+				},
+				"grid_field18": {
+					"field": "patient_id",
 					"type": "grid_field",
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"simple_grid_field": {
+				"grid_field19": {
 					"type": "grid_field_label",
-					"field": "first_name"
+					"field": "patient_id",
+					"label": {
+						"field": "patient_id",
+						"table": "patients",
+						"type": 3
+					}
 				},
-				"simple_grid_field2": {
-					"field": "last_name",
+				"grid_field15": {
+					"field": "full_name",
 					"type": "grid_field",
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"simple_grid_field8": {
+				"grid_field16": {
 					"type": "grid_field_label",
-					"field": "last_name"
-				},
-				"simple_grid_field3": {
-					"field": "middle_name",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field9": {
-					"type": "grid_field_label",
-					"field": "middle_name"
-				},
-				"simple_grid_field4": {
-					"field": "sex",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field10": {
-					"type": "grid_field_label",
-					"field": "sex"
-				},
-				"simple_grid_field5": {
-					"field": "birthday",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field11": {
-					"type": "grid_field_label",
-					"field": "birthday"
+					"field": "full_name"
 				},
 				"grid_field": {
 					"field": "classification",
@@ -2603,7 +2396,7 @@
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"simple_grid_field12": {
+				"simple_grid_field": {
 					"type": "grid_field_label",
 					"field": "created_at"
 				},
@@ -2613,7 +2406,7 @@
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"simple_grid_field13": {
+				"simple_grid_field8": {
 					"type": "grid_field_label",
 					"field": "updated_at"
 				},
@@ -2733,21 +2526,19 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"simple_grid_field1",
-								"simple_grid_field2",
-								"simple_grid_field3",
-								"simple_grid_field4",
-								"simple_grid_field5",
 								"simple_grid_field6",
 								"simple_grid_field7",
-								"simple_grid_field",
 								"simple_grid_field8",
 								"simple_grid_field9",
 								"simple_grid_field10",
 								"simple_grid_field11",
 								"simple_grid_field12",
 								"simple_grid_field13",
-								"simple_grid_field14"
+								"simple_grid_field14",
+								"simple_grid_field",
+								"simple_grid_field1",
+								"simple_grid_field2",
+								"simple_grid_field3"
 							]
 						}
 					},
@@ -2765,36 +2556,12 @@
 				"print_pages": {
 					"type": "print_pages"
 				},
-				"simple_grid_field1": {
-					"field": "first_name",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field2": {
-					"field": "last_name",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field3": {
-					"field": "middle_name",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field4": {
-					"field": "sex",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field5": {
-					"field": "birthday",
-					"type": "simple_grid_field"
-				},
 				"simple_grid_field6": {
 					"field": "created_at",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field7": {
 					"field": "updated_at",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field": {
-					"field": "full_name",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field8": {
@@ -2823,6 +2590,22 @@
 				},
 				"simple_grid_field14": {
 					"field": "philhealth_no",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field": {
+					"field": "person_id",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field1": {
+					"field": "person_type_id",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field2": {
+					"field": "full_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field3": {
+					"field": "patient_id",
 					"type": "simple_grid_field"
 				}
 			},
@@ -2996,34 +2779,16 @@
 									"cell": "headcell_field1"
 								},
 								{
-									"cell": "headcell_field4"
-								},
-								{
-									"cell": "headcell_field5"
-								},
-								{
-									"cell": "headcell_field6"
-								},
-								{
 									"cell": "headcell_field2"
 								},
 								{
 									"cell": "headcell_field3"
 								},
 								{
-									"cell": "headcell_field7"
+									"cell": "headcell_field4"
 								},
 								{
-									"cell": "headcell_field8"
-								},
-								{
-									"cell": "headcell_field9"
-								},
-								{
-									"cell": "headcell_field10"
-								},
-								{
-									"cell": "headcell_field11"
+									"cell": "headcell_field5"
 								}
 							]
 						},
@@ -3037,34 +2802,16 @@
 									"cell": "cell_field1"
 								},
 								{
-									"cell": "cell_field4"
-								},
-								{
-									"cell": "cell_field5"
-								},
-								{
-									"cell": "cell_field6"
-								},
-								{
 									"cell": "cell_field2"
 								},
 								{
 									"cell": "cell_field3"
 								},
 								{
-									"cell": "cell_field7"
+									"cell": "cell_field4"
 								},
 								{
-									"cell": "cell_field8"
-								},
-								{
-									"cell": "cell_field9"
-								},
-								{
-									"cell": "cell_field10"
-								},
-								{
-									"cell": "cell_field11"
+									"cell": "cell_field5"
 								}
 							]
 						},
@@ -3078,34 +2825,16 @@
 									"cell": "footcell_field1"
 								},
 								{
-									"cell": "footcell_field4"
-								},
-								{
-									"cell": "footcell_field5"
-								},
-								{
-									"cell": "footcell_field6"
-								},
-								{
 									"cell": "footcell_field2"
 								},
 								{
 									"cell": "footcell_field3"
 								},
 								{
-									"cell": "footcell_field7"
+									"cell": "footcell_field4"
 								},
 								{
-									"cell": "footcell_field8"
-								},
-								{
-									"cell": "footcell_field9"
-								},
-								{
-									"cell": "footcell_field10"
-								},
-								{
-									"cell": "footcell_field11"
+									"cell": "footcell_field5"
 								}
 							]
 						}
@@ -3114,230 +2843,134 @@
 						"headcell_field": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field1"
+								"grid_field"
 							],
-							"field": "id"
+							"field": "patient_id",
+							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
-								"grid_field"
+								"grid_field2"
 							],
-							"field": "id"
+							"field": "patient_id",
+							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "id"
+							"field": "patient_id",
+							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label"
+								"grid_field21"
 							],
-							"field": "first_name"
+							"field": "full_name",
+							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
-								"grid_field2"
+								"grid_field20"
 							],
-							"field": "first_name"
+							"field": "full_name",
+							"columnName": "field"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "first_name"
-						},
-						"headcell_field4": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field10"
-							],
-							"field": "sex"
-						},
-						"cell_field4": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field4"
-							],
-							"field": "sex"
-						},
-						"footcell_field4": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "sex"
-						},
-						"headcell_field5": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field11"
-							],
-							"field": "birthday"
-						},
-						"cell_field5": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field5"
-							],
-							"field": "birthday"
-						},
-						"footcell_field5": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "birthday"
-						},
-						"headcell_field6": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field12"
-							],
-							"field": "created_at"
-						},
-						"cell_field6": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field6"
-							],
-							"field": "created_at"
-						},
-						"footcell_field6": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "created_at"
+							"field": "full_name",
+							"columnName": "field"
 						},
 						"headcell_field2": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label1"
+								"simple_grid_field"
 							],
-							"field": "classification"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"cell_field2": {
 							"model": "cell_field",
 							"items": [
-								"grid_field3"
+								"simple_grid_field6"
 							],
-							"field": "classification"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"footcell_field2": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "classification"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label2"
+								"grid_field4"
 							],
-							"field": "office"
+							"field": "classification",
+							"columnName": "field"
 						},
 						"cell_field3": {
 							"model": "cell_field",
 							"items": [
-								"grid_field4"
+								"grid_field3"
 							],
-							"field": "office"
+							"field": "classification",
+							"columnName": "field"
 						},
 						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "office"
+							"field": "classification",
+							"columnName": "field"
 						},
-						"headcell_field7": {
+						"headcell_field4": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field_label3"
+								"grid_field7"
 							],
-							"field": "college"
+							"field": "uhs_id_no",
+							"columnName": "field"
 						},
-						"cell_field7": {
-							"model": "cell_field",
-							"items": [
-								"grid_field5"
-							],
-							"field": "college"
-						},
-						"footcell_field7": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "college"
-						},
-						"headcell_field8": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field_label4"
-							],
-							"field": "uhs_id_no"
-						},
-						"cell_field8": {
+						"cell_field4": {
 							"model": "cell_field",
 							"items": [
 								"grid_field6"
 							],
-							"field": "uhs_id_no"
+							"field": "uhs_id_no",
+							"columnName": "field"
 						},
-						"footcell_field8": {
+						"footcell_field4": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "uhs_id_no"
+							"field": "uhs_id_no",
+							"columnName": "field"
 						},
-						"headcell_field9": {
+						"headcell_field5": {
 							"model": "headcell_field",
-							"items": [
-								"grid_field_label5"
-							],
-							"field": "emed_no"
-						},
-						"cell_field9": {
-							"model": "cell_field",
-							"items": [
-								"grid_field7"
-							],
-							"field": "emed_no"
-						},
-						"footcell_field9": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "emed_no"
-						},
-						"headcell_field10": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field_label6"
-							],
-							"field": "ihomis_no"
-						},
-						"cell_field10": {
-							"model": "cell_field",
 							"items": [
 								"grid_field8"
 							],
-							"field": "ihomis_no"
+							"field": "college",
+							"columnName": "field"
 						},
-						"footcell_field10": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "ihomis_no"
-						},
-						"headcell_field11": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field_label7"
-							],
-							"field": "philhealth_no"
-						},
-						"cell_field11": {
+						"cell_field5": {
 							"model": "cell_field",
 							"items": [
-								"grid_field9"
+								"grid_field5"
 							],
-							"field": "philhealth_no"
+							"field": "college",
+							"columnName": "field"
 						},
-						"footcell_field11": {
+						"footcell_field5": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "philhealth_no"
+							"field": "college",
+							"columnName": "field"
 						}
 					},
 					"deferredItems": [],
@@ -3373,6 +3006,10 @@
 					"type": "search_panel",
 					"items": [
 						"search_panel_field7",
+						"search_panel_field3",
+						"search_panel_field2",
+						"search_panel_field1",
+						"search_panel_field",
 						"search_panel_field14",
 						"search_panel_field13",
 						"search_panel_field12",
@@ -3380,13 +3017,7 @@
 						"search_panel_field10",
 						"search_panel_field9",
 						"search_panel_field8",
-						"search_panel_field",
-						"search_panel_field6",
-						"search_panel_field5",
-						"search_panel_field4",
-						"search_panel_field3",
-						"search_panel_field2",
-						"search_panel_field1"
+						"search_panel_field6"
 					],
 					"_flexiblePanel": true
 				},
@@ -3409,26 +3040,6 @@
 				},
 				"hide_search_panel": {
 					"type": "hide_search_panel"
-				},
-				"search_panel_field1": {
-					"field": "first_name",
-					"type": "search_panel_field"
-				},
-				"search_panel_field2": {
-					"field": "last_name",
-					"type": "search_panel_field"
-				},
-				"search_panel_field3": {
-					"field": "middle_name",
-					"type": "search_panel_field"
-				},
-				"search_panel_field4": {
-					"field": "sex",
-					"type": "search_panel_field"
-				},
-				"search_panel_field5": {
-					"field": "birthday",
-					"type": "search_panel_field"
 				},
 				"search_panel_field6": {
 					"field": "created_at",
@@ -3489,44 +3100,6 @@
 				"delete_selected": {
 					"type": "delete_selected"
 				},
-				"grid_field1": {
-					"type": "grid_field_label",
-					"field": "id"
-				},
-				"grid_field": {
-					"field": "id",
-					"type": "grid_field"
-				},
-				"simple_grid_field10": {
-					"type": "grid_field_label",
-					"field": "sex"
-				},
-				"simple_grid_field4": {
-					"field": "sex",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field11": {
-					"type": "grid_field_label",
-					"field": "birthday"
-				},
-				"simple_grid_field5": {
-					"field": "birthday",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field12": {
-					"type": "grid_field_label",
-					"field": "created_at"
-				},
-				"simple_grid_field6": {
-					"field": "created_at",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
 				"username_button": {
 					"type": "username_button",
 					"items": [
@@ -3544,34 +3117,6 @@
 				"logout_link": {
 					"type": "logout_link"
 				},
-				"grid_field2": {
-					"field": "full_name",
-					"type": "grid_field"
-				},
-				"grid_field_label": {
-					"type": "grid_field_label",
-					"field": "full_name"
-				},
-				"search_panel_field": {
-					"field": "full_name",
-					"type": "search_panel_field"
-				},
-				"grid_field3": {
-					"field": "classification",
-					"type": "grid_field"
-				},
-				"grid_field_label1": {
-					"type": "grid_field_label",
-					"field": "classification"
-				},
-				"grid_field4": {
-					"field": "office",
-					"type": "grid_field"
-				},
-				"grid_field_label2": {
-					"type": "grid_field_label",
-					"field": "office"
-				},
 				"search_panel_field8": {
 					"field": "classification",
 					"type": "search_panel_field"
@@ -3580,49 +3125,9 @@
 					"field": "office",
 					"type": "search_panel_field"
 				},
-				"grid_field5": {
-					"field": "college",
-					"type": "grid_field"
-				},
-				"grid_field_label3": {
-					"type": "grid_field_label",
-					"field": "college"
-				},
 				"search_panel_field10": {
 					"field": "college",
 					"type": "search_panel_field"
-				},
-				"grid_field6": {
-					"field": "uhs_id_no",
-					"type": "grid_field"
-				},
-				"grid_field_label4": {
-					"type": "grid_field_label",
-					"field": "uhs_id_no"
-				},
-				"grid_field7": {
-					"field": "emed_no",
-					"type": "grid_field"
-				},
-				"grid_field_label5": {
-					"type": "grid_field_label",
-					"field": "emed_no"
-				},
-				"grid_field8": {
-					"field": "ihomis_no",
-					"type": "grid_field"
-				},
-				"grid_field_label6": {
-					"type": "grid_field_label",
-					"field": "ihomis_no"
-				},
-				"grid_field9": {
-					"field": "philhealth_no",
-					"type": "grid_field"
-				},
-				"grid_field_label7": {
-					"type": "grid_field_label",
-					"field": "philhealth_no"
 				},
 				"search_panel_field11": {
 					"field": "uhs_id_no",
@@ -3639,6 +3144,72 @@
 				"search_panel_field14": {
 					"field": "philhealth_no",
 					"type": "search_panel_field"
+				},
+				"search_panel_field": {
+					"field": "person_id",
+					"type": "search_panel_field"
+				},
+				"search_panel_field1": {
+					"field": "person_type_id",
+					"type": "search_panel_field"
+				},
+				"search_panel_field2": {
+					"field": "full_name",
+					"type": "search_panel_field"
+				},
+				"search_panel_field3": {
+					"field": "patient_id",
+					"type": "search_panel_field"
+				},
+				"grid_field2": {
+					"field": "patient_id",
+					"type": "grid_field"
+				},
+				"grid_field": {
+					"type": "grid_field_label",
+					"field": "patient_id"
+				},
+				"grid_field20": {
+					"field": "full_name",
+					"type": "grid_field"
+				},
+				"grid_field21": {
+					"type": "grid_field_label",
+					"field": "full_name"
+				},
+				"simple_grid_field6": {
+					"field": "created_at",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field": {
+					"type": "grid_field_label",
+					"field": "created_at"
+				},
+				"grid_field3": {
+					"field": "classification",
+					"type": "grid_field"
+				},
+				"grid_field4": {
+					"type": "grid_field_label",
+					"field": "classification"
+				},
+				"grid_field6": {
+					"field": "uhs_id_no",
+					"type": "grid_field"
+				},
+				"grid_field7": {
+					"type": "grid_field_label",
+					"field": "uhs_id_no"
+				},
+				"grid_field5": {
+					"field": "college",
+					"type": "grid_field"
+				},
+				"grid_field8": {
+					"type": "grid_field_label",
+					"field": "college"
 				}
 			},
 			"version": 13,

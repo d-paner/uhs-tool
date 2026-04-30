@@ -7,7 +7,7 @@
 			{
 				"gid": 2302590494,
 				"y": 922,
-				"x": 694,
+				"x": 714,
 				"width": 132.0625,
 				"height": 151.33334350585938
 			},
@@ -41,8 +41,8 @@
 			},
 			{
 				"gid": 1504671644,
-				"y": 103,
-				"x": 589,
+				"y": 110,
+				"x": 598,
 				"width": 174.0625,
 				"height": 291.3333435058594
 			},
@@ -82,6 +82,20 @@
 				"height": 179.33334350585938
 			},
 			{
+				"gid": 4110849780,
+				"y": 1055,
+				"x": 270,
+				"width": 150.7291717529297,
+				"height": 151.33334350585938
+			},
+			{
+				"gid": 2723989459,
+				"y": 1062,
+				"x": 107,
+				"width": 116.47917175292969,
+				"height": 263.3333435058594
+			},
+			{
 				"gid": 1498301457,
 				"y": 725,
 				"x": 20,
@@ -111,9 +125,9 @@
 			},
 			{
 				"gid": 3936885324,
-				"y": 43,
-				"x": 397,
-				"width": 142.15625,
+				"y": 1,
+				"x": 393.66666412353516,
+				"width": 155.48958587646484,
 				"height": 291.3333435058594
 			},
 			{
@@ -554,6 +568,16 @@
 								"export": true,
 								"import": true
 							}
+						},
+						"persons": {
+							"mask": "ADESPI",
+							"table": "persons",
+							"restrictedPages": {}
+						},
+						"person_types": {
+							"mask": "ADESPI",
+							"table": "person_types",
+							"restrictedPages": {}
 						}
 					},
 					"admin": false,
@@ -857,6 +881,32 @@
 								"export": false,
 								"import": false
 							}
+						},
+						"persons": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
+						},
+						"person_types": {
+							"mask": "AEDSPI",
+							"table": "",
+							"restrictedPages": {
+								"add": false,
+								"edit": false,
+								"list": false,
+								"view": false,
+								"print": false,
+								"export": false,
+								"import": false
+							}
 						}
 					}
 				}
@@ -954,6 +1004,21 @@
 					{
 						"id": "3",
 						"children": [
+							{
+								"id": "25",
+								"parent": "3",
+								"data": {
+									"name": {
+										"table": "persons",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 2723989459,
+									"pageType": "list"
+								}
+							},
 							{
 								"id": "1",
 								"parent": "3",
@@ -1070,6 +1135,21 @@
 					{
 						"id": "5",
 						"children": [
+							{
+								"id": "26",
+								"parent": "5",
+								"data": {
+									"name": {
+										"table": "person_types",
+										"type": 6
+									},
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"table": 4110849780,
+									"pageType": "list"
+								}
+							},
 							{
 								"id": "4",
 								"parent": "5",
@@ -1326,7 +1406,9 @@
 								"welcome_item15",
 								"welcome_item16",
 								"welcome_item17",
-								"welcome_item18"
+								"welcome_item18",
+								"welcome_item19",
+								"welcome_item20"
 							]
 						}
 					},
@@ -1628,6 +1710,30 @@
 						"type": 6
 					},
 					"background": "#d2af80",
+					"linkType": 0
+				},
+				"welcome_item19": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "persons",
+					"linkPage": "list",
+					"linkText": {
+						"table": "persons",
+						"type": 6
+					},
+					"background": "#778899",
+					"linkType": 0
+				},
+				"welcome_item20": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "person_types",
+					"linkPage": "list",
+					"linkText": {
+						"table": "person_types",
+						"type": 6
+					},
+					"background": "#db7093",
 					"linkType": 0
 				}
 			},

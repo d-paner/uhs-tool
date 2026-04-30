@@ -229,8 +229,8 @@
 					"lookupType": 2,
 					"lookupTable": "hospital_accounts",
 					"lookupTableConnection": "conn",
-					"lookupLinkField": "label",
-					"lookupDisplayField": "label",
+					"lookupLinkField": "account_number",
+					"lookupDisplayField": "description",
 					"lookupListPage": "list"
 				}
 			],
@@ -788,7 +788,8 @@
 								"import_field5",
 								"import_field6",
 								"import_field7",
-								"import_field8"
+								"import_field8",
+								"import_field"
 							]
 						}
 					},
@@ -826,6 +827,10 @@
 				},
 				"import_field8": {
 					"field": "updated_at",
+					"type": "import_field"
+				},
+				"import_field": {
+					"field": "hospital_account",
 					"type": "import_field"
 				}
 			},
@@ -1903,7 +1908,8 @@
 				"grid_field2": {
 					"field": "hospital_account",
 					"type": "grid_field",
-					"inlineAdd": true
+					"inlineAdd": true,
+					"inlineEdit": false
 				},
 				"grid_field3": {
 					"type": "grid_field_label",

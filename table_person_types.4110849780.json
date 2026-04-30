@@ -1,18 +1,18 @@
 {
-	"sql": "SELECT\r\n\tprofessionals.id,\r\n\tprofessionals.person_id,\r\n\tCONCAT_WS(' ', persons.first_name, NULLIF(persons.middle_name, ''), persons.last_name) AS full_name,\r\n\tprofessionals.person_type_id,\r\n\tprofessionals.profession,\r\n\tprofessionals.professional_type_id,\r\n\tprofessionals.created_at,\r\n\tprofessionals.updated_at\r\nFROM\r\n\tprofessionals\r\nJOIN persons ON persons.id = professionals.person_id",
+	"sql": "SELECT\r\n\tid,\r\n\ttype_name,\r\n\tcreated_at,\r\n\tupdated_at\r\nFROM\r\n\tperson_types",
 	"connId": "conn",
-	"originalTable": "professionals",
-	"name": "professionals",
-	"shortTableName": "professionals",
+	"originalTable": "person_types",
+	"name": "person_types",
+	"shortTableName": "person_types",
 	"dbType": 0,
 	"keyFields": [
 		"id"
 	],
-	"detailsBadgeColor": "008b8b",
+	"detailsBadgeColor": "db7093",
 	"fields": [
 		{
 			"name": "id",
-			"sqlExpression": "professionals.id",
+			"sqlExpression": "id",
 			"index": 1,
 			"strField": "id",
 			"type": 3,
@@ -24,15 +24,15 @@
 				{}
 			],
 			"label": {
-				"English": "Professional ID"
+				"English": "Id"
 			},
-			"tableName": "professionals"
+			"tableName": "person_types"
 		},
 		{
-			"name": "profession",
-			"sqlExpression": "professionals.profession",
-			"index": 5,
-			"strField": "profession",
+			"name": "type_name",
+			"sqlExpression": "type_name",
+			"index": 2,
+			"strField": "type_name",
 			"type": 200,
 			"viewFormats": [
 				{}
@@ -43,31 +43,14 @@
 				}
 			],
 			"label": {
-				"English": "Profession"
+				"English": "Type Name"
 			},
-			"tableName": "professionals"
-		},
-		{
-			"name": "professional_type_id",
-			"sqlExpression": "professionals.professional_type_id",
-			"index": 6,
-			"strField": "professional_type_id",
-			"type": 3,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{}
-			],
-			"label": {
-				"English": "Professional Type Id"
-			},
-			"tableName": "professionals"
+			"tableName": "person_types"
 		},
 		{
 			"name": "created_at",
-			"sqlExpression": "professionals.created_at",
-			"index": 7,
+			"sqlExpression": "created_at",
+			"index": 3,
 			"strField": "created_at",
 			"type": 135,
 			"viewFormats": [
@@ -78,19 +61,19 @@
 			"editFormats": [
 				{
 					"format": "Readonly",
-					"defaultValue": "now();",
+					"defaultValue": "NOW();",
 					"dateEditType": 11
 				}
 			],
 			"label": {
 				"English": "Created At"
 			},
-			"tableName": "professionals"
+			"tableName": "person_types"
 		},
 		{
 			"name": "updated_at",
-			"sqlExpression": "professionals.updated_at",
-			"index": 8,
+			"sqlExpression": "updated_at",
+			"index": 4,
 			"strField": "updated_at",
 			"type": 135,
 			"viewFormats": [
@@ -101,93 +84,15 @@
 			"editFormats": [
 				{
 					"format": "Readonly",
-					"defaultValue": "now();",
-					"autoUpdateValue": "now();",
+					"defaultValue": "NOW();",
+					"autoUpdateValue": "NOW();",
 					"dateEditType": 11
 				}
 			],
 			"label": {
 				"English": "Updated At"
 			},
-			"tableName": "professionals"
-		},
-		{
-			"name": "person_id",
-			"sqlExpression": "professionals.person_id",
-			"index": 2,
-			"strField": "person_id",
-			"type": 3,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{
-					"format": "Lookup wizard",
-					"required": true,
-					"lookupType": 2,
-					"lookupTable": "persons",
-					"lookupTableConnection": "conn",
-					"lookupLinkField": "id",
-					"lookupDisplayField": "id",
-					"lookupControlType": 2,
-					"lookupListPage": "addPerson"
-				}
-			],
-			"label": {
-				"English": "Person ID"
-			},
-			"tableName": "professionals"
-		},
-		{
-			"name": "person_type_id",
-			"sqlExpression": "professionals.person_type_id",
-			"index": 4,
-			"strField": "person_type_id",
-			"type": 3,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{}
-			],
-			"label": {
-				"English": "Person Type ID"
-			},
-			"tableName": "professionals"
-		},
-		{
-			"name": "full_name",
-			"sqlExpression": "CONCAT_WS(' ', persons.first_name, NULLIF(persons.middle_name, ''), persons.last_name)",
-			"index": 3,
-			"strField": "full_name",
-			"type": 200,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{}
-			],
-			"label": {
-				"English": "Full Name"
-			},
-			"tableName": ""
-		}
-	],
-	"eventHandlers": [
-		{
-			"eventId": "EVENT_BEFOREPROCESS_ADD",
-			"pageType": "add",
-			"code": "include_once('custom/set_type.php');"
-		},
-		{
-			"eventId": "EVENT_BEFOREADD",
-			"pageType": "add",
-			"code": "$type = 'Professional';\n$values['person_type_id'] = setPersonType($type);\n\n// check if data exists\n$query = \"SELECT * FROM person_type_map \n          WHERE person_id = \".$values['person_id'].\" \n          AND type_id = \".$values['person_type_id'].\"\n        \";\n\n$runSql = DB::Query($query);\n\nif($runSql->fetchAssoc()) {\n    $message = 'Already have professional profile.';\n    return false;\n} else {\n    $queryInsert = \"INSERT INTO person_type_map VALUES (\".$values['person_id'].\", \".$values['person_type_id'].\", now(), now())\";\n    $exec = DB::Query($queryInsert);\n    return true;\n}"
-		},
-		{
-			"eventId": "EVENT_JS_ONLOAD",
-			"pageType": "add",
-			"code": "$(\"[data-field='person_type_id']\").hide();"
+			"tableName": "person_types"
 		}
 	],
 	"dbTableInfo": {
@@ -206,44 +111,11 @@
 				"defaultValue": ""
 			},
 			{
-				"name": "person_id",
-				"type": 3,
-				"size": 11,
-				"scale": 0,
-				"typeName": "int(11)",
-				"nullable": true,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "person_type_id",
-				"type": 3,
-				"size": 11,
-				"scale": 0,
-				"typeName": "int(11)",
-				"nullable": true,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "profession",
+				"name": "type_name",
 				"type": 200,
-				"size": 250,
+				"size": 100,
 				"scale": 0,
-				"typeName": "varchar(250)",
-				"nullable": false,
-				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
-			},
-			{
-				"name": "professional_type_id",
-				"type": 3,
-				"size": 11,
-				"scale": 0,
-				"typeName": "int(11)",
+				"typeName": "varchar(100)",
 				"nullable": true,
 				"autoinc": false,
 				"defaultValueSQL": null,
@@ -254,29 +126,29 @@
 				"type": 135,
 				"size": 0,
 				"scale": 0,
-				"typeName": "datetime",
-				"nullable": true,
+				"typeName": "timestamp",
+				"nullable": false,
 				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
+				"defaultValueSQL": "current_timestamp()",
+				"defaultValue": "CURRENT_TIMESTAMP"
 			},
 			{
 				"name": "updated_at",
 				"type": 135,
 				"size": 0,
 				"scale": 0,
-				"typeName": "datetime",
-				"nullable": true,
+				"typeName": "timestamp",
+				"nullable": false,
 				"autoinc": false,
-				"defaultValueSQL": null,
-				"defaultValue": ""
+				"defaultValueSQL": "current_timestamp()",
+				"defaultValue": "CURRENT_TIMESTAMP"
 			}
 		],
 		"primaryKeys": [
 			"id"
 		],
 		"uniqueFields": [],
-		"name": "professionals"
+		"name": "person_types"
 	},
 	"pages": [
 		{
@@ -375,11 +247,8 @@
 							"model": "c3",
 							"items": [
 								"integrated_edit_field",
-								"integrated_edit_field2",
-								"integrated_edit_field4",
 								"integrated_edit_field1",
-								"integrated_edit_field5",
-								"integrated_edit_field6"
+								"integrated_edit_field2"
 							]
 						}
 					},
@@ -408,45 +277,20 @@
 				"add_reset": {
 					"type": "add_reset"
 				},
+				"integrated_edit_field": {
+					"field": "type_name",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
 				"integrated_edit_field1": {
-					"field": "profession",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field4": {
-					"field": "professional_type_id",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field5": {
 					"field": "created_at",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				},
-				"integrated_edit_field6": {
+				"integrated_edit_field2": {
 					"field": "updated_at",
 					"type": "integrated_edit_field",
 					"orientation": 0
-				},
-				"integrated_edit_field": {
-					"field": "person_id",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"label": {
-						"field": "person_id",
-						"table": "professionals",
-						"type": 3
-					}
-				},
-				"integrated_edit_field2": {
-					"field": "person_type_id",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"label": {
-						"field": "person_type_id",
-						"table": "professionals",
-						"type": 3
-					}
 				}
 			},
 			"version": 13,
@@ -526,12 +370,9 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"export_field2",
-								"export_field5",
-								"export_field6",
-								"export_field7",
 								"export_field",
 								"export_field1",
+								"export_field2",
 								"export_field3"
 							]
 						}
@@ -581,32 +422,20 @@
 				"export_cancel": {
 					"type": "export_cancel"
 				},
-				"export_field2": {
-					"field": "profession",
-					"type": "export_field"
-				},
-				"export_field5": {
-					"field": "professional_type_id",
-					"type": "export_field"
-				},
-				"export_field6": {
-					"field": "created_at",
-					"type": "export_field"
-				},
-				"export_field7": {
-					"field": "updated_at",
-					"type": "export_field"
-				},
 				"export_field": {
-					"field": "person_id",
+					"field": "id",
 					"type": "export_field"
 				},
 				"export_field1": {
-					"field": "person_type_id",
+					"field": "type_name",
+					"type": "export_field"
+				},
+				"export_field2": {
+					"field": "created_at",
 					"type": "export_field"
 				},
 				"export_field3": {
-					"field": "full_name",
+					"field": "updated_at",
 					"type": "export_field"
 				}
 			},
@@ -691,12 +520,10 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"import_field2",
-								"import_field5",
-								"import_field6",
-								"import_field7",
 								"import_field",
-								"import_field1"
+								"import_field1",
+								"import_field2",
+								"import_field3"
 							]
 						}
 					},
@@ -708,28 +535,20 @@
 				"import_header": {
 					"type": "import_header"
 				},
-				"import_field2": {
-					"field": "profession",
-					"type": "import_field"
-				},
-				"import_field5": {
-					"field": "professional_type_id",
-					"type": "import_field"
-				},
-				"import_field6": {
-					"field": "created_at",
-					"type": "import_field"
-				},
-				"import_field7": {
-					"field": "updated_at",
-					"type": "import_field"
-				},
 				"import_field": {
-					"field": "person_id",
+					"field": "id",
 					"type": "import_field"
 				},
 				"import_field1": {
-					"field": "person_type_id",
+					"field": "type_name",
+					"type": "import_field"
+				},
+				"import_field2": {
+					"field": "created_at",
+					"type": "import_field"
+				},
+				"import_field3": {
+					"field": "updated_at",
 					"type": "import_field"
 				}
 			},
@@ -846,11 +665,8 @@
 						"c3": {
 							"model": "c3",
 							"items": [
-								"integrated_edit_field1",
-								"integrated_edit_field4",
-								"integrated_edit_field5",
-								"integrated_edit_field6",
 								"integrated_edit_field",
+								"integrated_edit_field1",
 								"integrated_edit_field2"
 							]
 						}
@@ -868,8 +684,7 @@
 				"hamburger": {
 					"type": "hamburger",
 					"items": [
-						"edit_reset",
-						"edit_view"
+						"edit_reset"
 					]
 				},
 				"edit_reset": {
@@ -887,41 +702,20 @@
 				"edit_close": {
 					"type": "edit_close"
 				},
+				"integrated_edit_field": {
+					"field": "type_name",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
+				},
 				"integrated_edit_field1": {
-					"field": "profession",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field4": {
-					"field": "professional_type_id",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"integrated_edit_field5": {
 					"field": "created_at",
 					"type": "integrated_edit_field",
 					"orientation": 0,
 					"updateOnEdit": false
 				},
-				"integrated_edit_field6": {
-					"field": "updated_at",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
-				"edit_view": {
-					"type": "edit_view"
-				},
-				"integrated_edit_field": {
-					"field": "person_id",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
 				"integrated_edit_field2": {
-					"field": "person_type_id",
+					"field": "updated_at",
 					"type": "integrated_edit_field",
 					"orientation": 0,
 					"updateOnEdit": false
@@ -941,7 +735,7 @@
 			"id": "view",
 			"type": "view",
 			"layoutId": "nomenu",
-			"disabled": false,
+			"disabled": true,
 			"default": 0,
 			"forms": {
 				"above-grid": {
@@ -1038,12 +832,9 @@
 						"c3": {
 							"model": "c3",
 							"items": [
-								"integrated_edit_field2",
-								"integrated_edit_field5",
-								"integrated_edit_field6",
-								"integrated_edit_field7",
 								"integrated_edit_field",
 								"integrated_edit_field1",
+								"integrated_edit_field2",
 								"integrated_edit_field3"
 							]
 						}
@@ -1064,22 +855,22 @@
 				"view_close": {
 					"type": "view_close"
 				},
+				"integrated_edit_field": {
+					"field": "id",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field1": {
+					"field": "type_name",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
 				"integrated_edit_field2": {
-					"field": "profession",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field5": {
-					"field": "professional_type_id",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field6": {
 					"field": "created_at",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				},
-				"integrated_edit_field7": {
+				"integrated_edit_field3": {
 					"field": "updated_at",
 					"type": "integrated_edit_field",
 					"orientation": 0
@@ -1092,21 +883,6 @@
 				},
 				"view_edit": {
 					"type": "view_edit"
-				},
-				"integrated_edit_field": {
-					"field": "person_id",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field1": {
-					"field": "person_type_id",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field3": {
-					"field": "full_name",
-					"type": "integrated_edit_field",
-					"orientation": 0
 				}
 			},
 			"version": 13,
@@ -1289,12 +1065,6 @@
 								},
 								{
 									"cell": "headcell_field3"
-								},
-								{
-									"cell": "headcell_field4"
-								},
-								{
-									"cell": "headcell_field5"
 								}
 							]
 						},
@@ -1318,12 +1088,6 @@
 								},
 								{
 									"cell": "cell_field3"
-								},
-								{
-									"cell": "cell_field4"
-								},
-								{
-									"cell": "cell_field5"
 								}
 							]
 						},
@@ -1347,161 +1111,140 @@
 								},
 								{
 									"cell": "footcell_field3"
-								},
-								{
-									"cell": "footcell_field4"
-								},
-								{
-									"cell": "footcell_field5"
 								}
 							]
 						}
 					],
 					"cells": {
-						"headcell_checkbox": {
-							"model": "headcell_checkbox",
-							"items": [
-								"grid_checkbox_head"
-							]
-						},
-						"cell_checkbox": {
-							"model": "cell_checkbox",
-							"items": [
-								"grid_checkbox"
-							]
-						},
-						"footcell_checkbox": {
-							"model": "footcell_checkbox",
-							"items": []
-						},
-						"headcell_icons": {
-							"model": "headcell_icons",
-							"items": []
-						},
-						"cell_icons": {
-							"model": "cell_icons",
-							"items": [
-								"grid_edit",
-								"grid_view"
-							]
-						},
-						"footcell_icons": {
-							"model": "footcell_icons",
-							"items": []
-						},
 						"headcell_field": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field"
+								"simple_grid_field4"
 							],
-							"field": "id"
+							"field": "id",
+							"columnName": "field"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
-								"grid_field4"
+								"simple_grid_field"
 							],
-							"field": "id"
+							"field": "id",
+							"columnName": "field"
 						},
 						"footcell_field": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "id"
+							"field": "id",
+							"columnName": "field"
 						},
 						"headcell_field1": {
 							"model": "headcell_field",
 							"items": [
-								"grid_field3"
+								"simple_grid_field5"
 							],
-							"field": "full_name"
+							"field": "type_name",
+							"columnName": "field"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
-								"grid_field2"
+								"simple_grid_field1"
 							],
-							"field": "full_name"
+							"field": "type_name",
+							"columnName": "field"
 						},
 						"footcell_field1": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "full_name"
+							"field": "type_name",
+							"columnName": "field"
 						},
 						"headcell_field2": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field"
+								"simple_grid_field6"
 							],
-							"field": "profession"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"cell_field2": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field2"
 							],
-							"field": "profession"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"footcell_field2": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "profession"
+							"field": "created_at",
+							"columnName": "field"
 						},
 						"headcell_field3": {
 							"model": "headcell_field",
 							"items": [
-								"simple_grid_field8"
+								"simple_grid_field7"
 							],
-							"field": "professional_type_id"
+							"field": "updated_at",
+							"columnName": "field"
 						},
 						"cell_field3": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field5"
+								"simple_grid_field3"
 							],
-							"field": "professional_type_id"
+							"field": "updated_at",
+							"columnName": "field"
 						},
 						"footcell_field3": {
 							"model": "footcell_field",
 							"items": [],
-							"field": "professional_type_id"
+							"field": "updated_at",
+							"columnName": "field"
 						},
-						"headcell_field4": {
-							"model": "headcell_field",
+						"headcell_checkbox": {
+							"model": "headcell_checkbox",
 							"items": [
-								"simple_grid_field9"
+								"grid_checkbox_head"
 							],
-							"field": "created_at"
+							"columnName": "checkbox",
+							"field": ""
 						},
-						"cell_field4": {
-							"model": "cell_field",
+						"cell_checkbox": {
+							"model": "cell_checkbox",
 							"items": [
-								"simple_grid_field6"
+								"grid_checkbox"
 							],
-							"field": "created_at"
+							"columnName": "checkbox",
+							"field": ""
 						},
-						"footcell_field4": {
-							"model": "footcell_field",
+						"footcell_checkbox": {
+							"model": "footcell_checkbox",
 							"items": [],
-							"field": "created_at"
+							"columnName": "checkbox",
+							"field": ""
 						},
-						"headcell_field5": {
-							"model": "headcell_field",
-							"items": [
-								"simple_grid_field10"
-							],
-							"field": "updated_at"
-						},
-						"cell_field5": {
-							"model": "cell_field",
-							"items": [
-								"simple_grid_field7"
-							],
-							"field": "updated_at"
-						},
-						"footcell_field5": {
-							"model": "footcell_field",
+						"headcell_icons": {
+							"model": "headcell_icons",
 							"items": [],
-							"field": "updated_at"
+							"columnName": "edit",
+							"field": ""
+						},
+						"cell_icons": {
+							"model": "cell_icons",
+							"items": [
+								"grid_edit"
+							],
+							"columnName": "edit",
+							"field": ""
+						},
+						"footcell_icons": {
+							"model": "footcell_icons",
+							"items": [],
+							"columnName": "edit",
+							"field": ""
 						}
 					},
 					"deferredItems": [],
@@ -1533,14 +1276,10 @@
 				"search_panel": {
 					"type": "search_panel",
 					"items": [
-						"search_panel_field7",
-						"search_panel_field4",
-						"search_panel_field3",
-						"search_panel_field1",
 						"search_panel_field",
-						"search_panel_field6",
-						"search_panel_field5",
-						"search_panel_field2"
+						"search_panel_field3",
+						"search_panel_field2",
+						"search_panel_field1"
 					],
 					"_flexiblePanel": true
 				},
@@ -1564,21 +1303,42 @@
 				"hide_search_panel": {
 					"type": "hide_search_panel"
 				},
+				"search_panel_field": {
+					"field": "id",
+					"type": "search_panel_field"
+				},
+				"search_panel_field1": {
+					"field": "type_name",
+					"type": "search_panel_field"
+				},
 				"search_panel_field2": {
-					"field": "profession",
-					"type": "search_panel_field"
-				},
-				"search_panel_field5": {
-					"field": "professional_type_id",
-					"type": "search_panel_field"
-				},
-				"search_panel_field6": {
 					"field": "created_at",
 					"type": "search_panel_field"
 				},
-				"search_panel_field7": {
+				"search_panel_field3": {
 					"field": "updated_at",
 					"type": "search_panel_field"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"changepassword_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"changepassword_link": {
+					"type": "changepassword_link"
 				},
 				"expand_menu_button": {
 					"type": "expand_menu_button"
@@ -1631,117 +1391,55 @@
 				"delete_selected": {
 					"type": "delete_selected"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"userinfo_link",
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
-				"userinfo_link": {
-					"type": "userinfo_link"
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"search_panel_field": {
-					"field": "person_id",
-					"type": "search_panel_field"
-				},
-				"search_panel_field1": {
-					"field": "person_type_id",
-					"type": "search_panel_field"
-				},
-				"search_panel_field3": {
-					"field": "full_name",
-					"type": "search_panel_field"
-				},
-				"search_panel_field4": {
+				"simple_grid_field": {
 					"field": "id",
-					"type": "search_panel_field"
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
 				},
-				"grid_checkbox": {
-					"type": "grid_checkbox"
-				},
-				"grid_edit": {
-					"type": "grid_edit",
-					"popup": true
-				},
-				"grid_view": {
-					"type": "grid_view",
-					"popup": true
-				},
-				"grid_field": {
+				"simple_grid_field4": {
 					"type": "grid_field_label",
 					"field": "id"
 				},
-				"grid_field4": {
-					"field": "id",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false,
-					"label": {
-						"field": "id",
-						"table": "professionals",
-						"type": 3
-					}
-				},
-				"grid_field3": {
-					"type": "grid_field_label",
-					"field": "full_name"
-				},
-				"grid_field2": {
-					"field": "full_name",
+				"simple_grid_field1": {
+					"field": "type_name",
 					"type": "grid_field",
 					"inlineAdd": false,
 					"inlineEdit": false
-				},
-				"simple_grid_field": {
-					"type": "grid_field_label",
-					"field": "profession"
-				},
-				"simple_grid_field2": {
-					"field": "profession",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field8": {
-					"type": "grid_field_label",
-					"field": "professional_type_id"
 				},
 				"simple_grid_field5": {
-					"field": "professional_type_id",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field9": {
 					"type": "grid_field_label",
-					"field": "created_at"
+					"field": "type_name"
 				},
-				"simple_grid_field6": {
+				"simple_grid_field2": {
 					"field": "created_at",
 					"type": "grid_field",
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
-				"simple_grid_field10": {
+				"simple_grid_field6": {
 					"type": "grid_field_label",
-					"field": "updated_at"
+					"field": "created_at"
 				},
-				"simple_grid_field7": {
+				"simple_grid_field3": {
 					"field": "updated_at",
 					"type": "grid_field",
 					"inlineAdd": false,
 					"inlineEdit": false
 				},
+				"simple_grid_field7": {
+					"type": "grid_field_label",
+					"field": "updated_at"
+				},
+				"grid_checkbox": {
+					"type": "grid_checkbox"
+				},
 				"grid_checkbox_head": {
 					"type": "grid_checkbox_head"
+				},
+				"grid_edit": {
+					"type": "grid_edit",
+					"popup": true
 				}
 			},
 			"version": 13,
@@ -1845,12 +1543,9 @@
 						"c1": {
 							"model": "c1",
 							"items": [
-								"simple_grid_field2",
-								"simple_grid_field5",
-								"simple_grid_field6",
-								"simple_grid_field7",
 								"simple_grid_field",
 								"simple_grid_field1",
+								"simple_grid_field2",
 								"simple_grid_field3"
 							]
 						}
@@ -1869,32 +1564,20 @@
 				"print_pages": {
 					"type": "print_pages"
 				},
-				"simple_grid_field2": {
-					"field": "profession",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field5": {
-					"field": "professional_type_id",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field6": {
-					"field": "created_at",
-					"type": "simple_grid_field"
-				},
-				"simple_grid_field7": {
-					"field": "updated_at",
-					"type": "simple_grid_field"
-				},
 				"simple_grid_field": {
-					"field": "person_id",
+					"field": "id",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field1": {
-					"field": "person_type_id",
+					"field": "type_name",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field2": {
+					"field": "created_at",
 					"type": "simple_grid_field"
 				},
 				"simple_grid_field3": {
-					"field": "full_name",
+					"field": "updated_at",
 					"type": "simple_grid_field"
 				}
 			},
@@ -1916,6 +1599,6 @@
 		"addressFields": []
 	},
 	"caption": {
-		"English": "Professionals"
+		"English": "Person Types"
 	}
 }

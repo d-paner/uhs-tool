@@ -1,5 +1,5 @@
 {
-	"sql": "SELECT\r\n\tid,\r\n\ttransaction_number,\r\n\tguarantor_id,\r\n\tplaced_by,\r\n\t`group`,\r\n\ttimestamps\r\nFROM\r\n\ttransaction_guarantor",
+	"sql": "SELECT\r\n    id,\r\n    transaction_number,\r\n    guarantor_id,\r\n    placed_by,\r\n    `group`,\r\n    timestamps\r\nFROM\r\n\ttransaction_guarantor",
 	"connId": "conn",
 	"originalTable": "transaction_guarantor",
 	"name": "transaction_guarantor",
@@ -51,6 +51,7 @@
 			"editFormats": [
 				{
 					"format": "Lookup wizard",
+					"required": true,
 					"lookupType": 2,
 					"lookupTable": "transactions",
 					"lookupTableConnection": "conn",
@@ -62,32 +63,6 @@
 			],
 			"label": {
 				"English": "Transaction Number"
-			},
-			"tableName": "transaction_guarantor"
-		},
-		{
-			"name": "guarantor_id",
-			"sqlExpression": "guarantor_id",
-			"index": 3,
-			"strField": "guarantor_id",
-			"type": 3,
-			"viewFormats": [
-				{}
-			],
-			"editFormats": [
-				{
-					"format": "Lookup wizard",
-					"lookupType": 2,
-					"lookupTable": "guarantors",
-					"lookupTableConnection": "conn",
-					"lookupLinkField": "id",
-					"lookupDisplayField": "full_name",
-					"lookupControlType": 2,
-					"lookupListPage": "list"
-				}
-			],
-			"label": {
-				"English": "Guarantor Id"
 			},
 			"tableName": "transaction_guarantor"
 		},
@@ -151,6 +126,34 @@
 			],
 			"label": {
 				"English": "Timestamps"
+			},
+			"tableName": "transaction_guarantor"
+		},
+		{
+			"name": "guarantor_id",
+			"sqlExpression": "guarantor_id",
+			"index": 3,
+			"strField": "guarantor_id",
+			"type": 3,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"required": true,
+					"lookupType": 2,
+					"lookupTable": "guarantors",
+					"lookupTableConnection": "conn",
+					"lookupLinkField": "id",
+					"lookupDisplayField": "CONCAT_WS(' ', first_name, middle_name, last_name)",
+					"lookupCustomDisplay": true,
+					"lookupControlType": 2,
+					"lookupListPage": "list1"
+				}
+			],
+			"label": {
+				"English": "Guarantor Id"
 			},
 			"tableName": "transaction_guarantor"
 		}
@@ -373,11 +376,6 @@
 					"type": "integrated_edit_field",
 					"orientation": 0
 				},
-				"integrated_edit_field1": {
-					"field": "guarantor_id",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
 				"integrated_edit_field2": {
 					"field": "placed_by",
 					"type": "integrated_edit_field",
@@ -390,6 +388,11 @@
 				},
 				"integrated_edit_field4": {
 					"field": "timestamps",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field1": {
+					"field": "guarantor_id",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				}
@@ -472,10 +475,10 @@
 							"model": "c1",
 							"items": [
 								"export_field1",
-								"export_field2",
 								"export_field3",
 								"export_field4",
-								"export_field5"
+								"export_field5",
+								"export_field"
 							]
 						}
 					},
@@ -528,10 +531,6 @@
 					"field": "transaction_number",
 					"type": "export_field"
 				},
-				"export_field2": {
-					"field": "guarantor_id",
-					"type": "export_field"
-				},
 				"export_field3": {
 					"field": "placed_by",
 					"type": "export_field"
@@ -542,6 +541,10 @@
 				},
 				"export_field5": {
 					"field": "timestamps",
+					"type": "export_field"
+				},
+				"export_field": {
+					"field": "guarantor_id",
 					"type": "export_field"
 				}
 			},
@@ -627,10 +630,10 @@
 							"model": "c1",
 							"items": [
 								"import_field1",
-								"import_field2",
 								"import_field3",
 								"import_field4",
-								"import_field5"
+								"import_field5",
+								"import_field"
 							]
 						}
 					},
@@ -646,10 +649,6 @@
 					"field": "transaction_number",
 					"type": "import_field"
 				},
-				"import_field2": {
-					"field": "guarantor_id",
-					"type": "import_field"
-				},
 				"import_field3": {
 					"field": "placed_by",
 					"type": "import_field"
@@ -660,6 +659,10 @@
 				},
 				"import_field5": {
 					"field": "timestamps",
+					"type": "import_field"
+				},
+				"import_field": {
+					"field": "guarantor_id",
 					"type": "import_field"
 				}
 			},
@@ -777,10 +780,10 @@
 							"model": "c3",
 							"items": [
 								"integrated_edit_field",
-								"integrated_edit_field1",
 								"integrated_edit_field2",
 								"integrated_edit_field3",
-								"integrated_edit_field4"
+								"integrated_edit_field4",
+								"integrated_edit_field1"
 							]
 						}
 					},
@@ -822,12 +825,6 @@
 					"orientation": 0,
 					"updateOnEdit": false
 				},
-				"integrated_edit_field1": {
-					"field": "guarantor_id",
-					"type": "integrated_edit_field",
-					"orientation": 0,
-					"updateOnEdit": false
-				},
 				"integrated_edit_field2": {
 					"field": "placed_by",
 					"type": "integrated_edit_field",
@@ -848,6 +845,12 @@
 				},
 				"edit_view": {
 					"type": "edit_view"
+				},
+				"integrated_edit_field1": {
+					"field": "guarantor_id",
+					"type": "integrated_edit_field",
+					"orientation": 0,
+					"updateOnEdit": false
 				}
 			},
 			"version": 13,
@@ -962,10 +965,10 @@
 							"model": "c3",
 							"items": [
 								"integrated_edit_field1",
-								"integrated_edit_field2",
 								"integrated_edit_field3",
 								"integrated_edit_field4",
-								"integrated_edit_field5"
+								"integrated_edit_field5",
+								"integrated_edit_field"
 							]
 						}
 					},
@@ -987,11 +990,6 @@
 				},
 				"integrated_edit_field1": {
 					"field": "transaction_number",
-					"type": "integrated_edit_field",
-					"orientation": 0
-				},
-				"integrated_edit_field2": {
-					"field": "guarantor_id",
 					"type": "integrated_edit_field",
 					"orientation": 0
 				},
@@ -1018,6 +1016,11 @@
 				},
 				"view_edit": {
 					"type": "view_edit"
+				},
+				"integrated_edit_field": {
+					"field": "guarantor_id",
+					"type": "integrated_edit_field",
+					"orientation": 0
 				}
 			},
 			"version": 13,
@@ -1170,38 +1173,6 @@
 					"deferredItems": [],
 					"recsPerRow": 1
 				},
-				"grid": {
-					"modelId": "simple-grid",
-					"grid": [
-						{
-							"cells": [
-								{
-									"cell": "c1"
-								}
-							],
-							"section": ""
-						}
-					],
-					"cells": {
-						"c1": {
-							"model": "c1",
-							"items": [
-								"simple_grid_field1",
-								"simple_grid_field2",
-								"simple_grid_field3",
-								"simple_grid_field4",
-								"simple_grid_field5"
-							]
-						}
-					},
-					"deferredItems": [
-						"grid_checkbox",
-						"grid_checkbox_head",
-						"grid_edit",
-						"grid_view"
-					],
-					"recsPerRow": 1
-				},
 				"top": {
 					"modelId": "list-sidebar-top",
 					"grid": [
@@ -1220,6 +1191,219 @@
 							"items": [
 								"master_info"
 							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "horizontal-grid",
+					"grid": [
+						{
+							"section": "head",
+							"cells": [
+								{
+									"cell": "headcell_icons"
+								},
+								{
+									"cell": "headcell_checkbox"
+								},
+								{
+									"cell": "headcell_field"
+								},
+								{
+									"cell": "headcell_field1"
+								},
+								{
+									"cell": "headcell_field2"
+								},
+								{
+									"cell": "headcell_field3"
+								},
+								{
+									"cell": "headcell_field4"
+								}
+							]
+						},
+						{
+							"section": "body",
+							"cells": [
+								{
+									"cell": "cell_icons"
+								},
+								{
+									"cell": "cell_checkbox"
+								},
+								{
+									"cell": "cell_field"
+								},
+								{
+									"cell": "cell_field1"
+								},
+								{
+									"cell": "cell_field2"
+								},
+								{
+									"cell": "cell_field3"
+								},
+								{
+									"cell": "cell_field4"
+								}
+							]
+						},
+						{
+							"section": "foot",
+							"cells": [
+								{
+									"cell": "footcell_icons"
+								},
+								{
+									"cell": "footcell_checkbox"
+								},
+								{
+									"cell": "footcell_field"
+								},
+								{
+									"cell": "footcell_field1"
+								},
+								{
+									"cell": "footcell_field2"
+								},
+								{
+									"cell": "footcell_field3"
+								},
+								{
+									"cell": "footcell_field4"
+								}
+							]
+						}
+					],
+					"cells": {
+						"headcell_field": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field"
+							],
+							"field": "transaction_number"
+						},
+						"cell_field": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field1"
+							],
+							"field": "transaction_number"
+						},
+						"footcell_field": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "transaction_number"
+						},
+						"headcell_field1": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field1"
+							],
+							"field": "guarantor_id"
+						},
+						"cell_field1": {
+							"model": "cell_field",
+							"items": [
+								"grid_field"
+							],
+							"field": "guarantor_id"
+						},
+						"footcell_field1": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "guarantor_id"
+						},
+						"headcell_field2": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field6"
+							],
+							"field": "group"
+						},
+						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field4"
+							],
+							"field": "group"
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "group"
+						},
+						"headcell_field3": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field7"
+							],
+							"field": "placed_by"
+						},
+						"cell_field3": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field3"
+							],
+							"field": "placed_by"
+						},
+						"footcell_field3": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "placed_by"
+						},
+						"headcell_field4": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field8"
+							],
+							"field": "timestamps"
+						},
+						"cell_field4": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field5"
+							],
+							"field": "timestamps"
+						},
+						"footcell_field4": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "timestamps"
+						},
+						"headcell_checkbox": {
+							"model": "headcell_checkbox",
+							"items": [
+								"grid_checkbox_head"
+							]
+						},
+						"cell_checkbox": {
+							"model": "cell_checkbox",
+							"items": [
+								"grid_checkbox"
+							]
+						},
+						"footcell_checkbox": {
+							"model": "footcell_checkbox",
+							"items": []
+						},
+						"headcell_icons": {
+							"model": "headcell_icons",
+							"items": []
+						},
+						"cell_icons": {
+							"model": "cell_icons",
+							"items": [
+								"grid_edit",
+								"grid_view"
+							]
+						},
+						"footcell_icons": {
+							"model": "footcell_icons",
+							"items": []
 						}
 					},
 					"deferredItems": [],
@@ -1245,52 +1429,16 @@
 				"pagination": {
 					"type": "pagination"
 				},
-				"grid_checkbox": {
-					"type": "grid_checkbox"
-				},
-				"grid_checkbox_head": {
-					"type": "grid_checkbox_head"
-				},
 				"details_found": {
 					"type": "details_found"
-				},
-				"simple_grid_field1": {
-					"field": "transaction_number",
-					"type": "simple_grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field2": {
-					"field": "guarantor_id",
-					"type": "simple_grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field3": {
-					"field": "placed_by",
-					"type": "simple_grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field4": {
-					"field": "group",
-					"type": "simple_grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field5": {
-					"field": "timestamps",
-					"type": "simple_grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
 				},
 				"search_panel": {
 					"type": "search_panel",
 					"items": [
 						"search_panel_field5",
+						"search_panel_field",
 						"search_panel_field4",
 						"search_panel_field3",
-						"search_panel_field2",
 						"search_panel_field1"
 					],
 					"_flexiblePanel": true
@@ -1317,10 +1465,6 @@
 				},
 				"search_panel_field1": {
 					"field": "transaction_number",
-					"type": "search_panel_field"
-				},
-				"search_panel_field2": {
-					"field": "guarantor_id",
 					"type": "search_panel_field"
 				},
 				"search_panel_field3": {
@@ -1384,14 +1528,6 @@
 				"-2": {
 					"type": "-"
 				},
-				"grid_edit": {
-					"type": "grid_edit",
-					"popup": true
-				},
-				"grid_view": {
-					"type": "grid_view",
-					"popup": true
-				},
 				"print_panel": {
 					"type": "print_panel",
 					"items": [
@@ -1420,6 +1556,74 @@
 					"tables": {
 						"3936885324": "true"
 					}
+				},
+				"search_panel_field": {
+					"field": "guarantor_id",
+					"type": "search_panel_field"
+				},
+				"simple_grid_field1": {
+					"field": "transaction_number",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field": {
+					"type": "grid_field_label",
+					"field": "transaction_number"
+				},
+				"grid_field": {
+					"field": "guarantor_id",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field1": {
+					"type": "grid_field_label",
+					"field": "guarantor_id"
+				},
+				"simple_grid_field4": {
+					"field": "group",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field6": {
+					"type": "grid_field_label",
+					"field": "group"
+				},
+				"simple_grid_field3": {
+					"field": "placed_by",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field7": {
+					"type": "grid_field_label",
+					"field": "placed_by"
+				},
+				"simple_grid_field5": {
+					"field": "timestamps",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field8": {
+					"type": "grid_field_label",
+					"field": "timestamps"
+				},
+				"grid_checkbox_head": {
+					"type": "grid_checkbox_head"
+				},
+				"grid_edit": {
+					"type": "grid_edit",
+					"popup": true
+				},
+				"grid_view": {
+					"type": "grid_view",
+					"popup": true
+				},
+				"grid_checkbox": {
+					"type": "grid_checkbox"
 				}
 			},
 			"version": 13,
@@ -1538,10 +1742,10 @@
 							"model": "c1",
 							"items": [
 								"simple_grid_field1",
-								"simple_grid_field2",
 								"simple_grid_field3",
 								"simple_grid_field4",
-								"simple_grid_field5"
+								"simple_grid_field5",
+								"simple_grid_field"
 							]
 						}
 					},
@@ -1563,10 +1767,6 @@
 					"field": "transaction_number",
 					"type": "simple_grid_field"
 				},
-				"simple_grid_field2": {
-					"field": "guarantor_id",
-					"type": "simple_grid_field"
-				},
 				"simple_grid_field3": {
 					"field": "placed_by",
 					"type": "simple_grid_field"
@@ -1584,6 +1784,651 @@
 					"tables": {
 						"3936885324": "true"
 					}
+				},
+				"simple_grid_field": {
+					"field": "guarantor_id",
+					"type": "simple_grid_field"
+				}
+			},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "list1",
+			"type": "list",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "list-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add",
+								"delete"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"details_found",
+								"page_size",
+								"print_panel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "list-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"pagination"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu",
+								"search_panel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search",
+								"list_options",
+								"loginform_login",
+								"username_button"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "list-sidebar-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"master_info"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "horizontal-grid",
+					"grid": [
+						{
+							"section": "head",
+							"cells": [
+								{
+									"cell": "headcell_icons"
+								},
+								{
+									"cell": "headcell_checkbox"
+								},
+								{
+									"cell": "headcell_field"
+								},
+								{
+									"cell": "headcell_field1"
+								},
+								{
+									"cell": "headcell_field2"
+								},
+								{
+									"cell": "headcell_field3"
+								},
+								{
+									"cell": "headcell_field4"
+								},
+								{
+									"cell": "headcell_field5"
+								}
+							]
+						},
+						{
+							"section": "body",
+							"cells": [
+								{
+									"cell": "cell_icons"
+								},
+								{
+									"cell": "cell_checkbox"
+								},
+								{
+									"cell": "cell_field"
+								},
+								{
+									"cell": "cell_field1"
+								},
+								{
+									"cell": "cell_field2"
+								},
+								{
+									"cell": "cell_field3"
+								},
+								{
+									"cell": "cell_field4"
+								},
+								{
+									"cell": "cell_field5"
+								}
+							]
+						},
+						{
+							"section": "foot",
+							"cells": [
+								{
+									"cell": "footcell_icons"
+								},
+								{
+									"cell": "footcell_checkbox"
+								},
+								{
+									"cell": "footcell_field"
+								},
+								{
+									"cell": "footcell_field1"
+								},
+								{
+									"cell": "footcell_field2"
+								},
+								{
+									"cell": "footcell_field3"
+								},
+								{
+									"cell": "footcell_field4"
+								},
+								{
+									"cell": "footcell_field5"
+								}
+							]
+						}
+					],
+					"cells": {
+						"headcell_field": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field3"
+							],
+							"field": "id"
+						},
+						"cell_field": {
+							"model": "cell_field",
+							"items": [
+								"grid_field2"
+							],
+							"field": "id"
+						},
+						"footcell_field": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "id"
+						},
+						"headcell_field1": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field"
+							],
+							"field": "transaction_number"
+						},
+						"cell_field1": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field1"
+							],
+							"field": "transaction_number"
+						},
+						"footcell_field1": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "transaction_number"
+						},
+						"headcell_field2": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field1"
+							],
+							"field": "guarantor_id"
+						},
+						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"grid_field"
+							],
+							"field": "guarantor_id"
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "guarantor_id"
+						},
+						"headcell_field3": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field6"
+							],
+							"field": "group"
+						},
+						"cell_field3": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field4"
+							],
+							"field": "group"
+						},
+						"footcell_field3": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "group"
+						},
+						"headcell_field4": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field7"
+							],
+							"field": "placed_by"
+						},
+						"cell_field4": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field3"
+							],
+							"field": "placed_by"
+						},
+						"footcell_field4": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "placed_by"
+						},
+						"headcell_field5": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field8"
+							],
+							"field": "timestamps"
+						},
+						"cell_field5": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field5"
+							],
+							"field": "timestamps"
+						},
+						"footcell_field5": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "timestamps"
+						},
+						"headcell_checkbox": {
+							"model": "headcell_checkbox",
+							"items": [
+								"grid_checkbox_head"
+							]
+						},
+						"cell_checkbox": {
+							"model": "cell_checkbox",
+							"items": [
+								"grid_checkbox"
+							]
+						},
+						"footcell_checkbox": {
+							"model": "footcell_checkbox",
+							"items": []
+						},
+						"headcell_icons": {
+							"model": "headcell_icons",
+							"items": []
+						},
+						"cell_icons": {
+							"model": "cell_icons",
+							"items": [
+								"grid_edit",
+								"grid_view"
+							]
+						},
+						"footcell_icons": {
+							"model": "footcell_icons",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"page_size": {
+					"type": "page_size"
+				},
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"pagination": {
+					"type": "pagination"
+				},
+				"details_found": {
+					"type": "details_found"
+				},
+				"search_panel": {
+					"type": "search_panel",
+					"items": [
+						"search_panel_field5",
+						"search_panel_field",
+						"search_panel_field4",
+						"search_panel_field3",
+						"search_panel_field1"
+					],
+					"_flexiblePanel": true
+				},
+				"list_options": {
+					"type": "list_options",
+					"items": [
+						"export_selected",
+						"delete_selected",
+						"-1",
+						"show_search_panel",
+						"hide_search_panel",
+						"-",
+						"export",
+						"-2",
+						"import"
+					]
+				},
+				"show_search_panel": {
+					"type": "show_search_panel"
+				},
+				"hide_search_panel": {
+					"type": "hide_search_panel"
+				},
+				"search_panel_field1": {
+					"field": "transaction_number",
+					"type": "search_panel_field"
+				},
+				"search_panel_field3": {
+					"field": "placed_by",
+					"type": "search_panel_field"
+				},
+				"search_panel_field4": {
+					"field": "group",
+					"type": "search_panel_field"
+				},
+				"search_panel_field5": {
+					"field": "timestamps",
+					"type": "search_panel_field"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"changepassword_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"changepassword_link": {
+					"type": "changepassword_link"
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				},
+				"add": {
+					"type": "add",
+					"popup": true
+				},
+				"export": {
+					"type": "export"
+				},
+				"-": {
+					"type": "-"
+				},
+				"export_selected": {
+					"type": "export_selected"
+				},
+				"-1": {
+					"type": "-"
+				},
+				"import": {
+					"type": "import"
+				},
+				"-2": {
+					"type": "-"
+				},
+				"print_panel": {
+					"type": "print_panel",
+					"items": [
+						"print_scope",
+						"print_records",
+						"print_button"
+					]
+				},
+				"print_scope": {
+					"type": "print_scope"
+				},
+				"print_button": {
+					"type": "print_button"
+				},
+				"print_records": {
+					"type": "print_records"
+				},
+				"delete": {
+					"type": "delete"
+				},
+				"delete_selected": {
+					"type": "delete_selected"
+				},
+				"master_info": {
+					"type": "master_info",
+					"tables": {
+						"3936885324": "true"
+					}
+				},
+				"search_panel_field": {
+					"field": "guarantor_id",
+					"type": "search_panel_field"
+				},
+				"grid_field2": {
+					"field": "id",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field3": {
+					"type": "grid_field_label",
+					"field": "id"
+				},
+				"simple_grid_field1": {
+					"field": "transaction_number",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field": {
+					"type": "grid_field_label",
+					"field": "transaction_number"
+				},
+				"grid_field": {
+					"field": "guarantor_id",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field1": {
+					"type": "grid_field_label",
+					"field": "guarantor_id"
+				},
+				"simple_grid_field4": {
+					"field": "group",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field6": {
+					"type": "grid_field_label",
+					"field": "group"
+				},
+				"simple_grid_field3": {
+					"field": "placed_by",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field7": {
+					"type": "grid_field_label",
+					"field": "placed_by"
+				},
+				"simple_grid_field5": {
+					"field": "timestamps",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field8": {
+					"type": "grid_field_label",
+					"field": "timestamps"
+				},
+				"grid_checkbox_head": {
+					"type": "grid_checkbox_head"
+				},
+				"grid_edit": {
+					"type": "grid_edit",
+					"popup": true
+				},
+				"grid_view": {
+					"type": "grid_view",
+					"popup": true
+				},
+				"grid_checkbox": {
+					"type": "grid_checkbox"
 				}
 			},
 			"version": 13,
