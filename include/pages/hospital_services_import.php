@@ -8,7 +8,8 @@
 			'placed_by',
 			'group_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'hospital_account' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -37,6 +38,9 @@
 			),
 			'updated_at' => array( 
 				'import_field8' 
+			),
+			'hospital_account' => array( 
+				'import_field' 
 			) 
 		) 
 	),
@@ -62,7 +66,8 @@
 					'import_field5',
 					'import_field6',
 					'import_field7',
-					'import_field8' 
+					'import_field8',
+					'import_field' 
 				) 
 			),
 			'formXtTags' => array(
@@ -78,7 +83,8 @@
 				'import_field5' => 'grid',
 				'import_field6' => 'grid',
 				'import_field7' => 'grid',
-				'import_field8' => 'grid' 
+				'import_field8' => 'grid',
+				'import_field' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -98,7 +104,8 @@
 				'import_field5',
 				'import_field6',
 				'import_field7',
-				'import_field8' 
+				'import_field8',
+				'import_field' 
 			) 
 		),
 		'cellMaps' => array(
@@ -232,7 +239,8 @@
 						'import_field5',
 						'import_field6',
 						'import_field7',
-						'import_field8' 
+						'import_field8',
+						'import_field' 
 					) 
 				) 
 			),
@@ -272,6 +280,10 @@
 		),
 		'import_field8' => array(
 			'field' => 'updated_at',
+			'type' => 'import_field' 
+		),
+		'import_field' => array(
+			'field' => 'hospital_account',
 			'type' => 'import_field' 
 		) 
 	),

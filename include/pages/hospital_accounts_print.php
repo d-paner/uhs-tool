@@ -24,17 +24,20 @@
 		),
 		'fund_code' => array(
 			'totalsType' => '' 
+		),
+		'account_number' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'id',
 			'label',
 			'description',
 			'created_at',
 			'updated_at',
 			'fund_type',
-			'fund_code' 
+			'fund_code',
+			'account_number' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -43,32 +46,32 @@
 			 
 		),
 		'fieldItems' => array(
-			'id' => array( 
-				'simple_grid_field',
-				'simple_grid_field7' 
-			),
 			'label' => array( 
 				'simple_grid_field1',
-				'simple_grid_field8' 
+				'simple_grid_field' 
 			),
 			'description' => array( 
 				'simple_grid_field2',
-				'simple_grid_field9' 
+				'simple_grid_field8' 
 			),
 			'created_at' => array( 
 				'simple_grid_field3',
-				'simple_grid_field10' 
+				'simple_grid_field9' 
 			),
 			'updated_at' => array( 
 				'simple_grid_field4',
-				'simple_grid_field11' 
+				'simple_grid_field10' 
 			),
 			'fund_type' => array( 
 				'simple_grid_field6',
-				'simple_grid_field12' 
+				'simple_grid_field11' 
 			),
 			'fund_code' => array( 
 				'simple_grid_field5',
+				'simple_grid_field12' 
+			),
+			'account_number' => array( 
+				'simple_grid_field7',
 				'simple_grid_field13' 
 			) 
 		),
@@ -96,20 +99,20 @@
 					'print_subheader' 
 				),
 				'grid' => array( 
-					'simple_grid_field7',
 					'simple_grid_field',
-					'simple_grid_field8',
 					'simple_grid_field1',
-					'simple_grid_field9',
+					'simple_grid_field8',
 					'simple_grid_field2',
-					'simple_grid_field10',
+					'simple_grid_field9',
 					'simple_grid_field3',
-					'simple_grid_field11',
+					'simple_grid_field10',
 					'simple_grid_field4',
-					'simple_grid_field12',
+					'simple_grid_field11',
 					'simple_grid_field6',
+					'simple_grid_field12',
+					'simple_grid_field5',
 					'simple_grid_field13',
-					'simple_grid_field5' 
+					'simple_grid_field7' 
 				) 
 			),
 			'formXtTags' => array(
@@ -124,27 +127,27 @@
 				'print_pages' => 'above-grid',
 				'print_header' => 'top',
 				'print_subheader' => 'top',
-				'simple_grid_field7' => 'grid',
 				'simple_grid_field' => 'grid',
-				'simple_grid_field8' => 'grid',
 				'simple_grid_field1' => 'grid',
-				'simple_grid_field9' => 'grid',
+				'simple_grid_field8' => 'grid',
 				'simple_grid_field2' => 'grid',
-				'simple_grid_field10' => 'grid',
+				'simple_grid_field9' => 'grid',
 				'simple_grid_field3' => 'grid',
-				'simple_grid_field11' => 'grid',
+				'simple_grid_field10' => 'grid',
 				'simple_grid_field4' => 'grid',
-				'simple_grid_field12' => 'grid',
+				'simple_grid_field11' => 'grid',
 				'simple_grid_field6' => 'grid',
+				'simple_grid_field12' => 'grid',
+				'simple_grid_field5' => 'grid',
 				'simple_grid_field13' => 'grid',
-				'simple_grid_field5' => 'grid' 
+				'simple_grid_field7' => 'grid' 
 			),
 			'itemLocations' => array(
-				'simple_grid_field7' => array(
+				'simple_grid_field' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field' 
 				),
-				'simple_grid_field' => array(
+				'simple_grid_field1' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field' 
 				),
@@ -152,7 +155,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field1' 
 				),
-				'simple_grid_field1' => array(
+				'simple_grid_field2' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field1' 
 				),
@@ -160,7 +163,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field2' 
 				),
-				'simple_grid_field2' => array(
+				'simple_grid_field3' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field2' 
 				),
@@ -168,7 +171,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field3' 
 				),
-				'simple_grid_field3' => array(
+				'simple_grid_field4' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field3' 
 				),
@@ -176,7 +179,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field4' 
 				),
-				'simple_grid_field4' => array(
+				'simple_grid_field6' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field4' 
 				),
@@ -184,7 +187,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field5' 
 				),
-				'simple_grid_field6' => array(
+				'simple_grid_field5' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field5' 
 				),
@@ -192,7 +195,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field6' 
 				),
-				'simple_grid_field5' => array(
+				'simple_grid_field7' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field6' 
 				) 
@@ -212,16 +215,16 @@
 				'print_pages' 
 			),
 			'grid_field' => array( 
-				'simple_grid_field',
 				'simple_grid_field1',
 				'simple_grid_field2',
 				'simple_grid_field3',
 				'simple_grid_field4',
 				'simple_grid_field6',
-				'simple_grid_field5' 
+				'simple_grid_field5',
+				'simple_grid_field7' 
 			),
 			'grid_field_label' => array( 
-				'simple_grid_field7',
+				'simple_grid_field',
 				'simple_grid_field8',
 				'simple_grid_field9',
 				'simple_grid_field10',
@@ -241,10 +244,10 @@
 							0 
 						),
 						'tags' => array( 
-							'id_fieldheadercolumn' 
+							'label_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field7' 
+							'simple_grid_field' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -257,7 +260,7 @@
 							0 
 						),
 						'tags' => array( 
-							'label_fieldheadercolumn' 
+							'description_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field8' 
@@ -273,7 +276,7 @@
 							0 
 						),
 						'tags' => array( 
-							'description_fieldheadercolumn' 
+							'created_at_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field9' 
@@ -289,7 +292,7 @@
 							0 
 						),
 						'tags' => array( 
-							'created_at_fieldheadercolumn' 
+							'updated_at_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field10' 
@@ -305,7 +308,7 @@
 							0 
 						),
 						'tags' => array( 
-							'updated_at_fieldheadercolumn' 
+							'fund_type_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field11' 
@@ -321,7 +324,7 @@
 							0 
 						),
 						'tags' => array( 
-							'fund_type_fieldheadercolumn' 
+							'fund_code_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field12' 
@@ -337,7 +340,7 @@
 							0 
 						),
 						'tags' => array( 
-							'fund_code_fieldheadercolumn' 
+							'account_number_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field13' 
@@ -353,22 +356,6 @@
 							1 
 						),
 						'tags' => array( 
-							'id_fieldcolumn' 
-						),
-						'items' => array( 
-							'simple_grid_field' 
-						),
-						'fixedAtServer' => false,
-						'fixedAtClient' => false 
-					),
-					'cell_field1' => array(
-						'cols' => array( 
-							1 
-						),
-						'rows' => array( 
-							1 
-						),
-						'tags' => array( 
 							'label_fieldcolumn' 
 						),
 						'items' => array( 
@@ -377,9 +364,9 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
-					'cell_field2' => array(
+					'cell_field1' => array(
 						'cols' => array( 
-							2 
+							1 
 						),
 						'rows' => array( 
 							1 
@@ -393,9 +380,9 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
-					'cell_field3' => array(
+					'cell_field2' => array(
 						'cols' => array( 
-							3 
+							2 
 						),
 						'rows' => array( 
 							1 
@@ -409,9 +396,9 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
-					'cell_field4' => array(
+					'cell_field3' => array(
 						'cols' => array( 
-							4 
+							3 
 						),
 						'rows' => array( 
 							1 
@@ -425,9 +412,9 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
-					'cell_field5' => array(
+					'cell_field4' => array(
 						'cols' => array( 
-							5 
+							4 
 						),
 						'rows' => array( 
 							1 
@@ -441,9 +428,9 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
-					'cell_field6' => array(
+					'cell_field5' => array(
 						'cols' => array( 
-							6 
+							5 
 						),
 						'rows' => array( 
 							1 
@@ -453,6 +440,22 @@
 						),
 						'items' => array( 
 							'simple_grid_field5' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field6' => array(
+						'cols' => array( 
+							6 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'account_number_fieldcolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field7' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -806,17 +809,17 @@
 				'headcell_field' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field7' 
+						'simple_grid_field' 
 					),
-					'field' => 'id',
+					'field' => 'label',
 					'columnName' => 'field' 
 				),
 				'cell_field' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field' 
+						'simple_grid_field1' 
 					),
-					'field' => 'id',
+					'field' => 'label',
 					'columnName' => 'field' 
 				),
 				'footcell_field' => array(
@@ -830,15 +833,15 @@
 					'items' => array( 
 						'simple_grid_field8' 
 					),
-					'field' => 'label',
+					'field' => 'description',
 					'columnName' => 'field' 
 				),
 				'cell_field1' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field1' 
+						'simple_grid_field2' 
 					),
-					'field' => 'label',
+					'field' => 'description',
 					'columnName' => 'field' 
 				),
 				'footcell_field1' => array(
@@ -852,15 +855,15 @@
 					'items' => array( 
 						'simple_grid_field9' 
 					),
-					'field' => 'description',
+					'field' => 'created_at',
 					'columnName' => 'field' 
 				),
 				'cell_field2' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field2' 
+						'simple_grid_field3' 
 					),
-					'field' => 'description',
+					'field' => 'created_at',
 					'columnName' => 'field' 
 				),
 				'footcell_field2' => array(
@@ -874,15 +877,15 @@
 					'items' => array( 
 						'simple_grid_field10' 
 					),
-					'field' => 'created_at',
+					'field' => 'updated_at',
 					'columnName' => 'field' 
 				),
 				'cell_field3' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field3' 
+						'simple_grid_field4' 
 					),
-					'field' => 'created_at',
+					'field' => 'updated_at',
 					'columnName' => 'field' 
 				),
 				'footcell_field3' => array(
@@ -896,15 +899,15 @@
 					'items' => array( 
 						'simple_grid_field11' 
 					),
-					'field' => 'updated_at',
+					'field' => 'fund_type',
 					'columnName' => 'field' 
 				),
 				'cell_field4' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field4' 
+						'simple_grid_field6' 
 					),
-					'field' => 'updated_at',
+					'field' => 'fund_type',
 					'columnName' => 'field' 
 				),
 				'footcell_field4' => array(
@@ -918,15 +921,15 @@
 					'items' => array( 
 						'simple_grid_field12' 
 					),
-					'field' => 'fund_type',
+					'field' => 'fund_code',
 					'columnName' => 'field' 
 				),
 				'cell_field5' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field6' 
+						'simple_grid_field5' 
 					),
-					'field' => 'fund_type',
+					'field' => 'fund_code',
 					'columnName' => 'field' 
 				),
 				'footcell_field5' => array(
@@ -940,15 +943,15 @@
 					'items' => array( 
 						'simple_grid_field13' 
 					),
-					'field' => 'fund_code',
+					'field' => 'account_number',
 					'columnName' => 'field' 
 				),
 				'cell_field6' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field5' 
+						'simple_grid_field7' 
 					),
-					'field' => 'fund_code',
+					'field' => 'account_number',
 					'columnName' => 'field' 
 				),
 				'footcell_field6' => array(
@@ -974,19 +977,11 @@
 		'print_pages' => array(
 			'type' => 'print_pages' 
 		),
-		'simple_grid_field' => array(
-			'field' => 'id',
-			'type' => 'grid_field' 
-		),
-		'simple_grid_field7' => array(
-			'type' => 'grid_field_label',
-			'field' => 'id' 
-		),
 		'simple_grid_field1' => array(
 			'field' => 'label',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field8' => array(
+		'simple_grid_field' => array(
 			'type' => 'grid_field_label',
 			'field' => 'label' 
 		),
@@ -994,7 +989,7 @@
 			'field' => 'description',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field9' => array(
+		'simple_grid_field8' => array(
 			'type' => 'grid_field_label',
 			'field' => 'description' 
 		),
@@ -1002,7 +997,7 @@
 			'field' => 'created_at',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field10' => array(
+		'simple_grid_field9' => array(
 			'type' => 'grid_field_label',
 			'field' => 'created_at' 
 		),
@@ -1010,7 +1005,7 @@
 			'field' => 'updated_at',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field11' => array(
+		'simple_grid_field10' => array(
 			'type' => 'grid_field_label',
 			'field' => 'updated_at' 
 		),
@@ -1018,7 +1013,7 @@
 			'field' => 'fund_type',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field12' => array(
+		'simple_grid_field11' => array(
 			'type' => 'grid_field_label',
 			'field' => 'fund_type' 
 		),
@@ -1026,9 +1021,17 @@
 			'field' => 'fund_code',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field13' => array(
+		'simple_grid_field12' => array(
 			'type' => 'grid_field_label',
 			'field' => 'fund_code' 
+		),
+		'simple_grid_field7' => array(
+			'field' => 'account_number',
+			'type' => 'grid_field' 
+		),
+		'simple_grid_field13' => array(
+			'type' => 'grid_field_label',
+			'field' => 'account_number' 
 		) 
 	),
 	'version' => 13,

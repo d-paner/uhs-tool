@@ -1,6 +1,9 @@
 [data-cellid="grid_cell_details"][data-page="Viewing_List_list"][data-cellid="grid_cell_details"][data-page="Viewing_List_list"][data-cellid="grid_cell_details"][data-page="Viewing_List_list"] {
   white-space: nowrap;
 }
+[data-cellid="grid_cell_field"][data-page="Viewing_List_list"][data-cellid="grid_cell_field"][data-page="Viewing_List_list"][data-cellid="grid_cell_field"][data-page="Viewing_List_list"] {
+  white-space: nowrap;
+}
 [data-cellid="grid_footcell_field"][data-page="Viewing_List_list"][data-cellid="grid_footcell_field"][data-page="Viewing_List_list"][data-cellid="grid_footcell_field"][data-page="Viewing_List_list"] {
   white-space: nowrap;
 }
@@ -11,6 +14,9 @@
   white-space: nowrap;
 }
 [data-cellid="grid_footcell_field3"][data-page="Viewing_List_list"][data-cellid="grid_footcell_field3"][data-page="Viewing_List_list"][data-cellid="grid_footcell_field3"][data-page="Viewing_List_list"] {
+  white-space: nowrap;
+}
+[data-cellid="grid_cell_field4"][data-page="Viewing_List_list"][data-cellid="grid_cell_field4"][data-page="Viewing_List_list"][data-cellid="grid_cell_field4"][data-page="Viewing_List_list"] {
   white-space: nowrap;
 }
 [data-cellid="grid_footcell_field4"][data-page="Viewing_List_list"][data-cellid="grid_footcell_field4"][data-page="Viewing_List_list"][data-cellid="grid_footcell_field4"][data-page="Viewing_List_list"] {

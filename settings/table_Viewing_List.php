@@ -338,12 +338,12 @@ $runnerTableSettings['Viewing List'] = array(
 			'subtype' => 'sql',
 			'enabled' => true,
 			'sql' => 'SELECT
-    CONCAT_WS(\' \', g.first_name, g.middle_name, g.last_name) AS guarantor_name,
+    CONCAT_WS(\' \', gp.first_name, gp.middle_name, gp.last_name) AS guarantor_name,
     g.office AS guarantor_office,
     ts.transaction_number,
     ts.created_at AS transaction_date,
-    CONCAT_WS(\' \', pt.first_name, pt.middle_name, pt.last_name) AS patient_name,
-    ts.patient_type,
+    CONCAT_WS(\' \', pp.first_name, pp.middle_name, pp.last_name) AS patient_name,
+    ptype.type AS patient_type,
 
     -- total hospital_services taken amount tapos 0 default
     COALESCE(h_totals.total_hospital_amount, 0) AS total_hospital_fees,
@@ -356,7 +356,9 @@ $runnerTableSettings['Viewing List'] = array(
     + COALESCE(unpaid_p.total_unpaid_professional, 0) AS running_balance
 
 FROM transactions ts
-JOIN patients pt ON pt.id = ts.patient_id
+JOIN patients pt ON pt.patient_id = ts.patient_id
+JOIN persons pp ON pp.master_person_id = pt.person_id
+JOIN patient_types ptype ON ptype.id = ts.patient_type
 
 LEFT JOIN (
     SELECT 
@@ -394,6 +396,7 @@ LEFT JOIN (
 
 LEFT JOIN transaction_guarantor tg ON tg.transaction_number = ts.transaction_number
 LEFT JOIN guarantors g ON g.id = tg.guarantor_id
+LEFT JOIN persons gp ON gp.master_person_id = g.person_id
 
 ORDER BY ts.transaction_number;',
 			'payload' => array( 

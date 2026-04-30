@@ -5,13 +5,12 @@
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'full_name',
 			'profession',
-			'birthday',
-			'sex',
 			'professional_type_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'person_id',
+			'person_type_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -20,17 +19,8 @@
 			 
 		),
 		'fieldItems' => array(
-			'full_name' => array( 
-				'integrated_edit_field' 
-			),
 			'profession' => array( 
 				'integrated_edit_field1' 
-			),
-			'birthday' => array( 
-				'integrated_edit_field2' 
-			),
-			'sex' => array( 
-				'integrated_edit_field3' 
 			),
 			'professional_type_id' => array( 
 				'integrated_edit_field4' 
@@ -40,6 +30,12 @@
 			),
 			'updated_at' => array( 
 				'integrated_edit_field6' 
+			),
+			'person_id' => array( 
+				'integrated_edit_field' 
+			),
+			'person_type_id' => array( 
+				'integrated_edit_field2' 
 			) 
 		) 
 	),
@@ -66,10 +62,9 @@
 				),
 				'grid' => array( 
 					'integrated_edit_field',
-					'integrated_edit_field1',
-					'integrated_edit_field3',
 					'integrated_edit_field2',
 					'integrated_edit_field4',
+					'integrated_edit_field1',
 					'integrated_edit_field5',
 					'integrated_edit_field6' 
 				) 
@@ -87,10 +82,9 @@
 				'add_cancel' => 'below-grid',
 				'add_header' => 'top',
 				'integrated_edit_field' => 'grid',
-				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field2' => 'grid',
 				'integrated_edit_field4' => 'grid',
+				'integrated_edit_field1' => 'grid',
 				'integrated_edit_field5' => 'grid',
 				'integrated_edit_field6' => 'grid' 
 			),
@@ -99,19 +93,15 @@
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
-				'integrated_edit_field1' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field3' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
 				'integrated_edit_field2' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field4' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field1' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -148,13 +138,12 @@
 				'add_reset' 
 			),
 			'integrated_edit_field' => array( 
-				'integrated_edit_field',
 				'integrated_edit_field1',
-				'integrated_edit_field2',
-				'integrated_edit_field3',
 				'integrated_edit_field4',
 				'integrated_edit_field5',
-				'integrated_edit_field6' 
+				'integrated_edit_field6',
+				'integrated_edit_field',
+				'integrated_edit_field2' 
 			) 
 		),
 		'cellMaps' => array(
@@ -172,10 +161,9 @@
 						),
 						'items' => array( 
 							'integrated_edit_field',
-							'integrated_edit_field1',
-							'integrated_edit_field3',
 							'integrated_edit_field2',
 							'integrated_edit_field4',
+							'integrated_edit_field1',
 							'integrated_edit_field5',
 							'integrated_edit_field6' 
 						),
@@ -342,10 +330,9 @@
 					'model' => 'c3',
 					'items' => array( 
 						'integrated_edit_field',
-						'integrated_edit_field1',
-						'integrated_edit_field3',
 						'integrated_edit_field2',
 						'integrated_edit_field4',
+						'integrated_edit_field1',
 						'integrated_edit_field5',
 						'integrated_edit_field6' 
 					) 
@@ -378,23 +365,8 @@
 		'add_reset' => array(
 			'type' => 'add_reset' 
 		),
-		'integrated_edit_field' => array(
-			'field' => 'full_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
 		'integrated_edit_field1' => array(
 			'field' => 'profession',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field2' => array(
-			'field' => 'birthday',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field3' => array(
-			'field' => 'sex',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
@@ -412,6 +384,26 @@
 			'field' => 'updated_at',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
+		),
+		'integrated_edit_field' => array(
+			'field' => 'person_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'label' => array(
+				'field' => 'person_id',
+				'table' => 'professionals',
+				'type' => 3 
+			) 
+		),
+		'integrated_edit_field2' => array(
+			'field' => 'person_type_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'label' => array(
+				'field' => 'person_type_id',
+				'table' => 'professionals',
+				'type' => 3 
+			) 
 		) 
 	),
 	'version' => 13,

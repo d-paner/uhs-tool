@@ -50,6 +50,7 @@ $runnerTableSettings['hospital_accounts'] = array(
 	'detailsBadgeColor' => '6da5c8',
 	'sql' => 'SELECT
 	id,
+	account_number,
 	`label`,
 	description,
 	fund_code,
@@ -94,7 +95,7 @@ FROM
 			'name' => 'label',
 			'goodName' => 'label',
 			'strField' => 'label',
-			'index' => 2,
+			'index' => 3,
 			'sqlExpression' => '`label`',
 			'viewFormats' => array(
 				'view' => array(
@@ -112,7 +113,7 @@ FROM
 			'name' => 'description',
 			'goodName' => 'description',
 			'strField' => 'description',
-			'index' => 3,
+			'index' => 4,
 			'sqlExpression' => 'description',
 			'viewFormats' => array(
 				'view' => array(
@@ -130,7 +131,7 @@ FROM
 			'name' => 'created_at',
 			'goodName' => 'created_at',
 			'strField' => 'created_at',
-			'index' => 6,
+			'index' => 7,
 			'type' => 135,
 			'sqlExpression' => 'created_at',
 			'viewFormats' => array(
@@ -151,7 +152,7 @@ FROM
 			'name' => 'updated_at',
 			'goodName' => 'updated_at',
 			'strField' => 'updated_at',
-			'index' => 7,
+			'index' => 8,
 			'type' => 135,
 			'sqlExpression' => 'updated_at',
 			'viewFormats' => array(
@@ -173,7 +174,7 @@ FROM
 			'name' => 'fund_type',
 			'goodName' => 'fund_type',
 			'strField' => 'fund_type',
-			'index' => 5,
+			'index' => 6,
 			'sqlExpression' => 'fund_type',
 			'viewFormats' => array(
 				'view' => array(
@@ -202,7 +203,7 @@ FROM
 			'name' => 'fund_code',
 			'goodName' => 'fund_code',
 			'strField' => 'fund_code',
-			'index' => 4,
+			'index' => 5,
 			'sqlExpression' => 'fund_code',
 			'viewFormats' => array(
 				'view' => array(
@@ -227,11 +228,31 @@ FROM
 				) 
 			),
 			'tableName' => 'hospital_accounts' 
+		),
+		'account_number' => array(
+			'name' => 'account_number',
+			'goodName' => 'account_number',
+			'strField' => 'account_number',
+			'index' => 2,
+			'type' => 3,
+			'sqlExpression' => 'account_number',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'hospital_accounts' 
 		) 
 	),
 	'query' => array(
 		'sql' => 'SELECT
 	id,
+	account_number,
 	`label`,
 	description,
 	fund_code,
@@ -257,6 +278,21 @@ FROM
 				),
 				'encrypted' => false,
 				'columnName' => 'id' 
+			),
+			array(
+				'sql' => 'account_number',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'hospital_accounts',
+					'name' => 'account_number' 
+				),
+				'encrypted' => false,
+				'columnName' => 'account_number' 
 			),
 			array(
 				'sql' => '`label`',
@@ -360,6 +396,7 @@ FROM
 					'type' => 'SQLTable',
 					'columns' => array( 
 						'id',
+						'account_number',
 						'label',
 						'description',
 						'fund_code',
@@ -468,10 +505,18 @@ FROM
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 7,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
 			) 
 		),
 		'headSql' => 'SELECT',
 		'fieldListSql' => 'id,
+	account_number,
 	`label`,
 	description,
 	fund_code,
@@ -534,7 +579,8 @@ FROM
 			'created_at',
 			'updated_at',
 			'fund_type',
-			'fund_code' 
+			'fund_code',
+			'account_number' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -547,7 +593,8 @@ FROM
 			'created_at',
 			'updated_at',
 			'fund_type',
-			'fund_code' 
+			'fund_code',
+			'account_number' 
 		) 
 	),
 	'connId' => 'conn',
@@ -602,7 +649,8 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'created_at' => 'Created At',
 		'updated_at' => 'Updated At',
 		'fund_type' => 'Fund Type',
-		'fund_code' => 'Fund Code' 
+		'fund_code' => 'Fund Code',
+		'account_number' => 'Account Number' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
@@ -611,7 +659,8 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'created_at' => '',
 		'updated_at' => '',
 		'fund_type' => '',
-		'fund_code' => '' 
+		'fund_code' => '',
+		'account_number' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
@@ -620,7 +669,8 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'created_at' => '',
 		'updated_at' => '',
 		'fund_type' => '',
-		'fund_code' => '' 
+		'fund_code' => '',
+		'account_number' => '' 
 	),
 	'pageTitles' => array(
 		 

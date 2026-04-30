@@ -18,6 +18,17 @@ $runnerDbTableInfo['hospital_accounts'] = array(
 			'defaultValue' => '' 
 		),
 		array(
+			'name' => 'account_number',
+			'type' => 3,
+			'size' => 11,
+			'scale' => 0,
+			'typeName' => 'int(11)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
 			'name' => 'label',
 			'type' => 200,
 			'size' => 250,

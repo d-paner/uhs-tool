@@ -734,6 +734,7 @@ ORDER BY `date` DESC',
 					'type' => 'SQLTable',
 					'columns' => array( 
 						'id',
+						'account_number',
 						'label',
 						'description',
 						'fund_code',

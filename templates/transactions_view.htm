@@ -249,6 +249,46 @@
 
 
 {END updated_at_fieldblock}
+											
+{BEGIN patient_name_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_patient_name}  r-vertical-field" 
+	data-signal-error-for="patient_name{$id}" {$required_attr_patient_name}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="patient_name" data-fieldname="patient_name" >
+
+	<label class="r-edit-label control-label {$patient_name_label_class}" for="{$labelfor_patient_name}">
+		{BEGIN patient_name_label}
+			{$patient_name_forward_control}
+			{$label transactions patient_name }			{END patient_name_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$patient_name_value}	</div>
+	</div>
+
+
+{END patient_name_fieldblock}
+											
+{BEGIN opd_attendance_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_opd_attendance}  r-vertical-field" 
+	data-signal-error-for="opd_attendance{$id}" {$required_attr_opd_attendance}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="opd_attendance" data-fieldname="opd_attendance" >
+
+	<label class="r-edit-label control-label {$opd_attendance_label_class}" for="{$labelfor_opd_attendance}">
+		{BEGIN opd_attendance_label}
+			{$opd_attendance_forward_control}
+			{$label transactions opd_attendance }			{END opd_attendance_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$opd_attendance_value}	</div>
+	</div>
+
+
+{END opd_attendance_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

@@ -165,6 +165,37 @@ $runnerMenus['main'] = array(
 				'parent' => '',
 				'children' => array( 
 					array(
+						'id' => '25',
+						'parent' => '3',
+						'children' => array( 
+							 
+						),
+						'data' => array(
+							'name' => array(
+								'table' => 'persons',
+								'type' => 6 
+							),
+							'comments' => array(
+								'text' => '',
+								'type' => 0 
+							),
+							'style' => '',
+							'href' => '',
+							'params' => '',
+							'pageId' => '',
+							'itemType' => 2,
+							'linkType' => 0,
+							'openType' => 0,
+							'iconType' => 0,
+							'iconName' => '',
+							'iconStyle' => 0,
+							'showIconType' => 1,
+							'linkToAnotherApp' => false,
+							'table' => 8584,
+							'pageType' => 'list' 
+						) 
+					),
+					array(
 						'id' => '1',
 						'parent' => '3',
 						'children' => array( 
@@ -378,6 +409,37 @@ $runnerMenus['main'] = array(
 				'id' => '5',
 				'parent' => '',
 				'children' => array( 
+					array(
+						'id' => '26',
+						'parent' => '5',
+						'children' => array( 
+							 
+						),
+						'data' => array(
+							'name' => array(
+								'table' => 'person_types',
+								'type' => 6 
+							),
+							'comments' => array(
+								'text' => '',
+								'type' => 0 
+							),
+							'style' => '',
+							'href' => '',
+							'params' => '',
+							'pageId' => '',
+							'itemType' => 2,
+							'linkType' => 0,
+							'openType' => 0,
+							'iconType' => 0,
+							'iconName' => '',
+							'iconStyle' => 0,
+							'showIconType' => 1,
+							'linkToAnotherApp' => false,
+							'table' => 8679,
+							'pageType' => 'list' 
+						) 
+					),
 					array(
 						'id' => '4',
 						'parent' => '5',

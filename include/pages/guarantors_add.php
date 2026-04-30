@@ -5,17 +5,14 @@
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'sex',
-			'birthday',
 			'classification',
 			'created_at',
 			'updated_at',
 			'office',
-			'first_name',
-			'middle_name',
-			'last_name',
 			'college',
-			'unit' 
+			'unit',
+			'person_id',
+			'person_type_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -24,12 +21,6 @@
 			 
 		),
 		'fieldItems' => array(
-			'sex' => array( 
-				'integrated_edit_field1' 
-			),
-			'birthday' => array( 
-				'integrated_edit_field2' 
-			),
 			'classification' => array( 
 				'integrated_edit_field4' 
 			),
@@ -42,20 +33,17 @@
 			'office' => array( 
 				'integrated_edit_field3' 
 			),
-			'first_name' => array( 
-				'integrated_edit_field7' 
-			),
-			'middle_name' => array( 
-				'integrated_edit_field8' 
-			),
-			'last_name' => array( 
-				'integrated_edit_field9' 
-			),
 			'college' => array( 
 				'integrated_edit_field' 
 			),
 			'unit' => array( 
 				'integrated_edit_field10' 
+			),
+			'person_id' => array( 
+				'integrated_edit_field1' 
+			),
+			'person_type_id' => array( 
+				'integrated_edit_field2' 
 			) 
 		) 
 	),
@@ -81,9 +69,6 @@
 					'add_header' 
 				),
 				'grid' => array( 
-					'integrated_edit_field7',
-					'integrated_edit_field9',
-					'integrated_edit_field8',
 					'integrated_edit_field1',
 					'integrated_edit_field2',
 					'integrated_edit_field4',
@@ -106,9 +91,6 @@
 				'add_back_list' => 'below-grid',
 				'add_cancel' => 'below-grid',
 				'add_header' => 'top',
-				'integrated_edit_field7' => 'grid',
-				'integrated_edit_field9' => 'grid',
-				'integrated_edit_field8' => 'grid',
 				'integrated_edit_field1' => 'grid',
 				'integrated_edit_field2' => 'grid',
 				'integrated_edit_field4' => 'grid',
@@ -119,18 +101,6 @@
 				'integrated_edit_field6' => 'grid' 
 			),
 			'itemLocations' => array(
-				'integrated_edit_field7' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field9' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field8' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
 				'integrated_edit_field1' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
@@ -188,17 +158,14 @@
 				'add_reset' 
 			),
 			'integrated_edit_field' => array( 
-				'integrated_edit_field1',
-				'integrated_edit_field2',
 				'integrated_edit_field4',
 				'integrated_edit_field5',
 				'integrated_edit_field6',
 				'integrated_edit_field3',
-				'integrated_edit_field7',
-				'integrated_edit_field8',
-				'integrated_edit_field9',
 				'integrated_edit_field',
-				'integrated_edit_field10' 
+				'integrated_edit_field10',
+				'integrated_edit_field1',
+				'integrated_edit_field2' 
 			) 
 		),
 		'cellMaps' => array(
@@ -215,9 +182,6 @@
 							 
 						),
 						'items' => array( 
-							'integrated_edit_field7',
-							'integrated_edit_field9',
-							'integrated_edit_field8',
 							'integrated_edit_field1',
 							'integrated_edit_field2',
 							'integrated_edit_field4',
@@ -389,9 +353,6 @@
 				'c3' => array(
 					'model' => 'c3',
 					'items' => array( 
-						'integrated_edit_field7',
-						'integrated_edit_field9',
-						'integrated_edit_field8',
 						'integrated_edit_field1',
 						'integrated_edit_field2',
 						'integrated_edit_field4',
@@ -430,16 +391,6 @@
 		'add_reset' => array(
 			'type' => 'add_reset' 
 		),
-		'integrated_edit_field1' => array(
-			'field' => 'sex',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field2' => array(
-			'field' => 'birthday',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
 		'integrated_edit_field4' => array(
 			'field' => 'classification',
 			'type' => 'integrated_edit_field',
@@ -460,21 +411,6 @@
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
-		'integrated_edit_field7' => array(
-			'field' => 'first_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field8' => array(
-			'field' => 'middle_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field9' => array(
-			'field' => 'last_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
 		'integrated_edit_field' => array(
 			'field' => 'college',
 			'type' => 'integrated_edit_field',
@@ -482,6 +418,21 @@
 		),
 		'integrated_edit_field10' => array(
 			'field' => 'unit',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field1' => array(
+			'field' => 'person_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'label' => array(
+				'field' => 'person_id',
+				'table' => 'guarantors',
+				'type' => 3 
+			) 
+		),
+		'integrated_edit_field2' => array(
+			'field' => 'person_type_id',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		) 

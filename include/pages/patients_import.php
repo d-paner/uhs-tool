@@ -2,11 +2,6 @@
 			$optionsArray = array(
 	'fields' => array(
 		'gridFields' => array( 
-			'first_name',
-			'last_name',
-			'middle_name',
-			'sex',
-			'birthday',
 			'created_at',
 			'updated_at',
 			'classification',
@@ -15,7 +10,10 @@
 			'uhs_id_no',
 			'emed_no',
 			'ihomis_no',
-			'philhealth_no' 
+			'philhealth_no',
+			'person_id',
+			'person_type_id',
+			'patient_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -24,21 +22,6 @@
 			 
 		),
 		'fieldItems' => array(
-			'first_name' => array( 
-				'import_field1' 
-			),
-			'last_name' => array( 
-				'import_field2' 
-			),
-			'middle_name' => array( 
-				'import_field3' 
-			),
-			'sex' => array( 
-				'import_field4' 
-			),
-			'birthday' => array( 
-				'import_field5' 
-			),
 			'created_at' => array( 
 				'import_field6' 
 			),
@@ -65,6 +48,15 @@
 			),
 			'philhealth_no' => array( 
 				'import_field13' 
+			),
+			'person_id' => array( 
+				'import_field1' 
+			),
+			'person_type_id' => array( 
+				'import_field2' 
+			),
+			'patient_id' => array( 
+				'import_field3' 
 			) 
 		) 
 	),
@@ -84,11 +76,6 @@
 					'import_header' 
 				),
 				'grid' => array( 
-					'import_field1',
-					'import_field2',
-					'import_field3',
-					'import_field4',
-					'import_field5',
 					'import_field6',
 					'import_field7',
 					'import_field',
@@ -97,7 +84,10 @@
 					'import_field10',
 					'import_field11',
 					'import_field12',
-					'import_field13' 
+					'import_field13',
+					'import_field1',
+					'import_field2',
+					'import_field3' 
 				) 
 			),
 			'formXtTags' => array(
@@ -107,11 +97,6 @@
 			),
 			'itemForms' => array(
 				'import_header' => 'top',
-				'import_field1' => 'grid',
-				'import_field2' => 'grid',
-				'import_field3' => 'grid',
-				'import_field4' => 'grid',
-				'import_field5' => 'grid',
 				'import_field6' => 'grid',
 				'import_field7' => 'grid',
 				'import_field' => 'grid',
@@ -120,7 +105,10 @@
 				'import_field10' => 'grid',
 				'import_field11' => 'grid',
 				'import_field12' => 'grid',
-				'import_field13' => 'grid' 
+				'import_field13' => 'grid',
+				'import_field1' => 'grid',
+				'import_field2' => 'grid',
+				'import_field3' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -134,11 +122,6 @@
 				'import_header' 
 			),
 			'import_field' => array( 
-				'import_field1',
-				'import_field2',
-				'import_field3',
-				'import_field4',
-				'import_field5',
 				'import_field6',
 				'import_field7',
 				'import_field',
@@ -147,7 +130,10 @@
 				'import_field10',
 				'import_field11',
 				'import_field12',
-				'import_field13' 
+				'import_field13',
+				'import_field1',
+				'import_field2',
+				'import_field3' 
 			) 
 		),
 		'cellMaps' => array(
@@ -275,11 +261,6 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'import_field1',
-						'import_field2',
-						'import_field3',
-						'import_field4',
-						'import_field5',
 						'import_field6',
 						'import_field7',
 						'import_field',
@@ -288,7 +269,10 @@
 						'import_field10',
 						'import_field11',
 						'import_field12',
-						'import_field13' 
+						'import_field13',
+						'import_field1',
+						'import_field2',
+						'import_field3' 
 					) 
 				) 
 			),
@@ -301,26 +285,6 @@
 	'items' => array(
 		'import_header' => array(
 			'type' => 'import_header' 
-		),
-		'import_field1' => array(
-			'field' => 'first_name',
-			'type' => 'import_field' 
-		),
-		'import_field2' => array(
-			'field' => 'last_name',
-			'type' => 'import_field' 
-		),
-		'import_field3' => array(
-			'field' => 'middle_name',
-			'type' => 'import_field' 
-		),
-		'import_field4' => array(
-			'field' => 'sex',
-			'type' => 'import_field' 
-		),
-		'import_field5' => array(
-			'field' => 'birthday',
-			'type' => 'import_field' 
 		),
 		'import_field6' => array(
 			'field' => 'created_at',
@@ -356,6 +320,18 @@
 		),
 		'import_field13' => array(
 			'field' => 'philhealth_no',
+			'type' => 'import_field' 
+		),
+		'import_field1' => array(
+			'field' => 'person_id',
+			'type' => 'import_field' 
+		),
+		'import_field2' => array(
+			'field' => 'person_type_id',
+			'type' => 'import_field' 
+		),
+		'import_field3' => array(
+			'field' => 'patient_id',
 			'type' => 'import_field' 
 		) 
 	),

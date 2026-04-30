@@ -272,8 +272,8 @@ FROM
 					'lookupType' => 2,
 					'lookupTable' => 'hospital_accounts',
 					'lookupTableConnection' => 'conn',
-					'lookupLinkField' => 'label',
-					'lookupDisplayField' => 'label',
+					'lookupLinkField' => 'account_number',
+					'lookupDisplayField' => 'description',
 					'lookupListPage' => 'list' 
 				) 
 			),

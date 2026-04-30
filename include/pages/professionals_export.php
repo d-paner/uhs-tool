@@ -4,16 +4,7 @@
 		'id' => array(
 			'totalsType' => '' 
 		),
-		'full_name' => array(
-			'totalsType' => '' 
-		),
 		'profession' => array(
-			'totalsType' => '' 
-		),
-		'birthday' => array(
-			'totalsType' => '' 
-		),
-		'sex' => array(
 			'totalsType' => '' 
 		),
 		'professional_type_id' => array(
@@ -24,26 +15,35 @@
 		),
 		'updated_at' => array(
 			'totalsType' => '' 
+		),
+		'person_id' => array(
+			'totalsType' => '' 
+		),
+		'person_type_id' => array(
+			'totalsType' => '' 
+		),
+		'full_name' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'full_name',
 			'profession',
-			'birthday',
-			'sex',
 			'professional_type_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'person_id',
+			'person_type_id',
+			'full_name' 
 		),
 		'exportFields' => array( 
-			'full_name',
 			'profession',
-			'birthday',
-			'sex',
 			'professional_type_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'person_id',
+			'person_type_id',
+			'full_name' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -52,17 +52,8 @@
 			 
 		),
 		'fieldItems' => array(
-			'full_name' => array( 
-				'export_field1' 
-			),
 			'profession' => array( 
 				'export_field2' 
-			),
-			'birthday' => array( 
-				'export_field3' 
-			),
-			'sex' => array( 
-				'export_field4' 
 			),
 			'professional_type_id' => array( 
 				'export_field5' 
@@ -72,6 +63,15 @@
 			),
 			'updated_at' => array( 
 				'export_field7' 
+			),
+			'person_id' => array( 
+				'export_field' 
+			),
+			'person_type_id' => array( 
+				'export_field1' 
+			),
+			'full_name' => array( 
+				'export_field3' 
 			) 
 		) 
 	),
@@ -91,13 +91,13 @@
 					'export_header' 
 				),
 				'grid' => array( 
-					'export_field1',
 					'export_field2',
-					'export_field3',
-					'export_field4',
 					'export_field5',
 					'export_field6',
-					'export_field7' 
+					'export_field7',
+					'export_field',
+					'export_field1',
+					'export_field3' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -111,13 +111,13 @@
 			),
 			'itemForms' => array(
 				'export_header' => 'top',
-				'export_field1' => 'grid',
 				'export_field2' => 'grid',
-				'export_field3' => 'grid',
-				'export_field4' => 'grid',
 				'export_field5' => 'grid',
 				'export_field6' => 'grid',
 				'export_field7' => 'grid',
+				'export_field' => 'grid',
+				'export_field1' => 'grid',
+				'export_field3' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -139,13 +139,13 @@
 				'export_cancel' 
 			),
 			'export_field' => array( 
-				'export_field1',
 				'export_field2',
-				'export_field3',
-				'export_field4',
 				'export_field5',
 				'export_field6',
-				'export_field7' 
+				'export_field7',
+				'export_field',
+				'export_field1',
+				'export_field3' 
 			) 
 		),
 		'cellMaps' => array(
@@ -285,13 +285,13 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'export_field1',
 						'export_field2',
-						'export_field3',
-						'export_field4',
 						'export_field5',
 						'export_field6',
-						'export_field7' 
+						'export_field7',
+						'export_field',
+						'export_field1',
+						'export_field3' 
 					) 
 				) 
 			),
@@ -346,20 +346,8 @@
 		'export_cancel' => array(
 			'type' => 'export_cancel' 
 		),
-		'export_field1' => array(
-			'field' => 'full_name',
-			'type' => 'export_field' 
-		),
 		'export_field2' => array(
 			'field' => 'profession',
-			'type' => 'export_field' 
-		),
-		'export_field3' => array(
-			'field' => 'birthday',
-			'type' => 'export_field' 
-		),
-		'export_field4' => array(
-			'field' => 'sex',
 			'type' => 'export_field' 
 		),
 		'export_field5' => array(
@@ -372,6 +360,18 @@
 		),
 		'export_field7' => array(
 			'field' => 'updated_at',
+			'type' => 'export_field' 
+		),
+		'export_field' => array(
+			'field' => 'person_id',
+			'type' => 'export_field' 
+		),
+		'export_field1' => array(
+			'field' => 'person_type_id',
+			'type' => 'export_field' 
+		),
+		'export_field3' => array(
+			'field' => 'full_name',
 			'type' => 'export_field' 
 		) 
 	),

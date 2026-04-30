@@ -55,6 +55,12 @@
 [data-page="_global_menu"][data-itemid="welcome_item18"] > .bs-welcome-header {
   background-color: #d2af80;
 }
+[data-page="_global_menu"][data-itemid="welcome_item19"] > .bs-welcome-header {
+  background-color: #778899;
+}
+[data-page="_global_menu"][data-itemid="welcome_item20"] > .bs-welcome-header {
+  background-color: #db7093;
+}
 [data-page="_global_menu"][data-itemid="page_image_ash8f23hr"] {
   width: 400px;
 }

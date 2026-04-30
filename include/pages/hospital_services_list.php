@@ -1848,7 +1848,8 @@
 		'grid_field2' => array(
 			'field' => 'hospital_account',
 			'type' => 'grid_field',
-			'inlineAdd' => true 
+			'inlineAdd' => true,
+			'inlineEdit' => false 
 		),
 		'grid_field3' => array(
 			'type' => 'grid_field_label',

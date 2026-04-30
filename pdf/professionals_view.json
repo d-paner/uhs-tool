@@ -167,16 +167,7 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel professionals full_name }","bold":true},{"text":{$full_name_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
 			{"hidden":"{$item_hide_integrated_edit_field2}","stack":[{"text":"{$jslabel professionals profession }","bold":true},{"text":{$profession_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
-			{"hidden":"{$item_hide_integrated_edit_field3}","stack":[{"text":"{$jslabel professionals birthday }","bold":true},{"text":{$birthday_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
-			{"hidden":"{$item_hide_integrated_edit_field4}","stack":[{"text":"{$jslabel professionals sex }","bold":true},{"text":{$sex_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
 			{"hidden":"{$item_hide_integrated_edit_field5}","stack":[{"text":"{$jslabel professionals professional_type_id }","bold":true},{"text":{$professional_type_id_pdfvalue}}],"margin":[0,0,0,15]},
@@ -186,6 +177,15 @@ pdfDocument = {
 				
 				
 			{"hidden":"{$item_hide_integrated_edit_field7}","stack":[{"text":"{$jslabel professionals updated_at }","bold":true},{"text":{$updated_at_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field}","stack":[{"text":"{$jslabel professionals person_id }","bold":true},{"text":{$person_id_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel professionals person_type_id }","bold":true},{"text":{$person_type_id_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field3}","stack":[{"text":"{$jslabel professionals full_name }","bold":true},{"text":{$full_name_pdfvalue}}],"margin":[0,0,0,15]},
 				
 		  ],
   "border": [ false, false, false, false ],

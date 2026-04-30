@@ -3,7 +3,9 @@ class eventclass_guarantors  extends TableEventsBase {
 	
 	function init() {
 		$this->events = array(
-	'BeforeAdd' => true 
+	'BeforeAdd' => true,
+	'OnPageLoad' => true,
+	'BeforeProcessAdd' => true 
 );
 		$this->fieldValues = array(
 	'filterLimit' => array(
@@ -46,11 +48,33 @@ class eventclass_guarantors  extends TableEventsBase {
 );
 			}
 		function BeforeAdd( &$values, &$sqlValues, &$message, $inline, $pageObject ) {
-		$values['full_name'] = ucwords($values['full_name']);
+		$type = 'Guarantor';
+$values['person_type_id'] = setPersonType($type);
 
-return true;
+// check if data exists
+$query = "SELECT * FROM person_type_map 
+          WHERE person_id = ".$values['person_id']." 
+          AND type_id = ".$values['person_type_id']."
+        ";
+
+$runSql = DB::Query($query);
+
+if($runSql->fetchAssoc()) {
+    $message = 'Already have guarantor profile.';
+    return false;
+} else {
+    $queryInsert = "INSERT INTO person_type_map VALUES (".$values['person_id'].", ".$values['person_type_id'].", now(), now())";
+    $exec = DB::Query($queryInsert);
+    return true;
+}
 		;
 		return true;
+	}
+
+	function BeforeProcessAdd( $pageObject ) {
+		include_once('custom/set_type.php');
+		;
+		
 	}
 	public function default_created_at_efedit(  ) {
 	$defaultValue = now();;

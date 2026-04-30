@@ -190,6 +190,12 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_edit_field8}","stack":[{"text":"{$jslabel transactions updated_at }","bold":true},{"text":{$updated_at_pdfvalue}}],"margin":[0,0,0,15]},
 				
+				
+			{"hidden":"{$item_hide_integrated_edit_field}","stack":[{"text":"{$jslabel transactions patient_name }","bold":true},{"text":{$patient_name_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field9}","stack":[{"text":"{$jslabel transactions opd_attendance }","bold":true},{"text":{$opd_attendance_pdfvalue}}],"margin":[0,0,0,15]},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

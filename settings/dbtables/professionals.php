@@ -18,12 +18,23 @@ $runnerDbTableInfo['professionals'] = array(
 			'defaultValue' => '' 
 		),
 		array(
-			'name' => 'full_name',
-			'type' => 200,
-			'size' => 250,
+			'name' => 'person_id',
+			'type' => 3,
+			'size' => 11,
 			'scale' => 0,
-			'typeName' => 'varchar(250)',
-			'nullable' => false,
+			'typeName' => 'int(11)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
+			'name' => 'person_type_id',
+			'type' => 3,
+			'size' => 11,
+			'scale' => 0,
+			'typeName' => 'int(11)',
+			'nullable' => true,
 			'autoinc' => false,
 			'defaultValueSQL' => null,
 			'defaultValue' => '' 
@@ -35,28 +46,6 @@ $runnerDbTableInfo['professionals'] = array(
 			'scale' => 0,
 			'typeName' => 'varchar(250)',
 			'nullable' => false,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'birthday',
-			'type' => 7,
-			'size' => 0,
-			'scale' => 0,
-			'typeName' => 'date',
-			'nullable' => true,
-			'autoinc' => false,
-			'defaultValueSQL' => null,
-			'defaultValue' => '' 
-		),
-		array(
-			'name' => 'sex',
-			'type' => 200,
-			'size' => 250,
-			'scale' => 0,
-			'typeName' => 'varchar(250)',
-			'nullable' => true,
 			'autoinc' => false,
 			'defaultValueSQL' => null,
 			'defaultValue' => '' 

@@ -6,8 +6,6 @@
 			'patient_id',
 			'patient_type',
 			'status',
-			'total_due',
-			'total_paid',
 			'created_at',
 			'updated_at' 
 		),
@@ -29,12 +27,6 @@
 			),
 			'status' => array( 
 				'import_field4' 
-			),
-			'total_due' => array( 
-				'import_field5' 
-			),
-			'total_paid' => array( 
-				'import_field6' 
 			),
 			'created_at' => array( 
 				'import_field7' 
@@ -64,8 +56,6 @@
 					'import_field2',
 					'import_field3',
 					'import_field4',
-					'import_field5',
-					'import_field6',
 					'import_field7',
 					'import_field8' 
 				) 
@@ -81,8 +71,6 @@
 				'import_field2' => 'grid',
 				'import_field3' => 'grid',
 				'import_field4' => 'grid',
-				'import_field5' => 'grid',
-				'import_field6' => 'grid',
 				'import_field7' => 'grid',
 				'import_field8' => 'grid' 
 			),
@@ -102,8 +90,6 @@
 				'import_field2',
 				'import_field3',
 				'import_field4',
-				'import_field5',
-				'import_field6',
 				'import_field7',
 				'import_field8' 
 			) 
@@ -237,8 +223,6 @@
 						'import_field2',
 						'import_field3',
 						'import_field4',
-						'import_field5',
-						'import_field6',
 						'import_field7',
 						'import_field8' 
 					) 
@@ -268,14 +252,6 @@
 		),
 		'import_field4' => array(
 			'field' => 'status',
-			'type' => 'import_field' 
-		),
-		'import_field5' => array(
-			'field' => 'total_due',
-			'type' => 'import_field' 
-		),
-		'import_field6' => array(
-			'field' => 'total_paid',
 			'type' => 'import_field' 
 		),
 		'import_field7' => array(

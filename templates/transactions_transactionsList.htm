@@ -254,6 +254,32 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_updated_at}</span>
 						</div>
 		{END searchCtrlBlock_updated_at}
+																{BEGIN searchCtrlBlock_opd_attendance}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_opd_attendance}" {$filterRow_attrs_opd_attendance}>
+			<label>{$label transactions opd_attendance }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_opd_attendance}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_opd_attendance}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_opd_attendance}</span>
+						</div>
+		{END searchCtrlBlock_opd_attendance}
+																{BEGIN searchCtrlBlock_patient_name}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_patient_name}" {$filterRow_attrs_patient_name}>
+			<label>{$label transactions patient_name }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_patient_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_patient_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_patient_name}</span>
+						</div>
+		{END searchCtrlBlock_patient_name}
 																{BEGIN searchCtrlBlock_created_at}
 
 
@@ -702,16 +728,22 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="status"]:before {
 		content: "{$label transactions status}";
 	}
-					}
+							[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="patient_name"]:before {
+		content: "{$label transactions patient_name}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="opd_attendance"]:before {
+		content: "{$label transactions opd_attendance}";
+	}
+	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
 	cellpadding="0"
-	data-body-height="2"
+	data-body-height="1"
 >
 						<thead>
 			{BEGIN grid_header}
 			
-																														<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
+																									<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
 									{$gridHeader_class}
 					
 								r-gridrow
@@ -722,7 +754,7 @@
 	{$cell_grid_headcell_field}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$transaction_number_class}	"
+		 r-ori-vert		 {$transaction_number_class}	"
 
 			data-field="transaction_number"
 	
@@ -756,7 +788,7 @@
 	{$cell_grid_headcell_field1}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_id_class}	"
+		 r-ori-vert		 {$patient_id_class}	"
 
 			data-field="patient_id"
 	
@@ -767,7 +799,7 @@
 		{BEGIN patient_id_fieldheadercolumn}
 	{BEGIN patient_id_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_id" data-fieldname="patient_id" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_id" data-fieldname="patient_id" 
 
 			{$patient_id_orderlinkattrs}
 	
@@ -790,18 +822,52 @@
 	{$cell_grid_headcell_field2}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_type_class}	"
+		 r-ori-vert		 {$patient_name_class}	"
+
+			data-field="patient_name"
+	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN patient_name_fieldheadercolumn}
+	{BEGIN patient_name_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_name" data-fieldname="patient_name" 
+
+			{$patient_name_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label transactions patient_name }</span>
+					{$arrow_icon_patient_name}
+			</span>
+	</span>
+	{END patient_name_fieldheader}
+{END patient_name_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
+	<th
+	
+	{$cell_grid_headcell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$patient_type_class}	"
 
 			data-field="patient_type"
 	
-	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN patient_type_fieldheadercolumn}
 	{BEGIN patient_type_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_type" data-fieldname="patient_type" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_type" data-fieldname="patient_type" 
 
 			{$patient_type_orderlinkattrs}
 	
@@ -817,25 +883,25 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field2}
-									{BEGIN cellblock_grid_headcell_field3}
+	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field4}
 	<th
 	
-	{$cell_grid_headcell_field3}
+	{$cell_grid_headcell_field4}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$status_class}	"
+		 r-ori-vert		 {$status_class}	"
 
 			data-field="status"
 	
-	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN status_fieldheadercolumn}
 	{BEGIN status_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="status" data-fieldname="status" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="status" data-fieldname="status" 
 
 			{$status_orderlinkattrs}
 	
@@ -851,15 +917,49 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field3}
+	{END cellblock_grid_headcell_field4}
+									{BEGIN cellblock_grid_headcell_field5}
+	<th
+	
+	{$cell_grid_headcell_field5}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$opd_attendance_class}	"
+
+			data-field="opd_attendance"
+	
+	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN opd_attendance_fieldheadercolumn}
+	{BEGIN opd_attendance_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="opd_attendance" data-fieldname="opd_attendance" 
+
+			{$opd_attendance_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label transactions opd_attendance }</span>
+					{$arrow_icon_opd_attendance}
+			</span>
+	</span>
+	{END opd_attendance_fieldheader}
+{END opd_attendance_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field5}
 							</tr>
-																				
+															
 					{END grid_header}
 			</thead>
 															<tbody>
 					{BEGIN grid_row}
 							
-																																			<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
+																														<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
 				
 								r-gridrow
 							">
@@ -869,7 +969,7 @@
 	{$cell_grid_cell_field}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$transaction_number_class}	"
+		 r-ori-vert		 {$transaction_number_class}	"
 
 			data-field="transaction_number"
 	
@@ -890,7 +990,7 @@
 	{$cell_grid_cell_field1}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_id_class}	"
+		 r-ori-vert		 {$patient_id_class}	"
 
 			data-field="patient_id"
 	
@@ -911,11 +1011,32 @@
 	{$cell_grid_cell_field2}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_type_class}	"
+		 r-ori-vert		 {$patient_name_class}	"
+
+			data-field="patient_name"
+	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN patient_name_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_name" data-fieldname="patient_name" data-default-width >
+{$patient_name_value}
+</span>
+{END patient_name_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
+	<td
+	
+	{$cell_grid_cell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$patient_type_class}	"
 
 			data-field="patient_type"
 	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -925,18 +1046,18 @@
 </span>
 {END patient_type_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field4}
 	<td
 	
-	{$cell_grid_cell_field3}
+	{$cell_grid_cell_field4}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$status_class}	"
+		 r-ori-vert		 {$status_class}	"
 
 			data-field="status"
 	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -946,33 +1067,35 @@
 </span>
 {END status_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field3}
-							</tr>
-											<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
-				
-							">
-									{BEGIN cellblock_grid_cell_dpreview}
+	{END cellblock_grid_cell_field4}
+									{BEGIN cellblock_grid_cell_field5}
 	<td
 	
-	{$cell_grid_cell_dpreview}
+	{$cell_grid_cell_field5}
 	{$recordattrs}
 	class="
-		 r-ori-vert			"
+		 r-ori-vert		 {$opd_attendance_class}	"
 
+			data-field="opd_attendance"
 	
-	data-cellId="grid_cell_dpreview" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
-	
+	 
+		{BEGIN opd_attendance_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="opd_attendance" data-fieldname="opd_attendance" data-default-width >
+{$opd_attendance_value}
+</span>
+{END opd_attendance_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_dpreview}
+	{END cellblock_grid_cell_field5}
 							</tr>
 										
 											{END grid_row}
 					</tbody>
 													<tfoot>
 			
-																																													<tr {$rowattrs} {$row_grid_3} class="{$rowclass}
+																																			<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
 									{$gridFooter_class}
 					
 								r-gridrow
@@ -1013,7 +1136,7 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$patient_type_class}	"
+		 r-ori-vert		 {$patient_name_class}	"
 
 	
 	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_transactionsList"	
@@ -1028,7 +1151,7 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$status_class}	"
+		 r-ori-vert		 {$patient_type_class}	"
 
 	
 	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_transactionsList"	
@@ -1037,6 +1160,36 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field3}
+									{BEGIN cellblock_grid_footcell_field4}
+	<td
+	
+	{$cell_grid_footcell_field4}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$status_class}	"
+
+	
+	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_transactionsList"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field4}
+									{BEGIN cellblock_grid_footcell_field5}
+	<td
+	
+	{$cell_grid_footcell_field5}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$opd_attendance_class}	"
+
+	
+	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_transactionsList"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field5}
 							</tr>
 					
 					</tfoot>

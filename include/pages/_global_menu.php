@@ -166,6 +166,22 @@
 				'items' => null,
 				'table' => 'fund_code',
 				'page' => 'list' 
+			),
+			'welcome_item19' => array(
+				'menutItem' => true,
+				'group' => false,
+				'linkType' => 0,
+				'items' => null,
+				'table' => 'persons',
+				'page' => 'list' 
+			),
+			'welcome_item20' => array(
+				'menutItem' => true,
+				'group' => false,
+				'linkType' => 0,
+				'items' => null,
+				'table' => 'person_types',
+				'page' => 'list' 
 			) 
 		) 
 	),
@@ -214,7 +230,9 @@
 					'welcome_item15',
 					'welcome_item16',
 					'welcome_item17',
-					'welcome_item18' 
+					'welcome_item18',
+					'welcome_item19',
+					'welcome_item20' 
 				) 
 			),
 			'formXtTags' => array(
@@ -245,7 +263,9 @@
 				'welcome_item15' => 'grid',
 				'welcome_item16' => 'grid',
 				'welcome_item17' => 'grid',
-				'welcome_item18' => 'grid' 
+				'welcome_item18' => 'grid',
+				'welcome_item19' => 'grid',
+				'welcome_item20' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -282,7 +302,9 @@
 				'welcome_item15',
 				'welcome_item16',
 				'welcome_item17',
-				'welcome_item18' 
+				'welcome_item18',
+				'welcome_item19',
+				'welcome_item20' 
 			),
 			'username_button' => array( 
 				'username_button' 
@@ -454,7 +476,9 @@
 						'welcome_item15',
 						'welcome_item16',
 						'welcome_item17',
-						'welcome_item18' 
+						'welcome_item18',
+						'welcome_item19',
+						'welcome_item20' 
 					) 
 				) 
 			),
@@ -758,6 +782,30 @@
 				'type' => 6 
 			),
 			'background' => '#d2af80',
+			'linkType' => 0 
+		),
+		'welcome_item19' => array(
+			'type' => 'welcome_item',
+			'linkUrl' => '',
+			'linkTable' => 'persons',
+			'linkPage' => 'list',
+			'linkText' => array(
+				'table' => 'persons',
+				'type' => 6 
+			),
+			'background' => '#778899',
+			'linkType' => 0 
+		),
+		'welcome_item20' => array(
+			'type' => 'welcome_item',
+			'linkUrl' => '',
+			'linkTable' => 'person_types',
+			'linkPage' => 'list',
+			'linkText' => array(
+				'table' => 'person_types',
+				'type' => 6 
+			),
+			'background' => '#db7093',
 			'linkType' => 0 
 		) 
 	),

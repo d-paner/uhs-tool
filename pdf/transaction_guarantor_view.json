@@ -170,9 +170,6 @@ pdfDocument = {
 			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel transaction_guarantor transaction_number }","bold":true},{"text":{$transaction_number_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
-			{"hidden":"{$item_hide_integrated_edit_field2}","stack":[{"text":"{$jslabel transaction_guarantor guarantor_id }","bold":true},{"text":{$guarantor_id_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
 			{"hidden":"{$item_hide_integrated_edit_field3}","stack":[{"text":"{$jslabel transaction_guarantor placed_by }","bold":true},{"text":{$placed_by_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
@@ -180,6 +177,9 @@ pdfDocument = {
 				
 				
 			{"hidden":"{$item_hide_integrated_edit_field5}","stack":[{"text":"{$jslabel transaction_guarantor timestamps }","bold":true},{"text":{$timestamps_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field}","stack":[{"text":"{$jslabel transaction_guarantor guarantor_id }","bold":true},{"text":{$guarantor_id_pdfvalue}}],"margin":[0,0,0,15]},
 				
 		  ],
   "border": [ false, false, false, false ],

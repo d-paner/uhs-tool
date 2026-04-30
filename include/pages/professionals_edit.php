@@ -5,13 +5,12 @@
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'full_name',
 			'profession',
-			'birthday',
-			'sex',
 			'professional_type_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'person_id',
+			'person_type_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -23,17 +22,8 @@
 			 
 		),
 		'fieldItems' => array(
-			'full_name' => array( 
-				'integrated_edit_field' 
-			),
 			'profession' => array( 
 				'integrated_edit_field1' 
-			),
-			'birthday' => array( 
-				'integrated_edit_field2' 
-			),
-			'sex' => array( 
-				'integrated_edit_field3' 
 			),
 			'professional_type_id' => array( 
 				'integrated_edit_field4' 
@@ -43,6 +33,12 @@
 			),
 			'updated_at' => array( 
 				'integrated_edit_field6' 
+			),
+			'person_id' => array( 
+				'integrated_edit_field' 
+			),
+			'person_type_id' => array( 
+				'integrated_edit_field2' 
 			) 
 		) 
 	),
@@ -68,13 +64,12 @@
 					'edit_header' 
 				),
 				'grid' => array( 
-					'integrated_edit_field',
 					'integrated_edit_field1',
-					'integrated_edit_field2',
-					'integrated_edit_field3',
 					'integrated_edit_field4',
 					'integrated_edit_field5',
-					'integrated_edit_field6' 
+					'integrated_edit_field6',
+					'integrated_edit_field',
+					'integrated_edit_field2' 
 				) 
 			),
 			'formXtTags' => array(
@@ -89,28 +84,15 @@
 				'edit_close' => 'below-grid',
 				'hamburger' => 'below-grid',
 				'edit_header' => 'top',
-				'integrated_edit_field' => 'grid',
 				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field2' => 'grid',
-				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field5' => 'grid',
-				'integrated_edit_field6' => 'grid' 
+				'integrated_edit_field6' => 'grid',
+				'integrated_edit_field' => 'grid',
+				'integrated_edit_field2' => 'grid' 
 			),
 			'itemLocations' => array(
-				'integrated_edit_field' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
 				'integrated_edit_field1' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field2' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field3' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -123,6 +105,14 @@
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field6' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field2' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				) 
@@ -154,13 +144,12 @@
 				'edit_close' 
 			),
 			'integrated_edit_field' => array( 
-				'integrated_edit_field',
 				'integrated_edit_field1',
-				'integrated_edit_field2',
-				'integrated_edit_field3',
 				'integrated_edit_field4',
 				'integrated_edit_field5',
-				'integrated_edit_field6' 
+				'integrated_edit_field6',
+				'integrated_edit_field',
+				'integrated_edit_field2' 
 			),
 			'edit_view' => array( 
 				'edit_view' 
@@ -180,13 +169,12 @@
 							 
 						),
 						'items' => array( 
-							'integrated_edit_field',
 							'integrated_edit_field1',
-							'integrated_edit_field2',
-							'integrated_edit_field3',
 							'integrated_edit_field4',
 							'integrated_edit_field5',
-							'integrated_edit_field6' 
+							'integrated_edit_field6',
+							'integrated_edit_field',
+							'integrated_edit_field2' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -362,13 +350,12 @@
 				'c3' => array(
 					'model' => 'c3',
 					'items' => array( 
-						'integrated_edit_field',
 						'integrated_edit_field1',
-						'integrated_edit_field2',
-						'integrated_edit_field3',
 						'integrated_edit_field4',
 						'integrated_edit_field5',
-						'integrated_edit_field6' 
+						'integrated_edit_field6',
+						'integrated_edit_field',
+						'integrated_edit_field2' 
 					) 
 				) 
 			),
@@ -406,26 +393,8 @@
 		'edit_close' => array(
 			'type' => 'edit_close' 
 		),
-		'integrated_edit_field' => array(
-			'field' => 'full_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0,
-			'updateOnEdit' => false 
-		),
 		'integrated_edit_field1' => array(
 			'field' => 'profession',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0,
-			'updateOnEdit' => false 
-		),
-		'integrated_edit_field2' => array(
-			'field' => 'birthday',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0,
-			'updateOnEdit' => false 
-		),
-		'integrated_edit_field3' => array(
-			'field' => 'sex',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0,
 			'updateOnEdit' => false 
@@ -450,6 +419,18 @@
 		),
 		'edit_view' => array(
 			'type' => 'edit_view' 
+		),
+		'integrated_edit_field' => array(
+			'field' => 'person_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'updateOnEdit' => false 
+		),
+		'integrated_edit_field2' => array(
+			'field' => 'person_type_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'updateOnEdit' => false 
 		) 
 	),
 	'version' => 13,

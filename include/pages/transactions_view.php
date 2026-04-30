@@ -26,7 +26,9 @@
 			'total_due',
 			'total_paid',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'patient_name',
+			'opd_attendance' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -58,6 +60,12 @@
 			),
 			'updated_at' => array( 
 				'integrated_edit_field8' 
+			),
+			'patient_name' => array( 
+				'integrated_edit_field' 
+			),
+			'opd_attendance' => array( 
+				'integrated_edit_field9' 
 			) 
 		) 
 	),
@@ -89,7 +97,9 @@
 					'integrated_edit_field5',
 					'integrated_edit_field6',
 					'integrated_edit_field7',
-					'integrated_edit_field8' 
+					'integrated_edit_field8',
+					'integrated_edit_field',
+					'integrated_edit_field9' 
 				) 
 			),
 			'formXtTags' => array(
@@ -109,7 +119,9 @@
 				'integrated_edit_field5' => 'grid',
 				'integrated_edit_field6' => 'grid',
 				'integrated_edit_field7' => 'grid',
-				'integrated_edit_field8' => 'grid' 
+				'integrated_edit_field8' => 'grid',
+				'integrated_edit_field' => 'grid',
+				'integrated_edit_field9' => 'grid' 
 			),
 			'itemLocations' => array(
 				'integrated_edit_field1' => array(
@@ -143,6 +155,14 @@
 				'integrated_edit_field8' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
+				),
+				'integrated_edit_field' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field9' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
 				) 
 			),
 			'itemVisiblity' => array(
@@ -167,7 +187,9 @@
 				'integrated_edit_field5',
 				'integrated_edit_field6',
 				'integrated_edit_field7',
-				'integrated_edit_field8' 
+				'integrated_edit_field8',
+				'integrated_edit_field',
+				'integrated_edit_field9' 
 			),
 			'hamburger' => array( 
 				'hamburger' 
@@ -197,7 +219,9 @@
 							'integrated_edit_field5',
 							'integrated_edit_field6',
 							'integrated_edit_field7',
-							'integrated_edit_field8' 
+							'integrated_edit_field8',
+							'integrated_edit_field',
+							'integrated_edit_field9' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -377,7 +401,9 @@
 						'integrated_edit_field5',
 						'integrated_edit_field6',
 						'integrated_edit_field7',
-						'integrated_edit_field8' 
+						'integrated_edit_field8',
+						'integrated_edit_field',
+						'integrated_edit_field9' 
 					) 
 				) 
 			),
@@ -447,6 +473,16 @@
 		),
 		'view_edit' => array(
 			'type' => 'view_edit' 
+		),
+		'integrated_edit_field' => array(
+			'field' => 'patient_name',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field9' => array(
+			'field' => 'opd_attendance',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
 		) 
 	),
 	'version' => 13,

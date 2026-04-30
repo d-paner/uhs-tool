@@ -5,11 +5,6 @@
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'first_name',
-			'last_name',
-			'middle_name',
-			'sex',
-			'birthday',
 			'created_at',
 			'updated_at',
 			'classification',
@@ -18,7 +13,9 @@
 			'uhs_id_no',
 			'emed_no',
 			'ihomis_no',
-			'philhealth_no' 
+			'philhealth_no',
+			'person_id',
+			'person_type_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -27,21 +24,6 @@
 			 
 		),
 		'fieldItems' => array(
-			'first_name' => array( 
-				'integrated_edit_field' 
-			),
-			'last_name' => array( 
-				'integrated_edit_field1' 
-			),
-			'middle_name' => array( 
-				'integrated_edit_field2' 
-			),
-			'sex' => array( 
-				'integrated_edit_field3' 
-			),
-			'birthday' => array( 
-				'integrated_edit_field4' 
-			),
 			'created_at' => array( 
 				'integrated_edit_field5' 
 			),
@@ -68,6 +50,12 @@
 			),
 			'philhealth_no' => array( 
 				'integrated_edit_field13' 
+			),
+			'person_id' => array( 
+				'integrated_edit_field' 
+			),
+			'person_type_id' => array( 
+				'integrated_edit_field1' 
 			) 
 		) 
 	),
@@ -95,9 +83,6 @@
 				'grid' => array( 
 					'integrated_edit_field',
 					'integrated_edit_field1',
-					'integrated_edit_field2',
-					'integrated_edit_field3',
-					'integrated_edit_field4',
 					'integrated_edit_field7',
 					'integrated_edit_field8',
 					'integrated_edit_field9',
@@ -123,9 +108,6 @@
 				'add_header' => 'top',
 				'integrated_edit_field' => 'grid',
 				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field2' => 'grid',
-				'integrated_edit_field3' => 'grid',
-				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field7' => 'grid',
 				'integrated_edit_field8' => 'grid',
 				'integrated_edit_field9' => 'grid',
@@ -142,18 +124,6 @@
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field1' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field2' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field3' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field4' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -218,11 +188,6 @@
 				'add_reset' 
 			),
 			'integrated_edit_field' => array( 
-				'integrated_edit_field',
-				'integrated_edit_field1',
-				'integrated_edit_field2',
-				'integrated_edit_field3',
-				'integrated_edit_field4',
 				'integrated_edit_field5',
 				'integrated_edit_field6',
 				'integrated_edit_field7',
@@ -231,7 +196,9 @@
 				'integrated_edit_field10',
 				'integrated_edit_field11',
 				'integrated_edit_field12',
-				'integrated_edit_field13' 
+				'integrated_edit_field13',
+				'integrated_edit_field',
+				'integrated_edit_field1' 
 			) 
 		),
 		'cellMaps' => array(
@@ -250,9 +217,6 @@
 						'items' => array( 
 							'integrated_edit_field',
 							'integrated_edit_field1',
-							'integrated_edit_field2',
-							'integrated_edit_field3',
-							'integrated_edit_field4',
 							'integrated_edit_field7',
 							'integrated_edit_field8',
 							'integrated_edit_field9',
@@ -427,9 +391,6 @@
 					'items' => array( 
 						'integrated_edit_field',
 						'integrated_edit_field1',
-						'integrated_edit_field2',
-						'integrated_edit_field3',
-						'integrated_edit_field4',
 						'integrated_edit_field7',
 						'integrated_edit_field8',
 						'integrated_edit_field9',
@@ -468,31 +429,6 @@
 		),
 		'add_reset' => array(
 			'type' => 'add_reset' 
-		),
-		'integrated_edit_field' => array(
-			'field' => 'first_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field1' => array(
-			'field' => 'last_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field2' => array(
-			'field' => 'middle_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field3' => array(
-			'field' => 'sex',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field4' => array(
-			'field' => 'birthday',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
 		),
 		'integrated_edit_field5' => array(
 			'field' => 'created_at',
@@ -543,6 +479,26 @@
 			'field' => 'philhealth_no',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
+		),
+		'integrated_edit_field' => array(
+			'field' => 'person_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'label' => array(
+				'field' => 'person_id',
+				'table' => 'patients',
+				'type' => 3 
+			) 
+		),
+		'integrated_edit_field1' => array(
+			'field' => 'person_type_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'label' => array(
+				'field' => 'person_type_id',
+				'table' => 'patients',
+				'type' => 3 
+			) 
 		) 
 	),
 	'version' => 13,

@@ -3,10 +3,10 @@
 	'fields' => array(
 		'gridFields' => array( 
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -18,9 +18,6 @@
 			'transaction_number' => array( 
 				'import_field1' 
 			),
-			'guarantor_id' => array( 
-				'import_field2' 
-			),
 			'placed_by' => array( 
 				'import_field3' 
 			),
@@ -29,6 +26,9 @@
 			),
 			'timestamps' => array( 
 				'import_field5' 
+			),
+			'guarantor_id' => array( 
+				'import_field' 
 			) 
 		) 
 	),
@@ -49,10 +49,10 @@
 				),
 				'grid' => array( 
 					'import_field1',
-					'import_field2',
 					'import_field3',
 					'import_field4',
-					'import_field5' 
+					'import_field5',
+					'import_field' 
 				) 
 			),
 			'formXtTags' => array(
@@ -63,10 +63,10 @@
 			'itemForms' => array(
 				'import_header' => 'top',
 				'import_field1' => 'grid',
-				'import_field2' => 'grid',
 				'import_field3' => 'grid',
 				'import_field4' => 'grid',
-				'import_field5' => 'grid' 
+				'import_field5' => 'grid',
+				'import_field' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -81,10 +81,10 @@
 			),
 			'import_field' => array( 
 				'import_field1',
-				'import_field2',
 				'import_field3',
 				'import_field4',
-				'import_field5' 
+				'import_field5',
+				'import_field' 
 			) 
 		),
 		'cellMaps' => array(
@@ -213,10 +213,10 @@
 					'model' => 'c1',
 					'items' => array( 
 						'import_field1',
-						'import_field2',
 						'import_field3',
 						'import_field4',
-						'import_field5' 
+						'import_field5',
+						'import_field' 
 					) 
 				) 
 			),
@@ -234,10 +234,6 @@
 			'field' => 'transaction_number',
 			'type' => 'import_field' 
 		),
-		'import_field2' => array(
-			'field' => 'guarantor_id',
-			'type' => 'import_field' 
-		),
 		'import_field3' => array(
 			'field' => 'placed_by',
 			'type' => 'import_field' 
@@ -248,6 +244,10 @@
 		),
 		'import_field5' => array(
 			'field' => 'timestamps',
+			'type' => 'import_field' 
+		),
+		'import_field' => array(
+			'field' => 'guarantor_id',
 			'type' => 'import_field' 
 		) 
 	),

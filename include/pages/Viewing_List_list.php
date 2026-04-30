@@ -1462,6 +1462,7 @@
 					'items' => array( 
 						'grid_field' 
 					),
+					'nowrap' => true,
 					'field' => 'guarantor_name',
 					'columnName' => 'field' 
 				),
@@ -1550,6 +1551,7 @@
 					'items' => array( 
 						'grid_field4' 
 					),
+					'nowrap' => true,
 					'field' => 'patient_name',
 					'columnName' => 'field' 
 				),

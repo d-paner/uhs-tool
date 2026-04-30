@@ -241,19 +241,19 @@
 				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
 		</div>
 		{END searchCtrlBlock}
-																		{BEGIN searchCtrlBlock_id}
+																		{BEGIN searchCtrlBlock_account_number}
 
 
-		<div class="form-group srchPanelRow {$filterRow_class_id}" {$filterRow_attrs_id}>
-			<label>{$label hospital_accounts id }</label>
+		<div class="form-group srchPanelRow {$filterRow_class_account_number}" {$filterRow_attrs_account_number}>
+			<label>{$label hospital_accounts account_number }</label>
 
 							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_id}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_id}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_id}</span>
+								<span class="rnr-searchtype">{$searchtype_account_number}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_account_number}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_account_number}</span>
 						</div>
-		{END searchCtrlBlock_id}
+		{END searchCtrlBlock_account_number}
 																{BEGIN searchCtrlBlock_fund_code}
 
 
@@ -660,9 +660,6 @@
 <div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
 {END message_block}	<style>
 @media screen and (max-width: 767px) {
-		[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id"]:before {
-		content: "{$label hospital_accounts id}";
-	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="label"]:before {
 		content: "{$label hospital_accounts label}";
 	}
@@ -680,6 +677,9 @@
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="fund_code"]:before {
 		content: "{$label hospital_accounts fund_code}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="account_number"]:before {
+		content: "{$label hospital_accounts account_number}";
 	}
 	}
 </style>
@@ -739,30 +739,30 @@
 	{$cell_grid_headcell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$id_class}	"
+		 r-ori-vert		 {$account_number_class}	"
 
-			data-field="id"
+			data-field="account_number"
 	
 	data-cellId="grid_headcell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN id_fieldheadercolumn}
-	{BEGIN id_fieldheader}
+		{BEGIN account_number_fieldheadercolumn}
+	{BEGIN account_number_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id" data-fieldname="id" 
+	data-itemtype="grid_field_label" data-itemid="grid_field5" {$item_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="account_number" data-fieldname="account_number" 
 
-			{$id_orderlinkattrs}
+			{$account_number_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label hospital_accounts id }</span>
-					{$arrow_icon_id}
+		<span>{$label hospital_accounts account_number }</span>
+					{$arrow_icon_account_number}
 			</span>
 	</span>
-	{END id_fieldheader}
-{END id_fieldheadercolumn}
+	{END account_number_fieldheader}
+{END account_number_fieldheadercolumn}
 
 	
 	</th>
@@ -784,7 +784,7 @@
 		{BEGIN label_fieldheadercolumn}
 	{BEGIN label_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="label" data-fieldname="label" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="label" data-fieldname="label" 
 
 			{$label_orderlinkattrs}
 	
@@ -818,7 +818,7 @@
 		{BEGIN description_fieldheadercolumn}
 	{BEGIN description_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="description" data-fieldname="description" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="description" data-fieldname="description" 
 
 			{$description_orderlinkattrs}
 	
@@ -920,7 +920,7 @@
 		{BEGIN created_at_fieldheadercolumn}
 	{BEGIN created_at_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="created_at" data-fieldname="created_at" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="created_at" data-fieldname="created_at" 
 
 			{$created_at_orderlinkattrs}
 	
@@ -954,7 +954,7 @@
 		{BEGIN updated_at_fieldheadercolumn}
 	{BEGIN updated_at_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="updated_at" data-fieldname="updated_at" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="updated_at" data-fieldname="updated_at" 
 
 			{$updated_at_orderlinkattrs}
 	
@@ -1039,19 +1039,19 @@
 	{$cell_grid_cell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$id_class}	"
+		 r-ori-vert		 {$account_number_class}	"
 
-			data-field="id"
+			data-field="account_number"
 	
 	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN id_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id" data-fieldname="id" data-default-width >
-{$id_value}
+		{BEGIN account_number_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field4" {$item_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="account_number" data-fieldname="account_number" data-default-width >
+{$account_number_value}
 </span>
-{END id_fieldcolumn}	
+{END account_number_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field}
 									{BEGIN cellblock_grid_cell_field1}
@@ -1227,7 +1227,7 @@
 	{$cell_grid_footcell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$id_class}	"
+		 r-ori-vert		 {$account_number_class}	"
 
 	
 	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="hospital_accounts_list"	

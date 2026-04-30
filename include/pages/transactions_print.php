@@ -41,6 +41,12 @@
 		),
 		'updated_at' => array(
 			'totalsType' => '' 
+		),
+		'patient_name' => array(
+			'totalsType' => '' 
+		),
+		'opd_attendance' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
@@ -52,7 +58,9 @@
 			'total_due',
 			'total_paid',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'patient_name',
+			'opd_attendance' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -63,35 +71,43 @@
 		'fieldItems' => array(
 			'transaction_number' => array( 
 				'simple_grid_field1',
-				'simple_grid_field' 
+				'simple_grid_field10' 
 			),
 			'patient_id' => array( 
 				'simple_grid_field2',
-				'simple_grid_field9' 
+				'simple_grid_field11' 
 			),
 			'patient_type' => array( 
 				'simple_grid_field3',
-				'simple_grid_field10' 
+				'simple_grid_field12' 
 			),
 			'status' => array( 
 				'simple_grid_field4',
-				'simple_grid_field11' 
+				'simple_grid_field13' 
 			),
 			'total_due' => array( 
 				'simple_grid_field5',
-				'simple_grid_field12' 
+				'simple_grid_field14' 
 			),
 			'total_paid' => array( 
 				'simple_grid_field6',
-				'simple_grid_field13' 
+				'simple_grid_field15' 
 			),
 			'created_at' => array( 
 				'simple_grid_field7',
-				'simple_grid_field14' 
+				'simple_grid_field16' 
 			),
 			'updated_at' => array( 
 				'simple_grid_field8',
-				'simple_grid_field15' 
+				'simple_grid_field17' 
+			),
+			'patient_name' => array( 
+				'simple_grid_field',
+				'simple_grid_field18' 
+			),
+			'opd_attendance' => array( 
+				'simple_grid_field9',
+				'simple_grid_field19' 
 			) 
 		),
 		'hideEmptyFields' => array( 
@@ -118,22 +134,26 @@
 					'print_subheader' 
 				),
 				'grid' => array( 
-					'simple_grid_field',
-					'simple_grid_field1',
-					'simple_grid_field9',
-					'simple_grid_field2',
 					'simple_grid_field10',
-					'simple_grid_field3',
+					'simple_grid_field1',
 					'simple_grid_field11',
-					'simple_grid_field4',
+					'simple_grid_field2',
 					'simple_grid_field12',
-					'simple_grid_field5',
+					'simple_grid_field3',
 					'simple_grid_field13',
-					'simple_grid_field6',
+					'simple_grid_field4',
 					'simple_grid_field14',
-					'simple_grid_field7',
+					'simple_grid_field5',
 					'simple_grid_field15',
+					'simple_grid_field6',
+					'simple_grid_field16',
+					'simple_grid_field7',
+					'simple_grid_field17',
 					'simple_grid_field8',
+					'simple_grid_field18',
+					'simple_grid_field',
+					'simple_grid_field19',
+					'simple_grid_field9',
 					'details_preview',
 					'details_preview1',
 					'details_preview2' 
@@ -151,28 +171,32 @@
 				'print_pages' => 'above-grid',
 				'print_header' => 'top',
 				'print_subheader' => 'top',
-				'simple_grid_field' => 'grid',
-				'simple_grid_field1' => 'grid',
-				'simple_grid_field9' => 'grid',
-				'simple_grid_field2' => 'grid',
 				'simple_grid_field10' => 'grid',
-				'simple_grid_field3' => 'grid',
+				'simple_grid_field1' => 'grid',
 				'simple_grid_field11' => 'grid',
-				'simple_grid_field4' => 'grid',
+				'simple_grid_field2' => 'grid',
 				'simple_grid_field12' => 'grid',
-				'simple_grid_field5' => 'grid',
+				'simple_grid_field3' => 'grid',
 				'simple_grid_field13' => 'grid',
-				'simple_grid_field6' => 'grid',
+				'simple_grid_field4' => 'grid',
 				'simple_grid_field14' => 'grid',
-				'simple_grid_field7' => 'grid',
+				'simple_grid_field5' => 'grid',
 				'simple_grid_field15' => 'grid',
+				'simple_grid_field6' => 'grid',
+				'simple_grid_field16' => 'grid',
+				'simple_grid_field7' => 'grid',
+				'simple_grid_field17' => 'grid',
 				'simple_grid_field8' => 'grid',
+				'simple_grid_field18' => 'grid',
+				'simple_grid_field' => 'grid',
+				'simple_grid_field19' => 'grid',
+				'simple_grid_field9' => 'grid',
 				'details_preview' => 'grid',
 				'details_preview1' => 'grid',
 				'details_preview2' => 'grid' 
 			),
 			'itemLocations' => array(
-				'simple_grid_field' => array(
+				'simple_grid_field10' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field' 
 				),
@@ -180,7 +204,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field' 
 				),
-				'simple_grid_field9' => array(
+				'simple_grid_field11' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field1' 
 				),
@@ -188,7 +212,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field1' 
 				),
-				'simple_grid_field10' => array(
+				'simple_grid_field12' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field2' 
 				),
@@ -196,7 +220,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field2' 
 				),
-				'simple_grid_field11' => array(
+				'simple_grid_field13' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field3' 
 				),
@@ -204,7 +228,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field3' 
 				),
-				'simple_grid_field12' => array(
+				'simple_grid_field14' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field4' 
 				),
@@ -212,7 +236,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field4' 
 				),
-				'simple_grid_field13' => array(
+				'simple_grid_field15' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field5' 
 				),
@@ -220,7 +244,7 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field5' 
 				),
-				'simple_grid_field14' => array(
+				'simple_grid_field16' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field6' 
 				),
@@ -228,13 +252,29 @@
 					'location' => 'grid',
 					'cellId' => 'cell_field6' 
 				),
-				'simple_grid_field15' => array(
+				'simple_grid_field17' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field7' 
 				),
 				'simple_grid_field8' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field7' 
+				),
+				'simple_grid_field18' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field8' 
+				),
+				'simple_grid_field' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field8' 
+				),
+				'simple_grid_field19' => array(
+					'location' => 'grid',
+					'cellId' => 'headcell_field9' 
+				),
+				'simple_grid_field9' => array(
+					'location' => 'grid',
+					'cellId' => 'cell_field9' 
 				),
 				'details_preview' => array(
 					'location' => 'grid',
@@ -271,17 +311,21 @@
 				'simple_grid_field5',
 				'simple_grid_field6',
 				'simple_grid_field7',
-				'simple_grid_field8' 
+				'simple_grid_field8',
+				'simple_grid_field',
+				'simple_grid_field9' 
 			),
 			'grid_field_label' => array( 
-				'simple_grid_field',
-				'simple_grid_field9',
 				'simple_grid_field10',
 				'simple_grid_field11',
 				'simple_grid_field12',
 				'simple_grid_field13',
 				'simple_grid_field14',
-				'simple_grid_field15' 
+				'simple_grid_field15',
+				'simple_grid_field16',
+				'simple_grid_field17',
+				'simple_grid_field18',
+				'simple_grid_field19' 
 			),
 			'details_preview' => array( 
 				'details_preview',
@@ -303,7 +347,7 @@
 							'transaction_number_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field' 
+							'simple_grid_field10' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -319,7 +363,7 @@
 							'patient_id_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field9' 
+							'simple_grid_field11' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -335,7 +379,7 @@
 							'patient_type_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field10' 
+							'simple_grid_field12' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -351,7 +395,7 @@
 							'status_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field11' 
+							'simple_grid_field13' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -367,7 +411,7 @@
 							'total_due_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field12' 
+							'simple_grid_field14' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -383,7 +427,7 @@
 							'total_paid_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field13' 
+							'simple_grid_field15' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -399,7 +443,7 @@
 							'created_at_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field14' 
+							'simple_grid_field16' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -415,7 +459,39 @@
 							'updated_at_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field15' 
+							'simple_grid_field17' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field8' => array(
+						'cols' => array( 
+							8 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'patient_name_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field18' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'headcell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							0 
+						),
+						'tags' => array( 
+							'opd_attendance_fieldheadercolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field19' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -548,6 +624,38 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
+					'cell_field8' => array(
+						'cols' => array( 
+							8 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'patient_name_fieldcolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'opd_attendance_fieldcolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field9' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
 					'cell_dpreview' => array(
 						'cols' => array( 
 							0,
@@ -557,7 +665,9 @@
 							4,
 							5,
 							6,
-							7 
+							7,
+							8,
+							9 
 						),
 						'rows' => array( 
 							2 
@@ -700,9 +810,41 @@
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
+					),
+					'footcell_field8' => array(
+						'cols' => array( 
+							8 
+						),
+						'rows' => array( 
+							3 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'footcell_field9' => array(
+						'cols' => array( 
+							9 
+						),
+						'rows' => array( 
+							3 
+						),
+						'tags' => array( 
+							 
+						),
+						'items' => array( 
+							 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
 					) 
 				),
-				'width' => 8,
+				'width' => 10,
 				'height' => 4 
 			) 
 		) 
@@ -881,6 +1023,12 @@
 						),
 						array(
 							'cell' => 'headcell_field7' 
+						),
+						array(
+							'cell' => 'headcell_field8' 
+						),
+						array(
+							'cell' => 'headcell_field9' 
 						) 
 					) 
 				),
@@ -910,6 +1058,12 @@
 						),
 						array(
 							'cell' => 'cell_field7' 
+						),
+						array(
+							'cell' => 'cell_field8' 
+						),
+						array(
+							'cell' => 'cell_field9' 
 						) 
 					) 
 				),
@@ -917,7 +1071,7 @@
 					'cells' => array( 
 						array(
 							'cell' => 'cell_dpreview',
-							'colspan' => 8 
+							'colspan' => 10 
 						) 
 					),
 					'section' => 'body' 
@@ -948,6 +1102,12 @@
 						),
 						array(
 							'cell' => 'footcell_field7' 
+						),
+						array(
+							'cell' => 'footcell_field8' 
+						),
+						array(
+							'cell' => 'footcell_field9' 
 						) 
 					) 
 				) 
@@ -956,7 +1116,7 @@
 				'headcell_field' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field' 
+						'simple_grid_field10' 
 					),
 					'field' => 'transaction_number',
 					'columnName' => 'field' 
@@ -978,7 +1138,7 @@
 				'headcell_field1' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field9' 
+						'simple_grid_field11' 
 					),
 					'field' => 'patient_id',
 					'columnName' => 'field' 
@@ -1000,7 +1160,7 @@
 				'headcell_field2' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field10' 
+						'simple_grid_field12' 
 					),
 					'field' => 'patient_type',
 					'columnName' => 'field' 
@@ -1022,7 +1182,7 @@
 				'headcell_field3' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field11' 
+						'simple_grid_field13' 
 					),
 					'field' => 'status',
 					'columnName' => 'field' 
@@ -1044,7 +1204,7 @@
 				'headcell_field4' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field12' 
+						'simple_grid_field14' 
 					),
 					'field' => 'total_due',
 					'columnName' => 'field' 
@@ -1066,7 +1226,7 @@
 				'headcell_field5' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field13' 
+						'simple_grid_field15' 
 					),
 					'field' => 'total_paid',
 					'columnName' => 'field' 
@@ -1088,7 +1248,7 @@
 				'headcell_field6' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field14' 
+						'simple_grid_field16' 
 					),
 					'field' => 'created_at',
 					'columnName' => 'field' 
@@ -1110,7 +1270,7 @@
 				'headcell_field7' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field15' 
+						'simple_grid_field17' 
 					),
 					'field' => 'updated_at',
 					'columnName' => 'field' 
@@ -1124,6 +1284,50 @@
 					'columnName' => 'field' 
 				),
 				'footcell_field7' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'headcell_field8' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'simple_grid_field18' 
+					),
+					'field' => 'patient_name',
+					'columnName' => 'field' 
+				),
+				'cell_field8' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'simple_grid_field' 
+					),
+					'field' => 'patient_name',
+					'columnName' => 'field' 
+				),
+				'footcell_field8' => array(
+					'model' => 'footcell_field',
+					'items' => array( 
+						 
+					) 
+				),
+				'headcell_field9' => array(
+					'model' => 'headcell_field',
+					'items' => array( 
+						'simple_grid_field19' 
+					),
+					'field' => 'opd_attendance',
+					'columnName' => 'field' 
+				),
+				'cell_field9' => array(
+					'model' => 'cell_field',
+					'items' => array( 
+						'simple_grid_field9' 
+					),
+					'field' => 'opd_attendance',
+					'columnName' => 'field' 
+				),
+				'footcell_field9' => array(
 					'model' => 'footcell_field',
 					'items' => array( 
 						 
@@ -1158,7 +1362,7 @@
 			'field' => 'transaction_number',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field' => array(
+		'simple_grid_field10' => array(
 			'type' => 'grid_field_label',
 			'field' => 'transaction_number' 
 		),
@@ -1166,7 +1370,7 @@
 			'field' => 'patient_id',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field9' => array(
+		'simple_grid_field11' => array(
 			'type' => 'grid_field_label',
 			'field' => 'patient_id' 
 		),
@@ -1174,7 +1378,7 @@
 			'field' => 'patient_type',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field10' => array(
+		'simple_grid_field12' => array(
 			'type' => 'grid_field_label',
 			'field' => 'patient_type' 
 		),
@@ -1182,7 +1386,7 @@
 			'field' => 'status',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field11' => array(
+		'simple_grid_field13' => array(
 			'type' => 'grid_field_label',
 			'field' => 'status' 
 		),
@@ -1190,7 +1394,7 @@
 			'field' => 'total_due',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field12' => array(
+		'simple_grid_field14' => array(
 			'type' => 'grid_field_label',
 			'field' => 'total_due' 
 		),
@@ -1198,7 +1402,7 @@
 			'field' => 'total_paid',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field13' => array(
+		'simple_grid_field15' => array(
 			'type' => 'grid_field_label',
 			'field' => 'total_paid' 
 		),
@@ -1206,7 +1410,7 @@
 			'field' => 'created_at',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field14' => array(
+		'simple_grid_field16' => array(
 			'type' => 'grid_field_label',
 			'field' => 'created_at' 
 		),
@@ -1214,9 +1418,25 @@
 			'field' => 'updated_at',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field15' => array(
+		'simple_grid_field17' => array(
 			'type' => 'grid_field_label',
 			'field' => 'updated_at' 
+		),
+		'simple_grid_field' => array(
+			'field' => 'patient_name',
+			'type' => 'grid_field' 
+		),
+		'simple_grid_field18' => array(
+			'type' => 'grid_field_label',
+			'field' => 'patient_name' 
+		),
+		'simple_grid_field9' => array(
+			'field' => 'opd_attendance',
+			'type' => 'grid_field' 
+		),
+		'simple_grid_field19' => array(
+			'type' => 'grid_field_label',
+			'field' => 'opd_attendance' 
 		),
 		'details_preview' => array(
 			'type' => 'details_preview',

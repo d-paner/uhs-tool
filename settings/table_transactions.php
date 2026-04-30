@@ -65,27 +65,34 @@ $runnerTableSettings['transactions'] = array(
 	'afterEditDetails' => 'transactions',
 	'afterAddDetail' => 'transactions',
 	'detailsBadgeColor' => '6da5c8',
-	'strOrderBy' => 'ORDER BY created_at DESC',
+	'strOrderBy' => 'ORDER BY
+	transactions.created_at DESC',
 	'orderInfo' => array( 
 		array(
-			'index' => 8,
+			'index' => 10,
 			'dir' => 'DESC',
-			'field' => 'created_at' 
+			'field' => 'patient_name' 
 		) 
 	),
 	'sql' => 'SELECT
-	id,
-	transaction_number,
-	patient_id,
-	patient_type,
-	status,
-	total_due,
-	total_paid,
-	created_at,
-	updated_at
+	transactions.id,
+	transactions.transaction_number,
+	transactions.patient_id,
+	CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name) AS patient_name,
+	transactions.patient_type,
+	transactions.status,
+	transactions.total_due,
+	transactions.total_paid,
+	transactions.opd_attendance,
+	transactions.created_at,
+	transactions.updated_at
 FROM
 	transactions
-ORDER BY created_at DESC',
+	INNER JOIN patients ON patients.patient_id = transactions.patient_id
+	INNER JOIN persons ON persons.master_person_id = patients.person_id
+ORDER BY
+	transactions.created_at DESC
+',
 	'keyFields' => array( 
 		'id' 
 	),
@@ -105,7 +112,7 @@ ORDER BY created_at DESC',
 			'index' => 1,
 			'type' => 3,
 			'autoinc' => true,
-			'sqlExpression' => 'id',
+			'sqlExpression' => 'transactions.id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -123,7 +130,7 @@ ORDER BY created_at DESC',
 			'goodName' => 'transaction_number',
 			'strField' => 'transaction_number',
 			'index' => 2,
-			'sqlExpression' => 'transaction_number',
+			'sqlExpression' => 'transactions.transaction_number',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -143,7 +150,7 @@ ORDER BY created_at DESC',
 			'strField' => 'patient_id',
 			'index' => 3,
 			'type' => 3,
-			'sqlExpression' => 'patient_id',
+			'sqlExpression' => 'transactions.patient_id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -156,9 +163,8 @@ ORDER BY created_at DESC',
 					'lookupType' => 2,
 					'lookupTable' => 'patients',
 					'lookupTableConnection' => 'conn',
-					'lookupLinkField' => 'id',
-					'lookupDisplayField' => 'CONCAT_WS(\' \', first_name, middle_name, last_name)',
-					'lookupCustomDisplay' => true,
+					'lookupLinkField' => 'patient_id',
+					'lookupDisplayField' => 'patient_id',
 					'lookupControlType' => 2,
 					'lookupListPage' => 'forTransactions' 
 				) 
@@ -169,8 +175,8 @@ ORDER BY created_at DESC',
 			'name' => 'patient_type',
 			'goodName' => 'patient_type',
 			'strField' => 'patient_type',
-			'index' => 4,
-			'sqlExpression' => 'patient_type',
+			'index' => 5,
+			'sqlExpression' => 'transactions.patient_type',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -183,7 +189,7 @@ ORDER BY created_at DESC',
 					'lookupType' => 2,
 					'lookupTable' => 'patient_types',
 					'lookupTableConnection' => 'conn',
-					'lookupLinkField' => 'type',
+					'lookupLinkField' => 'id',
 					'lookupDisplayField' => 'type' 
 				) 
 			),
@@ -193,8 +199,8 @@ ORDER BY created_at DESC',
 			'name' => 'status',
 			'goodName' => 'status',
 			'strField' => 'status',
-			'index' => 5,
-			'sqlExpression' => 'status',
+			'index' => 6,
+			'sqlExpression' => 'transactions.status',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -212,9 +218,9 @@ ORDER BY created_at DESC',
 			'name' => 'total_due',
 			'goodName' => 'total_due',
 			'strField' => 'total_due',
-			'index' => 6,
+			'index' => 7,
 			'type' => 14,
-			'sqlExpression' => 'total_due',
+			'sqlExpression' => 'transactions.total_due',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Number' 
@@ -231,9 +237,9 @@ ORDER BY created_at DESC',
 			'name' => 'total_paid',
 			'goodName' => 'total_paid',
 			'strField' => 'total_paid',
-			'index' => 7,
+			'index' => 8,
 			'type' => 14,
-			'sqlExpression' => 'total_paid',
+			'sqlExpression' => 'transactions.total_paid',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Number' 
@@ -250,9 +256,9 @@ ORDER BY created_at DESC',
 			'name' => 'created_at',
 			'goodName' => 'created_at',
 			'strField' => 'created_at',
-			'index' => 8,
+			'index' => 10,
 			'type' => 135,
-			'sqlExpression' => 'created_at',
+			'sqlExpression' => 'transactions.created_at',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Short Date' 
@@ -271,9 +277,9 @@ ORDER BY created_at DESC',
 			'name' => 'updated_at',
 			'goodName' => 'updated_at',
 			'strField' => 'updated_at',
-			'index' => 9,
+			'index' => 11,
 			'type' => 135,
-			'sqlExpression' => 'updated_at',
+			'sqlExpression' => 'transactions.updated_at',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Short Date' 
@@ -288,6 +294,45 @@ ORDER BY created_at DESC',
 				) 
 			),
 			'tableName' => 'transactions' 
+		),
+		'patient_name' => array(
+			'name' => 'patient_name',
+			'goodName' => 'patient_name',
+			'strField' => 'patient_name',
+			'index' => 4,
+			'type' => 201,
+			'sqlExpression' => 'CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name)',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'defaultSearchOption' => 'Contains',
+			'tableName' => '' 
+		),
+		'opd_attendance' => array(
+			'name' => 'opd_attendance',
+			'goodName' => 'opd_attendance',
+			'strField' => 'opd_attendance',
+			'index' => 9,
+			'sqlExpression' => 'transactions.opd_attendance',
+			'viewFormats' => array(
+				'view' => array(
+					'format' => 'Short Date' 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					'format' => 'Date',
+					'dateEditType' => 11 
+				) 
+			),
+			'tableName' => 'transactions' 
 		) 
 	),
 	'detailsTables' => array( 
@@ -297,23 +342,29 @@ ORDER BY created_at DESC',
 	),
 	'query' => array(
 		'sql' => 'SELECT
-	id,
-	transaction_number,
-	patient_id,
-	patient_type,
-	status,
-	total_due,
-	total_paid,
-	created_at,
-	updated_at
+	transactions.id,
+	transactions.transaction_number,
+	transactions.patient_id,
+	CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name) AS patient_name,
+	transactions.patient_type,
+	transactions.status,
+	transactions.total_due,
+	transactions.total_paid,
+	transactions.opd_attendance,
+	transactions.created_at,
+	transactions.updated_at
 FROM
 	transactions
-ORDER BY created_at DESC',
+	INNER JOIN patients ON patients.patient_id = transactions.patient_id
+	INNER JOIN persons ON persons.master_person_id = patients.person_id
+ORDER BY
+	transactions.created_at DESC
+',
 		'parsed' => true,
 		'type' => 'SQLQuery',
 		'fieldList' => array( 
 			array(
-				'sql' => 'id',
+				'sql' => 'transactions.id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -328,7 +379,7 @@ ORDER BY created_at DESC',
 				'columnName' => 'id' 
 			),
 			array(
-				'sql' => 'transaction_number',
+				'sql' => 'transactions.transaction_number',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -343,7 +394,7 @@ ORDER BY created_at DESC',
 				'columnName' => 'transaction_number' 
 			),
 			array(
-				'sql' => 'patient_id',
+				'sql' => 'transactions.patient_id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -358,7 +409,44 @@ ORDER BY created_at DESC',
 				'columnName' => 'patient_id' 
 			),
 			array(
-				'sql' => 'patient_type',
+				'sql' => 'CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name)',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => 'patient_name',
+				'expression' => array(
+					'sql' => 'CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name)',
+					'parsed' => true,
+					'type' => 'FunctionCall',
+					'arguments' => array( 
+						array(
+							'sql' => '\' \'',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						),
+						array(
+							'sql' => 'persons.first_name',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						),
+						array(
+							'sql' => 'NULLIF(persons.middle_name, \'\')',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						),
+						array(
+							'sql' => 'persons.last_name',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						) 
+					),
+					'functionName' => 'CONCAT_WS',
+					'functionType' => 5 
+				),
+				'encrypted' => false,
+				'columnName' => 'patient_name' 
+			),
+			array(
+				'sql' => 'transactions.patient_type',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -373,7 +461,7 @@ ORDER BY created_at DESC',
 				'columnName' => 'patient_type' 
 			),
 			array(
-				'sql' => 'status',
+				'sql' => 'transactions.status',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -388,7 +476,7 @@ ORDER BY created_at DESC',
 				'columnName' => 'status' 
 			),
 			array(
-				'sql' => 'total_due',
+				'sql' => 'transactions.total_due',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -403,7 +491,7 @@ ORDER BY created_at DESC',
 				'columnName' => 'total_due' 
 			),
 			array(
-				'sql' => 'total_paid',
+				'sql' => 'transactions.total_paid',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -418,7 +506,22 @@ ORDER BY created_at DESC',
 				'columnName' => 'total_paid' 
 			),
 			array(
-				'sql' => 'created_at',
+				'sql' => 'transactions.opd_attendance',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'transactions',
+					'name' => 'opd_attendance' 
+				),
+				'encrypted' => false,
+				'columnName' => 'opd_attendance' 
+			),
+			array(
+				'sql' => 'transactions.created_at',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -433,7 +536,7 @@ ORDER BY created_at DESC',
 				'columnName' => 'created_at' 
 			),
 			array(
-				'sql' => 'updated_at',
+				'sql' => 'transactions.updated_at',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -466,6 +569,7 @@ ORDER BY created_at DESC',
 						'total_due',
 						'total_paid',
 						'outstanding_balance',
+						'opd_attendance',
 						'created_at',
 						'updated_at' 
 					),
@@ -493,6 +597,139 @@ ORDER BY created_at DESC',
 					) 
 				),
 				'link' => 0 
+			),
+			array(
+				'sql' => 'INNER JOIN patients ON patients.patient_id = transactions.patient_id',
+				'parsed' => true,
+				'type' => 'FromListItem',
+				'table' => array(
+					'sql' => 'patients',
+					'parsed' => true,
+					'type' => 'SQLTable',
+					'columns' => array( 
+						'id',
+						'patient_id',
+						'person_id',
+						'person_type_id',
+						'created_at',
+						'updated_at',
+						'classification',
+						'office',
+						'college',
+						'uhs_id_no',
+						'emed_no',
+						'ihomis_no',
+						'philhealth_no' 
+					),
+					'name' => 'patients' 
+				),
+				'joinOn' => array(
+					'sql' => 'patients.patient_id = transactions.patient_id',
+					'parsed' => true,
+					'type' => 'LogicalExpression',
+					'contained' => array( 
+						 
+					),
+					'unionType' => 0,
+					'column' => array(
+						'sql' => '',
+						'parsed' => true,
+						'type' => 'SQLField',
+						'table' => 'patients',
+						'name' => 'patient_id' 
+					),
+					'case' => '= transactions.patient_id',
+					'useAlias' => false 
+				),
+				'joinList' => array(
+					'sql' => 'patients.patient_id = transactions.patient_id',
+					'parsed' => true,
+					'type' => 'JoinOn',
+					'field1' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'patients',
+							'name' => 'patient_id' 
+						) 
+					),
+					'field2' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'transactions',
+							'name' => 'patient_id' 
+						) 
+					) 
+				),
+				'link' => 1 
+			),
+			array(
+				'sql' => 'INNER JOIN persons ON persons.master_person_id = patients.person_id',
+				'parsed' => true,
+				'type' => 'FromListItem',
+				'table' => array(
+					'sql' => 'persons',
+					'parsed' => true,
+					'type' => 'SQLTable',
+					'columns' => array( 
+						'id',
+						'master_person_id',
+						'first_name',
+						'middle_name',
+						'last_name',
+						'suffix',
+						'sex',
+						'birth_date',
+						'created_at',
+						'updated_at' 
+					),
+					'name' => 'persons' 
+				),
+				'joinOn' => array(
+					'sql' => 'persons.master_person_id = patients.person_id',
+					'parsed' => true,
+					'type' => 'LogicalExpression',
+					'contained' => array( 
+						 
+					),
+					'unionType' => 0,
+					'column' => array(
+						'sql' => '',
+						'parsed' => true,
+						'type' => 'SQLField',
+						'table' => 'persons',
+						'name' => 'master_person_id' 
+					),
+					'case' => '= patients.person_id',
+					'useAlias' => false 
+				),
+				'joinList' => array(
+					'sql' => 'persons.master_person_id = patients.person_id',
+					'parsed' => true,
+					'type' => 'JoinOn',
+					'field1' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'persons',
+							'name' => 'master_person_id' 
+						) 
+					),
+					'field2' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'patients',
+							'name' => 'person_id' 
+						) 
+					) 
+				),
+				'link' => 1 
 			) 
 		),
 		'where' => array(
@@ -520,7 +757,7 @@ ORDER BY created_at DESC',
 		),
 		'orderBy' => array( 
 			array(
-				'sql' => 'created_at DESC',
+				'sql' => 'transactions.created_at DESC',
 				'parsed' => true,
 				'type' => 'OrderByListItem',
 				'column' => array(
@@ -531,7 +768,7 @@ ORDER BY created_at DESC',
 					'name' => 'created_at' 
 				),
 				'asc' => false,
-				'columnNumber' => 8 
+				'columnNumber' => 10 
 			) 
 		),
 		'colsIndex' => array( 
@@ -586,7 +823,7 @@ ORDER BY created_at DESC',
 			),
 			array(
 				'fieldIndex' => 7,
-				'orderByIndex' => 0,
+				'orderByIndex' => -1,
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
@@ -597,21 +834,40 @@ ORDER BY created_at DESC',
 				'groupByIndex' => -1,
 				'whereIndex' => -1,
 				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 9,
+				'orderByIndex' => 0,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
+			),
+			array(
+				'fieldIndex' => 10,
+				'orderByIndex' => -1,
+				'groupByIndex' => -1,
+				'whereIndex' => -1,
+				'havingIndex' => -1 
 			) 
 		),
 		'headSql' => 'SELECT',
-		'fieldListSql' => 'id,
-	transaction_number,
-	patient_id,
-	patient_type,
-	status,
-	total_due,
-	total_paid,
-	created_at,
-	updated_at',
+		'fieldListSql' => 'transactions.id,
+	transactions.transaction_number,
+	transactions.patient_id,
+	CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name) AS patient_name,
+	transactions.patient_type,
+	transactions.status,
+	transactions.total_due,
+	transactions.total_paid,
+	transactions.opd_attendance,
+	transactions.created_at,
+	transactions.updated_at',
 		'fromListSql' => 'FROM
-	transactions',
-		'orderBySql' => 'ORDER BY created_at DESC',
+	transactions
+	INNER JOIN patients ON patients.patient_id = transactions.patient_id
+	INNER JOIN persons ON persons.master_person_id = patients.person_id',
+		'orderBySql' => 'ORDER BY
+	transactions.created_at DESC',
 		'tailSql' => '' 
 	),
 	'hasEvents' => true,
@@ -685,7 +941,9 @@ ORDER BY created_at DESC',
 			'total_due',
 			'total_paid',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'patient_name',
+			'opd_attendance' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -700,7 +958,9 @@ ORDER BY created_at DESC',
 			'total_due',
 			'total_paid',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'patient_name',
+			'opd_attendance' 
 		) 
 	),
 	'connId' => 'conn',
@@ -760,13 +1020,15 @@ if( mlang_getcurrentlang() === 'English' ) {
 	'fieldLabels' => array(
 		'id' => 'Id',
 		'transaction_number' => 'Transaction Number',
-		'patient_id' => 'Patient',
+		'patient_id' => 'Patient ID',
 		'patient_type' => 'Patient Type',
 		'status' => 'Status',
 		'total_due' => 'Total Charges',
 		'total_paid' => 'Total Paid',
 		'created_at' => 'Created At',
-		'updated_at' => 'Updated At' 
+		'updated_at' => 'Updated At',
+		'patient_name' => 'Patient Name',
+		'opd_attendance' => 'Date of OPD Attendance' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
@@ -777,7 +1039,9 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'total_due' => '',
 		'total_paid' => '',
 		'created_at' => '',
-		'updated_at' => '' 
+		'updated_at' => '',
+		'patient_name' => '',
+		'opd_attendance' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
@@ -788,7 +1052,9 @@ if( mlang_getcurrentlang() === 'English' ) {
 		'total_due' => '',
 		'total_paid' => '',
 		'created_at' => '',
-		'updated_at' => '' 
+		'updated_at' => '',
+		'patient_name' => '',
+		'opd_attendance' => '' 
 	),
 	'pageTitles' => array(
 		 

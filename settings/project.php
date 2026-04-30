@@ -62,6 +62,12 @@ $runnerProjectSettings = array(
 		),
 		'fund_code' => array(
 			'table' => 8452 
+		),
+		'persons' => array(
+			'table' => 8584 
+		),
+		'person_types' => array(
+			'table' => 8679 
 		) 
 	),
 	'userTableKeys' => array( 
@@ -498,6 +504,20 @@ $runnerProjectSettings = array(
 								'export' => true,
 								'import' => true 
 							) 
+						),
+						'persons' => array(
+							'mask' => 'ADESPI',
+							'table' => 'persons',
+							'restrictedPages' => array(
+								 
+							) 
+						),
+						'person_types' => array(
+							'mask' => 'ADESPI',
+							'table' => 'person_types',
+							'restrictedPages' => array(
+								 
+							) 
 						) 
 					),
 					'admin' => false,
@@ -831,6 +851,32 @@ $runnerProjectSettings = array(
 								'export' => false,
 								'import' => false 
 							) 
+						),
+						'persons' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								'add' => false,
+								'edit' => false,
+								'list' => false,
+								'view' => false,
+								'print' => false,
+								'export' => false,
+								'import' => false 
+							) 
+						),
+						'person_types' => array(
+							'mask' => 'AEDSPI',
+							'table' => '',
+							'restrictedPages' => array(
+								'add' => false,
+								'edit' => false,
+								'list' => false,
+								'view' => false,
+								'print' => false,
+								'export' => false,
+								'import' => false 
+							) 
 						) 
 					) 
 				) 
@@ -1103,6 +1149,30 @@ $runnerProjectSettings = array(
 			'connId' => 'conn',
 			'color' => 'd2af80',
 			'originalTable' => 'fund_code' 
+		),
+		'persons' => array(
+			'gid' => 8584,
+			'name' => 'persons',
+			'shortName' => 'persons',
+			'type' => 0,
+			'caption' => array(
+				'English' => 'Persons' 
+			),
+			'connId' => 'conn',
+			'color' => '778899',
+			'originalTable' => 'persons' 
+		),
+		'person_types' => array(
+			'gid' => 8679,
+			'name' => 'person_types',
+			'shortName' => 'person_types',
+			'type' => 0,
+			'caption' => array(
+				'English' => 'Person Types' 
+			),
+			'connId' => 'conn',
+			'color' => 'db7093',
+			'originalTable' => 'person_types' 
 		) 
 	),
 	'tablesByShort' => array(
@@ -1124,7 +1194,9 @@ $runnerProjectSettings = array(
 		'patient_classifications' => 'patient_classifications',
 		'guarantor_classifications' => 'guarantor_classifications',
 		'fund_type' => 'fund_type',
-		'fund_code' => 'fund_code' 
+		'fund_code' => 'fund_code',
+		'persons' => 'persons',
+		'person_types' => 'person_types' 
 	),
 	'tablesByGood' => array(
 		'patients' => 'patients',
@@ -1145,7 +1217,9 @@ $runnerProjectSettings = array(
 		'patient_classifications' => 'patient_classifications',
 		'guarantor_classifications' => 'guarantor_classifications',
 		'fund_type' => 'fund_type',
-		'fund_code' => 'fund_code' 
+		'fund_code' => 'fund_code',
+		'persons' => 'persons',
+		'person_types' => 'person_types' 
 	),
 	'events' => array( 
 		 
@@ -1172,7 +1246,7 @@ $runnerProjectSettings = array(
 		'table' => '' 
 	),
 	'wizardBuild' => '43917',
-	'projectBuild' => 'Az0m6mCEITRr',
+	'projectBuild' => 'kS7INxfwhK6s',
 	'projectTheme' => 'flatly',
 	'projectSize' => 'normal',
 	'customErrorMsg' => array(

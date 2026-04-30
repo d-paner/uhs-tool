@@ -1,36 +1,6 @@
 <?php
 $runnerPageInfo = array(
 	'allPages' => array(
-		'transactions' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list',
-				'transactionsList' 
-			),
-			'print' => array( 
-				'print' 
-			),
-			'masterlist' => array( 
-				'masterlist' 
-			),
-			'masterprint' => array( 
-				'masterprint' 
-			) 
-		),
 		'patient_types' => array(
 			'add' => array( 
 				'add' 
@@ -51,73 +21,7 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'professionals' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
 		'offices' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'view' => array( 
-				'view' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
-		'users' => array(
-			'add' => array( 
-				'add' 
-			),
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'edit' => array( 
-				'edit' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
-		'transaction_guarantor' => array(
 			'add' => array( 
 				'add' 
 			),
@@ -164,7 +68,7 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'hospital_services' => array(
+		'users' => array(
 			'add' => array( 
 				'add' 
 			),
@@ -177,12 +81,8 @@ $runnerPageInfo = array(
 			'edit' => array( 
 				'edit' 
 			),
-			'view' => array( 
-				'view' 
-			),
 			'list' => array( 
-				'list',
-				'transactionsChild' 
+				'list' 
 			),
 			'print' => array( 
 				'print' 
@@ -205,21 +105,7 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'uhs_audit' => array(
-			'export' => array( 
-				'export' 
-			),
-			'import' => array( 
-				'import' 
-			),
-			'list' => array( 
-				'list' 
-			),
-			'print' => array( 
-				'print' 
-			) 
-		),
-		'guarantors' => array(
+		'transaction_guarantor' => array(
 			'add' => array( 
 				'add' 
 			),
@@ -234,6 +120,21 @@ $runnerPageInfo = array(
 			),
 			'view' => array( 
 				'view' 
+			),
+			'list' => array( 
+				'list',
+				'list1' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
+		'uhs_audit' => array(
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
 			),
 			'list' => array( 
 				'list' 
@@ -328,7 +229,7 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'professional_accounts' => array(
+		'person_types' => array(
 			'add' => array( 
 				'add' 
 			),
@@ -343,6 +244,50 @@ $runnerPageInfo = array(
 			),
 			'list' => array( 
 				'list' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
+		'professionals' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
+		'persons' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'list' => array( 
+				'list',
+				'addPerson' 
 			),
 			'print' => array( 
 				'print' 
@@ -368,21 +313,48 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
-		'Viewing List' => array(
+		'hospital_services' => array(
+			'add' => array( 
+				'add' 
+			),
 			'export' => array( 
 				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'transactionsChild' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
+		'professional_accounts' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
 			),
 			'list' => array( 
 				'list' 
 			),
 			'print' => array( 
 				'print' 
-			),
-			'masterlist' => array( 
-				'masterlist' 
-			),
-			'masterprint' => array( 
-				'masterprint' 
 			) 
 		),
 		'patients' => array(
@@ -409,6 +381,77 @@ $runnerPageInfo = array(
 				'print' 
 			) 
 		),
+		'transactions' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'transactionsList' 
+			),
+			'print' => array( 
+				'print' 
+			),
+			'masterlist' => array( 
+				'masterlist' 
+			),
+			'masterprint' => array( 
+				'masterprint' 
+			) 
+		),
+		'guarantors' => array(
+			'add' => array( 
+				'add' 
+			),
+			'export' => array( 
+				'export' 
+			),
+			'import' => array( 
+				'import' 
+			),
+			'edit' => array( 
+				'edit' 
+			),
+			'view' => array( 
+				'view' 
+			),
+			'list' => array( 
+				'list',
+				'list1' 
+			),
+			'print' => array( 
+				'print' 
+			) 
+		),
+		'Viewing List' => array(
+			'export' => array( 
+				'export' 
+			),
+			'list' => array( 
+				'list' 
+			),
+			'print' => array( 
+				'print' 
+			),
+			'masterlist' => array( 
+				'masterlist' 
+			),
+			'masterprint' => array( 
+				'masterprint' 
+			) 
+		),
 		'<global>' => array(
 			'menu' => array( 
 				'menu' 
@@ -428,25 +471,27 @@ $runnerPageInfo = array(
 		) 
 	),
 	'tableMasks' => array(
-		'transactions' => 'ADESPI',
 		'patients' => 'ADESPI',
-		'professionals' => 'ADESPI',
-		'hospital_accounts' => 'ADESPI',
 		'patient_types' => 'ADESPI',
-		'guarantors' => 'ADESPI',
+		'transactions' => 'ADESPI',
 		'payments' => 'ADESPI',
 		'transaction_guarantor' => 'ADESPI',
-		'Viewing List' => 'ADESP',
-		'uhs_audit' => 'ADESPI',
-		'professional_accounts' => 'ADESPI',
-		'users' => 'ADESPI',
-		'professional_services' => 'ADESPI',
-		'offices' => 'ADESPI',
-		'patient_classifications' => 'ADESPI',
 		'hospital_services' => 'ADESPI',
+		'professional_services' => 'ADESPI',
+		'Viewing List' => 'ADESP',
+		'hospital_accounts' => 'ADESPI',
+		'offices' => 'ADESPI',
+		'users' => 'ADESPI',
+		'professionals' => 'ADESPI',
+		'guarantors' => 'ADESPI',
+		'professional_accounts' => 'ADESPI',
+		'uhs_audit' => 'ADESPI',
+		'patient_classifications' => 'ADESPI',
 		'guarantor_classifications' => 'ADESPI',
 		'fund_type' => 'ADESPI',
 		'fund_code' => 'ADESPI',
+		'persons' => 'ADESPI',
+		'person_types' => 'ADESPI',
 		'<global>' => 'S' 
 	) 
 );

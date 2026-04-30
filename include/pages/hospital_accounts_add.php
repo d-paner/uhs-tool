@@ -10,7 +10,8 @@
 			'created_at',
 			'updated_at',
 			'fund_type',
-			'fund_code' 
+			'fund_code',
+			'account_number' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -36,6 +37,9 @@
 			),
 			'fund_code' => array( 
 				'integrated_edit_field4' 
+			),
+			'account_number' => array( 
+				'integrated_edit_field6' 
 			) 
 		) 
 	),
@@ -66,7 +70,8 @@
 					'integrated_edit_field5',
 					'integrated_edit_field4',
 					'integrated_edit_field2',
-					'integrated_edit_field3' 
+					'integrated_edit_field3',
+					'integrated_edit_field6' 
 				) 
 			),
 			'formXtTags' => array(
@@ -86,7 +91,8 @@
 				'integrated_edit_field5' => 'grid',
 				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field2' => 'grid',
-				'integrated_edit_field3' => 'grid' 
+				'integrated_edit_field3' => 'grid',
+				'integrated_edit_field6' => 'grid' 
 			),
 			'itemLocations' => array(
 				'integrated_edit_field' => array(
@@ -110,6 +116,10 @@
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field3' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field6' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				) 
@@ -143,7 +153,8 @@
 				'integrated_edit_field2',
 				'integrated_edit_field3',
 				'integrated_edit_field5',
-				'integrated_edit_field4' 
+				'integrated_edit_field4',
+				'integrated_edit_field6' 
 			) 
 		),
 		'cellMaps' => array(
@@ -165,7 +176,8 @@
 							'integrated_edit_field5',
 							'integrated_edit_field4',
 							'integrated_edit_field2',
-							'integrated_edit_field3' 
+							'integrated_edit_field3',
+							'integrated_edit_field6' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -334,7 +346,8 @@
 						'integrated_edit_field5',
 						'integrated_edit_field4',
 						'integrated_edit_field2',
-						'integrated_edit_field3' 
+						'integrated_edit_field3',
+						'integrated_edit_field6' 
 					) 
 				) 
 			),
@@ -392,6 +405,11 @@
 		),
 		'integrated_edit_field4' => array(
 			'field' => 'fund_code',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field6' => array(
+			'field' => 'account_number',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		) 

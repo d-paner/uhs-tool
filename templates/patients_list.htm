@@ -204,67 +204,73 @@
 			<div class="clearfix  r-ori-vert" data-cellId="left_c1" data-pageid="{$pageid}" data-itemid="search_panel" {$item_search_panel} data-topcell-item-type="search_panel" >
 				<!-- Begin Search panel content -->
 <div class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} data-itemtype="search_panel" data-itemid="search_panel" {$item_search_panel} data-pageid="{$pageid}"	 >
-
-	<div class="panel-heading">
-		<div class="btn-group r-sp-addfield" id="addSearchFieldButton{$id}">
-			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle btn-sm )" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			{mlang_message SEARCH_IN}			<span class="caret"></span>
-			</button>
-		</div>
-
-
-		<div class="btn-group r-sp-options" id="searchPanelOptions{$id}">
-			<button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
-			</button>
-			<ul class="dropdown-menu dropdown-left">
-				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>{mlang_message SEARCH_SHOW_OPTIONS_BUTTON}</a></li>
-				<li role="separator" class="divider"></li>
-				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ALL_CONDITIONS}</label></a></li>
-				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ANY_CONDITIONS}</label></a></li>
-				<li role="separator" class="divider"></li>
-				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>{mlang_message HIDE}</a></li>
-			</ul>
-		</div>
-
-
-		</div>
 	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
 
 
-		
-		{BEGIN searchCtrlBlock}
-		<div class="srchPanelRow form-group" {$filterRow_attrs}>
-			<label>{$fLabel}</label>	{$delCtrlButt}
-				<span class="rnr-searchtype">{$searchtype}</span>
-				<span class="rnr-searchcontrol">{$searchcontrol}</span>
-				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
-		</div>
-		{END searchCtrlBlock}
 																		{BEGIN searchCtrlBlock_updated_at}
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_updated_at}" {$filterRow_attrs_updated_at}>
 			<label>{$label patients updated_at }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_updated_at}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_updated_at}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_updated_at}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_updated_at}</span>
 						</div>
 		{END searchCtrlBlock_updated_at}
+																{BEGIN searchCtrlBlock_patient_id}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_patient_id}" {$filterRow_attrs_patient_id}>
+			<label>{$label patients patient_id }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_patient_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_patient_id}</span>
+						</div>
+		{END searchCtrlBlock_patient_id}
+																{BEGIN searchCtrlBlock_full_name}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_full_name}" {$filterRow_attrs_full_name}>
+			<label>{$label patients full_name }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_full_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_full_name}</span>
+						</div>
+		{END searchCtrlBlock_full_name}
+																{BEGIN searchCtrlBlock_person_type_id}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_person_type_id}" {$filterRow_attrs_person_type_id}>
+			<label>{$label patients person_type_id }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_person_type_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_person_type_id}</span>
+						</div>
+		{END searchCtrlBlock_person_type_id}
+																{BEGIN searchCtrlBlock_person_id}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_person_id}" {$filterRow_attrs_person_id}>
+			<label>{$label patients person_id }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_person_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_person_id}</span>
+						</div>
+		{END searchCtrlBlock_person_id}
 																{BEGIN searchCtrlBlock_philhealth_no}
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_philhealth_no}" {$filterRow_attrs_philhealth_no}>
 			<label>{$label patients philhealth_no }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_philhealth_no}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_philhealth_no}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_philhealth_no}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_philhealth_no}</span>
 						</div>
 		{END searchCtrlBlock_philhealth_no}
 																{BEGIN searchCtrlBlock_ihomis_no}
@@ -273,11 +279,9 @@
 		<div class="form-group srchPanelRow {$filterRow_class_ihomis_no}" {$filterRow_attrs_ihomis_no}>
 			<label>{$label patients ihomis_no }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_ihomis_no}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_ihomis_no}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_ihomis_no}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_ihomis_no}</span>
 						</div>
 		{END searchCtrlBlock_ihomis_no}
 																{BEGIN searchCtrlBlock_emed_no}
@@ -286,11 +290,9 @@
 		<div class="form-group srchPanelRow {$filterRow_class_emed_no}" {$filterRow_attrs_emed_no}>
 			<label>{$label patients emed_no }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_emed_no}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_emed_no}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_emed_no}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_emed_no}</span>
 						</div>
 		{END searchCtrlBlock_emed_no}
 																{BEGIN searchCtrlBlock_uhs_id_no}
@@ -299,11 +301,9 @@
 		<div class="form-group srchPanelRow {$filterRow_class_uhs_id_no}" {$filterRow_attrs_uhs_id_no}>
 			<label>{$label patients uhs_id_no }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_uhs_id_no}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_uhs_id_no}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_uhs_id_no}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_uhs_id_no}</span>
 						</div>
 		{END searchCtrlBlock_uhs_id_no}
 																{BEGIN searchCtrlBlock_college}
@@ -312,11 +312,9 @@
 		<div class="form-group srchPanelRow {$filterRow_class_college}" {$filterRow_attrs_college}>
 			<label>{$label patients college }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_college}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_college}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_college}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_college}</span>
 						</div>
 		{END searchCtrlBlock_college}
 																{BEGIN searchCtrlBlock_office}
@@ -325,11 +323,9 @@
 		<div class="form-group srchPanelRow {$filterRow_class_office}" {$filterRow_attrs_office}>
 			<label>{$label patients office }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_office}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_office}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_office}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_office}</span>
 						</div>
 		{END searchCtrlBlock_office}
 																{BEGIN searchCtrlBlock_classification}
@@ -338,104 +334,22 @@
 		<div class="form-group srchPanelRow {$filterRow_class_classification}" {$filterRow_attrs_classification}>
 			<label>{$label patients classification }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_classification}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_classification}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_classification}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_classification}</span>
 						</div>
 		{END searchCtrlBlock_classification}
-																{BEGIN searchCtrlBlock_full_name}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_full_name}" {$filterRow_attrs_full_name}>
-			<label>{$label patients full_name }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_full_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_full_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_full_name}</span>
-						</div>
-		{END searchCtrlBlock_full_name}
 																{BEGIN searchCtrlBlock_created_at}
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_created_at}" {$filterRow_attrs_created_at}>
 			<label>{$label patients created_at }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_created_at}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_created_at}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_created_at}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_created_at}</span>
 						</div>
 		{END searchCtrlBlock_created_at}
-																{BEGIN searchCtrlBlock_birthday}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_birthday}" {$filterRow_attrs_birthday}>
-			<label>{$label patients birthday }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_birthday}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_birthday}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_birthday}</span>
-						</div>
-		{END searchCtrlBlock_birthday}
-																{BEGIN searchCtrlBlock_sex}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_sex}" {$filterRow_attrs_sex}>
-			<label>{$label patients sex }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_sex}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_sex}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_sex}</span>
-						</div>
-		{END searchCtrlBlock_sex}
-																{BEGIN searchCtrlBlock_middle_name}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_middle_name}" {$filterRow_attrs_middle_name}>
-			<label>{$label patients middle_name }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_middle_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_middle_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_middle_name}</span>
-						</div>
-		{END searchCtrlBlock_middle_name}
-																{BEGIN searchCtrlBlock_last_name}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_last_name}" {$filterRow_attrs_last_name}>
-			<label>{$label patients last_name }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_last_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_last_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_last_name}</span>
-						</div>
-		{END searchCtrlBlock_last_name}
-																{BEGIN searchCtrlBlock_first_name}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_first_name}" {$filterRow_attrs_first_name}>
-			<label>{$label patients first_name }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_first_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_first_name}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_first_name}</span>
-						</div>
-		{END searchCtrlBlock_first_name}
 		
 
 	</div>
@@ -765,28 +679,13 @@
 <div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
 {END message_block}	<style>
 @media screen and (max-width: 767px) {
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="first_name"]:before {
-		content: "{$label patients first_name}";
-	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="last_name"]:before {
-		content: "{$label patients last_name}";
-	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="middle_name"]:before {
-		content: "{$label patients middle_name}";
-	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="sex"]:before {
-		content: "{$label patients sex}";
-	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="birthday"]:before {
-		content: "{$label patients birthday}";
-	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="created_at"]:before {
 		content: "{$label patients created_at}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="updated_at"]:before {
 		content: "{$label patients updated_at}";
 	}
-				[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="classification"]:before {
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="classification"]:before {
 		content: "{$label patients classification}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="office"]:before {
@@ -806,6 +705,12 @@
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="philhealth_no"]:before {
 		content: "{$label patients philhealth_no}";
+	}
+					[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="full_name"]:before {
+		content: "{$label patients full_name}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="patient_id"]:before {
+		content: "{$label patients patient_id}";
 	}
 	}
 </style>
@@ -865,30 +770,30 @@
 	{$cell_grid_headcell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$first_name_class}	"
+		 r-ori-vert		 {$patient_id_class}	"
 
-			data-field="first_name"
+			data-field="patient_id"
 	
 	data-cellId="grid_headcell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN first_name_fieldheadercolumn}
-	{BEGIN first_name_fieldheader}
+		{BEGIN patient_id_fieldheadercolumn}
+	{BEGIN patient_id_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="first_name" data-fieldname="first_name" 
+	data-itemtype="grid_field_label" data-itemid="grid_field19" {$item_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_id" data-fieldname="patient_id" 
 
-			{$first_name_orderlinkattrs}
+			{$patient_id_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label patients first_name }</span>
-					{$arrow_icon_first_name}
+		<span>{$label patients patient_id }</span>
+					{$arrow_icon_patient_id}
 			</span>
 	</span>
-	{END first_name_fieldheader}
-{END first_name_fieldheadercolumn}
+	{END patient_id_fieldheader}
+{END patient_id_fieldheadercolumn}
 
 	
 	</th>
@@ -899,30 +804,30 @@
 	{$cell_grid_headcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$last_name_class}	"
+		 r-ori-vert		 {$full_name_class}	"
 
-			data-field="last_name"
+			data-field="full_name"
 	
 	data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN last_name_fieldheadercolumn}
-	{BEGIN last_name_fieldheader}
+		{BEGIN full_name_fieldheadercolumn}
+	{BEGIN full_name_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="last_name" data-fieldname="last_name" 
+	data-itemtype="grid_field_label" data-itemid="grid_field16" {$item_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="full_name" data-fieldname="full_name" 
 
-			{$last_name_orderlinkattrs}
+			{$full_name_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label patients last_name }</span>
-					{$arrow_icon_last_name}
+		<span>{$label patients full_name }</span>
+					{$arrow_icon_full_name}
 			</span>
 	</span>
-	{END last_name_fieldheader}
-{END last_name_fieldheadercolumn}
+	{END full_name_fieldheader}
+{END full_name_fieldheadercolumn}
 
 	
 	</th>
@@ -933,113 +838,11 @@
 	{$cell_grid_headcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$middle_name_class}	"
-
-			data-field="middle_name"
-	
-	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN middle_name_fieldheadercolumn}
-	{BEGIN middle_name_fieldheader}
-<span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="middle_name" data-fieldname="middle_name" 
-
-			{$middle_name_orderlinkattrs}
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label patients middle_name }</span>
-					{$arrow_icon_middle_name}
-			</span>
-	</span>
-	{END middle_name_fieldheader}
-{END middle_name_fieldheadercolumn}
-
-	
-	</th>
-	{END cellblock_grid_headcell_field2}
-									{BEGIN cellblock_grid_headcell_field3}
-	<th
-	
-	{$cell_grid_headcell_field3}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$sex_class}	"
-
-			data-field="sex"
-	
-	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN sex_fieldheadercolumn}
-	{BEGIN sex_fieldheader}
-<span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="sex" data-fieldname="sex" 
-
-			{$sex_orderlinkattrs}
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label patients sex }</span>
-					{$arrow_icon_sex}
-			</span>
-	</span>
-	{END sex_fieldheader}
-{END sex_fieldheadercolumn}
-
-	
-	</th>
-	{END cellblock_grid_headcell_field3}
-									{BEGIN cellblock_grid_headcell_field4}
-	<th
-	
-	{$cell_grid_headcell_field4}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$birthday_class}	"
-
-			data-field="birthday"
-	
-	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN birthday_fieldheadercolumn}
-	{BEGIN birthday_fieldheader}
-<span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="birthday" data-fieldname="birthday" 
-
-			{$birthday_orderlinkattrs}
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label patients birthday }</span>
-					{$arrow_icon_birthday}
-			</span>
-	</span>
-	{END birthday_fieldheader}
-{END birthday_fieldheadercolumn}
-
-	
-	</th>
-	{END cellblock_grid_headcell_field4}
-									{BEGIN cellblock_grid_headcell_field5}
-	<th
-	
-	{$cell_grid_headcell_field5}
-	{$recordattrs}
-	class="
 		 r-ori-vert		 {$classification_class}	"
 
 			data-field="classification"
 	
-	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1062,18 +865,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field5}
-									{BEGIN cellblock_grid_headcell_field6}
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
 	<th
 	
-	{$cell_grid_headcell_field6}
+	{$cell_grid_headcell_field3}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$office_class}	"
 
 			data-field="office"
 	
-	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1096,18 +899,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field6}
-									{BEGIN cellblock_grid_headcell_field7}
+	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field4}
 	<th
 	
-	{$cell_grid_headcell_field7}
+	{$cell_grid_headcell_field4}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$college_class}	"
 
 			data-field="college"
 	
-	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1130,18 +933,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field7}
-									{BEGIN cellblock_grid_headcell_field8}
+	{END cellblock_grid_headcell_field4}
+									{BEGIN cellblock_grid_headcell_field5}
 	<th
 	
-	{$cell_grid_headcell_field8}
+	{$cell_grid_headcell_field5}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$uhs_id_no_class}	"
 
 			data-field="uhs_id_no"
 	
-	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1164,18 +967,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field8}
-									{BEGIN cellblock_grid_headcell_field9}
+	{END cellblock_grid_headcell_field5}
+									{BEGIN cellblock_grid_headcell_field6}
 	<th
 	
-	{$cell_grid_headcell_field9}
+	{$cell_grid_headcell_field6}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$emed_no_class}	"
 
 			data-field="emed_no"
 	
-	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1198,18 +1001,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field9}
-									{BEGIN cellblock_grid_headcell_field10}
+	{END cellblock_grid_headcell_field6}
+									{BEGIN cellblock_grid_headcell_field7}
 	<th
 	
-	{$cell_grid_headcell_field10}
+	{$cell_grid_headcell_field7}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$ihomis_no_class}	"
 
 			data-field="ihomis_no"
 	
-	data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1232,18 +1035,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field10}
-									{BEGIN cellblock_grid_headcell_field11}
+	{END cellblock_grid_headcell_field7}
+									{BEGIN cellblock_grid_headcell_field8}
 	<th
 	
-	{$cell_grid_headcell_field11}
+	{$cell_grid_headcell_field8}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$philhealth_no_class}	"
 
 			data-field="philhealth_no"
 	
-	data-cellId="grid_headcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1266,25 +1069,25 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field11}
-									{BEGIN cellblock_grid_headcell_field12}
+	{END cellblock_grid_headcell_field8}
+									{BEGIN cellblock_grid_headcell_field9}
 	<th
 	
-	{$cell_grid_headcell_field12}
+	{$cell_grid_headcell_field9}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_headcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN created_at_fieldheadercolumn}
 	{BEGIN created_at_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="created_at" data-fieldname="created_at" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="created_at" data-fieldname="created_at" 
 
 			{$created_at_orderlinkattrs}
 	
@@ -1300,25 +1103,25 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field12}
-									{BEGIN cellblock_grid_headcell_field13}
+	{END cellblock_grid_headcell_field9}
+									{BEGIN cellblock_grid_headcell_field10}
 	<th
 	
-	{$cell_grid_headcell_field13}
+	{$cell_grid_headcell_field10}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_headcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN updated_at_fieldheadercolumn}
 	{BEGIN updated_at_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field13" {$item_simple_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="updated_at" data-fieldname="updated_at" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="updated_at" data-fieldname="updated_at" 
 
 			{$updated_at_orderlinkattrs}
 	
@@ -1334,7 +1137,7 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field13}
+	{END cellblock_grid_headcell_field10}
 							</tr>
 															
 					{END grid_header}
@@ -1414,19 +1217,19 @@
 	{$cell_grid_cell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$first_name_class}	"
+		 r-ori-vert		 {$patient_id_class}	"
 
-			data-field="first_name"
+			data-field="patient_id"
 	
 	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN first_name_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field1" {$item_simple_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="first_name" data-fieldname="first_name" data-default-width >
-{$first_name_value}
+		{BEGIN patient_id_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field18" {$item_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_id" data-fieldname="patient_id" data-default-width >
+{$patient_id_value}
 </span>
-{END first_name_fieldcolumn}	
+{END patient_id_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field}
 									{BEGIN cellblock_grid_cell_field1}
@@ -1435,19 +1238,19 @@
 	{$cell_grid_cell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$last_name_class}	"
+		 r-ori-vert		 {$full_name_class}	"
 
-			data-field="last_name"
+			data-field="full_name"
 	
-	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
 	>
 
 	 
-		{BEGIN last_name_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="last_name" data-fieldname="last_name" data-default-width >
-{$last_name_value}
+		{BEGIN full_name_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field15" {$item_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="full_name" data-fieldname="full_name" data-default-width >
+{$full_name_value}
 </span>
-{END last_name_fieldcolumn}	
+{END full_name_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field1}
 									{BEGIN cellblock_grid_cell_field2}
@@ -1456,74 +1259,11 @@
 	{$cell_grid_cell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$middle_name_class}	"
-
-			data-field="middle_name"
-	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN middle_name_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field3" {$item_simple_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="middle_name" data-fieldname="middle_name" data-default-width >
-{$middle_name_value}
-</span>
-{END middle_name_fieldcolumn}	
-	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
-	<td
-	
-	{$cell_grid_cell_field3}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$sex_class}	"
-
-			data-field="sex"
-	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN sex_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field4" {$item_simple_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="sex" data-fieldname="sex" data-default-width >
-{$sex_value}
-</span>
-{END sex_fieldcolumn}	
-	</td>
-	{END cellblock_grid_cell_field3}
-									{BEGIN cellblock_grid_cell_field4}
-	<td
-	
-	{$cell_grid_cell_field4}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$birthday_class}	"
-
-			data-field="birthday"
-	
-	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN birthday_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="birthday" data-fieldname="birthday" data-default-width >
-{$birthday_value}
-</span>
-{END birthday_fieldcolumn}	
-	</td>
-	{END cellblock_grid_cell_field4}
-									{BEGIN cellblock_grid_cell_field5}
-	<td
-	
-	{$cell_grid_cell_field5}
-	{$recordattrs}
-	class="
 		 r-ori-vert		 {$classification_class}	"
 
 			data-field="classification"
 	
-	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1533,18 +1273,18 @@
 </span>
 {END classification_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field5}
-									{BEGIN cellblock_grid_cell_field6}
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
 	<td
 	
-	{$cell_grid_cell_field6}
+	{$cell_grid_cell_field3}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$office_class}	"
 
 			data-field="office"
 	
-	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1554,18 +1294,18 @@
 </span>
 {END office_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field6}
-									{BEGIN cellblock_grid_cell_field7}
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field4}
 	<td
 	
-	{$cell_grid_cell_field7}
+	{$cell_grid_cell_field4}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$college_class}	"
 
 			data-field="college"
 	
-	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1575,18 +1315,18 @@
 </span>
 {END college_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field7}
-									{BEGIN cellblock_grid_cell_field8}
+	{END cellblock_grid_cell_field4}
+									{BEGIN cellblock_grid_cell_field5}
 	<td
 	
-	{$cell_grid_cell_field8}
+	{$cell_grid_cell_field5}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$uhs_id_no_class}	"
 
 			data-field="uhs_id_no"
 	
-	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1596,18 +1336,18 @@
 </span>
 {END uhs_id_no_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field8}
-									{BEGIN cellblock_grid_cell_field9}
+	{END cellblock_grid_cell_field5}
+									{BEGIN cellblock_grid_cell_field6}
 	<td
 	
-	{$cell_grid_cell_field9}
+	{$cell_grid_cell_field6}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$emed_no_class}	"
 
 			data-field="emed_no"
 	
-	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1617,18 +1357,18 @@
 </span>
 {END emed_no_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field9}
-									{BEGIN cellblock_grid_cell_field10}
+	{END cellblock_grid_cell_field6}
+									{BEGIN cellblock_grid_cell_field7}
 	<td
 	
-	{$cell_grid_cell_field10}
+	{$cell_grid_cell_field7}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$ihomis_no_class}	"
 
 			data-field="ihomis_no"
 	
-	data-cellId="grid_cell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1638,18 +1378,18 @@
 </span>
 {END ihomis_no_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field10}
-									{BEGIN cellblock_grid_cell_field11}
+	{END cellblock_grid_cell_field7}
+									{BEGIN cellblock_grid_cell_field8}
 	<td
 	
-	{$cell_grid_cell_field11}
+	{$cell_grid_cell_field8}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$philhealth_no_class}	"
 
 			data-field="philhealth_no"
 	
-	data-cellId="grid_cell_field11" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1659,18 +1399,18 @@
 </span>
 {END philhealth_no_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field11}
-									{BEGIN cellblock_grid_cell_field12}
+	{END cellblock_grid_cell_field8}
+									{BEGIN cellblock_grid_cell_field9}
 	<td
 	
-	{$cell_grid_cell_field12}
+	{$cell_grid_cell_field9}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_cell_field12" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1680,18 +1420,18 @@
 </span>
 {END created_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field12}
-									{BEGIN cellblock_grid_cell_field13}
+	{END cellblock_grid_cell_field9}
+									{BEGIN cellblock_grid_cell_field10}
 	<td
 	
-	{$cell_grid_cell_field13}
+	{$cell_grid_cell_field10}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_cell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1701,7 +1441,7 @@
 </span>
 {END updated_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field13}
+	{END cellblock_grid_cell_field10}
 							</tr>
 										
 											{END grid_row}
@@ -1749,7 +1489,7 @@
 	{$cell_grid_footcell_field}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$first_name_class}	"
+		 r-ori-vert		 {$patient_id_class}	"
 
 	
 	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1764,7 +1504,7 @@
 	{$cell_grid_footcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$last_name_class}	"
+		 r-ori-vert		 {$full_name_class}	"
 
 	
 	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1779,7 +1519,7 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$middle_name_class}	"
+		 r-ori-vert		 {$classification_class}	"
 
 	
 	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1794,7 +1534,7 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$sex_class}	"
+		 r-ori-vert		 {$office_class}	"
 
 	
 	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1809,7 +1549,7 @@
 	{$cell_grid_footcell_field4}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$birthday_class}	"
+		 r-ori-vert		 {$college_class}	"
 
 	
 	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1824,7 +1564,7 @@
 	{$cell_grid_footcell_field5}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$classification_class}	"
+		 r-ori-vert		 {$uhs_id_no_class}	"
 
 	
 	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1839,7 +1579,7 @@
 	{$cell_grid_footcell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$office_class}	"
+		 r-ori-vert		 {$emed_no_class}	"
 
 	
 	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1854,7 +1594,7 @@
 	{$cell_grid_footcell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$college_class}	"
+		 r-ori-vert		 {$ihomis_no_class}	"
 
 	
 	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1869,7 +1609,7 @@
 	{$cell_grid_footcell_field8}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$uhs_id_no_class}	"
+		 r-ori-vert		 {$philhealth_no_class}	"
 
 	
 	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1884,7 +1624,7 @@
 	{$cell_grid_footcell_field9}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$emed_no_class}	"
+		 r-ori-vert		 {$created_at_class}	"
 
 	
 	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1899,7 +1639,7 @@
 	{$cell_grid_footcell_field10}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$ihomis_no_class}	"
+		 r-ori-vert		 {$updated_at_class}	"
 
 	
 	data-cellId="grid_footcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
@@ -1908,51 +1648,6 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field10}
-									{BEGIN cellblock_grid_footcell_field11}
-	<td
-	
-	{$cell_grid_footcell_field11}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$philhealth_no_class}	"
-
-	
-	data-cellId="grid_footcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
-	>
-
-	
-	</td>
-	{END cellblock_grid_footcell_field11}
-									{BEGIN cellblock_grid_footcell_field12}
-	<td
-	
-	{$cell_grid_footcell_field12}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$created_at_class}	"
-
-	
-	data-cellId="grid_footcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
-	>
-
-	
-	</td>
-	{END cellblock_grid_footcell_field12}
-									{BEGIN cellblock_grid_footcell_field13}
-	<td
-	
-	{$cell_grid_footcell_field13}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$updated_at_class}	"
-
-	
-	data-cellId="grid_footcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="patients_list"	
-	>
-
-	
-	</td>
-	{END cellblock_grid_footcell_field13}
 							</tr>
 					
 					</tfoot>

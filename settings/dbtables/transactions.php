@@ -95,6 +95,17 @@ $runnerDbTableInfo['transactions'] = array(
 			'defaultValue' => '' 
 		),
 		array(
+			'name' => 'opd_attendance',
+			'type' => 200,
+			'size' => 20,
+			'scale' => 0,
+			'typeName' => 'varchar(20)',
+			'nullable' => true,
+			'autoinc' => false,
+			'defaultValueSQL' => null,
+			'defaultValue' => '' 
+		),
+		array(
 			'name' => 'created_at',
 			'type' => 135,
 			'size' => 0,

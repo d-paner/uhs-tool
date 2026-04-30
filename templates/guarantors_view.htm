@@ -90,46 +90,6 @@
 >
 	<div edit-form-cell class="clearfix">
 				
-{BEGIN sex_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_sex}  r-vertical-field" 
-	data-signal-error-for="sex{$id}" {$required_attr_sex}
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="sex" data-fieldname="sex" >
-
-	<label class="r-edit-label control-label {$sex_label_class}" for="{$labelfor_sex}">
-		{BEGIN sex_label}
-			{$sex_forward_control}
-			{$label guarantors sex }			{END sex_label}
-		<span class="icon-required"></span>
-	</label>
-	<div class="r-edit-field">
-		{$sex_value}	</div>
-	</div>
-
-
-{END sex_fieldblock}
-											
-{BEGIN birthday_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_birthday}  r-vertical-field" 
-	data-signal-error-for="birthday{$id}" {$required_attr_birthday}
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="birthday" data-fieldname="birthday" >
-
-	<label class="r-edit-label control-label {$birthday_label_class}" for="{$labelfor_birthday}">
-		{BEGIN birthday_label}
-			{$birthday_forward_control}
-			{$label guarantors birthday }			{END birthday_label}
-		<span class="icon-required"></span>
-	</label>
-	<div class="r-edit-field">
-		{$birthday_value}	</div>
-	</div>
-
-
-{END birthday_fieldblock}
-											
 {BEGIN classification_fieldblock}
 
 
@@ -210,66 +170,6 @@
 
 {END office_fieldblock}
 											
-{BEGIN first_name_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_first_name}  r-vertical-field" 
-	data-signal-error-for="first_name{$id}" {$required_attr_first_name}
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="first_name" data-fieldname="first_name" >
-
-	<label class="r-edit-label control-label {$first_name_label_class}" for="{$labelfor_first_name}">
-		{BEGIN first_name_label}
-			{$first_name_forward_control}
-			{$label guarantors first_name }			{END first_name_label}
-		<span class="icon-required"></span>
-	</label>
-	<div class="r-edit-field">
-		{$first_name_value}	</div>
-	</div>
-
-
-{END first_name_fieldblock}
-											
-{BEGIN middle_name_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_middle_name}  r-vertical-field" 
-	data-signal-error-for="middle_name{$id}" {$required_attr_middle_name}
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="middle_name" data-fieldname="middle_name" >
-
-	<label class="r-edit-label control-label {$middle_name_label_class}" for="{$labelfor_middle_name}">
-		{BEGIN middle_name_label}
-			{$middle_name_forward_control}
-			{$label guarantors middle_name }			{END middle_name_label}
-		<span class="icon-required"></span>
-	</label>
-	<div class="r-edit-field">
-		{$middle_name_value}	</div>
-	</div>
-
-
-{END middle_name_fieldblock}
-											
-{BEGIN last_name_fieldblock}
-
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_last_name}  r-vertical-field" 
-	data-signal-error-for="last_name{$id}" {$required_attr_last_name}
-	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="last_name" data-fieldname="last_name" >
-
-	<label class="r-edit-label control-label {$last_name_label_class}" for="{$labelfor_last_name}">
-		{BEGIN last_name_label}
-			{$last_name_forward_control}
-			{$label guarantors last_name }			{END last_name_label}
-		<span class="icon-required"></span>
-	</label>
-	<div class="r-edit-field">
-		{$last_name_value}	</div>
-	</div>
-
-
-{END last_name_fieldblock}
-											
 {BEGIN college_fieldblock}
 
 
@@ -309,6 +209,66 @@
 
 
 {END unit_fieldblock}
+											
+{BEGIN person_id_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_person_id}  r-vertical-field" 
+	data-signal-error-for="person_id{$id}" {$required_attr_person_id}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="person_id" data-fieldname="person_id" >
+
+	<label class="r-edit-label control-label {$person_id_label_class}" for="{$labelfor_person_id}">
+		{BEGIN person_id_label}
+			{$person_id_forward_control}
+			{$label guarantors person_id }			{END person_id_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$person_id_value}	</div>
+	</div>
+
+
+{END person_id_fieldblock}
+											
+{BEGIN person_type_id_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_person_type_id}  r-vertical-field" 
+	data-signal-error-for="person_type_id{$id}" {$required_attr_person_type_id}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="person_type_id" data-fieldname="person_type_id" >
+
+	<label class="r-edit-label control-label {$person_type_id_label_class}" for="{$labelfor_person_type_id}">
+		{BEGIN person_type_id_label}
+			{$person_type_id_forward_control}
+			{$label guarantors person_type_id }			{END person_type_id_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$person_type_id_value}	</div>
+	</div>
+
+
+{END person_type_id_fieldblock}
+											
+{BEGIN full_name_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_full_name}  r-vertical-field" 
+	data-signal-error-for="full_name{$id}" {$required_attr_full_name}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="full_name" data-fieldname="full_name" >
+
+	<label class="r-edit-label control-label {$full_name_label_class}" for="{$labelfor_full_name}">
+		{BEGIN full_name_label}
+			{$full_name_forward_control}
+			{$label guarantors full_name }			{END full_name_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$full_name_value}	</div>
+	</div>
+
+
+{END full_name_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

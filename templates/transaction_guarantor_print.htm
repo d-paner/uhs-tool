@@ -124,7 +124,7 @@
 	 
 		{BEGIN transaction_number_fieldheadercolumn}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="transaction_number" data-fieldname="transaction_number" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="transaction_number" data-fieldname="transaction_number" 
 
 	
 	
@@ -144,47 +144,17 @@
 	{$cell_grid_headcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$guarantor_id_class}	"
+		 r-ori-vert		 {$placed_by_class}	"
 
-			data-field="guarantor_id"
+			data-field="placed_by"
 	
 	data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN guarantor_id_fieldheadercolumn}
-<span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" 
-
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label transaction_guarantor guarantor_id }</span>
-			</span>
-	</span>
-{END guarantor_id_fieldheadercolumn}
-
-	
-	</th>
-	{END cellblock_grid_headcell_field1}
-									{BEGIN cellblock_grid_headcell_field2}
-	<th
-	
-	{$cell_grid_headcell_field2}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$placed_by_class}	"
-
-			data-field="placed_by"
-	
-	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
 		{BEGIN placed_by_fieldheadercolumn}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="placed_by" data-fieldname="placed_by" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="placed_by" data-fieldname="placed_by" 
 
 	
 	
@@ -197,24 +167,24 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field2}
-									{BEGIN cellblock_grid_headcell_field3}
+	{END cellblock_grid_headcell_field1}
+									{BEGIN cellblock_grid_headcell_field2}
 	<th
 	
-	{$cell_grid_headcell_field3}
+	{$cell_grid_headcell_field2}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$group_class}	"
 
 			data-field="group"
 	
-	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN group_fieldheadercolumn}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group" data-fieldname="group" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group" data-fieldname="group" 
 
 	
 	
@@ -227,24 +197,24 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field3}
-									{BEGIN cellblock_grid_headcell_field4}
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
 	<th
 	
-	{$cell_grid_headcell_field4}
+	{$cell_grid_headcell_field3}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$timestamps_class}	"
 
 			data-field="timestamps"
 	
-	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN timestamps_fieldheadercolumn}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="timestamps" data-fieldname="timestamps" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="timestamps" data-fieldname="timestamps" 
 
 	
 	
@@ -254,6 +224,36 @@
 			</span>
 	</span>
 {END timestamps_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field4}
+	<th
+	
+	{$cell_grid_headcell_field4}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$guarantor_id_class}	"
+
+			data-field="guarantor_id"
+	
+	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN guarantor_id_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label transaction_guarantor guarantor_id }</span>
+			</span>
+	</span>
+{END guarantor_id_fieldheadercolumn}
 
 	
 	</th>
@@ -296,32 +296,11 @@
 	{$cell_grid_cell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$guarantor_id_class}	"
-
-			data-field="guarantor_id"
-	
-	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN guarantor_id_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" data-default-width >
-{$guarantor_id_value}
-</span>
-{END guarantor_id_fieldcolumn}	
-	</td>
-	{END cellblock_grid_cell_field1}
-									{BEGIN cellblock_grid_cell_field2}
-	<td
-	
-	{$cell_grid_cell_field2}
-	{$recordattrs}
-	class="
 		 r-ori-vert		 {$placed_by_class}	"
 
 			data-field="placed_by"
 	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -331,18 +310,18 @@
 </span>
 {END placed_by_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
+	{END cellblock_grid_cell_field1}
+									{BEGIN cellblock_grid_cell_field2}
 	<td
 	
-	{$cell_grid_cell_field3}
+	{$cell_grid_cell_field2}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$group_class}	"
 
 			data-field="group"
 	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -352,18 +331,18 @@
 </span>
 {END group_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field3}
-									{BEGIN cellblock_grid_cell_field4}
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
 	<td
 	
-	{$cell_grid_cell_field4}
+	{$cell_grid_cell_field3}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$timestamps_class}	"
 
 			data-field="timestamps"
 	
-	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -372,6 +351,27 @@
 {$timestamps_value}
 </span>
 {END timestamps_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field4}
+	<td
+	
+	{$cell_grid_cell_field4}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$guarantor_id_class}	"
+
+			data-field="guarantor_id"
+	
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN guarantor_id_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" data-default-width >
+{$guarantor_id_value}
+</span>
+{END guarantor_id_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field4}
 							</tr>
@@ -406,7 +406,7 @@
 	{$cell_grid_footcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$guarantor_id_class}	"
+		 r-ori-vert		 {$placed_by_class}	"
 
 	
 	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transaction_guarantor_print"	
@@ -421,7 +421,7 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$placed_by_class}	"
+		 r-ori-vert		 {$group_class}	"
 
 	
 	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transaction_guarantor_print"	
@@ -436,7 +436,7 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$group_class}	"
+		 r-ori-vert		 {$timestamps_class}	"
 
 	
 	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transaction_guarantor_print"	
@@ -451,7 +451,7 @@
 	{$cell_grid_footcell_field4}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$timestamps_class}	"
+		 r-ori-vert		 {$guarantor_id_class}	"
 
 	
 	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transaction_guarantor_print"	

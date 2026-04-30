@@ -20,7 +20,8 @@ $runnerTableSettings['transaction_guarantor'] = array(
 			'view' 
 		),
 		'list' => array( 
-			'list' 
+			'list',
+			'list1' 
 		),
 		'print' => array( 
 			'print' 
@@ -37,6 +38,7 @@ $runnerTableSettings['transaction_guarantor'] = array(
 		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
+		'list1' => 'list',
 		'search' => 'search' 
 	),
 	'defaultPages' => array(
@@ -54,12 +56,12 @@ $runnerTableSettings['transaction_guarantor'] = array(
 	'afterAddDetail' => 'transaction_guarantor',
 	'detailsBadgeColor' => '5f9ea0',
 	'sql' => 'SELECT
-	id,
-	transaction_number,
-	guarantor_id,
-	placed_by,
-	`group`,
-	timestamps
+    id,
+    transaction_number,
+    guarantor_id,
+    placed_by,
+    `group`,
+    timestamps
 FROM
 	transaction_guarantor',
 	'keyFields' => array( 
@@ -108,37 +110,12 @@ FROM
 			'editFormats' => array(
 				'edit' => array(
 					'format' => 'Lookup wizard',
+					'required' => true,
 					'lookupType' => 2,
 					'lookupTable' => 'transactions',
 					'lookupTableConnection' => 'conn',
 					'lookupLinkField' => 'transaction_number',
 					'lookupDisplayField' => 'transaction_number',
-					'lookupControlType' => 2,
-					'lookupListPage' => 'list' 
-				) 
-			),
-			'tableName' => 'transaction_guarantor' 
-		),
-		'guarantor_id' => array(
-			'name' => 'guarantor_id',
-			'goodName' => 'guarantor_id',
-			'strField' => 'guarantor_id',
-			'index' => 3,
-			'type' => 3,
-			'sqlExpression' => 'guarantor_id',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'format' => 'Lookup wizard',
-					'lookupType' => 2,
-					'lookupTable' => 'guarantors',
-					'lookupTableConnection' => 'conn',
-					'lookupLinkField' => 'id',
-					'lookupDisplayField' => 'full_name',
 					'lookupControlType' => 2,
 					'lookupListPage' => 'list' 
 				) 
@@ -203,6 +180,34 @@ FROM
 				) 
 			),
 			'tableName' => 'transaction_guarantor' 
+		),
+		'guarantor_id' => array(
+			'name' => 'guarantor_id',
+			'goodName' => 'guarantor_id',
+			'strField' => 'guarantor_id',
+			'index' => 3,
+			'type' => 3,
+			'sqlExpression' => 'guarantor_id',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					'format' => 'Lookup wizard',
+					'required' => true,
+					'lookupType' => 2,
+					'lookupTable' => 'guarantors',
+					'lookupTableConnection' => 'conn',
+					'lookupLinkField' => 'id',
+					'lookupDisplayField' => 'CONCAT_WS(\' \', first_name, middle_name, last_name)',
+					'lookupCustomDisplay' => true,
+					'lookupControlType' => 2,
+					'lookupListPage' => 'list1' 
+				) 
+			),
+			'tableName' => 'transaction_guarantor' 
 		) 
 	),
 	'masterTables' => array( 
@@ -218,12 +223,12 @@ FROM
 	),
 	'query' => array(
 		'sql' => 'SELECT
-	id,
-	transaction_number,
-	guarantor_id,
-	placed_by,
-	`group`,
-	timestamps
+    id,
+    transaction_number,
+    guarantor_id,
+    placed_by,
+    `group`,
+    timestamps
 FROM
 	transaction_guarantor',
 		'parsed' => true,
@@ -435,11 +440,11 @@ FROM
 		),
 		'headSql' => 'SELECT',
 		'fieldListSql' => 'id,
-	transaction_number,
-	guarantor_id,
-	placed_by,
-	`group`,
-	timestamps',
+    transaction_number,
+    guarantor_id,
+    placed_by,
+    `group`,
+    timestamps',
 		'fromListSql' => 'FROM
 	transaction_guarantor',
 		'orderBySql' => '',
@@ -464,7 +469,8 @@ FROM
 			'view' 
 		),
 		'list' => array( 
-			'list' 
+			'list',
+			'list1' 
 		),
 		'print' => array( 
 			'print' 
@@ -481,6 +487,7 @@ FROM
 		'view' => 'view',
 		'list' => 'list',
 		'print' => 'print',
+		'list1' => 'list',
 		'search' => 'search' 
 	),
 	'originalDefaultPages' => array(
@@ -498,10 +505,10 @@ FROM
 		'searchableFields' => array( 
 			'id',
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -510,10 +517,10 @@ FROM
 		'googleLikeSearchFields' => array( 
 			'id',
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		) 
 	),
 	'connId' => 'conn',
@@ -564,26 +571,26 @@ if( mlang_getcurrentlang() === 'English' ) {
 	'fieldLabels' => array(
 		'id' => 'Id',
 		'transaction_number' => 'Transaction Number',
-		'guarantor_id' => 'Guarantor Id',
 		'placed_by' => 'Placed By',
 		'group' => 'Group',
-		'timestamps' => 'Timestamps' 
+		'timestamps' => 'Timestamps',
+		'guarantor_id' => 'Guarantor Id' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
 		'transaction_number' => '',
-		'guarantor_id' => '',
 		'placed_by' => '',
 		'group' => '',
-		'timestamps' => '' 
+		'timestamps' => '',
+		'guarantor_id' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
 		'transaction_number' => '',
-		'guarantor_id' => '',
 		'placed_by' => '',
 		'group' => '',
-		'timestamps' => '' 
+		'timestamps' => '',
+		'guarantor_id' => '' 
 	),
 	'pageTitles' => array(
 		 

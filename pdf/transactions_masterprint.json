@@ -91,6 +91,12 @@ pdfDocument = {
 										{BEGIN col_grid_8}
 					"%",
 					{END col_grid_8}
+										{BEGIN col_grid_9}
+					"%",
+					{END col_grid_9}
+										{BEGIN col_grid_10}
+					"%",
+					{END col_grid_10}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -233,7 +239,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions id }","hidden":"{$item_hide_simple_grid_field9}","bold":true},
+			{"text":"{$jslabel transactions id }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -262,7 +268,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions transaction_number }","hidden":"{$item_hide_simple_grid_field10}","bold":true},
+			{"text":"{$jslabel transactions transaction_number }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -291,7 +297,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions patient_id }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
+			{"text":"{$jslabel transactions patient_id }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -320,7 +326,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions patient_type }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
+			{"text":"{$jslabel transactions patient_type }","hidden":"{$item_hide_simple_grid_field14}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -349,7 +355,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions status }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
+			{"text":"{$jslabel transactions status }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -378,7 +384,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions total_due }","hidden":"{$item_hide_simple_grid_field14}","bold":true},
+			{"text":"{$jslabel transactions total_due }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -407,7 +413,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions total_paid }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
+			{"text":"{$jslabel transactions total_paid }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -436,7 +442,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions created_at }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
+			{"text":"{$jslabel transactions created_at }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -465,7 +471,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel transactions updated_at }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
+			{"text":"{$jslabel transactions updated_at }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -475,6 +481,64 @@ pdfDocument = {
       },
 
 {END cellblock_grid_headcell_field8}
+																							{BEGIN cellblock_grid_headcell_field9}
+{
+	cellId: 'headcell_field9',
+	col:0,
+	row:0,
+			fieldName: 'patient_name',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel transactions patient_name }","hidden":"{$item_hide_simple_grid_field20}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$patient_name_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field9}
+																							{BEGIN cellblock_grid_headcell_field10}
+{
+	cellId: 'headcell_field10',
+	col:0,
+	row:0,
+			fieldName: 'opd_attendance',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel transactions opd_attendance }","hidden":"{$item_hide_simple_grid_field21}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$opd_attendance_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field10}
 											],
 				{END row_grid_0}
 		
@@ -745,6 +809,64 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_field8}
+																							{BEGIN cellblock_grid_cell_field9}
+{
+	cellId: 'cell_field9',
+	col:0,
+	row:0,
+			fieldName: 'patient_name',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$patient_name_pdfvalue},"hidden":"{$item_hide_simple_grid_field9}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$patient_name_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field9}
+																							{BEGIN cellblock_grid_cell_field10}
+{
+	cellId: 'cell_field10',
+	col:0,
+	row:0,
+			fieldName: 'opd_attendance',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$opd_attendance_pdfvalue},"hidden":"{$item_hide_simple_grid_field10}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$opd_attendance_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field10}
 											],
 				{END row_grid_1}
 		
@@ -988,6 +1110,58 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field8}
+																							{BEGIN cellblock_grid_footcell_field9}
+{
+	cellId: 'footcell_field9',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field9}
+																							{BEGIN cellblock_grid_footcell_field10}
+{
+	cellId: 'footcell_field10',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field10}
 											],
 				{END row_grid_2}
 		

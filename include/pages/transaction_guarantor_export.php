@@ -7,9 +7,6 @@
 		'transaction_number' => array(
 			'totalsType' => '' 
 		),
-		'guarantor_id' => array(
-			'totalsType' => '' 
-		),
 		'placed_by' => array(
 			'totalsType' => '' 
 		),
@@ -18,22 +15,25 @@
 		),
 		'timestamps' => array(
 			'totalsType' => '' 
+		),
+		'guarantor_id' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
 		'gridFields' => array( 
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		),
 		'exportFields' => array( 
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -45,9 +45,6 @@
 			'transaction_number' => array( 
 				'export_field1' 
 			),
-			'guarantor_id' => array( 
-				'export_field2' 
-			),
 			'placed_by' => array( 
 				'export_field3' 
 			),
@@ -56,6 +53,9 @@
 			),
 			'timestamps' => array( 
 				'export_field5' 
+			),
+			'guarantor_id' => array( 
+				'export_field' 
 			) 
 		) 
 	),
@@ -76,10 +76,10 @@
 				),
 				'grid' => array( 
 					'export_field1',
-					'export_field2',
 					'export_field3',
 					'export_field4',
-					'export_field5' 
+					'export_field5',
+					'export_field' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -94,10 +94,10 @@
 			'itemForms' => array(
 				'export_header' => 'top',
 				'export_field1' => 'grid',
-				'export_field2' => 'grid',
 				'export_field3' => 'grid',
 				'export_field4' => 'grid',
 				'export_field5' => 'grid',
+				'export_field' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -120,10 +120,10 @@
 			),
 			'export_field' => array( 
 				'export_field1',
-				'export_field2',
 				'export_field3',
 				'export_field4',
-				'export_field5' 
+				'export_field5',
+				'export_field' 
 			) 
 		),
 		'cellMaps' => array(
@@ -264,10 +264,10 @@
 					'model' => 'c1',
 					'items' => array( 
 						'export_field1',
-						'export_field2',
 						'export_field3',
 						'export_field4',
-						'export_field5' 
+						'export_field5',
+						'export_field' 
 					) 
 				) 
 			),
@@ -326,10 +326,6 @@
 			'field' => 'transaction_number',
 			'type' => 'export_field' 
 		),
-		'export_field2' => array(
-			'field' => 'guarantor_id',
-			'type' => 'export_field' 
-		),
 		'export_field3' => array(
 			'field' => 'placed_by',
 			'type' => 'export_field' 
@@ -340,6 +336,10 @@
 		),
 		'export_field5' => array(
 			'field' => 'timestamps',
+			'type' => 'export_field' 
+		),
+		'export_field' => array(
+			'field' => 'guarantor_id',
 			'type' => 'export_field' 
 		) 
 	),

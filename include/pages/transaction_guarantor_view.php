@@ -11,10 +11,10 @@
 	'fields' => array(
 		'gridFields' => array( 
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -26,9 +26,6 @@
 			'transaction_number' => array( 
 				'integrated_edit_field1' 
 			),
-			'guarantor_id' => array( 
-				'integrated_edit_field2' 
-			),
 			'placed_by' => array( 
 				'integrated_edit_field3' 
 			),
@@ -37,6 +34,9 @@
 			),
 			'timestamps' => array( 
 				'integrated_edit_field5' 
+			),
+			'guarantor_id' => array( 
+				'integrated_edit_field' 
 			) 
 		) 
 	),
@@ -62,10 +62,10 @@
 				),
 				'grid' => array( 
 					'integrated_edit_field1',
-					'integrated_edit_field2',
 					'integrated_edit_field3',
 					'integrated_edit_field4',
-					'integrated_edit_field5' 
+					'integrated_edit_field5',
+					'integrated_edit_field' 
 				) 
 			),
 			'formXtTags' => array(
@@ -79,17 +79,13 @@
 				'hamburger' => 'below-grid',
 				'view_header' => 'top',
 				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field2' => 'grid',
 				'integrated_edit_field3' => 'grid',
 				'integrated_edit_field4' => 'grid',
-				'integrated_edit_field5' => 'grid' 
+				'integrated_edit_field5' => 'grid',
+				'integrated_edit_field' => 'grid' 
 			),
 			'itemLocations' => array(
 				'integrated_edit_field1' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field2' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -102,6 +98,10 @@
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field5' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				) 
@@ -122,10 +122,10 @@
 			),
 			'integrated_edit_field' => array( 
 				'integrated_edit_field1',
-				'integrated_edit_field2',
 				'integrated_edit_field3',
 				'integrated_edit_field4',
-				'integrated_edit_field5' 
+				'integrated_edit_field5',
+				'integrated_edit_field' 
 			),
 			'hamburger' => array( 
 				'hamburger' 
@@ -149,10 +149,10 @@
 						),
 						'items' => array( 
 							'integrated_edit_field1',
-							'integrated_edit_field2',
 							'integrated_edit_field3',
 							'integrated_edit_field4',
-							'integrated_edit_field5' 
+							'integrated_edit_field5',
+							'integrated_edit_field' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -326,10 +326,10 @@
 					'model' => 'c3',
 					'items' => array( 
 						'integrated_edit_field1',
-						'integrated_edit_field2',
 						'integrated_edit_field3',
 						'integrated_edit_field4',
-						'integrated_edit_field5' 
+						'integrated_edit_field5',
+						'integrated_edit_field' 
 					) 
 				) 
 			),
@@ -356,11 +356,6 @@
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
-		'integrated_edit_field2' => array(
-			'field' => 'guarantor_id',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
 		'integrated_edit_field3' => array(
 			'field' => 'placed_by',
 			'type' => 'integrated_edit_field',
@@ -384,6 +379,11 @@
 		),
 		'view_edit' => array(
 			'type' => 'view_edit' 
+		),
+		'integrated_edit_field' => array(
+			'field' => 'guarantor_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
 		) 
 	),
 	'version' => 13,

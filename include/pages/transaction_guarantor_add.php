@@ -11,10 +11,10 @@
 	'fields' => array(
 		'gridFields' => array( 
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -26,9 +26,6 @@
 			'transaction_number' => array( 
 				'integrated_edit_field' 
 			),
-			'guarantor_id' => array( 
-				'integrated_edit_field1' 
-			),
 			'placed_by' => array( 
 				'integrated_edit_field2' 
 			),
@@ -37,6 +34,9 @@
 			),
 			'timestamps' => array( 
 				'integrated_edit_field4' 
+			),
+			'guarantor_id' => array( 
+				'integrated_edit_field1' 
 			) 
 		) 
 	),
@@ -134,10 +134,10 @@
 			),
 			'integrated_edit_field' => array( 
 				'integrated_edit_field',
-				'integrated_edit_field1',
 				'integrated_edit_field2',
 				'integrated_edit_field3',
-				'integrated_edit_field4' 
+				'integrated_edit_field4',
+				'integrated_edit_field1' 
 			) 
 		),
 		'cellMaps' => array(
@@ -362,11 +362,6 @@
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		),
-		'integrated_edit_field1' => array(
-			'field' => 'guarantor_id',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
 		'integrated_edit_field2' => array(
 			'field' => 'placed_by',
 			'type' => 'integrated_edit_field',
@@ -379,6 +374,11 @@
 		),
 		'integrated_edit_field4' => array(
 			'field' => 'timestamps',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field1' => array(
+			'field' => 'guarantor_id',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		) 

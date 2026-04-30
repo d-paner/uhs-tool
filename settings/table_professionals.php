@@ -54,16 +54,17 @@ $runnerTableSettings['professionals'] = array(
 	'afterAddDetail' => 'professionals',
 	'detailsBadgeColor' => '008b8b',
 	'sql' => 'SELECT
-	id,
-	full_name,
-	profession,
-	birthday,
-	sex,
-	professional_type_id,
-	created_at,
-	updated_at
+	professionals.id,
+	professionals.person_id,
+	CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name) AS full_name,
+	professionals.person_type_id,
+	professionals.profession,
+	professionals.professional_type_id,
+	professionals.created_at,
+	professionals.updated_at
 FROM
-	professionals',
+	professionals
+JOIN persons ON persons.id = professionals.person_id',
 	'keyFields' => array( 
 		'id' 
 	),
@@ -83,7 +84,7 @@ FROM
 			'index' => 1,
 			'type' => 3,
 			'autoinc' => true,
-			'sqlExpression' => 'id',
+			'sqlExpression' => 'professionals.id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -92,24 +93,6 @@ FROM
 			'editFormats' => array(
 				'edit' => array(
 					 
-				) 
-			),
-			'tableName' => 'professionals' 
-		),
-		'full_name' => array(
-			'name' => 'full_name',
-			'goodName' => 'full_name',
-			'strField' => 'full_name',
-			'index' => 2,
-			'sqlExpression' => 'full_name',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'required' => true 
 				) 
 			),
 			'tableName' => 'professionals' 
@@ -118,8 +101,8 @@ FROM
 			'name' => 'profession',
 			'goodName' => 'profession',
 			'strField' => 'profession',
-			'index' => 3,
-			'sqlExpression' => 'profession',
+			'index' => 5,
+			'sqlExpression' => 'professionals.profession',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -128,49 +111,6 @@ FROM
 			'editFormats' => array(
 				'edit' => array(
 					'required' => true 
-				) 
-			),
-			'tableName' => 'professionals' 
-		),
-		'birthday' => array(
-			'name' => 'birthday',
-			'goodName' => 'birthday',
-			'strField' => 'birthday',
-			'index' => 4,
-			'type' => 7,
-			'sqlExpression' => 'birthday',
-			'viewFormats' => array(
-				'view' => array(
-					'format' => 'Short Date' 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'format' => 'Date',
-					'dateEditType' => 11 
-				) 
-			),
-			'tableName' => 'professionals' 
-		),
-		'sex' => array(
-			'name' => 'sex',
-			'goodName' => 'sex',
-			'strField' => 'sex',
-			'index' => 5,
-			'sqlExpression' => 'sex',
-			'viewFormats' => array(
-				'view' => array(
-					 
-				) 
-			),
-			'editFormats' => array(
-				'edit' => array(
-					'format' => 'Lookup wizard',
-					'lookupType' => 0,
-					'lookupValues' => array( 
-						'Male',
-						'Female' 
-					) 
 				) 
 			),
 			'tableName' => 'professionals' 
@@ -181,7 +121,7 @@ FROM
 			'strField' => 'professional_type_id',
 			'index' => 6,
 			'type' => 3,
-			'sqlExpression' => 'professional_type_id',
+			'sqlExpression' => 'professionals.professional_type_id',
 			'viewFormats' => array(
 				'view' => array(
 					 
@@ -200,7 +140,7 @@ FROM
 			'strField' => 'created_at',
 			'index' => 7,
 			'type' => 135,
-			'sqlExpression' => 'created_at',
+			'sqlExpression' => 'professionals.created_at',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Short Date' 
@@ -221,7 +161,7 @@ FROM
 			'strField' => 'updated_at',
 			'index' => 8,
 			'type' => 135,
-			'sqlExpression' => 'updated_at',
+			'sqlExpression' => 'professionals.updated_at',
 			'viewFormats' => array(
 				'view' => array(
 					'format' => 'Short Date' 
@@ -236,25 +176,90 @@ FROM
 				) 
 			),
 			'tableName' => 'professionals' 
+		),
+		'person_id' => array(
+			'name' => 'person_id',
+			'goodName' => 'person_id',
+			'strField' => 'person_id',
+			'index' => 2,
+			'type' => 3,
+			'sqlExpression' => 'professionals.person_id',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					'format' => 'Lookup wizard',
+					'required' => true,
+					'lookupType' => 2,
+					'lookupTable' => 'persons',
+					'lookupTableConnection' => 'conn',
+					'lookupLinkField' => 'id',
+					'lookupDisplayField' => 'id',
+					'lookupControlType' => 2,
+					'lookupListPage' => 'addPerson' 
+				) 
+			),
+			'tableName' => 'professionals' 
+		),
+		'person_type_id' => array(
+			'name' => 'person_type_id',
+			'goodName' => 'person_type_id',
+			'strField' => 'person_type_id',
+			'index' => 4,
+			'type' => 3,
+			'sqlExpression' => 'professionals.person_type_id',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => 'professionals' 
+		),
+		'full_name' => array(
+			'name' => 'full_name',
+			'goodName' => 'full_name',
+			'strField' => 'full_name',
+			'index' => 3,
+			'sqlExpression' => 'CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name)',
+			'viewFormats' => array(
+				'view' => array(
+					 
+				) 
+			),
+			'editFormats' => array(
+				'edit' => array(
+					 
+				) 
+			),
+			'tableName' => '' 
 		) 
 	),
 	'query' => array(
 		'sql' => 'SELECT
-	id,
-	full_name,
-	profession,
-	birthday,
-	sex,
-	professional_type_id,
-	created_at,
-	updated_at
+	professionals.id,
+	professionals.person_id,
+	CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name) AS full_name,
+	professionals.person_type_id,
+	professionals.profession,
+	professionals.professional_type_id,
+	professionals.created_at,
+	professionals.updated_at
 FROM
-	professionals',
+	professionals
+JOIN persons ON persons.id = professionals.person_id',
 		'parsed' => true,
 		'type' => 'SQLQuery',
 		'fieldList' => array( 
 			array(
-				'sql' => 'id',
+				'sql' => 'professionals.id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -269,7 +274,7 @@ FROM
 				'columnName' => 'id' 
 			),
 			array(
-				'sql' => 'full_name',
+				'sql' => 'professionals.person_id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -278,13 +283,65 @@ FROM
 					'parsed' => true,
 					'type' => 'SQLField',
 					'table' => 'professionals',
-					'name' => 'full_name' 
+					'name' => 'person_id' 
+				),
+				'encrypted' => false,
+				'columnName' => 'person_id' 
+			),
+			array(
+				'sql' => 'CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name)',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => 'full_name',
+				'expression' => array(
+					'sql' => 'CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name)',
+					'parsed' => true,
+					'type' => 'FunctionCall',
+					'arguments' => array( 
+						array(
+							'sql' => '\' \'',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						),
+						array(
+							'sql' => 'persons.first_name',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						),
+						array(
+							'sql' => 'NULLIF(persons.middle_name, \'\')',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						),
+						array(
+							'sql' => 'persons.last_name',
+							'parsed' => true,
+							'type' => 'NonParsedEntity' 
+						) 
+					),
+					'functionName' => 'CONCAT_WS',
+					'functionType' => 5 
 				),
 				'encrypted' => false,
 				'columnName' => 'full_name' 
 			),
 			array(
-				'sql' => 'profession',
+				'sql' => 'professionals.person_type_id',
+				'parsed' => true,
+				'type' => 'FieldListItem',
+				'alias' => '',
+				'expression' => array(
+					'sql' => '',
+					'parsed' => true,
+					'type' => 'SQLField',
+					'table' => 'professionals',
+					'name' => 'person_type_id' 
+				),
+				'encrypted' => false,
+				'columnName' => 'person_type_id' 
+			),
+			array(
+				'sql' => 'professionals.profession',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -299,37 +356,7 @@ FROM
 				'columnName' => 'profession' 
 			),
 			array(
-				'sql' => 'birthday',
-				'parsed' => true,
-				'type' => 'FieldListItem',
-				'alias' => '',
-				'expression' => array(
-					'sql' => '',
-					'parsed' => true,
-					'type' => 'SQLField',
-					'table' => 'professionals',
-					'name' => 'birthday' 
-				),
-				'encrypted' => false,
-				'columnName' => 'birthday' 
-			),
-			array(
-				'sql' => 'sex',
-				'parsed' => true,
-				'type' => 'FieldListItem',
-				'alias' => '',
-				'expression' => array(
-					'sql' => '',
-					'parsed' => true,
-					'type' => 'SQLField',
-					'table' => 'professionals',
-					'name' => 'sex' 
-				),
-				'encrypted' => false,
-				'columnName' => 'sex' 
-			),
-			array(
-				'sql' => 'professional_type_id',
+				'sql' => 'professionals.professional_type_id',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -344,7 +371,7 @@ FROM
 				'columnName' => 'professional_type_id' 
 			),
 			array(
-				'sql' => 'created_at',
+				'sql' => 'professionals.created_at',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -359,7 +386,7 @@ FROM
 				'columnName' => 'created_at' 
 			),
 			array(
-				'sql' => 'updated_at',
+				'sql' => 'professionals.updated_at',
 				'parsed' => true,
 				'type' => 'FieldListItem',
 				'alias' => '',
@@ -385,10 +412,9 @@ FROM
 					'type' => 'SQLTable',
 					'columns' => array( 
 						'id',
-						'full_name',
+						'person_id',
+						'person_type_id',
 						'profession',
-						'birthday',
-						'sex',
 						'professional_type_id',
 						'created_at',
 						'updated_at' 
@@ -417,6 +443,71 @@ FROM
 					) 
 				),
 				'link' => 0 
+			),
+			array(
+				'sql' => 'JOIN persons ON persons.id = professionals.person_id',
+				'parsed' => true,
+				'type' => 'FromListItem',
+				'table' => array(
+					'sql' => 'persons',
+					'parsed' => true,
+					'type' => 'SQLTable',
+					'columns' => array( 
+						'id',
+						'master_person_id',
+						'first_name',
+						'middle_name',
+						'last_name',
+						'suffix',
+						'sex',
+						'birth_date',
+						'created_at',
+						'updated_at' 
+					),
+					'name' => 'persons' 
+				),
+				'joinOn' => array(
+					'sql' => 'persons.id = professionals.person_id',
+					'parsed' => true,
+					'type' => 'LogicalExpression',
+					'contained' => array( 
+						 
+					),
+					'unionType' => 0,
+					'column' => array(
+						'sql' => '',
+						'parsed' => true,
+						'type' => 'SQLField',
+						'table' => 'persons',
+						'name' => 'id' 
+					),
+					'case' => '= professionals.person_id',
+					'useAlias' => false 
+				),
+				'joinList' => array(
+					'sql' => 'persons.id = professionals.person_id',
+					'parsed' => true,
+					'type' => 'JoinOn',
+					'field1' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'persons',
+							'name' => 'id' 
+						) 
+					),
+					'field2' => array( 
+						array(
+							'sql' => '',
+							'parsed' => true,
+							'type' => 'SQLField',
+							'table' => 'professionals',
+							'name' => 'person_id' 
+						) 
+					) 
+				),
+				'link' => 1 
 			) 
 		),
 		'where' => array(
@@ -504,19 +595,22 @@ FROM
 			) 
 		),
 		'headSql' => 'SELECT',
-		'fieldListSql' => 'id,
-	full_name,
-	profession,
-	birthday,
-	sex,
-	professional_type_id,
-	created_at,
-	updated_at',
+		'fieldListSql' => 'professionals.id,
+	professionals.person_id,
+	CONCAT_WS(\' \', persons.first_name, NULLIF(persons.middle_name, \'\'), persons.last_name) AS full_name,
+	professionals.person_type_id,
+	professionals.profession,
+	professionals.professional_type_id,
+	professionals.created_at,
+	professionals.updated_at',
 		'fromListSql' => 'FROM
-	professionals',
+	professionals
+JOIN persons ON persons.id = professionals.person_id',
 		'orderBySql' => '',
 		'tailSql' => '' 
 	),
+	'hasEvents' => true,
+	'hasJsEvents' => true,
 	'originalTable' => 'professionals',
 	'originalPagesByType' => array(
 		'add' => array( 
@@ -568,13 +662,13 @@ FROM
 		'caseSensitiveSearch' => false,
 		'searchableFields' => array( 
 			'id',
-			'full_name',
 			'profession',
-			'birthday',
-			'sex',
 			'professional_type_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'person_id',
+			'person_type_id',
+			'full_name' 
 		),
 		'searchSuggest' => true,
 		'highlightSearchResults' => true,
@@ -582,13 +676,13 @@ FROM
 		'hideFilterUntilSearch' => false,
 		'googleLikeSearchFields' => array( 
 			'id',
-			'full_name',
 			'profession',
-			'birthday',
-			'sex',
 			'professional_type_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'person_id',
+			'person_type_id',
+			'full_name' 
 		) 
 	),
 	'connId' => 'conn',
@@ -637,34 +731,34 @@ if( mlang_getcurrentlang() === 'English' ) {
 	$runnerTableLabels['professionals'] = array(
 	'tableCaption' => 'Professionals',
 	'fieldLabels' => array(
-		'id' => 'Id',
-		'full_name' => 'Full Name',
+		'id' => 'Professional ID',
 		'profession' => 'Profession',
-		'birthday' => 'Birthday',
-		'sex' => 'Sex',
 		'professional_type_id' => 'Professional Type Id',
 		'created_at' => 'Created At',
-		'updated_at' => 'Updated At' 
+		'updated_at' => 'Updated At',
+		'person_id' => 'Person ID',
+		'person_type_id' => 'Person Type ID',
+		'full_name' => 'Full Name' 
 	),
 	'fieldTooltips' => array(
 		'id' => '',
-		'full_name' => '',
 		'profession' => '',
-		'birthday' => '',
-		'sex' => '',
 		'professional_type_id' => '',
 		'created_at' => '',
-		'updated_at' => '' 
+		'updated_at' => '',
+		'person_id' => '',
+		'person_type_id' => '',
+		'full_name' => '' 
 	),
 	'fieldPlaceholders' => array(
 		'id' => '',
-		'full_name' => '',
 		'profession' => '',
-		'birthday' => '',
-		'sex' => '',
 		'professional_type_id' => '',
 		'created_at' => '',
-		'updated_at' => '' 
+		'updated_at' => '',
+		'person_id' => '',
+		'person_type_id' => '',
+		'full_name' => '' 
 	),
 	'pageTitles' => array(
 		 

@@ -15,9 +15,6 @@
 		'transaction_number' => array(
 			'totalsType' => '' 
 		),
-		'guarantor_id' => array(
-			'totalsType' => '' 
-		),
 		'placed_by' => array(
 			'totalsType' => '' 
 		),
@@ -26,15 +23,18 @@
 		),
 		'timestamps' => array(
 			'totalsType' => '' 
+		),
+		'guarantor_id' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
 		'gridFields' => array( 
 			'transaction_number',
-			'guarantor_id',
 			'placed_by',
 			'group',
-			'timestamps' 
+			'timestamps',
+			'guarantor_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -45,22 +45,22 @@
 		'fieldItems' => array(
 			'transaction_number' => array( 
 				'simple_grid_field1',
-				'simple_grid_field' 
-			),
-			'guarantor_id' => array( 
-				'simple_grid_field2',
-				'simple_grid_field6' 
+				'simple_grid_field2' 
 			),
 			'placed_by' => array( 
 				'simple_grid_field3',
-				'simple_grid_field7' 
+				'simple_grid_field6' 
 			),
 			'group' => array( 
 				'simple_grid_field4',
-				'simple_grid_field8' 
+				'simple_grid_field7' 
 			),
 			'timestamps' => array( 
 				'simple_grid_field5',
+				'simple_grid_field8' 
+			),
+			'guarantor_id' => array( 
+				'simple_grid_field',
 				'simple_grid_field9' 
 			) 
 		),
@@ -91,16 +91,16 @@
 					'master_info' 
 				),
 				'grid' => array( 
-					'simple_grid_field',
+					'simple_grid_field2',
 					'simple_grid_field1',
 					'simple_grid_field6',
-					'simple_grid_field2',
-					'simple_grid_field7',
 					'simple_grid_field3',
-					'simple_grid_field8',
+					'simple_grid_field7',
 					'simple_grid_field4',
+					'simple_grid_field8',
+					'simple_grid_field5',
 					'simple_grid_field9',
-					'simple_grid_field5' 
+					'simple_grid_field' 
 				) 
 			),
 			'formXtTags' => array(
@@ -120,19 +120,19 @@
 				'print_header' => 'top',
 				'print_subheader' => 'top',
 				'master_info' => 'top',
-				'simple_grid_field' => 'grid',
+				'simple_grid_field2' => 'grid',
 				'simple_grid_field1' => 'grid',
 				'simple_grid_field6' => 'grid',
-				'simple_grid_field2' => 'grid',
-				'simple_grid_field7' => 'grid',
 				'simple_grid_field3' => 'grid',
-				'simple_grid_field8' => 'grid',
+				'simple_grid_field7' => 'grid',
 				'simple_grid_field4' => 'grid',
+				'simple_grid_field8' => 'grid',
+				'simple_grid_field5' => 'grid',
 				'simple_grid_field9' => 'grid',
-				'simple_grid_field5' => 'grid' 
+				'simple_grid_field' => 'grid' 
 			),
 			'itemLocations' => array(
-				'simple_grid_field' => array(
+				'simple_grid_field2' => array(
 					'location' => 'grid',
 					'cellId' => 'headcell_field' 
 				),
@@ -144,7 +144,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field1' 
 				),
-				'simple_grid_field2' => array(
+				'simple_grid_field3' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field1' 
 				),
@@ -152,7 +152,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field2' 
 				),
-				'simple_grid_field3' => array(
+				'simple_grid_field4' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field2' 
 				),
@@ -160,7 +160,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field3' 
 				),
-				'simple_grid_field4' => array(
+				'simple_grid_field5' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field3' 
 				),
@@ -168,7 +168,7 @@
 					'location' => 'grid',
 					'cellId' => 'headcell_field4' 
 				),
-				'simple_grid_field5' => array(
+				'simple_grid_field' => array(
 					'location' => 'grid',
 					'cellId' => 'cell_field4' 
 				) 
@@ -192,13 +192,13 @@
 			),
 			'grid_field' => array( 
 				'simple_grid_field1',
-				'simple_grid_field2',
 				'simple_grid_field3',
 				'simple_grid_field4',
-				'simple_grid_field5' 
+				'simple_grid_field5',
+				'simple_grid_field' 
 			),
 			'grid_field_label' => array( 
-				'simple_grid_field',
+				'simple_grid_field2',
 				'simple_grid_field6',
 				'simple_grid_field7',
 				'simple_grid_field8',
@@ -225,7 +225,7 @@
 							'transaction_number_fieldheadercolumn' 
 						),
 						'items' => array( 
-							'simple_grid_field' 
+							'simple_grid_field2' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -238,7 +238,7 @@
 							0 
 						),
 						'tags' => array( 
-							'guarantor_id_fieldheadercolumn' 
+							'placed_by_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field6' 
@@ -254,7 +254,7 @@
 							0 
 						),
 						'tags' => array( 
-							'placed_by_fieldheadercolumn' 
+							'group_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field7' 
@@ -270,7 +270,7 @@
 							0 
 						),
 						'tags' => array( 
-							'group_fieldheadercolumn' 
+							'timestamps_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field8' 
@@ -286,7 +286,7 @@
 							0 
 						),
 						'tags' => array( 
-							'timestamps_fieldheadercolumn' 
+							'guarantor_id_fieldheadercolumn' 
 						),
 						'items' => array( 
 							'simple_grid_field9' 
@@ -318,22 +318,6 @@
 							1 
 						),
 						'tags' => array( 
-							'guarantor_id_fieldcolumn' 
-						),
-						'items' => array( 
-							'simple_grid_field2' 
-						),
-						'fixedAtServer' => false,
-						'fixedAtClient' => false 
-					),
-					'cell_field2' => array(
-						'cols' => array( 
-							2 
-						),
-						'rows' => array( 
-							1 
-						),
-						'tags' => array( 
 							'placed_by_fieldcolumn' 
 						),
 						'items' => array( 
@@ -342,9 +326,9 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
-					'cell_field3' => array(
+					'cell_field2' => array(
 						'cols' => array( 
-							3 
+							2 
 						),
 						'rows' => array( 
 							1 
@@ -358,9 +342,9 @@
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
 					),
-					'cell_field4' => array(
+					'cell_field3' => array(
 						'cols' => array( 
-							4 
+							3 
 						),
 						'rows' => array( 
 							1 
@@ -370,6 +354,22 @@
 						),
 						'items' => array( 
 							'simple_grid_field5' 
+						),
+						'fixedAtServer' => false,
+						'fixedAtClient' => false 
+					),
+					'cell_field4' => array(
+						'cols' => array( 
+							4 
+						),
+						'rows' => array( 
+							1 
+						),
+						'tags' => array( 
+							'guarantor_id_fieldcolumn' 
+						),
+						'items' => array( 
+							'simple_grid_field' 
 						),
 						'fixedAtServer' => false,
 						'fixedAtClient' => false 
@@ -689,7 +689,7 @@
 				'headcell_field' => array(
 					'model' => 'headcell_field',
 					'items' => array( 
-						'simple_grid_field' 
+						'simple_grid_field2' 
 					),
 					'field' => 'transaction_number',
 					'columnName' => 'field' 
@@ -713,15 +713,15 @@
 					'items' => array( 
 						'simple_grid_field6' 
 					),
-					'field' => 'guarantor_id',
+					'field' => 'placed_by',
 					'columnName' => 'field' 
 				),
 				'cell_field1' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field2' 
+						'simple_grid_field3' 
 					),
-					'field' => 'guarantor_id',
+					'field' => 'placed_by',
 					'columnName' => 'field' 
 				),
 				'footcell_field1' => array(
@@ -735,15 +735,15 @@
 					'items' => array( 
 						'simple_grid_field7' 
 					),
-					'field' => 'placed_by',
+					'field' => 'group',
 					'columnName' => 'field' 
 				),
 				'cell_field2' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field3' 
+						'simple_grid_field4' 
 					),
-					'field' => 'placed_by',
+					'field' => 'group',
 					'columnName' => 'field' 
 				),
 				'footcell_field2' => array(
@@ -757,15 +757,15 @@
 					'items' => array( 
 						'simple_grid_field8' 
 					),
-					'field' => 'group',
+					'field' => 'timestamps',
 					'columnName' => 'field' 
 				),
 				'cell_field3' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field4' 
+						'simple_grid_field5' 
 					),
-					'field' => 'group',
+					'field' => 'timestamps',
 					'columnName' => 'field' 
 				),
 				'footcell_field3' => array(
@@ -779,15 +779,15 @@
 					'items' => array( 
 						'simple_grid_field9' 
 					),
-					'field' => 'timestamps',
+					'field' => 'guarantor_id',
 					'columnName' => 'field' 
 				),
 				'cell_field4' => array(
 					'model' => 'cell_field',
 					'items' => array( 
-						'simple_grid_field5' 
+						'simple_grid_field' 
 					),
-					'field' => 'timestamps',
+					'field' => 'guarantor_id',
 					'columnName' => 'field' 
 				),
 				'footcell_field4' => array(
@@ -823,23 +823,15 @@
 			'field' => 'transaction_number',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field' => array(
+		'simple_grid_field2' => array(
 			'type' => 'grid_field_label',
 			'field' => 'transaction_number' 
-		),
-		'simple_grid_field2' => array(
-			'field' => 'guarantor_id',
-			'type' => 'grid_field' 
-		),
-		'simple_grid_field6' => array(
-			'type' => 'grid_field_label',
-			'field' => 'guarantor_id' 
 		),
 		'simple_grid_field3' => array(
 			'field' => 'placed_by',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field7' => array(
+		'simple_grid_field6' => array(
 			'type' => 'grid_field_label',
 			'field' => 'placed_by' 
 		),
@@ -847,7 +839,7 @@
 			'field' => 'group',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field8' => array(
+		'simple_grid_field7' => array(
 			'type' => 'grid_field_label',
 			'field' => 'group' 
 		),
@@ -855,9 +847,17 @@
 			'field' => 'timestamps',
 			'type' => 'grid_field' 
 		),
-		'simple_grid_field9' => array(
+		'simple_grid_field8' => array(
 			'type' => 'grid_field_label',
 			'field' => 'timestamps' 
+		),
+		'simple_grid_field' => array(
+			'field' => 'guarantor_id',
+			'type' => 'grid_field' 
+		),
+		'simple_grid_field9' => array(
+			'type' => 'grid_field_label',
+			'field' => 'guarantor_id' 
 		),
 		'inline_add' => array(
 			'type' => 'inline_add',

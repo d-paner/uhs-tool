@@ -27,6 +27,12 @@
 		),
 		'updated_at' => array(
 			'totalsType' => '' 
+		),
+		'patient_name' => array(
+			'totalsType' => '' 
+		),
+		'opd_attendance' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
@@ -38,7 +44,9 @@
 			'total_due',
 			'total_paid',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'patient_name',
+			'opd_attendance' 
 		),
 		'exportFields' => array( 
 			'transaction_number',
@@ -48,7 +56,9 @@
 			'total_due',
 			'total_paid',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'patient_name',
+			'opd_attendance' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -80,6 +90,12 @@
 			),
 			'updated_at' => array( 
 				'export_field8' 
+			),
+			'patient_name' => array( 
+				'export_field' 
+			),
+			'opd_attendance' => array( 
+				'export_field9' 
 			) 
 		) 
 	),
@@ -106,7 +122,9 @@
 					'export_field5',
 					'export_field6',
 					'export_field7',
-					'export_field8' 
+					'export_field8',
+					'export_field',
+					'export_field9' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -128,6 +146,8 @@
 				'export_field6' => 'grid',
 				'export_field7' => 'grid',
 				'export_field8' => 'grid',
+				'export_field' => 'grid',
+				'export_field9' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -156,7 +176,9 @@
 				'export_field5',
 				'export_field6',
 				'export_field7',
-				'export_field8' 
+				'export_field8',
+				'export_field',
+				'export_field9' 
 			) 
 		),
 		'cellMaps' => array(
@@ -303,7 +325,9 @@
 						'export_field5',
 						'export_field6',
 						'export_field7',
-						'export_field8' 
+						'export_field8',
+						'export_field',
+						'export_field9' 
 					) 
 				) 
 			),
@@ -388,6 +412,14 @@
 		),
 		'export_field8' => array(
 			'field' => 'updated_at',
+			'type' => 'export_field' 
+		),
+		'export_field' => array(
+			'field' => 'patient_name',
+			'type' => 'export_field' 
+		),
+		'export_field9' => array(
+			'field' => 'opd_attendance',
 			'type' => 'export_field' 
 		) 
 	),

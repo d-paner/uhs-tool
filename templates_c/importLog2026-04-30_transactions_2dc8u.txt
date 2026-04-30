@@ -1,0 +1,6 @@
+Import into transactions
+4/30/2026 1:20:20 AM
+
+1397 out of 1397 records processed successfully.
+1397 records added.
+0 records updated.

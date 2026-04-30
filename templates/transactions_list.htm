@@ -204,67 +204,84 @@
 			<div class="clearfix  r-ori-vert" data-cellId="left_c1" data-pageid="{$pageid}" data-itemid="search_panel" {$item_search_panel} data-topcell-item-type="search_panel" >
 				<!-- Begin Search panel content -->
 <div class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} data-itemtype="search_panel" data-itemid="search_panel" {$item_search_panel} data-pageid="{$pageid}"	 >
-
-	<div class="panel-heading">
-		<div class="btn-group r-sp-addfield" id="addSearchFieldButton{$id}">
-			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle btn-sm )" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			{mlang_message SEARCH_IN}			<span class="caret"></span>
-			</button>
-		</div>
-
-
-		<div class="btn-group r-sp-options" id="searchPanelOptions{$id}">
-			<button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
-			</button>
-			<ul class="dropdown-menu dropdown-left">
-				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>{mlang_message SEARCH_SHOW_OPTIONS_BUTTON}</a></li>
-				<li role="separator" class="divider"></li>
-				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ALL_CONDITIONS}</label></a></li>
-				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ANY_CONDITIONS}</label></a></li>
-				<li role="separator" class="divider"></li>
-				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>{mlang_message HIDE}</a></li>
-			</ul>
-		</div>
-
-
-		</div>
 	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
 
 
-		
-		{BEGIN searchCtrlBlock}
-		<div class="srchPanelRow form-group" {$filterRow_attrs}>
-			<label>{$fLabel}</label>	{$delCtrlButt}
-				<span class="rnr-searchtype">{$searchtype}</span>
-				<span class="rnr-searchcontrol">{$searchcontrol}</span>
-				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
-		</div>
-		{END searchCtrlBlock}
-																		{BEGIN searchCtrlBlock_updated_at}
+																		{BEGIN searchCtrlBlock_transaction_number}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_transaction_number}" {$filterRow_attrs_transaction_number}>
+			<label>{$label transactions transaction_number }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_transaction_number}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_transaction_number}</span>
+						</div>
+		{END searchCtrlBlock_transaction_number}
+																{BEGIN searchCtrlBlock_patient_name}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_patient_name}" {$filterRow_attrs_patient_name}>
+			<label>{$label transactions patient_name }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_patient_name}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_patient_name}</span>
+						</div>
+		{END searchCtrlBlock_patient_name}
+																{BEGIN searchCtrlBlock_patient_type}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_patient_type}" {$filterRow_attrs_patient_type}>
+			<label>{$label transactions patient_type }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_patient_type}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_patient_type}</span>
+						</div>
+		{END searchCtrlBlock_patient_type}
+																{BEGIN searchCtrlBlock_status}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_status}" {$filterRow_attrs_status}>
+			<label>{$label transactions status }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_status}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_status}</span>
+						</div>
+		{END searchCtrlBlock_status}
+																{BEGIN searchCtrlBlock_updated_at}
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_updated_at}" {$filterRow_attrs_updated_at}>
 			<label>{$label transactions updated_at }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_updated_at}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_updated_at}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_updated_at}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_updated_at}</span>
 						</div>
 		{END searchCtrlBlock_updated_at}
+																{BEGIN searchCtrlBlock_opd_attendance}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_opd_attendance}" {$filterRow_attrs_opd_attendance}>
+			<label>{$label transactions opd_attendance }</label>
+
+			
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_opd_attendance}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_opd_attendance}</span>
+						</div>
+		{END searchCtrlBlock_opd_attendance}
 																{BEGIN searchCtrlBlock_created_at}
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_created_at}" {$filterRow_attrs_created_at}>
 			<label>{$label transactions created_at }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_created_at}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_created_at}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_created_at}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_created_at}</span>
 						</div>
 		{END searchCtrlBlock_created_at}
 																{BEGIN searchCtrlBlock_total_paid}
@@ -273,11 +290,9 @@
 		<div class="form-group srchPanelRow {$filterRow_class_total_paid}" {$filterRow_attrs_total_paid}>
 			<label>{$label transactions total_paid }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_total_paid}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_total_paid}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_total_paid}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_total_paid}</span>
 						</div>
 		{END searchCtrlBlock_total_paid}
 																{BEGIN searchCtrlBlock_total_due}
@@ -286,65 +301,22 @@
 		<div class="form-group srchPanelRow {$filterRow_class_total_due}" {$filterRow_attrs_total_due}>
 			<label>{$label transactions total_due }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_total_due}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_total_due}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_total_due}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_total_due}</span>
 						</div>
 		{END searchCtrlBlock_total_due}
-																{BEGIN searchCtrlBlock_status}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_status}" {$filterRow_attrs_status}>
-			<label>{$label transactions status }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_status}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_status}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_status}</span>
-						</div>
-		{END searchCtrlBlock_status}
-																{BEGIN searchCtrlBlock_patient_type}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_patient_type}" {$filterRow_attrs_patient_type}>
-			<label>{$label transactions patient_type }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_patient_type}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_patient_type}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_patient_type}</span>
-						</div>
-		{END searchCtrlBlock_patient_type}
 																{BEGIN searchCtrlBlock_patient_id}
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_patient_id}" {$filterRow_attrs_patient_id}>
 			<label>{$label transactions patient_id }</label>
 
-							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_patient_id}</span>
+								<span class="rnr-searchtype" style="display: none;">{$searchtype_patient_id}</span>
 								<span class="rnr-searchcontrol">{$searchcontrol_patient_id}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_patient_id}</span>
 						</div>
 		{END searchCtrlBlock_patient_id}
-																{BEGIN searchCtrlBlock_transaction_number}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_transaction_number}" {$filterRow_attrs_transaction_number}>
-			<label>{$label transactions transaction_number }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_transaction_number}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_transaction_number}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_transaction_number}</span>
-						</div>
-		{END searchCtrlBlock_transaction_number}
 		
 
 	</div>
@@ -404,30 +376,6 @@
 {END breadcrumb}			</span>
 							 
 							 
-				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="simple_search" {$item_simple_search} data-topcell-item-type="simple_search" >
-				<span data-itemtype="simple_search" data-itemid="simple_search" {$item_simple_search} data-pageid="{$pageid}" class="form-group">
-
-<div  class="input-group">
-{BEGIN searchform_text}
-	<input type="search" class="form-control" {$searchfor_attrs} size="25">
-{END searchform_text}
-	<span class="input-group-btn">
-	{BEGIN searchform_showall}
-				<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="{mlang_message SHOW_ALL}">
-			<span class="glyphicon glyphicon-remove"></span>
-		</button>
-	{END searchform_showall}
-
-	{BEGIN searchform_search}
-	<button {$searchbutton_attrs} class="btn btn-primary" >
-		<span class="glyphicon glyphicon-search"></span>
-	</button>
-	{END searchform_search}
-	</span>
-</div>
-		
-</span>			</span>
-		 
 				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="list_options" {$item_list_options} data-topcell-item-type="list_options" >
 				<span data-itemtype="list_options" data-itemid="list_options" {$item_list_options} data-pageid="{$pageid}" data-small data-button-item>
 	<span class="dropdown ">
@@ -447,6 +395,7 @@
 							{BEGIN deleteselected_link}
 	<li data-itemtype="delete_selected" data-itemid="delete_selected" {$item_delete_selected} data-pageid="{$pageid}" data-small >
 				<a  href="#" {$deleteselectedlink_attrs} {$deleteselectedlink_span}  title="" >
+					<span class=""></span>
 				
 		{mlang_message DELETE_SELECTED}		
 		</a>
@@ -735,6 +684,12 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="updated_at"]:before {
 		content: "{$label transactions updated_at}";
 	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="patient_name"]:before {
+		content: "{$label transactions patient_name}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="opd_attendance"]:before {
+		content: "{$label transactions opd_attendance}";
+	}
 	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
@@ -808,7 +763,7 @@
 	{$cell_grid_headcell_field}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$transaction_number_class}	"
+		 r-ori-vert		 {$transaction_number_class}	"
 
 			data-field="transaction_number"
 	
@@ -842,7 +797,7 @@
 	{$cell_grid_headcell_field1}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_id_class}	"
+		 r-ori-vert		 {$patient_id_class}	"
 
 			data-field="patient_id"
 	
@@ -876,11 +831,45 @@
 	{$cell_grid_headcell_field2}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_type_class}	"
+		 r-ori-vert		 {$patient_name_class}	"
+
+			data-field="patient_name"
+	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN patient_name_fieldheadercolumn}
+	{BEGIN patient_name_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_name" data-fieldname="patient_name" 
+
+			{$patient_name_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label transactions patient_name }</span>
+					{$arrow_icon_patient_name}
+			</span>
+	</span>
+	{END patient_name_fieldheader}
+{END patient_name_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
+	<th
+	
+	{$cell_grid_headcell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$patient_type_class}	"
 
 			data-field="patient_type"
 	
-	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -903,18 +892,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field2}
-									{BEGIN cellblock_grid_headcell_field3}
+	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field4}
 	<th
 	
-	{$cell_grid_headcell_field3}
+	{$cell_grid_headcell_field4}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$status_class}	"
+		 r-ori-vert		 {$status_class}	"
 
 			data-field="status"
 	
-	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -937,18 +926,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field3}
-									{BEGIN cellblock_grid_headcell_field4}
+	{END cellblock_grid_headcell_field4}
+									{BEGIN cellblock_grid_headcell_field5}
 	<th
 	
-	{$cell_grid_headcell_field4}
+	{$cell_grid_headcell_field5}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$total_due_class}	"
+		 r-ori-vert		 {$total_due_class}	"
 
 			data-field="total_due"
 	
-	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -971,18 +960,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field4}
-									{BEGIN cellblock_grid_headcell_field5}
+	{END cellblock_grid_headcell_field5}
+									{BEGIN cellblock_grid_headcell_field6}
 	<th
 	
-	{$cell_grid_headcell_field5}
+	{$cell_grid_headcell_field6}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$total_paid_class}	"
+		 r-ori-vert		 {$total_paid_class}	"
 
 			data-field="total_paid"
 	
-	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1005,18 +994,52 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field5}
-									{BEGIN cellblock_grid_headcell_field6}
+	{END cellblock_grid_headcell_field6}
+									{BEGIN cellblock_grid_headcell_field7}
 	<th
 	
-	{$cell_grid_headcell_field6}
+	{$cell_grid_headcell_field7}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$created_at_class}	"
+		 r-ori-vert		 {$opd_attendance_class}	"
+
+			data-field="opd_attendance"
+	
+	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN opd_attendance_fieldheadercolumn}
+	{BEGIN opd_attendance_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="opd_attendance" data-fieldname="opd_attendance" 
+
+			{$opd_attendance_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label transactions opd_attendance }</span>
+					{$arrow_icon_opd_attendance}
+			</span>
+	</span>
+	{END opd_attendance_fieldheader}
+{END opd_attendance_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field7}
+									{BEGIN cellblock_grid_headcell_field8}
+	<th
+	
+	{$cell_grid_headcell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1039,18 +1062,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field6}
-									{BEGIN cellblock_grid_headcell_field7}
+	{END cellblock_grid_headcell_field8}
+									{BEGIN cellblock_grid_headcell_field9}
 	<th
 	
-	{$cell_grid_headcell_field7}
+	{$cell_grid_headcell_field9}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$updated_at_class}	"
+		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1073,7 +1096,7 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field7}
+	{END cellblock_grid_headcell_field9}
 							</tr>
 																				
 					{END grid_header}
@@ -1175,20 +1198,6 @@
 	 
 		
 		
-	{BEGIN professional_services_dtable_link}
-	<span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
-	<a  {$professional_services_link_attrs} data-short-details="professional_services"
-		class="{$professional_services_dlink_class}" 
-		title="{$caption professional_services }"			>
-								
-			</a>
-	</span>
-	{END professional_services_dtable_link}
-
-
-	 
-		
-		
 	{BEGIN hospital_services_dtable_link}
 	<span data-itemtype="grid_details_link" data-itemid="grid_details_link1" {$item_grid_details_link1} data-pageid="{$pageid}" data-record-id="{$recId}">
 	<a  {$hospital_services_link_attrs} data-short-details="hospital_services"
@@ -1198,6 +1207,20 @@
 			</a>
 	</span>
 	{END hospital_services_dtable_link}
+
+
+	 
+		
+		
+	{BEGIN professional_services_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$professional_services_link_attrs} data-short-details="professional_services"
+		class="{$professional_services_dlink_class}" 
+		title="{$caption professional_services }"			>
+								
+			</a>
+	</span>
+	{END professional_services_dtable_link}
 
 
 	 
@@ -1223,7 +1246,7 @@
 	{$cell_grid_cell_field}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$transaction_number_class}	"
+		 r-ori-vert		 {$transaction_number_class}	"
 
 			data-field="transaction_number"
 	
@@ -1244,7 +1267,7 @@
 	{$cell_grid_cell_field1}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_id_class}	"
+		 r-ori-vert		 {$patient_id_class}	"
 
 			data-field="patient_id"
 	
@@ -1265,11 +1288,32 @@
 	{$cell_grid_cell_field2}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$patient_type_class}	"
+		 r-ori-vert		 {$patient_name_class}	"
+
+			data-field="patient_name"
+	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
+	>
+
+	 
+		{BEGIN patient_name_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="patient_name" data-fieldname="patient_name" data-default-width >
+{$patient_name_value}
+</span>
+{END patient_name_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
+	<td
+	
+	{$cell_grid_cell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$patient_type_class}	"
 
 			data-field="patient_type"
 	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1279,18 +1323,18 @@
 </span>
 {END patient_type_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field4}
 	<td
 	
-	{$cell_grid_cell_field3}
+	{$cell_grid_cell_field4}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$status_class}	"
+		 r-ori-vert		 {$status_class}	"
 
 			data-field="status"
 	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1300,18 +1344,18 @@
 </span>
 {END status_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field3}
-									{BEGIN cellblock_grid_cell_field4}
+	{END cellblock_grid_cell_field4}
+									{BEGIN cellblock_grid_cell_field5}
 	<td
 	
-	{$cell_grid_cell_field4}
+	{$cell_grid_cell_field5}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$total_due_class}	"
+		 r-ori-vert		 {$total_due_class}	"
 
 			data-field="total_due"
 	
-	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1321,18 +1365,18 @@
 </span>
 {END total_due_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field4}
-									{BEGIN cellblock_grid_cell_field5}
+	{END cellblock_grid_cell_field5}
+									{BEGIN cellblock_grid_cell_field6}
 	<td
 	
-	{$cell_grid_cell_field5}
+	{$cell_grid_cell_field6}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$total_paid_class}	"
+		 r-ori-vert		 {$total_paid_class}	"
 
 			data-field="total_paid"
 	
-	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1342,18 +1386,39 @@
 </span>
 {END total_paid_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field5}
-									{BEGIN cellblock_grid_cell_field6}
+	{END cellblock_grid_cell_field6}
+									{BEGIN cellblock_grid_cell_field7}
 	<td
 	
-	{$cell_grid_cell_field6}
+	{$cell_grid_cell_field7}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$created_at_class}	"
+		 r-ori-vert		 {$opd_attendance_class}	"
+
+			data-field="opd_attendance"
+	
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN opd_attendance_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="opd_attendance" data-fieldname="opd_attendance" data-default-width >
+{$opd_attendance_value}
+</span>
+{END opd_attendance_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field7}
+									{BEGIN cellblock_grid_cell_field8}
+	<td
+	
+	{$cell_grid_cell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$created_at_class}	"
 
 			data-field="created_at"
 	
-	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1363,18 +1428,18 @@
 </span>
 {END created_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field6}
-									{BEGIN cellblock_grid_cell_field7}
+	{END cellblock_grid_cell_field8}
+									{BEGIN cellblock_grid_cell_field9}
 	<td
 	
-	{$cell_grid_cell_field7}
+	{$cell_grid_cell_field9}
 	{$recordattrs}
 	class="
-		r-align-center r-ori-vert		 {$updated_at_class}	"
+		 r-ori-vert		 {$updated_at_class}	"
 
 			data-field="updated_at"
 	
-	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1384,7 +1449,7 @@
 </span>
 {END updated_at_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field7}
+	{END cellblock_grid_cell_field9}
 							</tr>
 											<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
 				
@@ -1511,7 +1576,7 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$patient_type_class}	"
+		 r-ori-vert		 {$patient_name_class}	"
 
 	
 	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
@@ -1526,7 +1591,7 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$status_class}	"
+		 r-ori-vert		 {$patient_type_class}	"
 
 	
 	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
@@ -1541,7 +1606,7 @@
 	{$cell_grid_footcell_field4}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_due_class}	"
+		 r-ori-vert		 {$status_class}	"
 
 	
 	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
@@ -1556,7 +1621,7 @@
 	{$cell_grid_footcell_field5}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$total_paid_class}	"
+		 r-ori-vert		 {$total_due_class}	"
 
 	
 	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
@@ -1571,7 +1636,7 @@
 	{$cell_grid_footcell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$created_at_class}	"
+		 r-ori-vert		 {$total_paid_class}	"
 
 	
 	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
@@ -1586,7 +1651,7 @@
 	{$cell_grid_footcell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$updated_at_class}	"
+		 r-ori-vert		 {$opd_attendance_class}	"
 
 	
 	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
@@ -1595,6 +1660,36 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field7}
+									{BEGIN cellblock_grid_footcell_field8}
+	<td
+	
+	{$cell_grid_footcell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$created_at_class}	"
+
+	
+	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field8}
+									{BEGIN cellblock_grid_footcell_field9}
+	<td
+	
+	{$cell_grid_footcell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$updated_at_class}	"
+
+	
+	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transactions_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field9}
 							</tr>
 					
 					</tfoot>

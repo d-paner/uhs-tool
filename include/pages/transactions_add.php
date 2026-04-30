@@ -24,7 +24,8 @@
 			'status',
 			'created_at',
 			'updated_at',
-			'transaction_number' 
+			'transaction_number',
+			'opd_attendance' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -50,6 +51,9 @@
 			),
 			'transaction_number' => array( 
 				'integrated_edit_field' 
+			),
+			'opd_attendance' => array( 
+				'integrated_edit_field4' 
 			) 
 		) 
 	),
@@ -79,6 +83,7 @@
 					'integrated_edit_field1',
 					'integrated_edit_field2',
 					'integrated_edit_field3',
+					'integrated_edit_field4',
 					'integrated_edit_field6',
 					'integrated_edit_field7' 
 				) 
@@ -99,6 +104,7 @@
 				'integrated_edit_field1' => 'grid',
 				'integrated_edit_field2' => 'grid',
 				'integrated_edit_field3' => 'grid',
+				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field6' => 'grid',
 				'integrated_edit_field7' => 'grid' 
 			),
@@ -116,6 +122,10 @@
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field3' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field4' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				),
@@ -157,7 +167,8 @@
 				'integrated_edit_field3',
 				'integrated_edit_field6',
 				'integrated_edit_field7',
-				'integrated_edit_field' 
+				'integrated_edit_field',
+				'integrated_edit_field4' 
 			) 
 		),
 		'cellMaps' => array(
@@ -178,6 +189,7 @@
 							'integrated_edit_field1',
 							'integrated_edit_field2',
 							'integrated_edit_field3',
+							'integrated_edit_field4',
 							'integrated_edit_field6',
 							'integrated_edit_field7' 
 						),
@@ -347,6 +359,7 @@
 						'integrated_edit_field1',
 						'integrated_edit_field2',
 						'integrated_edit_field3',
+						'integrated_edit_field4',
 						'integrated_edit_field6',
 						'integrated_edit_field7' 
 					) 
@@ -410,6 +423,11 @@
 			'orientation' => 0,
 			'color' => '#0026ff',
 			'bold' => true 
+		),
+		'integrated_edit_field4' => array(
+			'field' => 'opd_attendance',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
 		) 
 	),
 	'version' => 13,

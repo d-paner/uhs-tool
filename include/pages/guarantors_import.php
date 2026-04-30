@@ -2,14 +2,9 @@
 			$optionsArray = array(
 	'fields' => array(
 		'gridFields' => array( 
-			'sex',
-			'birthday',
 			'classification',
 			'created_at',
 			'updated_at',
-			'first_name',
-			'middle_name',
-			'last_name',
 			'college',
 			'unit' 
 		),
@@ -20,12 +15,6 @@
 			 
 		),
 		'fieldItems' => array(
-			'sex' => array( 
-				'import_field2' 
-			),
-			'birthday' => array( 
-				'import_field3' 
-			),
 			'classification' => array( 
 				'import_field5' 
 			),
@@ -34,15 +23,6 @@
 			),
 			'updated_at' => array( 
 				'import_field7' 
-			),
-			'first_name' => array( 
-				'import_field' 
-			),
-			'middle_name' => array( 
-				'import_field4' 
-			),
-			'last_name' => array( 
-				'import_field8' 
 			),
 			'college' => array( 
 				'import_field1' 
@@ -68,14 +48,9 @@
 					'import_header' 
 				),
 				'grid' => array( 
-					'import_field2',
-					'import_field3',
 					'import_field5',
 					'import_field6',
 					'import_field7',
-					'import_field',
-					'import_field4',
-					'import_field8',
 					'import_field1',
 					'import_field9' 
 				) 
@@ -87,14 +62,9 @@
 			),
 			'itemForms' => array(
 				'import_header' => 'top',
-				'import_field2' => 'grid',
-				'import_field3' => 'grid',
 				'import_field5' => 'grid',
 				'import_field6' => 'grid',
 				'import_field7' => 'grid',
-				'import_field' => 'grid',
-				'import_field4' => 'grid',
-				'import_field8' => 'grid',
 				'import_field1' => 'grid',
 				'import_field9' => 'grid' 
 			),
@@ -110,14 +80,9 @@
 				'import_header' 
 			),
 			'import_field' => array( 
-				'import_field2',
-				'import_field3',
 				'import_field5',
 				'import_field6',
 				'import_field7',
-				'import_field',
-				'import_field4',
-				'import_field8',
 				'import_field1',
 				'import_field9' 
 			) 
@@ -247,14 +212,9 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'import_field2',
-						'import_field3',
 						'import_field5',
 						'import_field6',
 						'import_field7',
-						'import_field',
-						'import_field4',
-						'import_field8',
 						'import_field1',
 						'import_field9' 
 					) 
@@ -270,14 +230,6 @@
 		'import_header' => array(
 			'type' => 'import_header' 
 		),
-		'import_field2' => array(
-			'field' => 'sex',
-			'type' => 'import_field' 
-		),
-		'import_field3' => array(
-			'field' => 'birthday',
-			'type' => 'import_field' 
-		),
 		'import_field5' => array(
 			'field' => 'classification',
 			'type' => 'import_field' 
@@ -288,18 +240,6 @@
 		),
 		'import_field7' => array(
 			'field' => 'updated_at',
-			'type' => 'import_field' 
-		),
-		'import_field' => array(
-			'field' => 'first_name',
-			'type' => 'import_field' 
-		),
-		'import_field4' => array(
-			'field' => 'middle_name',
-			'type' => 'import_field' 
-		),
-		'import_field8' => array(
-			'field' => 'last_name',
 			'type' => 'import_field' 
 		),
 		'import_field1' => array(

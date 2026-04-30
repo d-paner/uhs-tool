@@ -167,24 +167,6 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel patients first_name }","bold":true},{"text":{$first_name_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
-			{"hidden":"{$item_hide_integrated_edit_field2}","stack":[{"text":"{$jslabel patients last_name }","bold":true},{"text":{$last_name_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
-			{"hidden":"{$item_hide_integrated_edit_field3}","stack":[{"text":"{$jslabel patients middle_name }","bold":true},{"text":{$middle_name_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
-			{"hidden":"{$item_hide_integrated_edit_field4}","stack":[{"text":"{$jslabel patients sex }","bold":true},{"text":{$sex_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
-			{"hidden":"{$item_hide_integrated_edit_field5}","stack":[{"text":"{$jslabel patients birthday }","bold":true},{"text":{$birthday_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
-			{"hidden":"{$item_hide_integrated_edit_field}","stack":[{"text":"{$jslabel patients full_name }","bold":true},{"text":{$full_name_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
 			{"hidden":"{$item_hide_integrated_edit_field8}","stack":[{"text":"{$jslabel patients classification }","bold":true},{"text":{$classification_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
@@ -210,6 +192,18 @@ pdfDocument = {
 				
 				
 			{"hidden":"{$item_hide_integrated_edit_field7}","stack":[{"text":"{$jslabel patients updated_at }","bold":true},{"text":{$updated_at_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field}","stack":[{"text":"{$jslabel patients person_id }","bold":true},{"text":{$person_id_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel patients person_type_id }","bold":true},{"text":{$person_type_id_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field2}","stack":[{"text":"{$jslabel patients full_name }","bold":true},{"text":{$full_name_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field3}","stack":[{"text":"{$jslabel patients patient_id }","bold":true},{"text":{$patient_id_pdfvalue}}],"margin":[0,0,0,15]},
 				
 		  ],
   "border": [ false, false, false, false ],

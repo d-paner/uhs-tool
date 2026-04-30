@@ -1,0 +1,250 @@
+Import into patients
+4/30/2026 2:23:07 AM
+
+1219 out of 1300 records processed successfully.
+1219 records added.
+0 records updated.
+81 records processed with errors:
+
+Duplicate entry '5' for key 'patient_id'
+"5","5","","","","","","",""
+
+Duplicate entry '17' for key 'patient_id'
+"17","17","","","","","","",""
+
+Duplicate entry '154' for key 'patient_id'
+"154","154","","","","","","",""
+
+Duplicate entry '223' for key 'patient_id'
+"223","223","","","","","","",""
+
+Duplicate entry '236' for key 'patient_id'
+"236","236","","","","","","",""
+
+Duplicate entry '292' for key 'patient_id'
+"292","292","","","","","","",""
+
+Duplicate entry '292' for key 'patient_id'
+"292","292","","","","","","",""
+
+Duplicate entry '292' for key 'patient_id'
+"292","292","","","","","","",""
+
+Duplicate entry '292' for key 'patient_id'
+"292","292","","","","","","",""
+
+Duplicate entry '349' for key 'patient_id'
+"349","349","","","","","","",""
+
+Duplicate entry '352' for key 'patient_id'
+"352","352","","","","","","",""
+
+Duplicate entry '352' for key 'patient_id'
+"352","352","","","","","","",""
+
+Duplicate entry '353' for key 'patient_id'
+"353","353","","","","","","",""
+
+Duplicate entry '353' for key 'patient_id'
+"353","353","","","","","","",""
+
+Duplicate entry '355' for key 'patient_id'
+"355","355","","","","","","",""
+
+Duplicate entry '356' for key 'patient_id'
+"356","356","","","","","","",""
+
+Duplicate entry '370' for key 'patient_id'
+"370","370","","","","","","",""
+
+Duplicate entry '376' for key 'patient_id'
+"376","376","","","","","","",""
+
+Duplicate entry '376' for key 'patient_id'
+"376","376","","","","","","",""
+
+Duplicate entry '380' for key 'patient_id'
+"380","380","","","","","","",""
+
+Duplicate entry '384' for key 'patient_id'
+"384","384","","","","","","",""
+
+Duplicate entry '384' for key 'patient_id'
+"384","384","","","","","","",""
+
+Duplicate entry '384' for key 'patient_id'
+"384","384","","","","","","",""
+
+Duplicate entry '396' for key 'patient_id'
+"396","396","","","","","","",""
+
+Duplicate entry '396' for key 'patient_id'
+"396","396","","","","","","",""
+
+Duplicate entry '406' for key 'patient_id'
+"406","406","","","","","","",""
+
+Duplicate entry '415' for key 'patient_id'
+"415","415","","","","","","",""
+
+Duplicate entry '415' for key 'patient_id'
+"415","415","","","","","","",""
+
+Duplicate entry '420' for key 'patient_id'
+"420","420","","","","","","",""
+
+Duplicate entry '420' for key 'patient_id'
+"420","420","","","","","","",""
+
+Duplicate entry '420' for key 'patient_id'
+"420","420","","","","","","",""
+
+Duplicate entry '432' for key 'patient_id'
+"432","432","","","","","","",""
+
+Duplicate entry '435' for key 'patient_id'
+"435","435","","","","","","",""
+
+Duplicate entry '435' for key 'patient_id'
+"435","435","","","","","","",""
+
+Duplicate entry '468' for key 'patient_id'
+"468","468","","","","","","",""
+
+Duplicate entry '479' for key 'patient_id'
+"479","479","","","","","","",""
+
+Duplicate entry '495' for key 'patient_id'
+"495","495","","","","","","",""
+
+Duplicate entry '496' for key 'patient_id'
+"496","496","","","","","","",""
+
+Duplicate entry '500' for key 'patient_id'
+"500","500","","","","","","",""
+
+Duplicate entry '512' for key 'patient_id'
+"512","512","","","","","","",""
+
+Duplicate entry '527' for key 'patient_id'
+"527","527","","","","","","",""
+
+Duplicate entry '541' for key 'patient_id'
+"541","541","","","","","","",""
+
+Duplicate entry '544' for key 'patient_id'
+"544","544","","","","","","",""
+
+Duplicate entry '546' for key 'patient_id'
+"546","546","","","","","","",""
+
+Duplicate entry '557' for key 'patient_id'
+"557","557","","","","","","",""
+
+Duplicate entry '558' for key 'patient_id'
+"558","558","","","","","","",""
+
+Duplicate entry '567' for key 'patient_id'
+"567","567","","","","","","",""
+
+Duplicate entry '600' for key 'patient_id'
+"600","600","","","","","","",""
+
+Duplicate entry '604' for key 'patient_id'
+"604","604","","","","","","",""
+
+Duplicate entry '622' for key 'patient_id'
+"622","622","","","","","","",""
+
+Duplicate entry '625' for key 'patient_id'
+"625","625","","","","","","",""
+
+Duplicate entry '649' for key 'patient_id'
+"649","649","","","","","","",""
+
+Duplicate entry '671' for key 'patient_id'
+"671","671","","","","","","",""
+
+Duplicate entry '709' for key 'patient_id'
+"709","709","","","","","","",""
+
+Duplicate entry '730' for key 'patient_id'
+"730","730","","","","","","",""
+
+Duplicate entry '786' for key 'patient_id'
+"786","786","","","","","","",""
+
+Duplicate entry '788' for key 'patient_id'
+"788","788","","","","","","",""
+
+Duplicate entry '818' for key 'patient_id'
+"818","818","","","","","","",""
+
+Duplicate entry '821' for key 'patient_id'
+"821","821","","","","","","",""
+
+Duplicate entry '822' for key 'patient_id'
+"822","822","","","","","","",""
+
+Duplicate entry '824' for key 'patient_id'
+"824","824","","","","","","",""
+
+Duplicate entry '828' for key 'patient_id'
+"828","828","","","","","","",""
+
+Duplicate entry '830' for key 'patient_id'
+"830","830","","","","","","",""
+
+Duplicate entry '840' for key 'patient_id'
+"840","840","","","","","","",""
+
+Duplicate entry '853' for key 'patient_id'
+"853","853","","","","","","",""
+
+Duplicate entry '853' for key 'patient_id'
+"853","853","","","","","","",""
+
+Duplicate entry '879' for key 'patient_id'
+"879","879","","","","","","",""
+
+Duplicate entry '883' for key 'patient_id'
+"883","883","","","","","","",""
+
+Duplicate entry '939' for key 'patient_id'
+"939","939","","","","","","",""
+
+Duplicate entry '966' for key 'patient_id'
+"966","966","","","","","","",""
+
+Duplicate entry '975' for key 'patient_id'
+"975","975","","","","","","",""
+
+Duplicate entry '977' for key 'patient_id'
+"977","977","","","","","","",""
+
+Duplicate entry '983' for key 'patient_id'
+"983","983","","","","","","",""
+
+Duplicate entry '996' for key 'patient_id'
+"996","996","","","","","","",""
+
+Duplicate entry '1024' for key 'patient_id'
+"1024","1024","","","","","","",""
+
+Duplicate entry '1053' for key 'patient_id'
+"1053","1053","","","","","","",""
+
+Duplicate entry '1054' for key 'patient_id'
+"1054","1054","","","","","","",""
+
+Duplicate entry '1069' for key 'patient_id'
+"1069","1069","","","","","","",""
+
+Duplicate entry '1153' for key 'patient_id'
+"1153","1153","","","","","","",""
+
+Duplicate entry '1172' for key 'patient_id'
+"1172","1172","","","","","","",""
+
+Duplicate entry '1224' for key 'patient_id'
+"1224","1224","","","","","","",""

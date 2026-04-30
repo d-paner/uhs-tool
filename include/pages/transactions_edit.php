@@ -26,7 +26,8 @@
 			'total_due',
 			'total_paid',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'opd_attendance' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -61,6 +62,9 @@
 			),
 			'updated_at' => array( 
 				'integrated_edit_field7' 
+			),
+			'opd_attendance' => array( 
+				'integrated_edit_field8' 
 			) 
 		) 
 	),
@@ -93,7 +97,8 @@
 					'integrated_edit_field4',
 					'integrated_edit_field5',
 					'integrated_edit_field6',
-					'integrated_edit_field7' 
+					'integrated_edit_field7',
+					'integrated_edit_field8' 
 				) 
 			),
 			'formXtTags' => array(
@@ -115,7 +120,8 @@
 				'integrated_edit_field4' => 'grid',
 				'integrated_edit_field5' => 'grid',
 				'integrated_edit_field6' => 'grid',
-				'integrated_edit_field7' => 'grid' 
+				'integrated_edit_field7' => 'grid',
+				'integrated_edit_field8' => 'grid' 
 			),
 			'itemLocations' => array(
 				'integrated_edit_field' => array(
@@ -147,6 +153,10 @@
 					'cellId' => 'c3' 
 				),
 				'integrated_edit_field7' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field8' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
 				) 
@@ -185,7 +195,8 @@
 				'integrated_edit_field4',
 				'integrated_edit_field5',
 				'integrated_edit_field6',
-				'integrated_edit_field7' 
+				'integrated_edit_field7',
+				'integrated_edit_field8' 
 			),
 			'edit_view' => array( 
 				'edit_view' 
@@ -212,7 +223,8 @@
 							'integrated_edit_field4',
 							'integrated_edit_field5',
 							'integrated_edit_field6',
-							'integrated_edit_field7' 
+							'integrated_edit_field7',
+							'integrated_edit_field8' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -395,7 +407,8 @@
 						'integrated_edit_field4',
 						'integrated_edit_field5',
 						'integrated_edit_field6',
-						'integrated_edit_field7' 
+						'integrated_edit_field7',
+						'integrated_edit_field8' 
 					) 
 				) 
 			),
@@ -483,6 +496,12 @@
 		),
 		'edit_view' => array(
 			'type' => 'edit_view' 
+		),
+		'integrated_edit_field8' => array(
+			'field' => 'opd_attendance',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0,
+			'updateOnEdit' => false 
 		) 
 	),
 	'version' => 13,

@@ -2,13 +2,13 @@
 			$optionsArray = array(
 	'fields' => array(
 		'gridFields' => array( 
-			'id',
 			'label',
 			'description',
 			'created_at',
 			'updated_at',
 			'fund_type',
-			'fund_code' 
+			'fund_code',
+			'account_number' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -17,9 +17,6 @@
 			 
 		),
 		'fieldItems' => array(
-			'id' => array( 
-				'import_field' 
-			),
 			'label' => array( 
 				'import_field1' 
 			),
@@ -37,6 +34,9 @@
 			),
 			'fund_code' => array( 
 				'import_field5' 
+			),
+			'account_number' => array( 
+				'import_field7' 
 			) 
 		) 
 	),
@@ -56,13 +56,13 @@
 					'import_header' 
 				),
 				'grid' => array( 
-					'import_field',
 					'import_field1',
 					'import_field2',
 					'import_field3',
 					'import_field4',
 					'import_field6',
-					'import_field5' 
+					'import_field5',
+					'import_field7' 
 				) 
 			),
 			'formXtTags' => array(
@@ -72,13 +72,13 @@
 			),
 			'itemForms' => array(
 				'import_header' => 'top',
-				'import_field' => 'grid',
 				'import_field1' => 'grid',
 				'import_field2' => 'grid',
 				'import_field3' => 'grid',
 				'import_field4' => 'grid',
 				'import_field6' => 'grid',
-				'import_field5' => 'grid' 
+				'import_field5' => 'grid',
+				'import_field7' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -92,13 +92,13 @@
 				'import_header' 
 			),
 			'import_field' => array( 
-				'import_field',
 				'import_field1',
 				'import_field2',
 				'import_field3',
 				'import_field4',
 				'import_field6',
-				'import_field5' 
+				'import_field5',
+				'import_field7' 
 			) 
 		),
 		'cellMaps' => array(
@@ -226,13 +226,13 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'import_field',
 						'import_field1',
 						'import_field2',
 						'import_field3',
 						'import_field4',
 						'import_field6',
-						'import_field5' 
+						'import_field5',
+						'import_field7' 
 					) 
 				) 
 			),
@@ -245,10 +245,6 @@
 	'items' => array(
 		'import_header' => array(
 			'type' => 'import_header' 
-		),
-		'import_field' => array(
-			'field' => 'id',
-			'type' => 'import_field' 
 		),
 		'import_field1' => array(
 			'field' => 'label',
@@ -272,6 +268,10 @@
 		),
 		'import_field5' => array(
 			'field' => 'fund_code',
+			'type' => 'import_field' 
+		),
+		'import_field7' => array(
+			'field' => 'account_number',
 			'type' => 'import_field' 
 		) 
 	),

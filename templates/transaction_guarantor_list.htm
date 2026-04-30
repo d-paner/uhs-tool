@@ -254,6 +254,19 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_timestamps}</span>
 						</div>
 		{END searchCtrlBlock_timestamps}
+																{BEGIN searchCtrlBlock_guarantor_id}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_guarantor_id}" {$filterRow_attrs_guarantor_id}>
+			<label>{$label transaction_guarantor guarantor_id }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_guarantor_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_guarantor_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_guarantor_id}</span>
+						</div>
+		{END searchCtrlBlock_guarantor_id}
 																{BEGIN searchCtrlBlock_group}
 
 
@@ -280,19 +293,6 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_placed_by}</span>
 						</div>
 		{END searchCtrlBlock_placed_by}
-																{BEGIN searchCtrlBlock_guarantor_id}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_guarantor_id}" {$filterRow_attrs_guarantor_id}>
-			<label>{$label transaction_guarantor guarantor_id }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_guarantor_id}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_guarantor_id}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_guarantor_id}</span>
-						</div>
-		{END searchCtrlBlock_guarantor_id}
 																{BEGIN searchCtrlBlock_transaction_number}
 
 
@@ -667,9 +667,6 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="transaction_number"]:before {
 		content: "{$label transaction_guarantor transaction_number}";
 	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="guarantor_id"]:before {
-		content: "{$label transaction_guarantor guarantor_id}";
-	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="placed_by"]:before {
 		content: "{$label transaction_guarantor placed_by}";
 	}
@@ -678,6 +675,9 @@
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="timestamps"]:before {
 		content: "{$label transaction_guarantor timestamps}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="guarantor_id"]:before {
+		content: "{$label transaction_guarantor guarantor_id}";
 	}
 	}
 </style>
@@ -782,7 +782,7 @@
 		{BEGIN guarantor_id_fieldheadercolumn}
 	{BEGIN guarantor_id_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" 
+	data-itemtype="grid_field_label" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" 
 
 			{$guarantor_id_orderlinkattrs}
 	
@@ -805,11 +805,45 @@
 	{$cell_grid_headcell_field2}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$group_class}	"
+
+			data-field="group"
+	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN group_fieldheadercolumn}
+	{BEGIN group_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group" data-fieldname="group" 
+
+			{$group_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label transaction_guarantor group }</span>
+					{$arrow_icon_group}
+			</span>
+	</span>
+	{END group_fieldheader}
+{END group_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
+	<th
+	
+	{$cell_grid_headcell_field3}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$placed_by_class}	"
 
 			data-field="placed_by"
 	
-	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -832,40 +866,6 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field2}
-									{BEGIN cellblock_grid_headcell_field3}
-	<th
-	
-	{$cell_grid_headcell_field3}
-	{$recordattrs}
-	class="
-		 r-ori-vert		 {$group_class}	"
-
-			data-field="group"
-	
-	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN group_fieldheadercolumn}
-	{BEGIN group_fieldheader}
-<span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="group" data-fieldname="group" 
-
-			{$group_orderlinkattrs}
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label transaction_guarantor group }</span>
-					{$arrow_icon_group}
-			</span>
-	</span>
-	{END group_fieldheader}
-{END group_fieldheadercolumn}
-
-	
-	</th>
 	{END cellblock_grid_headcell_field3}
 									{BEGIN cellblock_grid_headcell_field4}
 	<th
@@ -884,7 +884,7 @@
 		{BEGIN timestamps_fieldheadercolumn}
 	{BEGIN timestamps_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="timestamps" data-fieldname="timestamps" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="timestamps" data-fieldname="timestamps" 
 
 			{$timestamps_orderlinkattrs}
 	
@@ -1019,7 +1019,7 @@
 
 	 
 		{BEGIN guarantor_id_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" data-default-width >
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="guarantor_id" data-fieldname="guarantor_id" data-default-width >
 {$guarantor_id_value}
 </span>
 {END guarantor_id_fieldcolumn}	
@@ -1031,32 +1031,11 @@
 	{$cell_grid_cell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$placed_by_class}	"
-
-			data-field="placed_by"
-	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN placed_by_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field3" {$item_simple_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="placed_by" data-fieldname="placed_by" data-default-width >
-{$placed_by_value}
-</span>
-{END placed_by_fieldcolumn}	
-	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
-	<td
-	
-	{$cell_grid_cell_field3}
-	{$recordattrs}
-	class="
 		 r-ori-vert		 {$group_class}	"
 
 			data-field="group"
 	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1065,6 +1044,27 @@
 {$group_value}
 </span>
 {END group_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
+	<td
+	
+	{$cell_grid_cell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$placed_by_class}	"
+
+			data-field="placed_by"
+	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN placed_by_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field3" {$item_simple_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="placed_by" data-fieldname="placed_by" data-default-width >
+{$placed_by_value}
+</span>
+{END placed_by_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field3}
 									{BEGIN cellblock_grid_cell_field4}
@@ -1165,7 +1165,7 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$placed_by_class}	"
+		 r-ori-vert		 {$group_class}	"
 
 	
 	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transaction_guarantor_list"	
@@ -1180,7 +1180,7 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$group_class}	"
+		 r-ori-vert		 {$placed_by_class}	"
 
 	
 	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="transaction_guarantor_list"	

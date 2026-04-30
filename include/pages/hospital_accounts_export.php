@@ -21,26 +21,29 @@
 		),
 		'fund_code' => array(
 			'totalsType' => '' 
+		),
+		'account_number' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'id',
 			'label',
 			'description',
 			'created_at',
 			'updated_at',
 			'fund_type',
-			'fund_code' 
+			'fund_code',
+			'account_number' 
 		),
 		'exportFields' => array( 
-			'id',
 			'label',
 			'description',
 			'created_at',
 			'updated_at',
 			'fund_type',
-			'fund_code' 
+			'fund_code',
+			'account_number' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -49,9 +52,6 @@
 			 
 		),
 		'fieldItems' => array(
-			'id' => array( 
-				'export_field' 
-			),
 			'label' => array( 
 				'export_field1' 
 			),
@@ -69,6 +69,9 @@
 			),
 			'fund_code' => array( 
 				'export_field5' 
+			),
+			'account_number' => array( 
+				'export_field7' 
 			) 
 		) 
 	),
@@ -88,13 +91,13 @@
 					'export_header' 
 				),
 				'grid' => array( 
-					'export_field',
 					'export_field1',
 					'export_field2',
 					'export_field3',
 					'export_field4',
 					'export_field6',
-					'export_field5' 
+					'export_field5',
+					'export_field7' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -108,13 +111,13 @@
 			),
 			'itemForms' => array(
 				'export_header' => 'top',
-				'export_field' => 'grid',
 				'export_field1' => 'grid',
 				'export_field2' => 'grid',
 				'export_field3' => 'grid',
 				'export_field4' => 'grid',
 				'export_field6' => 'grid',
 				'export_field5' => 'grid',
+				'export_field7' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -136,13 +139,13 @@
 				'export_cancel' 
 			),
 			'export_field' => array( 
-				'export_field',
 				'export_field1',
 				'export_field2',
 				'export_field3',
 				'export_field4',
 				'export_field6',
-				'export_field5' 
+				'export_field5',
+				'export_field7' 
 			) 
 		),
 		'cellMaps' => array(
@@ -282,13 +285,13 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'export_field',
 						'export_field1',
 						'export_field2',
 						'export_field3',
 						'export_field4',
 						'export_field6',
-						'export_field5' 
+						'export_field5',
+						'export_field7' 
 					) 
 				) 
 			),
@@ -343,10 +346,6 @@
 		'export_cancel' => array(
 			'type' => 'export_cancel' 
 		),
-		'export_field' => array(
-			'field' => 'id',
-			'type' => 'export_field' 
-		),
 		'export_field1' => array(
 			'field' => 'label',
 			'type' => 'export_field' 
@@ -369,6 +368,10 @@
 		),
 		'export_field5' => array(
 			'field' => 'fund_code',
+			'type' => 'export_field' 
+		),
+		'export_field7' => array(
+			'field' => 'account_number',
 			'type' => 'export_field' 
 		) 
 	),

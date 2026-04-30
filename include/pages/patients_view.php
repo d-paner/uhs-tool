@@ -5,21 +5,19 @@
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'first_name',
-			'last_name',
-			'middle_name',
-			'sex',
-			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name',
 			'classification',
 			'office',
 			'college',
 			'uhs_id_no',
 			'emed_no',
 			'ihomis_no',
-			'philhealth_no' 
+			'philhealth_no',
+			'person_id',
+			'person_type_id',
+			'full_name',
+			'patient_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -28,29 +26,11 @@
 			 
 		),
 		'fieldItems' => array(
-			'first_name' => array( 
-				'integrated_edit_field1' 
-			),
-			'last_name' => array( 
-				'integrated_edit_field2' 
-			),
-			'middle_name' => array( 
-				'integrated_edit_field3' 
-			),
-			'sex' => array( 
-				'integrated_edit_field4' 
-			),
-			'birthday' => array( 
-				'integrated_edit_field5' 
-			),
 			'created_at' => array( 
 				'integrated_edit_field6' 
 			),
 			'updated_at' => array( 
 				'integrated_edit_field7' 
-			),
-			'full_name' => array( 
-				'integrated_edit_field' 
 			),
 			'classification' => array( 
 				'integrated_edit_field8' 
@@ -72,6 +52,18 @@
 			),
 			'philhealth_no' => array( 
 				'integrated_edit_field14' 
+			),
+			'person_id' => array( 
+				'integrated_edit_field' 
+			),
+			'person_type_id' => array( 
+				'integrated_edit_field1' 
+			),
+			'full_name' => array( 
+				'integrated_edit_field2' 
+			),
+			'patient_id' => array( 
+				'integrated_edit_field3' 
 			) 
 		) 
 	),
@@ -96,12 +88,6 @@
 					'view_header' 
 				),
 				'grid' => array( 
-					'integrated_edit_field1',
-					'integrated_edit_field2',
-					'integrated_edit_field3',
-					'integrated_edit_field4',
-					'integrated_edit_field5',
-					'integrated_edit_field',
 					'integrated_edit_field8',
 					'integrated_edit_field9',
 					'integrated_edit_field10',
@@ -110,7 +96,11 @@
 					'integrated_edit_field13',
 					'integrated_edit_field14',
 					'integrated_edit_field6',
-					'integrated_edit_field7' 
+					'integrated_edit_field7',
+					'integrated_edit_field',
+					'integrated_edit_field1',
+					'integrated_edit_field2',
+					'integrated_edit_field3' 
 				) 
 			),
 			'formXtTags' => array(
@@ -123,12 +113,6 @@
 				'view_close' => 'below-grid',
 				'hamburger' => 'below-grid',
 				'view_header' => 'top',
-				'integrated_edit_field1' => 'grid',
-				'integrated_edit_field2' => 'grid',
-				'integrated_edit_field3' => 'grid',
-				'integrated_edit_field4' => 'grid',
-				'integrated_edit_field5' => 'grid',
-				'integrated_edit_field' => 'grid',
 				'integrated_edit_field8' => 'grid',
 				'integrated_edit_field9' => 'grid',
 				'integrated_edit_field10' => 'grid',
@@ -137,33 +121,13 @@
 				'integrated_edit_field13' => 'grid',
 				'integrated_edit_field14' => 'grid',
 				'integrated_edit_field6' => 'grid',
-				'integrated_edit_field7' => 'grid' 
+				'integrated_edit_field7' => 'grid',
+				'integrated_edit_field' => 'grid',
+				'integrated_edit_field1' => 'grid',
+				'integrated_edit_field2' => 'grid',
+				'integrated_edit_field3' => 'grid' 
 			),
 			'itemLocations' => array(
-				'integrated_edit_field1' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field2' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field3' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field4' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field5' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
-				'integrated_edit_field' => array(
-					'location' => 'grid',
-					'cellId' => 'c3' 
-				),
 				'integrated_edit_field8' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
@@ -199,6 +163,22 @@
 				'integrated_edit_field7' => array(
 					'location' => 'grid',
 					'cellId' => 'c3' 
+				),
+				'integrated_edit_field' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field1' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field2' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
+				),
+				'integrated_edit_field3' => array(
+					'location' => 'grid',
+					'cellId' => 'c3' 
 				) 
 			),
 			'itemVisiblity' => array(
@@ -216,21 +196,19 @@
 				'view_close' 
 			),
 			'integrated_edit_field' => array( 
-				'integrated_edit_field1',
-				'integrated_edit_field2',
-				'integrated_edit_field3',
-				'integrated_edit_field4',
-				'integrated_edit_field5',
 				'integrated_edit_field6',
 				'integrated_edit_field7',
-				'integrated_edit_field',
 				'integrated_edit_field8',
 				'integrated_edit_field9',
 				'integrated_edit_field10',
 				'integrated_edit_field11',
 				'integrated_edit_field12',
 				'integrated_edit_field13',
-				'integrated_edit_field14' 
+				'integrated_edit_field14',
+				'integrated_edit_field',
+				'integrated_edit_field1',
+				'integrated_edit_field2',
+				'integrated_edit_field3' 
 			),
 			'hamburger' => array( 
 				'hamburger' 
@@ -253,12 +231,6 @@
 							 
 						),
 						'items' => array( 
-							'integrated_edit_field1',
-							'integrated_edit_field2',
-							'integrated_edit_field3',
-							'integrated_edit_field4',
-							'integrated_edit_field5',
-							'integrated_edit_field',
 							'integrated_edit_field8',
 							'integrated_edit_field9',
 							'integrated_edit_field10',
@@ -267,7 +239,11 @@
 							'integrated_edit_field13',
 							'integrated_edit_field14',
 							'integrated_edit_field6',
-							'integrated_edit_field7' 
+							'integrated_edit_field7',
+							'integrated_edit_field',
+							'integrated_edit_field1',
+							'integrated_edit_field2',
+							'integrated_edit_field3' 
 						),
 						'fixedAtServer' => true,
 						'fixedAtClient' => false 
@@ -440,12 +416,6 @@
 				'c3' => array(
 					'model' => 'c3',
 					'items' => array( 
-						'integrated_edit_field1',
-						'integrated_edit_field2',
-						'integrated_edit_field3',
-						'integrated_edit_field4',
-						'integrated_edit_field5',
-						'integrated_edit_field',
 						'integrated_edit_field8',
 						'integrated_edit_field9',
 						'integrated_edit_field10',
@@ -454,7 +424,11 @@
 						'integrated_edit_field13',
 						'integrated_edit_field14',
 						'integrated_edit_field6',
-						'integrated_edit_field7' 
+						'integrated_edit_field7',
+						'integrated_edit_field',
+						'integrated_edit_field1',
+						'integrated_edit_field2',
+						'integrated_edit_field3' 
 					) 
 				) 
 			),
@@ -476,31 +450,6 @@
 		'view_close' => array(
 			'type' => 'view_close' 
 		),
-		'integrated_edit_field1' => array(
-			'field' => 'first_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field2' => array(
-			'field' => 'last_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field3' => array(
-			'field' => 'middle_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field4' => array(
-			'field' => 'sex',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
-		'integrated_edit_field5' => array(
-			'field' => 'birthday',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
-		),
 		'integrated_edit_field6' => array(
 			'field' => 'created_at',
 			'type' => 'integrated_edit_field',
@@ -519,11 +468,6 @@
 		),
 		'view_edit' => array(
 			'type' => 'view_edit' 
-		),
-		'integrated_edit_field' => array(
-			'field' => 'full_name',
-			'type' => 'integrated_edit_field',
-			'orientation' => 0 
 		),
 		'integrated_edit_field8' => array(
 			'field' => 'classification',
@@ -557,6 +501,26 @@
 		),
 		'integrated_edit_field14' => array(
 			'field' => 'philhealth_no',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field' => array(
+			'field' => 'person_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field1' => array(
+			'field' => 'person_type_id',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field2' => array(
+			'field' => 'full_name',
+			'type' => 'integrated_edit_field',
+			'orientation' => 0 
+		),
+		'integrated_edit_field3' => array(
+			'field' => 'patient_id',
 			'type' => 'integrated_edit_field',
 			'orientation' => 0 
 		) 

@@ -4,28 +4,10 @@
 		'id' => array(
 			'totalsType' => '' 
 		),
-		'first_name' => array(
-			'totalsType' => '' 
-		),
-		'last_name' => array(
-			'totalsType' => '' 
-		),
-		'middle_name' => array(
-			'totalsType' => '' 
-		),
-		'sex' => array(
-			'totalsType' => '' 
-		),
-		'birthday' => array(
-			'totalsType' => '' 
-		),
 		'created_at' => array(
 			'totalsType' => '' 
 		),
 		'updated_at' => array(
-			'totalsType' => '' 
-		),
-		'full_name' => array(
 			'totalsType' => '' 
 		),
 		'classification' => array(
@@ -48,42 +30,50 @@
 		),
 		'philhealth_no' => array(
 			'totalsType' => '' 
+		),
+		'person_id' => array(
+			'totalsType' => '' 
+		),
+		'person_type_id' => array(
+			'totalsType' => '' 
+		),
+		'full_name' => array(
+			'totalsType' => '' 
+		),
+		'patient_id' => array(
+			'totalsType' => '' 
 		) 
 	),
 	'fields' => array(
 		'gridFields' => array( 
-			'first_name',
-			'last_name',
-			'middle_name',
-			'sex',
-			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name',
 			'classification',
 			'office',
 			'college',
 			'uhs_id_no',
 			'emed_no',
 			'ihomis_no',
-			'philhealth_no' 
+			'philhealth_no',
+			'person_id',
+			'person_type_id',
+			'full_name',
+			'patient_id' 
 		),
 		'exportFields' => array( 
-			'first_name',
-			'last_name',
-			'middle_name',
-			'sex',
-			'birthday',
 			'created_at',
 			'updated_at',
-			'full_name',
 			'classification',
 			'office',
 			'college',
 			'uhs_id_no',
 			'emed_no',
 			'ihomis_no',
-			'philhealth_no' 
+			'philhealth_no',
+			'person_id',
+			'person_type_id',
+			'full_name',
+			'patient_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -92,29 +82,11 @@
 			 
 		),
 		'fieldItems' => array(
-			'first_name' => array( 
-				'export_field1' 
-			),
-			'last_name' => array( 
-				'export_field2' 
-			),
-			'middle_name' => array( 
-				'export_field3' 
-			),
-			'sex' => array( 
-				'export_field4' 
-			),
-			'birthday' => array( 
-				'export_field5' 
-			),
 			'created_at' => array( 
 				'export_field6' 
 			),
 			'updated_at' => array( 
 				'export_field7' 
-			),
-			'full_name' => array( 
-				'export_field' 
 			),
 			'classification' => array( 
 				'export_field8' 
@@ -136,6 +108,18 @@
 			),
 			'philhealth_no' => array( 
 				'export_field14' 
+			),
+			'person_id' => array( 
+				'export_field' 
+			),
+			'person_type_id' => array( 
+				'export_field1' 
+			),
+			'full_name' => array( 
+				'export_field2' 
+			),
+			'patient_id' => array( 
+				'export_field3' 
 			) 
 		) 
 	),
@@ -155,21 +139,19 @@
 					'export_header' 
 				),
 				'grid' => array( 
-					'export_field1',
-					'export_field2',
-					'export_field3',
-					'export_field4',
-					'export_field5',
 					'export_field6',
 					'export_field7',
-					'export_field',
 					'export_field8',
 					'export_field9',
 					'export_field10',
 					'export_field11',
 					'export_field12',
 					'export_field13',
-					'export_field14' 
+					'export_field14',
+					'export_field',
+					'export_field1',
+					'export_field2',
+					'export_field3' 
 				),
 				'footer' => array( 
 					'export_export',
@@ -183,14 +165,8 @@
 			),
 			'itemForms' => array(
 				'export_header' => 'top',
-				'export_field1' => 'grid',
-				'export_field2' => 'grid',
-				'export_field3' => 'grid',
-				'export_field4' => 'grid',
-				'export_field5' => 'grid',
 				'export_field6' => 'grid',
 				'export_field7' => 'grid',
-				'export_field' => 'grid',
 				'export_field8' => 'grid',
 				'export_field9' => 'grid',
 				'export_field10' => 'grid',
@@ -198,6 +174,10 @@
 				'export_field12' => 'grid',
 				'export_field13' => 'grid',
 				'export_field14' => 'grid',
+				'export_field' => 'grid',
+				'export_field1' => 'grid',
+				'export_field2' => 'grid',
+				'export_field3' => 'grid',
 				'export_export' => 'footer',
 				'export_cancel' => 'footer' 
 			),
@@ -219,21 +199,19 @@
 				'export_cancel' 
 			),
 			'export_field' => array( 
-				'export_field1',
-				'export_field2',
-				'export_field3',
-				'export_field4',
-				'export_field5',
 				'export_field6',
 				'export_field7',
-				'export_field',
 				'export_field8',
 				'export_field9',
 				'export_field10',
 				'export_field11',
 				'export_field12',
 				'export_field13',
-				'export_field14' 
+				'export_field14',
+				'export_field',
+				'export_field1',
+				'export_field2',
+				'export_field3' 
 			) 
 		),
 		'cellMaps' => array(
@@ -373,21 +351,19 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'export_field1',
-						'export_field2',
-						'export_field3',
-						'export_field4',
-						'export_field5',
 						'export_field6',
 						'export_field7',
-						'export_field',
 						'export_field8',
 						'export_field9',
 						'export_field10',
 						'export_field11',
 						'export_field12',
 						'export_field13',
-						'export_field14' 
+						'export_field14',
+						'export_field',
+						'export_field1',
+						'export_field2',
+						'export_field3' 
 					) 
 				) 
 			),
@@ -442,36 +418,12 @@
 		'export_cancel' => array(
 			'type' => 'export_cancel' 
 		),
-		'export_field1' => array(
-			'field' => 'first_name',
-			'type' => 'export_field' 
-		),
-		'export_field2' => array(
-			'field' => 'last_name',
-			'type' => 'export_field' 
-		),
-		'export_field3' => array(
-			'field' => 'middle_name',
-			'type' => 'export_field' 
-		),
-		'export_field4' => array(
-			'field' => 'sex',
-			'type' => 'export_field' 
-		),
-		'export_field5' => array(
-			'field' => 'birthday',
-			'type' => 'export_field' 
-		),
 		'export_field6' => array(
 			'field' => 'created_at',
 			'type' => 'export_field' 
 		),
 		'export_field7' => array(
 			'field' => 'updated_at',
-			'type' => 'export_field' 
-		),
-		'export_field' => array(
-			'field' => 'full_name',
 			'type' => 'export_field' 
 		),
 		'export_field8' => array(
@@ -500,6 +452,22 @@
 		),
 		'export_field14' => array(
 			'field' => 'philhealth_no',
+			'type' => 'export_field' 
+		),
+		'export_field' => array(
+			'field' => 'person_id',
+			'type' => 'export_field' 
+		),
+		'export_field1' => array(
+			'field' => 'person_type_id',
+			'type' => 'export_field' 
+		),
+		'export_field2' => array(
+			'field' => 'full_name',
+			'type' => 'export_field' 
+		),
+		'export_field3' => array(
+			'field' => 'patient_id',
 			'type' => 'export_field' 
 		) 
 	),

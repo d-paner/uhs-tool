@@ -2,13 +2,12 @@
 			$optionsArray = array(
 	'fields' => array(
 		'gridFields' => array( 
-			'full_name',
 			'profession',
-			'birthday',
-			'sex',
 			'professional_type_id',
 			'created_at',
-			'updated_at' 
+			'updated_at',
+			'person_id',
+			'person_type_id' 
 		),
 		'searchRequiredFields' => array( 
 			 
@@ -17,17 +16,8 @@
 			 
 		),
 		'fieldItems' => array(
-			'full_name' => array( 
-				'import_field1' 
-			),
 			'profession' => array( 
 				'import_field2' 
-			),
-			'birthday' => array( 
-				'import_field3' 
-			),
-			'sex' => array( 
-				'import_field4' 
 			),
 			'professional_type_id' => array( 
 				'import_field5' 
@@ -37,6 +27,12 @@
 			),
 			'updated_at' => array( 
 				'import_field7' 
+			),
+			'person_id' => array( 
+				'import_field' 
+			),
+			'person_type_id' => array( 
+				'import_field1' 
 			) 
 		) 
 	),
@@ -56,13 +52,12 @@
 					'import_header' 
 				),
 				'grid' => array( 
-					'import_field1',
 					'import_field2',
-					'import_field3',
-					'import_field4',
 					'import_field5',
 					'import_field6',
-					'import_field7' 
+					'import_field7',
+					'import_field',
+					'import_field1' 
 				) 
 			),
 			'formXtTags' => array(
@@ -72,13 +67,12 @@
 			),
 			'itemForms' => array(
 				'import_header' => 'top',
-				'import_field1' => 'grid',
 				'import_field2' => 'grid',
-				'import_field3' => 'grid',
-				'import_field4' => 'grid',
 				'import_field5' => 'grid',
 				'import_field6' => 'grid',
-				'import_field7' => 'grid' 
+				'import_field7' => 'grid',
+				'import_field' => 'grid',
+				'import_field1' => 'grid' 
 			),
 			'itemLocations' => array(
 				 
@@ -92,13 +86,12 @@
 				'import_header' 
 			),
 			'import_field' => array( 
-				'import_field1',
 				'import_field2',
-				'import_field3',
-				'import_field4',
 				'import_field5',
 				'import_field6',
-				'import_field7' 
+				'import_field7',
+				'import_field',
+				'import_field1' 
 			) 
 		),
 		'cellMaps' => array(
@@ -226,13 +219,12 @@
 				'c1' => array(
 					'model' => 'c1',
 					'items' => array( 
-						'import_field1',
 						'import_field2',
-						'import_field3',
-						'import_field4',
 						'import_field5',
 						'import_field6',
-						'import_field7' 
+						'import_field7',
+						'import_field',
+						'import_field1' 
 					) 
 				) 
 			),
@@ -246,20 +238,8 @@
 		'import_header' => array(
 			'type' => 'import_header' 
 		),
-		'import_field1' => array(
-			'field' => 'full_name',
-			'type' => 'import_field' 
-		),
 		'import_field2' => array(
 			'field' => 'profession',
-			'type' => 'import_field' 
-		),
-		'import_field3' => array(
-			'field' => 'birthday',
-			'type' => 'import_field' 
-		),
-		'import_field4' => array(
-			'field' => 'sex',
 			'type' => 'import_field' 
 		),
 		'import_field5' => array(
@@ -272,6 +252,14 @@
 		),
 		'import_field7' => array(
 			'field' => 'updated_at',
+			'type' => 'import_field' 
+		),
+		'import_field' => array(
+			'field' => 'person_id',
+			'type' => 'import_field' 
+		),
+		'import_field1' => array(
+			'field' => 'person_type_id',
 			'type' => 'import_field' 
 		) 
 	),

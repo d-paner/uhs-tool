@@ -218,35 +218,6 @@ pdfDocument = {
 	cellId: 'headcell_field',
 	col:0,
 	row:0,
-			fieldName: 'full_name',
-				style: 'headcell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":"{$jslabel professionals full_name }","hidden":"{$item_hide_simple_grid_field}","bold":true},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$full_name_align}',
-     
-      
-      },
-
-{END cellblock_grid_headcell_field}
-																							{BEGIN cellblock_grid_headcell_field1}
-{
-	cellId: 'headcell_field1',
-	col:0,
-	row:0,
 			fieldName: 'profession',
 				style: 'headcell',
 		
@@ -261,7 +232,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel professionals profession }","hidden":"{$item_hide_simple_grid_field8}","bold":true},
+			{"text":"{$jslabel professionals profession }","hidden":"{$item_hide_simple_grid_field4}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -270,68 +241,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_headcell_field1}
-																							{BEGIN cellblock_grid_headcell_field2}
+{END cellblock_grid_headcell_field}
+																							{BEGIN cellblock_grid_headcell_field1}
 {
-	cellId: 'headcell_field2',
-	col:0,
-	row:0,
-			fieldName: 'birthday',
-				style: 'headcell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":"{$jslabel professionals birthday }","hidden":"{$item_hide_simple_grid_field9}","bold":true},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$birthday_align}',
-     
-      
-      },
-
-{END cellblock_grid_headcell_field2}
-																							{BEGIN cellblock_grid_headcell_field3}
-{
-	cellId: 'headcell_field3',
-	col:0,
-	row:0,
-			fieldName: 'sex',
-				style: 'headcell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":"{$jslabel professionals sex }","hidden":"{$item_hide_simple_grid_field10}","bold":true},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$sex_align}',
-     
-      
-      },
-
-{END cellblock_grid_headcell_field3}
-																							{BEGIN cellblock_grid_headcell_field4}
-{
-	cellId: 'headcell_field4',
+	cellId: 'headcell_field1',
 	col:0,
 	row:0,
 			fieldName: 'professional_type_id',
@@ -348,7 +261,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel professionals professional_type_id }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
+			{"text":"{$jslabel professionals professional_type_id }","hidden":"{$item_hide_simple_grid_field8}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -357,10 +270,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_headcell_field4}
-																							{BEGIN cellblock_grid_headcell_field5}
+{END cellblock_grid_headcell_field1}
+																							{BEGIN cellblock_grid_headcell_field2}
 {
-	cellId: 'headcell_field5',
+	cellId: 'headcell_field2',
 	col:0,
 	row:0,
 			fieldName: 'created_at',
@@ -377,7 +290,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel professionals created_at }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
+			{"text":"{$jslabel professionals created_at }","hidden":"{$item_hide_simple_grid_field9}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -386,10 +299,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_headcell_field5}
-																							{BEGIN cellblock_grid_headcell_field6}
+{END cellblock_grid_headcell_field2}
+																							{BEGIN cellblock_grid_headcell_field3}
 {
-	cellId: 'headcell_field6',
+	cellId: 'headcell_field3',
 	col:0,
 	row:0,
 			fieldName: 'updated_at',
@@ -406,11 +319,98 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel professionals updated_at }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
+			{"text":"{$jslabel professionals updated_at }","hidden":"{$item_hide_simple_grid_field10}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": '{$updated_at_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field3}
+																							{BEGIN cellblock_grid_headcell_field4}
+{
+	cellId: 'headcell_field4',
+	col:0,
+	row:0,
+			fieldName: 'person_id',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel professionals person_id }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$person_id_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field4}
+																							{BEGIN cellblock_grid_headcell_field5}
+{
+	cellId: 'headcell_field5',
+	col:0,
+	row:0,
+			fieldName: 'person_type_id',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel professionals person_type_id }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$person_type_id_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field5}
+																							{BEGIN cellblock_grid_headcell_field6}
+{
+	cellId: 'headcell_field6',
+	col:0,
+	row:0,
+			fieldName: 'full_name',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel professionals full_name }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$full_name_align}',
      
       
       },
@@ -428,35 +428,6 @@ pdfDocument = {
 																{BEGIN cellblock_grid_cell_field}
 {
 	cellId: 'cell_field',
-	col:0,
-	row:0,
-			fieldName: 'full_name',
-				style: 'bodycell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":{$full_name_pdfvalue},"hidden":"{$item_hide_simple_grid_field1}"},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$full_name_align}',
-     
-      
-      },
-
-{END cellblock_grid_cell_field}
-																							{BEGIN cellblock_grid_cell_field1}
-{
-	cellId: 'cell_field1',
 	col:0,
 	row:0,
 			fieldName: 'profession',
@@ -482,68 +453,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_cell_field1}
-																							{BEGIN cellblock_grid_cell_field2}
+{END cellblock_grid_cell_field}
+																							{BEGIN cellblock_grid_cell_field1}
 {
-	cellId: 'cell_field2',
-	col:0,
-	row:0,
-			fieldName: 'birthday',
-				style: 'bodycell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":{$birthday_pdfvalue},"hidden":"{$item_hide_simple_grid_field3}"},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$birthday_align}',
-     
-      
-      },
-
-{END cellblock_grid_cell_field2}
-																							{BEGIN cellblock_grid_cell_field3}
-{
-	cellId: 'cell_field3',
-	col:0,
-	row:0,
-			fieldName: 'sex',
-				style: 'bodycell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":{$sex_pdfvalue},"hidden":"{$item_hide_simple_grid_field4}"},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$sex_align}',
-     
-      
-      },
-
-{END cellblock_grid_cell_field3}
-																							{BEGIN cellblock_grid_cell_field4}
-{
-	cellId: 'cell_field4',
+	cellId: 'cell_field1',
 	col:0,
 	row:0,
 			fieldName: 'professional_type_id',
@@ -569,10 +482,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_cell_field4}
-																							{BEGIN cellblock_grid_cell_field5}
+{END cellblock_grid_cell_field1}
+																							{BEGIN cellblock_grid_cell_field2}
 {
-	cellId: 'cell_field5',
+	cellId: 'cell_field2',
 	col:0,
 	row:0,
 			fieldName: 'created_at',
@@ -598,10 +511,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_cell_field5}
-																							{BEGIN cellblock_grid_cell_field6}
+{END cellblock_grid_cell_field2}
+																							{BEGIN cellblock_grid_cell_field3}
 {
-	cellId: 'cell_field6',
+	cellId: 'cell_field3',
 	col:0,
 	row:0,
 			fieldName: 'updated_at',
@@ -623,6 +536,93 @@ pdfDocument = {
 		  ],
   "border": [ true, true, true, true ],
               "alignment": '{$updated_at_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field3}
+																							{BEGIN cellblock_grid_cell_field4}
+{
+	cellId: 'cell_field4',
+	col:0,
+	row:0,
+			fieldName: 'person_id',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$person_id_pdfvalue},"hidden":"{$item_hide_simple_grid_field}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$person_id_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field4}
+																							{BEGIN cellblock_grid_cell_field5}
+{
+	cellId: 'cell_field5',
+	col:0,
+	row:0,
+			fieldName: 'person_type_id',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$person_type_id_pdfvalue},"hidden":"{$item_hide_simple_grid_field1}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$person_type_id_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field5}
+																							{BEGIN cellblock_grid_cell_field6}
+{
+	cellId: 'cell_field6',
+	col:0,
+	row:0,
+			fieldName: 'full_name',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$full_name_pdfvalue},"hidden":"{$item_hide_simple_grid_field3}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$full_name_align}',
      
       
       },
